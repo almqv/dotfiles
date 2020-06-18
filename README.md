@@ -10,4 +10,5 @@ ______________________________________________________________________
 > - i3-gaps 
 > - rofi
 > - compton
+>
 > ***And all other dependencies that those require.***
