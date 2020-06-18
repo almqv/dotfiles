@@ -184,7 +184,7 @@ set $inactive-bg-color		#121212
 set $text-color			#f3f4f5
 set $inactive-text-color	#676E7D
 set $urgent-bg-color		#E53935
-set $indicator-color		#84939c
+set $indicator-color		#474747
 
 # window colors
 #			border			background		text			indicator
@@ -194,9 +194,9 @@ client.focused_inactive	$inactive-bg-color	$inactive-bg-color	$inactive-text-col
 client.urgent		$urgent-bg-color	$urgent-bg-color	$text-color          	$indicator-color
 
 # Border
-# new_window pixel 3
-# new_float pixel 3
-# hide_edge_borders both
+new_window pixel 3
+new_float pixel 3
+hide_edge_borders both
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)

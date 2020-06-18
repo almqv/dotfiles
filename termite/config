@@ -4,8 +4,9 @@
 # Project:    Nord Termite
 # Repository: https://github.com/arcticicestudio/nord-termite
 # License:    MIT
+
 [options]
-font = Source Code Pro Light 10
+font = Source Code Pro 9
 
 [colors]
 cursor = #d8dee9
@@ -13,7 +14,7 @@ cursor_foreground = #2e3440
 
 foreground = #d8dee9
 foreground_bold = #d8dee9
-background = rgba(21, 21, 21, 0.92)
+background = rgba(21, 21, 21, 0.94) 
 
 highlight = #4c566a
 
