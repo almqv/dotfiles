@@ -33,6 +33,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'sheerun/vim-polyglot' " Syntax highlightning
 	Plug 'preservim/nerdtree' " Tree navigation
 	Plug 'rafi/awesome-vim-colorschemes' " Theme collection
+	Plug 'chriskempson/base16-vim' " Theme
 call plug#end()
 
 " Mapping
@@ -42,6 +43,8 @@ nmap <silent> <C-D> :NERDTreeToggle<CR>
 
 " Theme
 set t_Co=256
-colorscheme happy_hacking
+colorscheme base16-default-dark " happy_hacking
 let &showbreak = '↳ '
-hi Normal guibg=NONE ctermbg=NONE
+" hi Normal guibg=NONE ctermbg=NONE
+set termguicolors
+let base16colorspace=256
