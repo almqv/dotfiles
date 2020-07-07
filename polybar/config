@@ -3,7 +3,7 @@ background = #c2171717
 foreground = #eee
 linecolor = #c2bf616a
 bordercolor = #ff252525
-accent = #e60053
+accent = #c2bf616a
 
 [settings]
 screenchange-reload = true
@@ -65,7 +65,7 @@ font-3 = FontAwesome:size=12;0
 modules-left = i3 
 ;modules-center = mpd
 modules-center = xwindow
-modules-right = wired cpu temperature memory pavolume date  
+modules-right = pavolume date  
 
 tray-position = right
 tray-padding = 4
@@ -194,9 +194,9 @@ label-warn-foreground = #f00
 ; The icon selection will range from `base-temperature` to `warn-temperature`,
 ; temperatures above `warn-temperature` will use the last icon
 ; and temperatures below `base-temperature` will use `ramp-0`
-ramp-0 = temp:
-ramp-1 = temp:
-ramp-2 = temp:
+ramp-0 = Temp:
+ramp-1 = Temp:
+ramp-2 = Temp:
 ramp-foreground = #55
 
 [module/github]

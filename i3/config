@@ -241,3 +241,6 @@ exec_always compton
 
 # Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+# Conky
+exec_always --no-startup-id $HOME/.config/conky/launch.sh

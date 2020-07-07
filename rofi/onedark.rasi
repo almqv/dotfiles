@@ -34,11 +34,11 @@ window {
   transparency: "real";
   fullscreen: false;
   background-color: #151515dd;
-  width: 40%;
+  width: 29%;
 }
 
 mainbox {
-  padding: 4% 4%;
+  padding: 1% 0.8%;
 }
 
 inputbar {
