@@ -22,6 +22,10 @@ set mouse=a
 set wrap
 set noet
 
+" Tabbing lines
+vmap <Tab> >gv
+vmap <S-Tab> <gv
+
 " GUI stuff
 syntax on
 set nu
