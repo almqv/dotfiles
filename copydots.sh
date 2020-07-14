@@ -9,6 +9,7 @@ cp -r $HOME/.config/conky $repoPath
 cp -r $HOME/.config/polybar $repoPath
 cp -r $HOME/.config/termite $repoPath
 cp -r $HOME/.config/neofetch $repoPath
+cp -r $HOME/.config/ranger $repoPath
 
 # Vim
 cp $HOME/.vimrc $repoPath/vimrc
