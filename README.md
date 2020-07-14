@@ -10,5 +10,8 @@ ______________________________________________________________________
 > - i3-gaps 
 > - rofi
 > - compton
+> - conky
+> - ranger
+> - w3m
 >
 > ***And all other dependencies that those require.***
