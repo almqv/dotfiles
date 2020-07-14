@@ -235,6 +235,7 @@ exec_always setxkbmap se # set keyboard layout to swedish (sv-latin1)
 # Binds
 bindsym $mod+Shift+x exec betterlockscreen --lock blur # screen lock
 bindsym $mod+lalt+space exec rofi -show drun
+bindsym $mod+Print exec spectacle -r -c -b
 
 # Compositor
 exec_always compton
