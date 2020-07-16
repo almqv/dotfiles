@@ -46,7 +46,7 @@ module-margin = 1
 
 modules-left = i3 title 
 modules-center = time
-modules-right = pavolume date 
+modules-right = cmus pavolume date 
 
 #################################################################################
 #				MODULES						#
@@ -78,6 +78,25 @@ label-urgent = %index%
 label-urgent-foreground = #000000
 label-urgent-background = #bd2c40
 label-urgent-padding = 1
+
+[module/cmus]
+type = custom/script
+
+exec = ~/.config/polybar/scripts/cmus.sh
+exec-if = pgrep -x cmus
+interval = 1
+
+click-left = cmus-remote --next
+click-right = cmus-remote --prev
+click-middle = cmus-remote --pause
+scroll-up = cmus-remote --volume +5%
+scroll-down = cmus-remote --volume -5%
+
+label-font = 3
+format = <label>
+format-underline = ${colors.accent}
+label =  %output%
+label-maxlen = 50
 
 [module/pavolume]
 type = custom/script
