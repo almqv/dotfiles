@@ -10,6 +10,7 @@ cp -r $HOME/.config/polybar $repoPath
 cp -r $HOME/.config/termite $repoPath
 cp -r $HOME/.config/neofetch $repoPath
 cp -r $HOME/.config/ranger $repoPath
+cp -r $HOME/.config/dunst $repoPath
 
 # Vim
 cp $HOME/.vimrc $repoPath/vimrc
