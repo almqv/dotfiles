@@ -228,7 +228,7 @@ bindsym $mod+Print exec spectacle -r -c -b # screenshot
 bindsym $mod+k exec cmus-remote --pause
 
 # Compositor
-exec_always --no-startup-id compton
+exec_always --no-startup-id $HOME/.config/picom/launch
 
 # Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
