@@ -17,16 +17,21 @@
 "                  .....                  
 "                    .                    
 
-" Logic
 set mouse=a
 set wrap
 set noet
 
-" Tabbing lines
+set autoindent
+set noexpandtab " If this doesn't work for a lang change the $LANG.vim and append this here
+set tabstop=4
+set shiftwidth=4
+" ~/.vim/plugged/vim-polyglot/ftplugin/(LANG).vim
+" If not there try:
+" :verbose set et? (remove that line)
+
 vmap <Tab> >gv
 vmap <S-Tab> <gv
 
-" GUI stuff
 syntax on
 set nu
 set ruler
@@ -39,6 +44,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'rafi/awesome-vim-colorschemes' " Theme collection
 	Plug 'chriskempson/base16-vim' " Theme
 call plug#end()
+
 
 " Mapping
 " CTRL + D to open navtree 
