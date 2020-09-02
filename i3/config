@@ -209,8 +209,8 @@ hide_edge_borders both
 bindsym $mod+Shift+s sticky toggle
 
 # gaps
-gaps outer 26
-gaps inner 12
+gaps outer 28
+gaps inner 8
 
 # Wallpaper
 exec_always feh --bg-fill $HOME/.wallpaper.jpg
