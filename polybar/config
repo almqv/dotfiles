@@ -28,6 +28,7 @@ width = 80%
 height = 28
 
 offset-x = 10%
+offset-y = 5
 
 background = ${colors.background}
 foreground = ${colors.foreground}
