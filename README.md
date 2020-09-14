@@ -1,17 +1,11 @@
 ![Preview](preview.png)
 
-**Specs**
-> - WM: i3-gaps (i3wm)
-> - Terminal: Termite
-> - Editor: GVim
-______________________________________________________________________
-**Dependencies**
-> - polybar (AUR)
-> - i3-gaps 
-> - rofi
-> - compton
-> - conky
-> - ranger
-> - w3m
->
-> ***And all other dependencies that those require.***
+## Specs
+ - **OS**: Arch Linux
+ - **WM**: i3-gaps 
+ - **Terminal**: Termite
+ - **Editor**: GVim
+ - **Compositor**: picom (AUR: picom-tryone-git)
+ - **Bar**: polybar (AUR: polybar-git)
+ - **Launcher**: rofi
+ - **File browser**: ranger
