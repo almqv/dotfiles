@@ -33,7 +33,7 @@ vmap <Tab> >gv
 vmap <S-Tab> <gv
 
 syntax on
-" set nu
+set nu
 set ruler
 
 " Vim-Plug
@@ -57,7 +57,7 @@ nmap <silent> <C-F> :Goyo x100%<CR>
 set t_Co=256
 colorscheme base16-default-dark 
 let &showbreak = '↳ '
-hi Normal guibg=NONE ctermbg=NONE
+" hi Normal guibg=NONE ctermbg=NONE
 set termguicolors
 let base16colorspace=256
 
@@ -90,3 +90,12 @@ endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
+" YCM
+set completeopt-=preview
+
+" Tabs
+nnoremap <silent> <C-Left> :tabprevious<CR>
+nnoremap <silent> <C-Right> :tabnext<CR>
+nnoremap <silent> <C-j> :tabprevious<CR>
+nnoremap <silent> <C-k> :tabnext<CR>
