@@ -52,6 +52,8 @@ call plug#end()
 nmap <silent> <C-D> :NERDTreeToggle<CR> 
 " CTRL + F to enter goyo mode
 nmap <silent> <C-F> :Goyo x100%<CR>
+" Replace
+vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
 " Theme
 set t_Co=256

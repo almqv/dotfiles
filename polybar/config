@@ -25,7 +25,9 @@ fixed-center = true
 wm-restack = i3
 
 #width = 80%
-height = 22
+height = 24
+
+#bottom = true
 
 #offset-x = 10%
 #offset-y = 5
