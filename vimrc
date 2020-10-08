@@ -59,7 +59,12 @@ vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 set t_Co=256
 colorscheme base16-default-dark 
 let &showbreak = '↳ '
-" hi Normal guibg=NONE ctermbg=NONE
+
+hi Normal guibg=NONE ctermbg=NONE
+
+highlight clear LineNr
+highlight LineNr ctermfg=grey ctermbg=NONE
+
 set termguicolors
 let base16colorspace=256
 
