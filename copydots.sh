@@ -15,7 +15,3 @@ cp -r $HOME/.config/picom $repoPath
 
 # Vim
 cp $HOME/.vimrc $repoPath/vimrc
-
-# Background
-cp $HOME/.wallpaper.jpg $repoPath/wallpaper.jpg
-
