@@ -35,6 +35,8 @@ window {
   fullscreen: false;
   background-color: #151515dd;
   width: 29%;
+  /*location: North West;
+  margin: 40px 0 0 0;*/
 }
 
 mainbox {
