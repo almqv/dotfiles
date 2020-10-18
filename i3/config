@@ -243,3 +243,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Conky
 exec_always --no-startup-id $HOME/.config/conky/launch.sh
+
+# Anti sleep screen
+exec_always xset s off
+exec_always xset -dpms
