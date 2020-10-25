@@ -186,8 +186,8 @@ client.focused_inactive	$inactive-bg-color	$inactive-bg-color	$inactive-text-col
 client.urgent			$urgent-bg-color	$urgent-bg-color	$text-color          	$indicator-color
 
 # Border
-new_window pixel 0
-new_float pixel 0
+new_window pixel 2
+new_float pixel 2
 hide_edge_borders both
 
 # Start i3bar to display a workspace bar (plus the system information i3status
