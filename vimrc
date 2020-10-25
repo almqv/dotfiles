@@ -66,6 +66,9 @@ let &showbreak = '↳ '
 highlight clear LineNr
 highlight LineNr ctermfg=grey ctermbg=NONE
 
+" Syntax highlightning
+let asmsyntax = 'nasm'
+
 set termguicolors
 let base16colorspace=256
 
