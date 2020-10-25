@@ -25,7 +25,7 @@ fixed-center = true
 wm-restack = i3
 
 #width = 80%
-height = 24
+height = 28
 
 bottom = true
 
@@ -48,8 +48,8 @@ padding-right = 1
 module-margin = 1
 
 modules-left = i3 title 
-modules-center = 
-modules-right = cmus pavolume time date 
+modules-center = cmus 
+modules-right = pavolume time date 
 
 #############################################
 #				MODULES						#
