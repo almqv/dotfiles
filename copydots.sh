@@ -13,5 +13,8 @@ cp -r $HOME/.config/ranger $repoPath
 cp -r $HOME/.config/dunst $repoPath
 cp -r $HOME/.config/picom $repoPath
 
+# Doom Emacs
+cp -r $HOME/.doom.d $repoPath/doom.d
+
 # Vim
 cp $HOME/.vimrc $repoPath/vimrc
