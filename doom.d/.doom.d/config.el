@@ -57,10 +57,6 @@
 (setq-default indent-tabs-mode 'only)
 (setq-default tab-width 4)
 
-; Discord
-(load-file "/home/elal/Programs/discord-emacs/discord-emacs.el")
-(discord-emacs-run "384815451978334208")
-
 ; NASM
 (add-to-list 'auto-mode-alist '("\\.nasm\\'" . nasm-mode))
 
