@@ -64,5 +64,6 @@
 (add-to-list 'auto-mode-alist '("\\.nasm\\'" . nasm-mode))
 
 ; Tabs
+(setq centaur-tabs-height 11)
 (define-key evil-normal-state-map (kbd "g t") 'centaur-tabs-forward)
 (define-key evil-normal-state-map (kbd "g T") 'centaur-tabs-backward)
