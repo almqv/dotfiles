@@ -14,6 +14,7 @@ cp -r $HOME/.config/dunst $repoPath
 cp -r $HOME/.config/picom $repoPath
 
 # Doom Emacs
+rm -r $repoPath/doom.d
 cp -r $HOME/.doom.d $repoPath/doom.d
 
 # Vim

@@ -25,6 +25,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
+; (setq doom-theme 'doom-tomorrow-day)
 (setq doom-theme 'doom-tomorrow-night)
 
 ;; If you use `org' and don't want your org files in the default location below,
@@ -55,7 +56,15 @@
 
 ; Indentation settings
 (setq-default indent-tabs-mode 'only)
-(setq-default tab-width 4)
+(setq-default tab-width 8)
 
-(load-file "/home/elal/Programs/discord-emacs/discord-emacs.el")
-(discord-emacs-run "384815451978334208")
+; Elcord
+(elcord-mode)
+
+; NASM
+(add-to-list 'auto-mode-alist '("\\.nasm\\'" . nasm-mode))
+
+; Tabs
+(setq centaur-tabs-height 11)
+(define-key evil-normal-state-map (kbd "g t") 'centaur-tabs-forward)
+(define-key evil-normal-state-map (kbd "g T") 'centaur-tabs-backward)

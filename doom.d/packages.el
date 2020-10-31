@@ -50,4 +50,5 @@
 ;(unpin! t)
 
 ;(package! discord-emacs :recipe (:host github :repo "nitros12/discord-emacs.el"))
-;(load-file "~/Programs/discord-emacs/discord-emacs.el")
+(package! nasm-mode :recipe (:host github :repo "skeeto/nasm-mode"))
+(package! elcord :recipe (:host github :repo "Mstrodl/elcord"))
