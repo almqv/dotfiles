@@ -77,3 +77,6 @@
 
 ; Scroll
 (setq scroll-conservatively 101)
+
+; Word wrap
+(global-visual-line-mode t)
