@@ -70,7 +70,10 @@
 (define-key evil-normal-state-map (kbd "g T") 'centaur-tabs-backward)
 
 ; Font
-(setq doom-font (font-spec :family "Overpass Mono" :size 14 :weight 'semi-light)
+(setq doom-font (font-spec :family "Overpass Mono" :size 13 :weight 'semi-light)
       doom-variable-pitch-font (font-spec :family "Overpass Mono")
       doom-unicode-font (font-spec :family "Overpass Mono")
-      doom-big-font (font-spec :family "Overpass Mono" :size 16))
+      doom-big-font (font-spec :family "Overpass Mono" :size 15))
+
+; Scroll
+(setq scroll-conservatively 101)
