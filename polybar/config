@@ -1,19 +1,20 @@
 [colors]
-background = #df151515
+background = #de242424
 # ef1d1f21
 foreground = #a4abb3
 # 707880
 line = #f00
 border = #ef272727
 accent = #c2bf616a
+selected = #cc6666
 
 [global/wm]
 margin-top = 0
 margin-bottom = 20
 
 [bar/top]
-font-0 = "Overpass Mono:pixelsize=10;2.25"
-font-1 = "siji:pixelsize=10;1"
+font-0 = "Ubuntu Mono:pixelsize=12#2.25"
+font-1 = "siji:pixelsize=10#1"
 
 monitor = ${env:MONITOR}
 
@@ -21,16 +22,13 @@ scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
 
 fixed-center = true
-#override-redirect = true
-wm-restack = i3
+override-redirect = false
+wm-restack = dwm
 
-#width = 80%
+# width = 80%
 height = 24
-
-#bottom = true
-
-#offset-x = 10%
-#offset-y = 5
+# offset-x = 10%
+# offset-y = 8
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -47,13 +45,96 @@ padding-left = 1
 padding-right = 1
 module-margin = 1
 
-modules-left = i3 title 
-modules-center = time 
-modules-right = cmus pavolume date 
+#modules-left = dwm title
+modules-left = dwm
+modules-center = time
+modules-right = cmus pavolume battery date 
 
-#############################################
+#################################################################################
 #				MODULES						#
-#############################################
+#################################################################################
+
+[module/dwm]
+type = internal/dwm
+format = <label-tags> <label-layout> <label-floating> <label-title>
+# Path to dwm socket (default: /tmp/dwm.sock)
+# socket-path = /tmp/dwm.sock
+
+# Left-click to view tag, right-click to toggle tag view
+enable-tags-click = false
+# Scroll to cycle between available tags
+enable-tags-scroll = false
+# If true and enable-tags-scroll = true, scrolling will view all tags regardless if occupied
+tags-scroll-empty = false
+# If true and enable-tags-scroll = true, scrolling will cycle through tags backwards
+tags-scroll-reverse = false
+# If true and enable-tags-scroll = true, wrap active tag when scrolling
+tags-scroll-wrap = false
+# Left-click to set secondary layout, right-click to switch to previous layout
+enable-layout-click = false
+# Scroll to cycle between available layouts
+enable-layout-scroll = false
+# Wrap when scrolling and reaching beginning/end of layouts
+layout-scroll-wrap = false
+# Reverse scroll direction
+layout-scroll-reverse = false
+
+# If enable-layout-click = true, clicking the layout symbol will switch to this layout
+secondary-layout-symbol = [M]
+
+# Separator in between shown tags
+# label-separator = |
+
+# Title of currently focused window
+# Available tokens:
+#   %title%
+label-title = %title%
+label-title-padding = 1
+label-title-foreground = #f0c674
+label-title-maxlen = 30
+
+# Symbol of current layout
+# Available tokens:
+#   %symbol%
+label-layout = %symbol%
+label-layout-padding = 0
+label-layout-foreground = ${colors.foreground}
+label-layout-background = ${colors.background}
+
+# Text to show when currently focused window is floating
+label-floating = F
+
+# States: focused, unfocused, visible, urgent, empty
+# Available tokens:
+#   %name%
+
+# focused = Selected tag on focused monitor
+label-focused = %name%
+label-focused-background = ${colors.background}
+label-focused-foreground = ${colors.selected}
+label-focused-underline= ${colors.line}
+label-focused-padding = 1
+
+# unfocused = Unselected tag on unselected monitor
+label-unfocused = %name%
+label-unfocused-padding = 0
+
+# visible = Unselected tag, but occupied tag on any monitor
+label-visible = %name%
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+
+# urgent = Unselected tag with window that has urgency hint set
+label-urgent = %name%
+label-urgent-background = ${colors.accent}
+label-urgent-padding = 0
+
+# empty = Unselected and unoccupied tag
+# This can be set to an empty string to hide empty tags
+label-empty =
+label-empty-background = ${colors.background}
+label-empty-padding = 1
 
 [module/i3]
 type = internal/i3
@@ -130,3 +211,29 @@ format-background = ${colors.background}
 format-foreground = #f0c674
 format-padding = 1
 label-maxlen = 50
+
+[module/battery]
+type = internal/battery
+full-at = 98
+time-format = %H:%M
+
+format-charging = <animation-charging> <label-charging>
+label-charging = %percentage%% 
+
+format-discharging = <ramp-capacity> <label-discharging>
+label-discharging = %percentage%% 
+
+format-full = <label-full>
+format-full-prefix = " "
+format-full-prefix-foreground = ${colors.foreground}
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-foreground = ${colors.foreground} 
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-foreground = ${colors.foreground}
+animation-charging-framerate = 750

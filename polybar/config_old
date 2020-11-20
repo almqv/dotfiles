@@ -1,0 +1,132 @@
+[colors]
+background = #df151515
+# ef1d1f21
+foreground = #a4abb3
+# 707880
+line = #f00
+border = #ef272727
+accent = #c2bf616a
+
+[global/wm]
+margin-top = 0
+margin-bottom = 20
+
+[bar/top]
+font-0 = "Overpass Mono:pixelsize=10;2.25"
+font-1 = "siji:pixelsize=10;1"
+
+monitor = ${env:MONITOR}
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
+fixed-center = true
+#override-redirect = true
+wm-restack = i3
+
+#width = 80%
+height = 24
+
+#bottom = true
+
+#offset-x = 10%
+#offset-y = 5
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+radius = 0.0
+
+# line-size = 1
+# line-color = ${colors.line}
+
+# border-size = 1
+# border-color = ${colors.border}
+
+padding-left = 1
+padding-right = 1
+module-margin = 1
+
+modules-left = i3 title 
+modules-center = time 
+modules-right = cmus pavolume date 
+
+#############################################
+#				MODULES						#
+#############################################
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+
+index-sort = true
+pin-workspaces = true
+wrapping-scroll = true
+strip-wsnumbers = true
+
+label-focused = %index%
+label-focused-foreground = #cc6666
+label-focused-background = ${colors.background}
+label-focused-underline = #fba922
+label-focused-padding = 1
+
+label-unfocused = %index%
+label-unfocused-padding = 1
+
+label-visible = %index%
+label-visible-underline = #555555
+label-visible-padding = 1
+
+label-urgent = %index%
+label-urgent-foreground = #000000
+label-urgent-background = #bd2c40
+label-urgent-padding = 1
+
+[module/cmus]
+type = custom/script
+
+exec = ~/.config/polybar/scripts/cmus.sh
+exec-if = pgrep -x cmus
+interval = 1
+
+click-left = cmus-remote --next
+click-right = cmus-remote --prev
+click-middle = cmus-remote --pause
+scroll-up = cmus-remote --volume +5%
+scroll-down = cmus-remote --volume -5%
+
+label-font = 3
+format = <label>
+format-underline = ${colors.accent}
+label =  %output%
+label-maxlen = 50
+
+[module/pavolume]
+type = custom/script
+tail = true
+label = %output%
+exec = ~/.config/polybar/scripts/pavolume.sh --listen
+click-right = exec pavucontrol
+click-left = ~/.config/polybar/scripts/pavolume.sh --togmute
+scroll-up = ~/.config/polybar/scripts/pavolume.sh --up
+scroll-down = ~/.config/polybar/scripts/pavolume.sh --down
+
+[module/date]
+type = internal/date
+label =  %date%  
+date = %Y-%m-%d
+time = %H:%M:%S
+interval = 1
+
+[module/time]
+type = internal/date
+label = %time%
+time = %H:%M:%S
+interval = 1
+
+[module/title]
+type = internal/xwindow
+format-background = ${colors.background}
+format-foreground = #f0c674
+format-padding = 1
+label-maxlen = 50
