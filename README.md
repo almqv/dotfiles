@@ -2,10 +2,10 @@
 
 ## Specs
  - **OS**: Arch Linux
- - **WM**: i3-gaps 
+ - **WM**: dwm 
  - **Terminal**: Termite
- - **Editor**: Doom Emacs & GVim
+ - **Editor**: Doom Emacs
  - **Compositor**: picom (AUR: picom-tryone-git)
- - **Bar**: polybar (AUR: polybar-git)
+ - **Bar**: polybar
  - **Launcher**: rofi
  - **File browser**: ranger
