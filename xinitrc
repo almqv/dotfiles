@@ -47,8 +47,8 @@ $HOME/.config/picom/launch &
 nitrogen --restore &
 
 # Anti sleep
-xset s off &
-xset -dpms &
+exec_always xset s off &
+exec_always xset -dpms &
 
 # Loop
 while true; do

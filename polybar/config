@@ -1,5 +1,5 @@
 [colors]
-background = #de242424
+background = #df151515
 # ef1d1f21
 foreground = #a4abb3
 # 707880
@@ -13,7 +13,7 @@ margin-top = 0
 margin-bottom = 20
 
 [bar/top]
-font-0 = "Ubuntu Mono:pixelsize=12#2.25"
+font-0 = "Overpass Mono:pixelsize=11#2.25"
 font-1 = "siji:pixelsize=10#1"
 
 monitor = ${env:MONITOR}
@@ -26,7 +26,7 @@ override-redirect = false
 wm-restack = dwm
 
 # width = 80%
-height = 24
+height = 21
 # offset-x = 10%
 # offset-y = 8
 
@@ -41,14 +41,14 @@ radius = 0.0
 # border-size = 1
 # border-color = ${colors.border}
 
-padding-left = 1
-padding-right = 1
+padding-left = 2
+padding-right = 2
 module-margin = 1
 
 #modules-left = dwm title
 modules-left = dwm
 modules-center = time
-modules-right = cmus pavolume battery date 
+modules-right = cmus pavolume date 
 
 #################################################################################
 #				MODULES						#
@@ -91,7 +91,7 @@ secondary-layout-symbol = [M]
 label-title = %title%
 label-title-padding = 1
 label-title-foreground = #f0c674
-label-title-maxlen = 30
+label-title-maxlen = 75
 
 # Symbol of current layout
 # Available tokens:
