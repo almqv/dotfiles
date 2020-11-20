@@ -1,39 +1,48 @@
+[settings]
+compositing-foreground = difference
+
 [colors]
-background = #df151515
+background = #00000000
+#df151515
 # ef1d1f21
-foreground = #a4abb3
+foreground = #151515
+#a4abb3
 # 707880
-line = #f00
+line = #d1111111
 border = #ef272727
 accent = #c2bf616a
-selected = #cc6666
+selected = #a84222
+#cc6666
+focused = #f0c674
 
 [global/wm]
 margin-top = 0
-margin-bottom = 20
+margin-bottom = 21
 
 [bar/top]
-font-0 = "Overpass Mono:pixelsize=11#2.25"
+font-0 = "Overpass Mono:pixelsize=12#2.25"
 font-1 = "siji:pixelsize=10#1"
+
+line-size = 1
 
 monitor = ${env:MONITOR}
 
-scroll-up = i3wm-wsnext
-scroll-down = i3wm-wsprev
+#scroll-up = i3wm-wsnext
+#scroll-down = i3wm-wsprev
 
 fixed-center = true
 override-redirect = false
 wm-restack = dwm
 
-# width = 80%
+width = 90%
 height = 21
-# offset-x = 10%
-# offset-y = 8
+offset-x = 5%
+offset-y = 4
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-radius = 0.0
+#radius = 0.0
 
 # line-size = 1
 # line-color = ${colors.line}
@@ -41,8 +50,8 @@ radius = 0.0
 # border-size = 1
 # border-color = ${colors.border}
 
-padding-left = 2
-padding-right = 2
+padding-left = 1
+padding-right = 1
 module-margin = 1
 
 #modules-left = dwm title
@@ -61,17 +70,17 @@ format = <label-tags> <label-layout> <label-floating> <label-title>
 # socket-path = /tmp/dwm.sock
 
 # Left-click to view tag, right-click to toggle tag view
-enable-tags-click = false
+enable-tags-click = true
 # Scroll to cycle between available tags
-enable-tags-scroll = false
+enable-tags-scroll = true
 # If true and enable-tags-scroll = true, scrolling will view all tags regardless if occupied
 tags-scroll-empty = false
 # If true and enable-tags-scroll = true, scrolling will cycle through tags backwards
-tags-scroll-reverse = false
+tags-scroll-reverse = true
 # If true and enable-tags-scroll = true, wrap active tag when scrolling
-tags-scroll-wrap = false
+tags-scroll-wrap = true
 # Left-click to set secondary layout, right-click to switch to previous layout
-enable-layout-click = false
+enable-layout-click = true
 # Scroll to cycle between available layouts
 enable-layout-scroll = false
 # Wrap when scrolling and reaching beginning/end of layouts
@@ -83,26 +92,26 @@ layout-scroll-reverse = false
 secondary-layout-symbol = [M]
 
 # Separator in between shown tags
-# label-separator = |
+# label-separator = -
 
 # Title of currently focused window
 # Available tokens:
 #   %title%
 label-title = %title%
 label-title-padding = 1
-label-title-foreground = #f0c674
-label-title-maxlen = 75
+label-title-foreground = ${colors.selected}
+label-title-maxlen = 50
 
 # Symbol of current layout
 # Available tokens:
 #   %symbol%
 label-layout = %symbol%
-label-layout-padding = 0
+label-layout-padding = 1
 label-layout-foreground = ${colors.foreground}
 label-layout-background = ${colors.background}
 
 # Text to show when currently focused window is floating
-label-floating = F
+label-floating = *
 
 # States: focused, unfocused, visible, urgent, empty
 # Available tokens:
@@ -117,7 +126,7 @@ label-focused-padding = 1
 
 # unfocused = Unselected tag on unselected monitor
 label-unfocused = %name%
-label-unfocused-padding = 0
+label-unfocused-padding = 1
 
 # visible = Unselected tag, but occupied tag on any monitor
 label-visible = %name%
@@ -126,42 +135,16 @@ label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
 # urgent = Unselected tag with window that has urgency hint set
-label-urgent = %name%
-label-urgent-background = ${colors.accent}
-label-urgent-padding = 0
+label-urgent = [%name%]
+#label-urgent-background = ${colors.selected}
+label-urgent-foreground = ${colors.selected}
+label-urgent-padding = 1
 
 # empty = Unselected and unoccupied tag
 # This can be set to an empty string to hide empty tags
-label-empty =
+label-empty = %name%
 label-empty-background = ${colors.background}
 label-empty-padding = 1
-
-[module/i3]
-type = internal/i3
-format = <label-state> <label-mode>
-
-index-sort = true
-pin-workspaces = true
-wrapping-scroll = true
-strip-wsnumbers = true
-
-label-focused = %index%
-label-focused-foreground = #cc6666
-label-focused-background = ${colors.background}
-label-focused-underline = #fba922
-label-focused-padding = 1
-
-label-unfocused = %index%
-label-unfocused-padding = 1
-
-label-visible = %index%
-label-visible-underline = #555555
-label-visible-padding = 1
-
-label-urgent = %index%
-label-urgent-foreground = #000000
-label-urgent-background = #bd2c40
-label-urgent-padding = 1
 
 [module/cmus]
 type = custom/script
@@ -178,7 +161,7 @@ scroll-down = cmus-remote --volume -5%
 
 label-font = 3
 format = <label>
-format-underline = ${colors.accent}
+format-underline = ${colors.line}
 label =  %output%
 label-maxlen = 50
 
