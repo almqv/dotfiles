@@ -2,7 +2,7 @@
 
 ## Specs
  - **OS**: Arch Linux
- - **WM**: dwm 
+ - **WM**: [dwm](http://github.com/E-Almqvist/dwm) 
  - **Terminal**: Termite
  - **Editor**: Doom Emacs
  - **Compositor**: picom (AUR: picom-tryone-git)
