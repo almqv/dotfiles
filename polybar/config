@@ -32,7 +32,6 @@ monitor = ${env:MONITOR}
 
 fixed-center = true
 override-redirect = false
-wm-restack = dwm
 
 width = 90%
 height = 21
@@ -56,8 +55,8 @@ module-margin = 1
 
 #modules-left = dwm title
 modules-left = dwm
-modules-center = time
-modules-right = cmus pavolume date 
+modules-center =
+modules-right = cmus pavolume time date
 
 #################################################################################
 #				MODULES						#
