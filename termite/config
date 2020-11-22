@@ -1,5 +1,6 @@
 [options]
-font = Source Code Pro 10
+font = Ubuntu Mono 12
+# font = Source Code Pro 11
 size_hints = true
 
 [colors]
