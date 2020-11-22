@@ -9,7 +9,7 @@ cursor              = #d8d8d8
 
 # 181818 (HEX) default
 cursor_foreground   = rgba(24, 24, 24, 0.8)
-background          = rgba(29, 31, 33, 0.94)
+background          = rgba(29, 31, 33, 1)
 # 1d1f21
 # a=0.94 
 highlight = #161719 
