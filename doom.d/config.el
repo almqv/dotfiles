@@ -57,6 +57,7 @@
 ; Indentation settings
 (setq-default indent-tabs-mode 'only)
 (setq-default tab-width 8)
+(defvaralias 'sgml-basic-offset 'tab-width)
 
 ; Elcord
 (elcord-mode)
