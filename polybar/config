@@ -1,64 +1,46 @@
 [settings]
-compositing-foreground = difference
+#compositing-foreground = difference
 
 [colors]
-background = #00000000
-#df151515
-# ef1d1f21
-foreground = #151515
-#a4abb3
-# 707880
-line = #d1111111
-border = #ef272727
-accent = #c2bf616a
-selected = #a84222
-#cc6666
+background = #c7222222
+foreground = #bbb
+line = #bbb
+border = #bbb
+accent = #434d5e
+accent2 = #637291
+selected = #2590db
 focused = #f0c674
 
 [global/wm]
-margin-top = 0
-margin-bottom = 21
+margin-top = 20
+margin-bottom = 20
 
 [bar/top]
-font-0 = "Overpass Mono:pixelsize=12#2.25"
+font-0 = "Source Code Pro:pixelsize=9#1"
 font-1 = "siji:pixelsize=10#1"
 
-line-size = 1
-
 monitor = ${env:MONITOR}
-
-#scroll-up = i3wm-wsnext
-#scroll-down = i3wm-wsprev
 
 fixed-center = true
 override-redirect = false
 
 width = 100%
-height = 21
+height = 24
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-#radius = 0.0
-
-# line-size = 1
-# line-color = ${colors.line}
-
-# border-size = 1
-# border-color = ${colors.border}
-
-padding-left = 18
-padding-right = 18
+padding-left = 8
+padding-right = 8
 module-margin = 1
 
-#modules-left = dwm title
 modules-left = dwm
-modules-center =
-modules-right = cmus pavolume time date
+modules-center = time
+modules-right = cmus pavolume date
 
-#################################################################################
+#############################################
 #				MODULES						#
-#################################################################################
+#############################################
 
 [module/dwm]
 type = internal/dwm
@@ -96,7 +78,7 @@ secondary-layout-symbol = [M]
 #   %title%
 label-title = %title%
 label-title-padding = 1
-label-title-foreground = ${colors.selected}
+label-title-foreground = ${colors.accent2}
 label-title-maxlen = 50
 
 # Symbol of current layout
@@ -108,7 +90,7 @@ label-layout-foreground = ${colors.foreground}
 label-layout-background = ${colors.background}
 
 # Text to show when currently focused window is floating
-label-floating = *
+label-floating = ~
 
 # States: focused, unfocused, visible, urgent, empty
 # Available tokens:
@@ -128,6 +110,7 @@ label-unfocused-padding = 1
 # visible = Unselected tag, but occupied tag on any monitor
 label-visible = %name%
 label-visible-background = ${self.label-focused-background}
+label-visible-foreground = ${colors.accent}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
