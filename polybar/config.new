@@ -1,15 +1,21 @@
-[settings]
-#compositing-foreground = difference
+; Polybar Configuration
+
+[nord]
+background = #2e3440
+foreground = #d8dee9
+
+black = #3b4252
+red = #bf616a
+green = #a3be8c
+yellow = #ebcb8b
+blue = #81a1c1
+magenta = #b48ead
+cyan = #88c0d0
+white = #e5e9f0
 
 [colors]
-background = #c7111015
-foreground = #d8dee9
-line = #bbb
-border = #bbb
-accent = #434d5e
-accent2 = #637291
-selected = #2590db
-focused = #f0c674
+background = #1a1b26
+foreground = #a9b1d6
 
 black = #32344a
 red = #f7768c
@@ -20,39 +26,61 @@ magenta = #ad8ee6
 cyan = #449dab
 white = #787c99
 
-[global/wm]
-margin-top = 20
-margin-bottom = 20
-
 [bar/top]
-font-0 = "Hack-Regular:pixelsize=9#1"
-font-1 = "siji:pixelsize=10#1"
-font-2 = "Font Awesome 5 Free Regular:size=10;1"
-font-3 = "Font Awesome 5 Free Solid:size=10;1"
-font-4 = "Font Awesome 5 Brands Regular:size=10;1"
-
-monitor = ${env:MONITOR}
-
-fixed-center = true
-override-redirect = false
-
-width = 100%
+width = 100% 
 height = 24
+fixed-center = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-padding-left = 8
-padding-right = 8
-module-margin = 1
+border-size = 0
+border-color = #00000000
 
-modules-left = dwm 
-modules-center = time
-modules-right = cmus pulseaudio wlan eth date
+padding-left = 0
+padding-right = 2
 
-#############################################
-#				MODULES						#
-#############################################
+module-margin-left = 0
+module-margin-right = 1
+
+font-0 = "Hack-Regular:size=10;1"
+font-1 = "Font Awesome 5 Free Regular:size=10;1"
+font-2 = "Font Awesome 5 Free Solid:size=10;1"
+font-3 = "Font Awesome 5 Brands Regular:size=10;1"
+font-4 = "siji:pixelsize=10#1"
+
+monitor = ${env:MONITOR}
+
+modules-left = dwm
+modules-center = cmus
+modules-right = pulseaudio wlan battery date
+
+tray-position = right
+tray-padding = 2
+
+override-redirect = true
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[module/cmus]
+type = custom/script
+
+exec = ~/.config/polybar/scripts/cmus.sh
+exec-if = pgrep -x cmus
+interval = 1
+
+click-left = cmus-remote --next
+click-right = cmus-remote --prev
+click-middle = cmus-remote --pause
+scroll-up = cmus-remote --volume +5%
+scroll-down = cmus-remote --volume -5%
+
+label-font = 3
+format = <label>
+format-underline = ${colors.line}
+label =  %output%
+label-maxlen = 50
 
 [module/dwm]
 type = internal/dwm
@@ -138,24 +166,18 @@ label-empty = %name%
 label-empty-background = ${colors.background}
 label-empty-padding = 1
 
-[module/cmus]
-type = custom/script
+[module/mpd]
+type = internal/mpd
+format-online =  <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
 
-exec = ~/.config/polybar/scripts/cmus.sh
-exec-if = pgrep -x cmus
-interval = 1
+icon-prev = 
+icon-stop = 
+icon-play = 
+icon-pause = 
+icon-next = 
 
-click-left = cmus-remote --next
-click-right = cmus-remote --prev
-click-middle = cmus-remote --pause
-scroll-up = cmus-remote --volume +5%
-scroll-down = cmus-remote --volume -5%
-
-label-font = 3
-format = <label>
-format-underline = ${colors.line}
-label =  %output%
-label-maxlen = 50
+label-song-maxlen = 37
+label-song-ellipsis = true
 
 [module/wlan]
 type = internal/network
@@ -180,7 +202,7 @@ ramp-signal-foreground = ${colors.foreground}
 
 [module/eth]
 type = internal/network
-interface = enp0s31f6
+interface = enp2s0
 interval = 3.0
 
 format-connected-underline = ${colors.foreground}
@@ -210,10 +232,10 @@ interval = 1
 type = internal/pulseaudio
 
 format-volume = <label-volume> <bar-volume>
-label-volume =  %percentage%%
+label-volume =  %percentage%%
 label-volume-foreground = ${root.foreground}
 
-label-muted =  ---%
+label-muted =  muted
 label-muted-foreground = ${colors.red}
 
 bar-volume-width = 10
@@ -233,36 +255,44 @@ bar-volume-empty = ─
 bar-volume-empty-font = 0
 bar-volume-empty-foreground = #666
 
-
-[module/title]
-type = internal/xwindow
-format-background = ${colors.background}
-format-foreground = #f0c674
-format-padding = 1
-label-maxlen = 50
-
 [module/battery]
 type = internal/battery
+battery = BAT0
+adapter = AC
 full-at = 98
-time-format = %H:%M
 
 format-charging = <animation-charging> <label-charging>
-label-charging = %percentage%% 
+format-charging-underline = #ffb52a
 
-format-discharging = <ramp-capacity> <label-discharging>
-label-discharging = %percentage%% 
+format-discharging = <animation-discharging> <label-discharging>
+format-discharging-underline = ${self.format-charging-underline}
 
-format-full = <label-full>
-format-full-prefix = " "
+format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground}
+format-full-underline = ${self.format-charging-underline}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-foreground = ${colors.foreground} 
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-foreground = ${colors.red}
 
 animation-charging-0 = 
 animation-charging-1 = 
 animation-charging-2 = 
-animation-charging-foreground = ${colors.foreground}
+animation-charging-foreground = ${colors.yellow}
 animation-charging-framerate = 750
+
+animation-discharging-0 = 
+animation-discharging-1 = 
+animation-discharging-2 = 
+animation-discharging-foreground = ${colors.red}
+animation-discharging-framerate = 750
+
+[settings]
+screenchange-reload = true
+
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
