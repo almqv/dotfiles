@@ -2,14 +2,22 @@
 #compositing-foreground = difference
 
 [colors]
-background = #c7111015
-foreground = #d8dee9
+#background = #aa111015
+#foreground = #d8dee9
 line = #bbb
 border = #bbb
 accent = #434d5e
 accent2 = #637291
 selected = #2590db
 focused = #f0c674
+
+background = ${xrdb:color0:#222}
+foreground = ${xrdb:color7:#222}
+foreground-alt = ${xrdb:color7:#222}
+primary = ${xrdb:color1:#222}
+secondary = ${xrdb:color2:#222}
+alert = ${xrdb:color3:#222}
+special = ${xrdb:color14:#222}
 
 black = #32344a
 red = #f7768c
@@ -50,9 +58,9 @@ modules-left = dwm
 modules-center = time
 modules-right = cmus pulseaudio wlan eth date
 
-#############################################
-#				MODULES						#
-#############################################
+#################################################
+#					MODULES						#
+#################################################
 
 [module/dwm]
 type = internal/dwm
@@ -90,7 +98,7 @@ secondary-layout-symbol = [M]
 #   %title%
 label-title = %title%
 label-title-padding = 1
-label-title-foreground = ${colors.accent2}
+label-title-foreground = ${colors.primary}
 label-title-maxlen = 50
 
 # Symbol of current layout
@@ -111,7 +119,7 @@ label-floating = ~
 # focused = Selected tag on focused monitor
 label-focused = %name%
 label-focused-background = ${colors.background}
-label-focused-foreground = ${colors.selected}
+label-focused-foreground = ${colors.blue}
 label-focused-underline= ${colors.line}
 label-focused-padding = 1
 
@@ -122,7 +130,7 @@ label-unfocused-padding = 1
 # visible = Unselected tag, but occupied tag on any monitor
 label-visible = %name%
 label-visible-background = ${self.label-focused-background}
-label-visible-foreground = ${colors.accent}
+label-visible-foreground = ${colors.alert}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 

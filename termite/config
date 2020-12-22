@@ -3,9 +3,9 @@ font = Hack 10
 size_hints = true
 
 [colors]
-foreground          = #d8d8d8
-foreground_bold     = #d8d8d8
-cursor              = #d8d8d8
+foreground          = #aad8d8d8
+foreground_bold     = #aad8d8d8
+cursor              = #aad8d8d8
 
 #cursor_foreground   = rgba(24, 24, 24, 0.8)
 background          = rgba(17, 16, 21, 0.94)
