@@ -2,8 +2,8 @@
 #compositing-foreground = difference
 
 [colors]
-#background = #aa111015
-#foreground = #d8dee9
+background = #aa111015
+foreground = #d8dee9
 line = #bbb
 border = #bbb
 accent = #434d5e
@@ -11,13 +11,13 @@ accent2 = #637291
 selected = #2590db
 focused = #f0c674
 
-background = ${xrdb:color0:#222}
-foreground = ${xrdb:color7:#222}
+#background = ${xrdb:color0:#222}
+#foreground = ${xrdb:color7:#222}
 foreground-alt = ${xrdb:color7:#222}
-primary = ${xrdb:color1:#222}
+primary = ${xrdb:color4:#222}
 secondary = ${xrdb:color2:#222}
-alert = ${xrdb:color3:#222}
-special = ${xrdb:color14:#222}
+alert = ${xrdb:color8:#222}
+special = ${xrdb:color12:#222}
 
 black = #32344a
 red = #f7768c
@@ -119,7 +119,7 @@ label-floating = ~
 # focused = Selected tag on focused monitor
 label-focused = %name%
 label-focused-background = ${colors.background}
-label-focused-foreground = ${colors.blue}
+label-focused-foreground = ${colors.primary}
 label-focused-underline= ${colors.line}
 label-focused-padding = 1
 
