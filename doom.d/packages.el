@@ -52,3 +52,4 @@
 ;(package! discord-emacs :recipe (:host github :repo "nitros12/discord-emacs.el"))
 (package! nasm-mode :recipe (:host github :repo "skeeto/nasm-mode"))
 (package! elcord :recipe (:host github :repo "Mstrodl/elcord"))
+(package! xresources-theme :recipe (:host github :repo "cqql/xresources-theme"))

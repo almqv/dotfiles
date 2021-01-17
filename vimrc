@@ -22,9 +22,9 @@ set wrap
 set noet
 
 set autoindent
-set noexpandtab " If this doesn't work for a lang change the $LANG.vim and append this here
-set tabstop=4
-set shiftwidth=4
+set noexpandtab 
+set tabstop=8
+set shiftwidth=8
 
 vmap <Tab> >gv
 vmap <S-Tab> <gv
@@ -40,20 +40,21 @@ call plug#begin('~/.vim/plugged')
 	Plug 'preservim/nerdtree' " Tree navigation
 	Plug 'rafi/awesome-vim-colorschemes' " Theme collection
 	Plug 'chriskempson/base16-vim' " Theme
+	Plug 'vim-airline/vim-airline' " Airline
+	Plug 'vim-airline/vim-airline-themes' " Airline themes
+	Plug 'ajh17/vimcompletesme' " YCM but Vim
+	Plug 'sonph/onehalf', { 'rtp': 'vim' } " theme
 call plug#end()
 
 
 " Mapping
-" CTRL + D to open navtree 
 nmap <silent> <C-D> :NERDTreeToggle<CR> 
-" CTRL + F to enter goyo mode
-nmap <silent> <C-F> :Goyo x100%<CR>
-" Replace
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
 " Theme
 set t_Co=256
 colors default
+let g:airline_theme='minimalist'
 let &showbreak = '↳ '
 
 hi Normal guibg=NONE ctermbg=NONE
@@ -61,15 +62,17 @@ hi Normal guibg=NONE ctermbg=NONE
 highlight clear LineNr
 highlight LineNr ctermfg=grey ctermbg=NONE
 
-" Syntax highlightning
-let asmsyntax = 'nasm'
-
 " YCM
 set completeopt-=preview
 let g:ycm_show_diagnostics_ui = 0
+highlight Pmenu ctermfg=15 ctermbg=0 guifg=#ffffff guibg=#000000
 
 " Tabs
 nnoremap <silent> <C-Left> :tabprevious<CR>
 nnoremap <silent> <C-Right> :tabnext<CR>
 nnoremap <silent> <C-j> :tabprevious<CR>
 nnoremap <silent> <C-k> :tabnext<CR>
+
+" Airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
