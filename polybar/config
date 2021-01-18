@@ -8,7 +8,7 @@ line = #bbb
 border = #bbb
 accent = #434d5e
 accent2 = #637291
-selected = #2590db
+selected = #81a2be
 focused = #f0c674
 
 #background = ${xrdb:color0:#222}
@@ -55,11 +55,11 @@ padding-right = 8
 module-margin = 1
 
 modules-left = dwm 
-modules-center = time
-modules-right = cmus pulseaudio wlan eth date
+modules-center = cmus
+modules-right = kernel filesystem pulseaudio wlan date time
 
 #################################################
-#					MODULES						#
+#                   MODULES			#
 #################################################
 
 [module/dwm]
@@ -135,9 +135,9 @@ label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
 # urgent = Unselected tag with window that has urgency hint set
-label-urgent = [%name%]
-#label-urgent-background = ${colors.selected}
-label-urgent-foreground = ${colors.selected}
+label-urgent = %name%
+label-urgent-background = ${colors.selected}
+label-urgent-foreground = ${colors.foreground}
 label-urgent-padding = 1
 
 # empty = Unselected and unoccupied tag
@@ -213,6 +213,22 @@ type = internal/date
 label = %time%
 time = %H:%M:%S
 interval = 1
+
+[module/filesystem]
+type = internal/fs
+mount-0 = /
+interval= 60
+fixed-values = true
+spacing = 2
+format-mounted = <label-mounted>
+label-mounted =  %mountpoint% %free%
+
+[module/kernel]
+type = custom/script
+exec = uname -r
+interval = 600
+format = " <label>"
+label = %output%
 
 [module/pulseaudio]
 type = internal/pulseaudio

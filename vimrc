@@ -40,9 +40,9 @@ call plug#begin('~/.vim/plugged')
 	Plug 'preservim/nerdtree' " Tree navigation
 	Plug 'rafi/awesome-vim-colorschemes' " Theme collection
 	Plug 'chriskempson/base16-vim' " Theme
-	Plug 'vim-airline/vim-airline' " Airline
-	Plug 'vim-airline/vim-airline-themes' " Airline themes
-	Plug 'ajh17/vimcompletesme' " YCM but Vim
+	" Plug 'vim-airline/vim-airline' " Airline
+	" Plug 'vim-airline/vim-airline-themes' " Airline themes
+	" Plug 'ajh17/vimcompletesme' " YCM but Vim
 	Plug 'sonph/onehalf', { 'rtp': 'vim' } " theme
 call plug#end()
 
@@ -61,6 +61,9 @@ hi Normal guibg=NONE ctermbg=NONE
 
 highlight clear LineNr
 highlight LineNr ctermfg=grey ctermbg=NONE
+
+" Assembly
+let b:asmsyntax = "nasm"
 
 " YCM
 set completeopt-=preview
