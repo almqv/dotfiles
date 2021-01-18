@@ -1,5 +1,5 @@
 URxvt.scrollBar: false
-URxvt.font:           xft:Hack:size=11
+URxvt.font:           xft:Fira Code:size=11
 URxvt.url-launcher:   /usr/bin/firefox
 
 URxvt*highlightColor: #282a2e
