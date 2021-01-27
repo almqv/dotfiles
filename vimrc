@@ -40,10 +40,8 @@ call plug#begin('~/.vim/plugged')
 	Plug 'preservim/nerdtree' " Tree navigation
 	Plug 'rafi/awesome-vim-colorschemes' " Theme collection
 	Plug 'chriskempson/base16-vim' " Theme
-	" Plug 'vim-airline/vim-airline' " Airline
-	" Plug 'vim-airline/vim-airline-themes' " Airline themes
-	" Plug 'ajh17/vimcompletesme' " YCM but Vim
-	Plug 'sonph/onehalf', { 'rtp': 'vim' } " theme
+	Plug 'vim-airline/vim-airline' " Airline
+	Plug 'vim-airline/vim-airline-themes' " Airline themes
 call plug#end()
 
 
@@ -52,7 +50,7 @@ nmap <silent> <C-D> :NERDTreeToggle<CR>
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
 " Theme
-set t_Co=256
+set t_Co=16
 colors default
 let g:airline_theme='minimalist'
 let &showbreak = '↳ '
