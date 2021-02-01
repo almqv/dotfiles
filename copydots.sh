@@ -1,6 +1,6 @@
 #!/bin/bash
 
-repoPath=$HOME/dotfiles
+repoPath=$HOME/Projects/linux/dotfiles
 
 # All those things
 cp -r $HOME/.config/rofi $repoPath

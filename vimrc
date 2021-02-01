@@ -40,8 +40,8 @@ call plug#begin('~/.vim/plugged')
 	Plug 'preservim/nerdtree' " Tree navigation
 	Plug 'rafi/awesome-vim-colorschemes' " Theme collection
 	Plug 'chriskempson/base16-vim' " Theme
-	Plug 'vim-airline/vim-airline' " Airline
-	Plug 'vim-airline/vim-airline-themes' " Airline themes
+	" Plug 'vim-airline/vim-airline' " Airline
+	" Plug 'vim-airline/vim-airline-themes' " Airline themes
 call plug#end()
 
 
@@ -75,5 +75,5 @@ nnoremap <silent> <C-j> :tabprevious<CR>
 nnoremap <silent> <C-k> :tabnext<CR>
 
 " Airline
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
+"let g:airline#extensions#tabline#enabled = 1
+"let g:airline_powerline_fonts = 1
