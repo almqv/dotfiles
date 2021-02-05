@@ -2,7 +2,7 @@
 #compositing-foreground = difference
 
 [colors]
-background = #aa111015
+background = #111015
 foreground = #d8dee9
 line = #bbb
 border = #bbb

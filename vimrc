@@ -62,6 +62,7 @@ highlight LineNr ctermfg=grey ctermbg=NONE
 
 " Assembly
 let b:asmsyntax = "nasm"
+let g:asmsyntax = 'nasm'
 
 " YCM
 set completeopt-=preview
