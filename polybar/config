@@ -2,8 +2,8 @@
 #compositing-foreground = difference
 
 [colors]
-background = #111015
-foreground = #d8dee9
+background = #111015 
+foreground = #c5c8c6
 line = #bbb
 border = #bbb
 accent = #434d5e
