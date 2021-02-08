@@ -11,6 +11,10 @@ cp -r $HOME/.config/ranger $repoPath
 cp -r $HOME/.config/dunst $repoPath
 cp -r $HOME/.config/picom $repoPath
 
+# ZSH
+cp -r $HOME/.oh-my-zsh/custom/themes $repoPath/zsh-themes
+cp $HOME/.zshrc $repoPath
+
 # X
 cp $HOME/.Xresources $repoPath/.Xresources
 
