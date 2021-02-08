@@ -38,8 +38,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'https://github.com/hugolgst/vimsence.git' " Discord Presence
 	Plug 'sheerun/vim-polyglot' " Syntax highlightning
 	Plug 'preservim/nerdtree' " Tree navigation
-	Plug 'rafi/awesome-vim-colorschemes' " Theme collection
-	Plug 'chriskempson/base16-vim' " Theme
+	Plug 'rafi/awesome-vim-colorschemes'
 	" Plug 'vim-airline/vim-airline' " Airline
 	" Plug 'vim-airline/vim-airline-themes' " Airline themes
 call plug#end()
@@ -50,12 +49,14 @@ nmap <silent> <C-D> :NERDTreeToggle<CR>
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
 " Theme
+
 set t_Co=16
-colors default
+"colors angr
+colors minimalist
 let g:airline_theme='minimalist'
 let &showbreak = '↳ '
 
-hi Normal guibg=NONE ctermbg=NONE
+" hi Normal guibg=NONE ctermbg=NONE
 
 highlight clear LineNr
 highlight LineNr ctermfg=grey ctermbg=NONE
