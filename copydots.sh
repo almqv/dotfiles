@@ -11,6 +11,9 @@ cp -r $HOME/.config/ranger $repoPath
 cp -r $HOME/.config/dunst $repoPath
 cp -r $HOME/.config/picom $repoPath
 
+# Wallpaper
+rm $repoPath/wallpaper.jpg; cp $HOME/.wallpaper.jpg $repoPath/wallpaper.jpg
+
 # ZSH
 rm -r $repoPath/zsh-themes; cp -r $HOME/.oh-my-zsh/custom/themes $repoPath/zsh-themes
 cp $HOME/.zshrc $repoPath
