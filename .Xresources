@@ -1,27 +1,29 @@
-URxvt.scrollBar: false
-URxvt.font:           xft:Fira Code:size=11
-URxvt.url-launcher:   /usr/bin/firefox
+URxvt*scrollBar: false
+URxvt*font:           xft:Fira Code:size=11
+URxvt*url-launcher:   /usr/bin/firefox
+
+URxvt*termName: rxvt-unicode-256color
 
 URxvt*highlightColor: #282a2e
 URxvt*highlightTextColor: #bfbfbf
 
 URxvt*lineSpace:                1
-URxvt.letterSpace:              -1
+URxvt*letterSpace:              -1
 
-URxvt.keysym.Control-Up:     \033[1;5A
-URxvt.keysym.Control-Down:   \033[1;5B
-URxvt.keysym.Control-Left:   \033[1;5D
-URxvt.keysym.Control-Right:  \033[1;5C
+URxvt*keysym*Control-Up:     \033[1;5A
+URxvt*keysym*Control-Down:   \033[1;5B
+URxvt*keysym*Control-Left:   \033[1;5D
+URxvt*keysym*Control-Right:  \033[1;5C
 
-URxvt.keysym.C-Up:     font-size:increase
-URxvt.keysym.C-Down:   font-size:decrease
-URxvt.keysym.C-S-Up:   font-size:incglobal
-URxvt.keysym.C-S-Down: font-size:decglobal
-URxvt.keysym.C-equal:  font-size:reset
-URxvt.keysym.C-slash:  font-size:show
+URxvt*keysym*C-Up:     font-size:increase
+URxvt*keysym*C-Down:   font-size:decrease
+URxvt*keysym*C-S-Up:   font-size:incglobal
+URxvt*keysym*C-S-Down: font-size:decglobal
+URxvt*keysym*C-equal:  font-size:reset
+URxvt*keysym*C-slash:  font-size:show
 
 ! Aesthetics
-URxvt*fading: 20
+URxvt*fading: 10
 URxvt*fadeColor: #111015
 
 ! Colors
