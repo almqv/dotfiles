@@ -10,6 +10,7 @@ cp -r $HOME/.config/neofetch $repoPath
 cp -r $HOME/.config/ranger $repoPath
 cp -r $HOME/.config/dunst $repoPath
 cp -r $HOME/.config/picom $repoPath
+cp -r $HOME/.config/nvim $repoPath
 
 # Wallpaper
 rm $repoPath/wallpaper.jpg; cp $HOME/.wallpaper.jpg $repoPath/wallpaper.jpg
