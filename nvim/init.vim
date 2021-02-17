@@ -58,10 +58,6 @@ set t_Co=16
 colorscheme minimalist 
 let &showbreak = '↳ '
 
-hi Normal guibg=NONE ctermbg=NONE
-highlight clear LineNr
-highlight LineNr ctermfg=grey ctermbg=NONE
-
 " hi Normal guibg=NONE ctermbg=NONE
 
 highlight clear LineNr

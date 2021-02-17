@@ -1,6 +1,6 @@
 URxvt*scrollBar: false
 URxvt*font:           xft:Fira Code:size=11
-URxvt*url-launcher:   /usr/bin/firefox
+URxvt*url-launcher:   /usr/bin/librewolf
 
 URxvt*termName: rxvt-unicode-256color
 
