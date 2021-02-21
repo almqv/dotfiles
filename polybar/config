@@ -47,6 +47,8 @@ override-redirect = false
 width = 100%
 height = 24
 
+bottom = 1
+
 background = ${colors.background}
 foreground = ${colors.foreground}
 
