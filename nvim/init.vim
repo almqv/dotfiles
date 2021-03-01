@@ -55,7 +55,7 @@ nmap <silent> <C-D> :NERDTreeToggle<CR>
 
 " Theme
 set t_Co=16
-colorscheme minimalist 
+colorscheme one 
 let &showbreak = '↳ '
 
 " hi Normal guibg=NONE ctermbg=NONE
