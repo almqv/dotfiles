@@ -22,9 +22,5 @@ cp $HOME/.zshrc $repoPath
 # X
 cp $HOME/.Xresources $repoPath/.Xresources
 
-# Doom Emacs
-rm -r $repoPath/doom.d
-cp -r $HOME/.doom.d $repoPath/doom.d
-
 # Vim
 cp $HOME/.vimrc $repoPath/vimrc
