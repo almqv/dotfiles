@@ -27,6 +27,7 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'joshdick/onedark.vim' " Theme
 	Plug 'rafi/awesome-vim-colorschemes'
 	Plug 'preservim/nerdtree'
+	Plug 'arakashic/chromatica.nvim'
 	" Plug 'vim-airline/vim-airline' " Airline
 	" Plug 'vim-airline/vim-airline-themes' " Airline themes'
 call plug#end() 
@@ -55,7 +56,7 @@ nmap <silent> <C-D> :NERDTreeToggle<CR>
 
 " Theme
 set t_Co=16
-colorscheme one 
+colorscheme minimalist 
 let &showbreak = '↳ '
 
 " hi Normal guibg=NONE ctermbg=NONE
