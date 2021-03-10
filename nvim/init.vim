@@ -28,8 +28,9 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'rafi/awesome-vim-colorschemes'
 	Plug 'preservim/nerdtree'
 	Plug 'arakashic/chromatica.nvim'
-	" Plug 'vim-airline/vim-airline' " Airline
-	" Plug 'vim-airline/vim-airline-themes' " Airline themes'
+	" Plug 'itchyny/lightline.vim'
+	Plug 'vim-airline/vim-airline' " Airline
+	Plug 'vim-airline/vim-airline-themes' " Airline themes'
 call plug#end() 
 
 set nocompatible
@@ -44,9 +45,8 @@ syntax on
 
 set autoindent
 set noexpandtab 
-set tabstop=8
-set shiftwidth=8
-
+set tabstop=4
+set shiftwidth=4
 
 " Binds
 vmap <Tab> >gv
@@ -56,7 +56,7 @@ nmap <silent> <C-D> :NERDTreeToggle<CR>
 
 " Theme
 set t_Co=16
-colorscheme minimalist 
+colors one
 let &showbreak = '↳ '
 
 " hi Normal guibg=NONE ctermbg=NONE
@@ -68,4 +68,11 @@ highlight LineNr ctermfg=grey ctermbg=NONE
  
 set encoding=UTF-8
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
+if (empty($TMUX))
+	if (has("nvim"))
+		let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+	endif
+	if (has("termguicolors"))
+		set termguicolors
+	endif
+endif
