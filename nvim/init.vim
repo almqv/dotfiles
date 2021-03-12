@@ -76,3 +76,4 @@ if (empty($TMUX))
 		set termguicolors
 	endif
 endif
+let g:coc_global_extensions = ['coc-prettier', 'coc-tsserver', 'coc-solargraph', 'coc-sh', 'coc-pyright', 'coc-json', 'coc-html', 'coc-css', 'coc-cmake', 'coc-clangd', 'coc-emmet', 'coc-vimtex']

@@ -79,9 +79,6 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-# Ruby rvm thing
-# source $HOME/.rvm/scripts/rvm
-
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -108,7 +105,4 @@ source $ZSH/oh-my-zsh.sh
 source $ZSH/aliases.sh
 
 # Termite stuff
-export TERM=xterm-256color
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-# export PATH="$PATH:$HOME/.rvm/bin"
+# export TERM=xterm-256color
