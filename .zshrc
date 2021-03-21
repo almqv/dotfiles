@@ -103,6 +103,4 @@ source $ZSH/oh-my-zsh.sh
 #
 
 source $ZSH/aliases.sh
-
-# Termite stuff
-# export TERM=xterm-256color
+export TERM='xterm-256color'

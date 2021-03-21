@@ -53,7 +53,6 @@ vmap <Tab> >gv
 vmap <S-Tab> <gv
 nmap <silent> <C-D> :NERDTreeToggle<CR> 
 
-
 " Theme
 set t_Co=16
 colors one
@@ -64,8 +63,7 @@ let &showbreak = '↳ '
 highlight clear LineNr
 highlight LineNr ctermfg=grey ctermbg=NONE
 
-" ----------------------------- "
- 
+" Color stuff
 set encoding=UTF-8
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 if (empty($TMUX))
@@ -76,4 +74,7 @@ if (empty($TMUX))
 		set termguicolors
 	endif
 endif
-let g:coc_global_extensions = ['coc-prettier', 'coc-tsserver', 'coc-solargraph', 'coc-sh', 'coc-pyright', 'coc-json', 'coc-html', 'coc-css', 'coc-cmake', 'coc-clangd', 'coc-emmet', 'coc-vimtex']
+
+" COC
+let g:coc_global_extensions = ['coc-prettier', 'coc-tsserver', 'coc-solargraph', 'coc-sh', 'coc-pyright', 'coc-json', 'coc-html', 'coc-css', 'coc-cmake', 'coc-emmet', 'coc-vimtex']
+" 'coc-clangd'
