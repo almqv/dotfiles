@@ -19,7 +19,7 @@
 "                    .                    
 
 call plug#begin('~/.config/nvim/plugged')
-	Plug 'neoclide/coc.nvim', {'branch': 'release'}
+	" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	Plug 'tpope/vim-markdown'
 	Plug 'ap/vim-css-color' 
 	Plug 'vim-scripts/fountain.vim'
@@ -76,5 +76,6 @@ if (empty($TMUX))
 endif
 
 " COC
-let g:coc_global_extensions = ['coc-prettier', 'coc-tsserver', 'coc-solargraph', 'coc-sh', 'coc-pyright', 'coc-json', 'coc-html', 'coc-css', 'coc-cmake', 'coc-emmet', 'coc-vimtex']
+let g:coc_global_extensions = ['coc-prettier', 'coc-tsserver', 'coc-solargraph', 'coc-sh', 'coc-json', 'coc-html', 'coc-css', 'coc-cmake', 'coc-emmet', 'coc-vimtex']
 " 'coc-clangd'
+" 'coc-pyright'
