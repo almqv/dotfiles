@@ -19,7 +19,7 @@
 "                    .                    
 
 call plug#begin('~/.config/nvim/plugged')
-	" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	Plug 'tpope/vim-markdown'
 	Plug 'ap/vim-css-color' 
 	Plug 'vim-scripts/fountain.vim'
