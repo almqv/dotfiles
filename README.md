@@ -3,9 +3,8 @@
 ## Specs
  - **OS**: Arch Linux
  - **WM**: [dwm](http://github.com/E-Almqvist/dwm) 
- - **Terminal**: urxvt
- - **Editor**: Doom Emacs
+ - **Terminal**: st
+ - **Editor**: nvim
  - **Compositor**: picom (AUR: picom-tryone-git)
  - **Bar**: polybar
- - **Launcher**: rofi
- - **File browser**: ranger
+ - **Launcher**: dmenu
