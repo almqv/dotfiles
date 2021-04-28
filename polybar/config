@@ -1,6 +1,3 @@
-[settings]
-#compositing-foreground = difference
-
 [colors]
 background = #af111015 
 foreground = #c5c8c6
