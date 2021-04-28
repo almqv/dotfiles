@@ -24,3 +24,6 @@ cp $HOME/.Xresources $repoPath/.Xresources
 
 # Vim
 cp $HOME/.vimrc $repoPath/vimrc
+
+# ST-luke
+cp $HOME/Projects/linux/st-luke/config.h $repoPath/luke-st_config.h
