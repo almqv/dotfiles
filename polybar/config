@@ -53,17 +53,17 @@ padding-left = 8
 padding-right = 8
 module-margin = 1
 
-modules-left = dwm 
-modules-center = cmus
-modules-right = kernel filesystem pulseaudio wlan date time
+modules-left = dwm title 
+modules-center = time
+modules-right = cmus pulseaudio wlan battery date
 
 #################################################
-#                   MODULES			#
+#                   MODULES						#
 #################################################
 
 [module/dwm]
 type = internal/dwm
-format = <label-tags> <label-layout> <label-floating> <label-title>
+format = <label-tags> <label-layout> <label-floating> 
 # Path to dwm socket (default: /tmp/dwm.sock)
 # socket-path = /tmp/dwm.sock
 
