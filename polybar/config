@@ -1,5 +1,6 @@
 [colors]
-background = #af111015 
+#af
+background = #111015 
 foreground = #c5c8c6
 line = #bbb
 border = #bbb
