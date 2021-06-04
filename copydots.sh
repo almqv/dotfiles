@@ -1,16 +1,18 @@
 #!/bin/bash
 
 repoPath=$HOME/Projects/linux/dotfiles
+cfgPath=$repoPath/.config
 
 # All those things
-cp -r $HOME/.config/rofi $repoPath
-cp -r $HOME/.config/conky $repoPath
-cp -r $HOME/.config/polybar $repoPath
-cp -r $HOME/.config/neofetch $repoPath
-cp -r $HOME/.config/ranger $repoPath
-cp -r $HOME/.config/dunst $repoPath
-cp -r $HOME/.config/picom $repoPath
-cp -r $HOME/.config/nvim $repoPath
+cp -r $HOME/.config/rofi $cfgPath
+cp -r $HOME/.config/conky $cfgPath
+cp -r $HOME/.config/polybar $cfgPath
+cp -r $HOME/.config/neofetch $cfgPath
+cp -r $HOME/.config/ranger $cfgPath
+cp -r $HOME/.config/dunst $cfgPath
+cp -r $HOME/.config/picom $cfgPath
+cp -r $HOME/.config/nvim $cfgPath
+rm -rf $cfgPath/nvim/plugged
 
 # Wallpaper
 rm $repoPath/wallpaper.jpg; cp $HOME/.wallpaper.jpg $repoPath/wallpaper.jpg
@@ -25,5 +27,3 @@ cp $HOME/.Xresources $repoPath/.Xresources
 # Vim
 cp $HOME/.vimrc $repoPath/vimrc
 
-# ST-luke
-cp $HOME/Projects/linux/st-luke/config.h $repoPath/luke-st_config.h
