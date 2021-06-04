@@ -1,3 +1,6 @@
 [submodule "dwm"]
 	path = dwm
 	url = https://github.com/E-Almqvist/dwm
+[submodule "dmenu"]
+	path = dmenu
+	url = https://github.com/E-Almqvist/dmenu
