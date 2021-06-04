@@ -4,3 +4,6 @@
 [submodule "dmenu"]
 	path = dmenu
 	url = https://github.com/E-Almqvist/dmenu
+[submodule "st"]
+	path = st
+	url = https://github.com/E-Almqvist/st
