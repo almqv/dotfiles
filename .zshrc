@@ -104,3 +104,10 @@ source $ZSH/oh-my-zsh.sh
 
 source $ZSH/aliases.sh
 export TERM='xterm-256color'
+
+
+# Program defaults
+export VIDPLAY=vlc
+export IMGVIEW=eog
+export BROWSER=qutebrowser
+export EDITOR=nvim
