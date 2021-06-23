@@ -12,9 +12,9 @@ conky.config = {
     draw_outline = false,
     draw_shades = false,
     extra_newline = false,
-    font = 'Fira Code:size=25',
-    gap_x = 0,
-    gap_y = 0,
+    font = 'Overpass Mono:size=14',
+    gap_x = 40,
+    gap_y = 20,
     minimum_height = 5,
     minimum_width = 260,
     maximum_width = 260,
@@ -39,7 +39,22 @@ conky.config = {
 }
 
 conky.text = [[
-${font Fira Code:weight=Bold:size=35}${alignc}${color 2f2f2f}${time %H:%M:%S}
-${font Fira Code:size=25}${alignc}${color 2f2f2f}${time %d %B, %Y}
-${font Fira Code:size=20}${alignc}${color 2f2f2f}${time %A}
+${color #bf616a}AlmTech - $nodename
+
+${color #a4abb3}Kernel:$color $kernel
+${color #a4abb3}Uptime:$color $uptime 
+${color #a4abb3}LAN:$color ${addr enp0s31f6}
+
+
+${color #a4abb3}CPU:$color $cpu% ${cpubar 4}
+${color #a4abb3}RAM:$color $mem/$memmax ${membar 4}
+${color #a4abb3}Swap:$color $swap/$swapmax - $swapperc% ${swapbar 4}
+${color #a4abb3}Frequency:$color $freq_g GHz
+${color #a4abb3}Processes:$color $processes  ${color #a4abb3}Running:$color $running_processes
+
+
+${color #a4abb3}File systems:
+ / $color${fs_used /}/${fs_size /} ${fs_bar 6 /}
+${color #a4abb3}Networking:
+Up:$color ${upspeed enp0s31f6}${color #a4abb3} - Down:$color ${downspeed enp0s31f6}
 ]]

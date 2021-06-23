@@ -1,7 +1,11 @@
+[settings]
+#compositing-foreground = over
+
 [colors]
 #af
-background = #111015 
-foreground = #c5c8c6
+background = #ffffff 
+foreground = #2f2f2f
+foreground2 = #2f2f2faa
 line = #bbb
 border = #bbb
 accent = #434d5e
@@ -14,7 +18,8 @@ focused = #f0c674
 foreground-alt = ${xrdb:color7:#222}
 primary = ${xrdb:color4:#222}
 secondary = ${xrdb:color2:#222}
-alert = ${xrdb:color8:#222}
+alert = #2f2f2ffa
+#${xrdb:color8:#222}
 special = ${xrdb:color12:#222}
 
 black = #32344a
@@ -31,11 +36,11 @@ margin-top = 20
 margin-bottom = 20
 
 [bar/top]
-font-0 = "Fira Code:pixelsize=9.5#1"
-font-1 = "siji:pixelsize=10#1"
-font-2 = "Font Awesome 5 Free Regular:size=10;1"
-font-3 = "Font Awesome 5 Free Solid:size=10;1"
-font-4 = "Font Awesome 5 Brands Regular:size=10;1"
+font-0 = "Fira Code:weight=bold:pixelsize=9#1"
+font-1 = "siji:pixelsize=12#1"
+font-2 = "Font Awesome 5 Free Regular:size=12;1"
+font-3 = "Font Awesome 5 Free Solid:size=12;1"
+font-4 = "Font Awesome 5 Brands Regular:size=12;1"
 
 monitor = ${env:MONITOR}
 
@@ -55,8 +60,8 @@ padding-right = 16
 module-margin = 1
 
 modules-left = dwm title 
-modules-center = time
-modules-right = cmus pulseaudio wlan battery date
+modules-center = cmus
+modules-right = pulseaudio wlan eth kernel battery 
 
 #################################################
 #                   MODULES						#
@@ -119,7 +124,7 @@ label-floating = ~
 # focused = Selected tag on focused monitor
 label-focused = %name%
 label-focused-background = ${colors.background}
-label-focused-foreground = ${colors.primary}
+label-focused-foreground = ${colors.blue}
 label-focused-underline= ${colors.line}
 label-focused-padding = 1
 
@@ -130,7 +135,7 @@ label-unfocused-padding = 1
 # visible = Unselected tag, but occupied tag on any monitor
 label-visible = %name%
 label-visible-background = ${self.label-focused-background}
-label-visible-foreground = ${colors.alert}
+label-visible-foreground = ${colors.foreground}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
@@ -144,6 +149,7 @@ label-urgent-padding = 1
 # This can be set to an empty string to hide empty tags
 label-empty = %name%
 label-empty-background = ${colors.background}
+label-empty-foreground = ${colors.foreground2}
 label-empty-padding = 1
 
 [module/cmus]
@@ -163,7 +169,7 @@ label-font = 3
 format = <label>
 format-underline = ${colors.line}
 label =  %output%
-label-maxlen = 50
+label-maxlen = 80
 
 [module/wlan]
 type = internal/network
