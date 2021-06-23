@@ -2,10 +2,9 @@
 #compositing-foreground = over
 
 [colors]
-#af
-background = #ffffff 
-foreground = #2f2f2f
-foreground2 = #2f2f2faa
+background = #111015 
+foreground = #fefefe
+foreground2 = #aafefefe
 line = #bbb
 border = #bbb
 accent = #434d5e
@@ -36,7 +35,7 @@ margin-top = 20
 margin-bottom = 20
 
 [bar/top]
-font-0 = "Fira Code:weight=bold:pixelsize=9#1"
+font-0 = "Fira Code:pixelsize=9#1"
 font-1 = "siji:pixelsize=12#1"
 font-2 = "Font Awesome 5 Free Regular:size=12;1"
 font-3 = "Font Awesome 5 Free Solid:size=12;1"
@@ -61,7 +60,7 @@ module-margin = 1
 
 modules-left = dwm title 
 modules-center = cmus
-modules-right = pulseaudio wlan eth kernel battery 
+modules-right = pulseaudio wlan kernel battery date
 
 #################################################
 #                   MODULES						#
