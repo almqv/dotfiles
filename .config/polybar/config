@@ -2,7 +2,7 @@
 #compositing-foreground = over
 
 [colors]
-background = #111015 
+background = #111015
 foreground = #fefefe
 foreground2 = #aafefefe
 line = #bbb
@@ -31,36 +31,36 @@ cyan = #449dab
 white = #787c99
 
 [global/wm]
-margin-top = 20
-margin-bottom = 20
+# margin-top = 0
+# margin-bottom = 0
 
 [bar/top]
-font-0 = "Fira Code:pixelsize=9#1"
-font-1 = "siji:pixelsize=12#1"
+font-0 = "Fira Code:pixelsize=9;1"
+font-1 = "siji:pixelsize=12;1"
 font-2 = "Font Awesome 5 Free Regular:size=12;1"
 font-3 = "Font Awesome 5 Free Solid:size=12;1"
 font-4 = "Font Awesome 5 Brands Regular:size=12;1"
 
 monitor = ${env:MONITOR}
 
-fixed-center = true
-override-redirect = false
+# fixed-center = true
+# override-redirect = true
 
 width = 100%
-height = 24
+height = 16
 
 bottom = 1
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-padding-left = 16
-padding-right = 16
+padding-left = 8
+padding-right = 8
 module-margin = 1
 
 modules-left = dwm title 
-modules-center = cmus
-modules-right = pulseaudio wlan kernel battery date
+modules-center = time
+modules-right = cmus pulseaudio wlan battery date
 
 #################################################
 #                   MODULES						#
