@@ -28,8 +28,8 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'rafi/awesome-vim-colorschemes'
 	Plug 'preservim/nerdtree'
 	Plug 'arakashic/chromatica.nvim'
-	Plug 'vim-airline/vim-airline' " Airline
-	Plug 'vim-airline/vim-airline-themes' " Airline themes'
+	"Plug 'vim-airline/vim-airline' " Airline
+	"Plug 'vim-airline/vim-airline-themes' " Airline themes'
 call plug#end() 
 
 set nocompatible
