@@ -53,11 +53,7 @@ set shiftwidth=4
 	" NERDTree
 	nmap <silent> <C-D> :NERDTreeToggle<CR> 
 
-	" Clipboard
-	noremap <Leader>y "*y
-	noremap <Leader>p "*p
-	noremap <Leader>Y "+y
-	noremap <Leader>P "+p
+set clipboard+=unnamedplus
 
 " Theme
 set t_Co=16
