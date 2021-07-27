@@ -28,8 +28,6 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'rafi/awesome-vim-colorschemes'
 	Plug 'preservim/nerdtree'
 	Plug 'arakashic/chromatica.nvim'
-	"Plug 'vim-airline/vim-airline' " Airline
-	"Plug 'vim-airline/vim-airline-themes' " Airline themes'
 call plug#end() 
 
 set nocompatible
@@ -48,9 +46,18 @@ set tabstop=4
 set shiftwidth=4
 
 " Binds
-vmap <Tab> >gv
-vmap <S-Tab> <gv
-nmap <silent> <C-D> :NERDTreeToggle<CR> 
+	" Tabs
+	vmap <Tab> >gv
+	vmap <S-Tab> <gv
+
+	" NERDTree
+	nmap <silent> <C-D> :NERDTreeToggle<CR> 
+
+	" Clipboard
+	noremap <Leader>y "*y
+	noremap <Leader>p "*p
+	noremap <Leader>Y "+y
+	noremap <Leader>P "+p
 
 " Theme
 set t_Co=16
