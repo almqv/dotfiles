@@ -60,7 +60,7 @@ module-margin = 1
 
 modules-left = dwm title 
 modules-center = time
-modules-right = cmus spotify pulseaudio wlan battery date
+modules-right = cmus pulseaudio wlan battery date
 
 #################################################
 #                   MODULES						#
