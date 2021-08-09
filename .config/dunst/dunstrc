@@ -15,7 +15,7 @@
 	#
 	# If this option is set to mouse or keyboard, the monitor option
 	# will be ignored.
-	follow = keyboard
+	follow = none 
 
 	# The geometry of the window:
 	#   [{width}]x{height}[+/-{x}+/-{y}]
@@ -29,7 +29,7 @@
 	# the top and down respectively.
 	# The width can be negative.  In this case the actual width is the
 	# screen width minus the width defined in within the geometry option.
-	geometry = "320x5+20+20"
+	geometry = "320x5-20-42"
 
 	# Show how many messages are currently hidden (because of geometry).
 	indicate_hidden = yes
