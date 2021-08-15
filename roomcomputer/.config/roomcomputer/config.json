@@ -1,0 +1,10 @@
+{
+	"hue": {
+		"address": "192.168.1.15",
+		"username": "tibniMzoYv6bCD5V3jVnn5yq3-Ebt2h2ERRy0pxn"
+	},
+	"speech": {
+		"device_index": 30,
+		"prefixes": ["computer", "computers"]
+	}
+}
