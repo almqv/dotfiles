@@ -1,10 +1,14 @@
 ![Preview](preview.png)
 
 ## Installing dotfiles
-`$ ./stow.sh (stow option)`
+`$ stow (stow options) (package)`
+	
 	-S, --stow 	: Install
 	-D, --delete	: Uninstall
-**i.e.** `$ ./stow.sh -S`
+	Read more in the manual page for stow.
+	$ man stow
+
+**i.e.** `$ stow -S vim`
 
 ## Specs
  - **OS**: Arch Linux
