@@ -3,8 +3,8 @@
 ## Specs
  - **OS**: Arch Linux
  - **WM**: [dwm](http://github.com/E-Almqvist/dwm) 
- - **Terminal**: st
+ - **Terminal**: Alacritty 
  - **Editor**: nvim
- - **Compositor**: picom (AUR: picom-tryone-git)
+ - **Compositor**: picom 
  - **Bar**: polybar
  - **Launcher**: dmenu
