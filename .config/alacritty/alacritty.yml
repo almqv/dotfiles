@@ -1,0 +1,131 @@
+# Configuration for Alacritty, the GPU enhanced terminal emulator.
+#
+
+env:
+  TERM: xterm-256color
+
+window:
+  padding:
+    x: 18 
+    y: 18
+
+  # Window title
+  title: Terminal
+
+  # Window class (Linux/BSD only):
+  class:
+    # Application instance name
+    instance: Alacritty
+    # General application class
+    general: Alacritty
+
+
+scrolling:
+  history: 5000
+
+# Font configuration
+font:
+  # Normal (roman) font face
+  normal:
+
+    family: monospace
+
+    # The `style` can be specified to pick a specific face.
+    style: Regular
+
+  # Bold font face
+  bold:
+
+    family: monospace
+
+    # The `style` can be specified to pick a specific face.
+    style: Bold
+
+  # Italic font face
+  italic:
+
+    style: Italic
+
+  # Bold italic font face
+  bold_italic:
+
+    family: monospace
+
+    # The `style` can be specified to pick a specific face.
+    style: Bold Italic
+
+  # Point size
+  size: 10 
+
+  # Offset is the extra space around each character. `offset.y` can be thought of
+  # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
+  offset:
+    x: 0
+    y: 1
+
+# If `true`, bold text is drawn using the bright color variants.
+draw_bold_text_with_bright_colors: true
+
+# Colors (Tomorrow Night Bright)
+colors:
+  # Default colors
+  primary:
+    background: '0x111015'
+    foreground: '0xfefefe'
+
+  selection:
+    text: '0xbbc2cf'
+
+  # Normal colors
+  normal:
+    black:   '0x282a2e'
+    red:     '0xa54242'
+    green:   '0x8c9440'
+    yellow:  '0xde935f'
+    blue:    '0x5f819d'
+    magenta: '0x85678f'
+    cyan:    '0x5e8d87'
+    white:   '0x707880'
+
+  # Bright colors
+  bright:
+    black:   '0x373b41'
+    red:     '0xcc6666'
+    green:   '0xb5bd68'
+    yellow:  '0xf0c674'
+    blue:    '0x81a2be'   
+    magenta: '0xb294bb'
+    cyan:    '0x8abeb7'
+    white:   '0xc5c8c6'
+
+# Window opacity as a floating point number from `0.0` to `1.0`.
+# The value `0.0` is completely transparent and `1.0` is opaque.
+background_opacity: 1.0 
+
+cursor:
+  # Values for `style`:
+  #   - ▇ Block
+  #   - _ Underline
+  #   - | Beam
+  style: Beam
+
+key_bindings:
+    # (Windows, Linux, and BSD only)
+  - { key: V,        mods: Control|Shift, action: Paste            }
+  - { key: C,        mods: Control|Shift, action: Copy             }
+  - { key: Insert,   mods: Shift,         action: PasteSelection   }
+  - { key: Key0,     mods: Control,       action: ResetFontSize    }
+  - { key: Equals,   mods: Control,       action: IncreaseFontSize }
+  - { key: Plus,     mods: Control,       action: IncreaseFontSize }
+  - { key: Minus,    mods: Control,       action: DecreaseFontSize }
+  - { key: Minus,    mods: Control,       action: DecreaseFontSize }
+
+  - { key: Paste,                    action: Paste                            }
+  - { key: Copy,                     action: Copy                             }
+  - { key: L,         mods: Control, action: ClearLogNotice                   }
+  - { key: L,         mods: Control, chars: "\x0c"                            }
+  - { key: PageUp,    mods: Shift,   action: ScrollPageUp,   mode: ~Alt       }
+  - { key: PageDown,  mods: Shift,   action: ScrollPageDown, mode: ~Alt       }
+  - { key: Home,      mods: Shift,   action: ScrollToTop,    mode: ~Alt       }
+  - { key: End,       mods: Shift,   action: ScrollToBottom, mode: ~Alt       }
+

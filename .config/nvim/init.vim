@@ -36,7 +36,7 @@ set ignorecase
 set mouse=a	
 set hlsearch
 set autoindent	
-set number
+set nu rnu
 filetype plugin indent on  
 syntax on		
 

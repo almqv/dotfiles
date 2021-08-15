@@ -4,7 +4,7 @@
 [colors]
 background = #111015
 foreground = #fefefe
-foreground2 = #aafefefe
+foreground2 = #77fefefe
 line = #bbb
 border = #bbb
 accent = #434d5e
@@ -18,7 +18,6 @@ foreground-alt = ${xrdb:color7:#222}
 primary = ${xrdb:color4:#222}
 secondary = ${xrdb:color2:#222}
 alert = #2f2f2ffa
-#${xrdb:color8:#222}
 special = ${xrdb:color12:#222}
 
 black = #32344a
@@ -35,7 +34,7 @@ white = #787c99
 # margin-bottom = 0
 
 [bar/top]
-font-0 = "Iosevka:pixelsize=10;1"
+font-0 = "monospace:pixelsize=10;1"
 font-1 = "siji:pixelsize=12;1"
 font-2 = "Font Awesome 5 Free Regular:size=12;1"
 font-3 = "Font Awesome 5 Free Solid:size=12;1"
@@ -49,7 +48,7 @@ monitor = ${env:MONITOR}
 width = 100%
 height = 20
 
-bottom = 1
+# bottom = 1
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -164,7 +163,7 @@ click-middle = cmus-remote --pause
 scroll-up = cmus-remote --volume +5%
 scroll-down = cmus-remote --volume -5%
 
-label-font = 3
+label-font = 1
 format = <label>
 format-underline = ${colors.line}
 label =  %output%
