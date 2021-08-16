@@ -190,7 +190,7 @@ c.tabs.show = 'always'
 
 # Setting default page for when opening new tabs or new windows with
 # commands like :open -t and :open -w .
-c.url.default_page = 'file://~/.surf/html/homepage.html'
+c.url.default_page = 'file://~/.dotfiles/qutebrowser/.config/qutebrowser/startpage/index.html'
 
 # Search engines which can be used via the address bar.  Maps a search
 # engine name (such as `DEFAULT`, or `ddg`) to a URL with a `{}`
