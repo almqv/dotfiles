@@ -21,7 +21,9 @@ config.load_autoconfig(False)
 c.aliases = {'q': 'quit', 'w': 'session-save', 'wq': 'quit --save'}
 
 # Setting dark mode
-#config.set("colors.webpage.darkmode.enabled", True)
+# config.set("colors.webpage.darkmode.enabled", True)
+
+c.url.start_pages = "~/.dotfiles/qutebrowser/.config/qutebrowser/startpage/index.html"
 
 
 # Which cookies to accept. With QtWebEngine, this setting also controls
