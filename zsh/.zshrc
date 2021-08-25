@@ -102,6 +102,8 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 
+alias ls="exa --icons"
+
 source $ZSH/aliases.sh
 export TERM='xterm-256color'
 export PATH="$HOME/.scripts:$PATH" # Add custom scripts!
