@@ -45,6 +45,9 @@ set noexpandtab
 set tabstop=8
 set shiftwidth=8
 
+" Dumb shit
+let g:ruby_recommended_style = 0
+
 " Binds
 	" Tabs
 	vmap <Tab> >gv
