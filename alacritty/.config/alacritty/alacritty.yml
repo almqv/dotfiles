@@ -28,7 +28,7 @@ font:
   # Normal (roman) font face
   normal:
 
-    family: monospace
+    family: JetBrainsMono Nerd Font Mono
 
     # The `style` can be specified to pick a specific face.
     style: Regular
@@ -36,7 +36,7 @@ font:
   # Bold font face
   bold:
 
-    family: monospace
+    family: JetBrainsMono Nerd Font Mono
 
     # The `style` can be specified to pick a specific face.
     style: Bold
@@ -49,13 +49,13 @@ font:
   # Bold italic font face
   bold_italic:
 
-    family: monospace
+    family: JetBrainsMono Nerd Font Mono
 
     # The `style` can be specified to pick a specific face.
     style: Bold Italic
 
   # Point size
-  size: 10 
+  size: 10
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -70,11 +70,11 @@ draw_bold_text_with_bright_colors: true
 colors:
   # Default colors
   primary:
-    background: '0x111015'
-    foreground: '0xfefefe'
+    background: '0x0c1115'
+    foreground: '0xefefff'
 
   selection:
-    text: '0xbbc2cf'
+    text: '0x000000'
 
   # Normal colors
   normal:
