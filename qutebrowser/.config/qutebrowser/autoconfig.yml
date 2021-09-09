@@ -6,5 +6,5 @@
 
 config_version: 2
 settings:
-  content.notifications.enabled:
-    https://www.tiktok.com: false
+  content.geolocation:
+    https://www.google.com: false
