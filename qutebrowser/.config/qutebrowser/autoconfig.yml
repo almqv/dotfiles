@@ -6,5 +6,5 @@
 
 config_version: 2
 settings:
-  content.geolocation:
-    https://www.google.com: false
+  content.notifications.enabled:
+    https://www.duolingo.com: false
