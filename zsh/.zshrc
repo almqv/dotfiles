@@ -108,7 +108,6 @@ source $ZSH/aliases.sh
 export TERM='xterm-256color'
 export PATH="$HOME/.scripts:$PATH" # Add custom scripts!
 
-
 # Program defaults
 export VIDPLAY=vlc
 export IMGVIEW=eog
