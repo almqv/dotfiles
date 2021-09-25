@@ -28,6 +28,7 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'rafi/awesome-vim-colorschemes'
 	Plug 'preservim/nerdtree'
 	Plug 'arakashic/chromatica.nvim'
+	Plug 'jamestthompson3/nvim-remote-containers' " Docker Container Workspace
 call plug#end() 
 
 set nocompatible
