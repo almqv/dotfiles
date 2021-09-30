@@ -2,7 +2,7 @@
 #compositing-foreground = over
 
 [colors]
-background = #0c1115
+background = #282c34
 foreground = #fefefe
 foreground2 = #77fefefe
 line = #bbb
@@ -34,7 +34,7 @@ white = #787c99
 # margin-bottom = 0
 
 [bar/top]
-font-0 = "monospace:pixelsize=10;1"
+font-0 = "monospace:pixelsize=9;1"
 font-1 = "siji:pixelsize=12;1"
 font-2 = "Font Awesome 5 Free Regular:size=12;1"
 font-3 = "Font Awesome 5 Free Solid:size=12;1"
