@@ -46,23 +46,23 @@ monitor = ${env:MONITOR}
 # override-redirect = true
 
 width = 100%
-height = 20
+height = 22 
 
 # bottom = 1
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-padding-left = 8
-padding-right = 8
+padding-left = 32
+padding-right = 32
 module-margin = 1
 
-modules-left = dwm title 
-modules-center = time
-modules-right = cmus pulseaudio wlan battery date
+modules-left = dwm 
+modules-center = title
+modules-right = cmus pulseaudio wlan battery time date
 
 #################################################
-#                   MODULES						#
+#                   MODULES			#
 #################################################
 
 [module/dwm]
