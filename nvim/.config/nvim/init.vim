@@ -63,6 +63,7 @@ set clipboard+=unnamedplus
 set t_Co=16
 colors one
 let &showbreak = '↳ '
+set laststatus=0 ruler
 
 hi Normal guibg=NONE ctermbg=NONE
 
