@@ -29,7 +29,7 @@
 	# the top and down respectively.
 	# The width can be negative.  In this case the actual width is the
 	# screen width minus the width defined in within the geometry option.
-	geometry = "320x5-20+42"
+	geometry = "320x5-20-20"
 
 	# Show how many messages are currently hidden (because of geometry).
 	indicate_hidden = yes
@@ -64,7 +64,7 @@
 	frame_width = 1
 
 	# Defines color of the frame around the notification window.
-	frame_color = "#111015"
+	frame_color = "#282c34"
 
 	# Define a color for the separator.
 	# possible values are:
@@ -275,7 +275,7 @@
 [urgency_low]
 	# IMPORTANT: colors have to be defined in quotation marks.
 	# Otherwise the "#" and following would be interpreted as a comment.
-	background = "#111015"
+	background = "#282c34"
 	foreground = "#a4abb3"
 	frame_color = "#272727"
 	timeout = 10
@@ -283,7 +283,7 @@
 	#icon = /path/to/icon
 
 [urgency_normal]
-	background = "#111015"
+	background = "#282c34"
 	foreground = "#a4abb3"
 	frame_color = "#272727"
 	timeout = 10
@@ -291,7 +291,7 @@
 	#icon = /path/to/icon
 
 [urgency_critical]
-	background = "#111015"
+	background = "#282c34"
 	foreground = "#a4abb3"
 	frame_color = "#272727"
 	timeout = 0
