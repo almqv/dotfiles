@@ -60,15 +60,15 @@ let g:ruby_recommended_style = 0
 set clipboard+=unnamedplus
 
 " Theme
-set t_Co=16
-colors one
+colors deep-space 
 let &showbreak = '↳ '
-set laststatus=0 ruler
+" set laststatus=0 ruler
 
 hi Normal guibg=NONE ctermbg=NONE
+hi StatusLine ctermbg=NONE ctermfg=NONE
 
 highlight clear LineNr
-highlight LineNr ctermfg=grey ctermbg=NONE
+highlight LineNr ctermfg=NONE ctermbg=NONE
 
 " Color stuff
 set encoding=UTF-8
