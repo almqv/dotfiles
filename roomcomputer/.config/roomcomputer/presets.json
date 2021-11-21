@@ -6,11 +6,6 @@
 
 	"dim": {
 		"color": [178, 199, 255],
-		"brightness": 111
-	},
-
-	"dim": {
-		"color": [178, 199, 255],
 		"brightness": 80
 	},
 
@@ -37,5 +32,10 @@
 	"sleep": {
 		"color": [185, 155, 25],
 		"brightness": 60
+	},
+
+	"read": {
+		"color": [185, 155, 80],
+		"brightness": 120 
 	}
 }
