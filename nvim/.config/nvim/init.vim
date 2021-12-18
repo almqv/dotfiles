@@ -23,12 +23,13 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'tpope/vim-markdown'
 	Plug 'ap/vim-css-color' 
 	Plug 'vim-scripts/fountain.vim'
-	Plug 'aurieh/discord.nvim', {'do': ':UpdateRemotePlugins'} " Discord Presence
+"	Plug 'aurieh/discord.nvim', {'do': ':UpdateRemotePlugins'} " Discord Presence
 	Plug 'joshdick/onedark.vim' " Theme
 	Plug 'rafi/awesome-vim-colorschemes'
 	Plug 'preservim/nerdtree'
 	Plug 'arakashic/chromatica.nvim'
-	Plug 'jamestthompson3/nvim-remote-containers' " Docker Container Workspace
+"	Plug 'jamestthompson3/nvim-remote-containers' " Docker Container Workspace
+	Plug 'slim-template/vim-slim'
 call plug#end() 
 
 set nocompatible
