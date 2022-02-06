@@ -1,14 +1,12 @@
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
-#
-
 env:
   TERM: xterm-256color
 
 window:
   opacity: 1.0
   padding:
-    x: 12
-    y: 12
+    x: 8 
+    y: 8
 
   # Window title
   title: Terminal
@@ -29,7 +27,7 @@ font:
   # Normal (roman) font face
   normal:
 
-    family: Hack
+    family: Space Mono
 
     # The `style` can be specified to pick a specific face.
     style: Regular
@@ -37,7 +35,7 @@ font:
   # Bold font face
   bold:
 
-    family: Hack
+    family: Space Mono
 
     # The `style` can be specified to pick a specific face.
     style: Bold
@@ -50,13 +48,13 @@ font:
   # Bold italic font face
   bold_italic:
 
-    family: Hack
+    family: Space Mono
 
     # The `style` can be specified to pick a specific face.
     style: Bold Italic
 
   # Point size
-  size: 9 
+  size: 10 
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -70,7 +68,7 @@ draw_bold_text_with_bright_colors: true
 # Colors 
 colors:
     primary:
-      background: '0x272a34'
+      background: '0x282c34'
       foreground: '0xFFFFFF'
     normal:
       black:   '0x1F2229'

@@ -30,6 +30,7 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'arakashic/chromatica.nvim'
 "	Plug 'jamestthompson3/nvim-remote-containers' " Docker Container Workspace
 	Plug 'slim-template/vim-slim'
+	Plug 'OmniSharp/omnisharp-vim'
 call plug#end() 
 
 set nocompatible
