@@ -31,6 +31,7 @@ call plug#begin('~/.config/nvim/plugged')
 "	Plug 'jamestthompson3/nvim-remote-containers' " Docker Container Workspace
 	Plug 'slim-template/vim-slim'
 	Plug 'OmniSharp/omnisharp-vim'
+	Plug 'ngmy/vim-rubocop'
 call plug#end() 
 
 set nocompatible
