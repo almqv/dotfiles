@@ -32,6 +32,7 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'slim-template/vim-slim'
 	Plug 'OmniSharp/omnisharp-vim'
 	Plug 'ngmy/vim-rubocop'
+	Plug 'lervag/vimtex' 
 call plug#end() 
 
 set nocompatible
@@ -89,3 +90,14 @@ endif
 let g:coc_global_extensions = ['coc-prettier', 'coc-tsserver', 'coc-solargraph', 'coc-sh', 'coc-json', 'coc-html', 'coc-css', 'coc-cmake', 'coc-emmet', 'coc-vimtex']
 " 'coc-clangd'
 " 'coc-pyright'
+
+
+let g:vimtex_view_method = 'zathura'
+
+" Or with a generic interface:
+let g:vimtex_view_general_viewer = 'zathura'
+let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
+
+" Most VimTeX mappings rely on localleader and this can be changed with the
+" following line. The default is usually fine and is the symbol "\".
+let maplocalleader = ","
