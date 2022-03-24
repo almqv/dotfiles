@@ -1,1 +1,8 @@
-map <C-i> recolor
+set recolor true
+set render-loading false
+
+set inputbar-bg "#272a34" 
+set inputbar-fg "#ffffff"
+set recolor-darkcolor "#ffffff"
+set recolor-lightcolor "#272a34"
+
