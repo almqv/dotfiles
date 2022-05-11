@@ -64,7 +64,7 @@ let g:ruby_recommended_style = 0
 set clipboard+=unnamedplus
 
 " Theme
-colors deep-space 
+colors hybrid_material
 let &showbreak = '↳ '
 " set laststatus=0 ruler
 

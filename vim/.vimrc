@@ -31,7 +31,7 @@ vmap <Tab> >gv
 vmap <S-Tab> <gv
 
 syntax on
-set nu rnu
-set ruler
+"set nu rnu
+"set ruler
 
 colors koehler

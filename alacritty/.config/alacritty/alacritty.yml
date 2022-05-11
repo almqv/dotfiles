@@ -27,7 +27,7 @@ font:
   # Normal (roman) font face
   normal:
 
-    family: Space Mono
+    family: IBM Plex Mono
 
     # The `style` can be specified to pick a specific face.
     style: Regular
@@ -35,7 +35,7 @@ font:
   # Bold font face
   bold:
 
-    family: Space Mono
+    family: IBM Plex Mono
 
     # The `style` can be specified to pick a specific face.
     style: Bold
@@ -48,13 +48,13 @@ font:
   # Bold italic font face
   bold_italic:
 
-    family: Space Mono
+    family: IBM Plex Mono
 
     # The `style` can be specified to pick a specific face.
     style: Bold Italic
 
   # Point size
-  size: 10 
+  size: 11
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -66,28 +66,46 @@ font:
 draw_bold_text_with_bright_colors: true
 
 # Colors 
+#colors:
+#    primary:
+#      background: '0x272a34'
+#      foreground: '0xFFFFFF'
+#    normal:
+#      black:   '0x1F2229'
+#      red:     '0xEC0101'
+#      green:   '0x47D4B9'
+#      yellow:  '0xFF8A18'
+#      blue:    '0x277FFF'
+#      magenta: '0xD71655'
+#      cyan:    '0x05A1F7'
+#      white:   '0xFFFFFF'
+#    bright:
+#      black:   '0x1F2229'
+#      red:     '0xD41919'
+#      green:   '0x5EBDAB'
+#      yellow:  '0xFEA44C'
+#      blue:    '0x367bf0'
+#      magenta: '0xBF2E5D'
+#      cyan:    '0x49AEE6'
+#      white:   '0xFFFFFF'
+
+# Colors (Doom One)
 colors:
-    primary:
-      background: '0x272a34'
-      foreground: '0xFFFFFF'
-    normal:
-      black:   '0x1F2229'
-      red:     '0xEC0101'
-      green:   '0x47D4B9'
-      yellow:  '0xFF8A18'
-      blue:    '0x277FFF'
-      magenta: '0xD71655'
-      cyan:    '0x05A1F7'
-      white:   '0xFFFFFF'
-    bright:
-      black:   '0x1F2229'
-      red:     '0xD41919'
-      green:   '0x5EBDAB'
-      yellow:  '0xFEA44C'
-      blue:    '0x367bf0'
-      magenta: '0xBF2E5D'
-      cyan:    '0x49AEE6'
-      white:   '0xFFFFFF'
+  # Default colors
+  primary:
+    background: '0x282c34'
+    foreground: '0xbbc2cf'
+
+  # Normal colors
+  normal:
+    black:   '0x282c34'
+    red:     '0xff6c6b'
+    green:   '0x98be65'
+    yellow:  '0xecbe7b'
+    blue:    '0x51afef'
+    magenta: '0xc678dd'
+    cyan:    '0x46d9ff'
+    white:   '0xbbc2cf'
 
 cursor:
   # Values for `style`:
