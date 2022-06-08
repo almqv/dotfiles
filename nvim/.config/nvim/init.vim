@@ -33,6 +33,7 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'OmniSharp/omnisharp-vim'
 	Plug 'ngmy/vim-rubocop'
 	Plug 'lervag/vimtex' 
+	Plug 'mikelue/vim-maven-plugin' " Java 
 call plug#end() 
 
 set nocompatible
