@@ -34,6 +34,9 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'ngmy/vim-rubocop'
 	Plug 'lervag/vimtex' 
 	Plug 'mikelue/vim-maven-plugin' " Java 
+	Plug 'sheerun/vim-polyglot'
+	Plug 'vim-airline/vim-airline'
+	Plug 'vim-airline/vim-airline-themes'
 call plug#end() 
 
 set nocompatible
@@ -75,6 +78,9 @@ hi StatusLine ctermbg=NONE ctermfg=NONE
 highlight clear LineNr
 highlight LineNr ctermfg=NONE ctermbg=NONE
 
+" Airline
+let g:airline_theme='gruvbox'
+
 " Color stuff
 set encoding=UTF-8
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -93,6 +99,7 @@ let g:coc_global_extensions = ['coc-prettier', 'coc-tsserver', 'coc-solargraph',
 " 'coc-pyright'
 
 
+" VIMTEX stuff
 let g:vimtex_view_method = 'zathura'
 
 " Or with a generic interface:
