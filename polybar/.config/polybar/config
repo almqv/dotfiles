@@ -53,8 +53,8 @@ height = 24
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-padding-left = 8
-padding-right = 8
+padding-left = 2
+padding-right = 2
 module-margin = 1
 
 modules-left = dwm 
