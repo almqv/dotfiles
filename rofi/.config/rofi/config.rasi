@@ -24,6 +24,8 @@ configuration {
 /*	ignored-prefixes: "";*/
 /*	sort: false;*/
 /*	sorting-method: "normal";*/
+	show-icons: true;
+	icon-theme: "Breeze";
 /*	case-sensitive: false;*/
 /*	cycle: true;*/
 /*	sidebar-mode: false;*/
@@ -146,65 +148,5 @@ configuration {
   }
 
 }
-* {
-	fnt: "IBM Plex Mono 12";
 
-	bg: #272a36;
-	bg-alt: #44475a;
-	fg: #f8f8f8;
-	blue: #6272a4;
-	purple: #bd93f0;
-
-	background-color: @bg;
-	border: 0;
-	margin: 0;
-	padding: 0;
-	spacing: 0;
-}
-
-element {
-	padding: 12;
-	text-color: @blue;
-}
-
-element selected {
-	text-color: @purple;
-}
-
-element-text {
-	background-color: inherit;
-	text-color: inherit;
-}
-
-entry {
-	background-color: @blue;
-	padding: 12 0 12 3;
-	text-color: @fg;
-}
-
-inputbar {
-	children: [prompt, entry];
-}
-
-listview {
-	columns: 1;
-	lines: 8;
-}
-
-mainbox {
-	children: [inputbar, listview];
-}
-
-prompt {
-	background-color: @blue;
-	enabled: true;
-	font: @fnt;
-	padding: 12 0 0 12;
-	text-color: @fg;
-}
-
-window {
-	transparency: "real";
-	background-color: @bg;
-}
-@theme "/usr/share/rofi/themes/sidebar.rasi"
+@theme "doomsidebar"
