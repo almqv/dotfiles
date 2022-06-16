@@ -1,0 +1,119 @@
+* {
+    text-color:  #f6f6f6;
+    background-color:  rgba(1,0,0,0);
+    dark: #282c34;
+	border-color: #1d1f21;
+    // Black
+    black:       #272a34;
+    blackop:     #272a34ef;
+    lightblack:  #272a34;
+    //
+    // Red
+    red:         #ff6c6b;
+    lightred:    #ff6c6b;
+    //
+    // Green
+    green:       #98be65;
+    lightgreen:  #98be65;
+    //
+    // Yellow
+    yellow:      #ecbe7b;
+    lightyellow: #ecbe7b;
+    //
+    // Blue
+    blue:      #5f819d;
+    lightblue: #5f819d;
+    //
+    // Magenta
+    magenta:      #c678dd;
+    lightmagenta: #c678dd;
+    //
+    // Cyan
+    cyan:      #5f819d;
+    lightcyan: #5f819d;
+    //
+    // White
+    white:      #bbc2cf;
+    lightwhite: #bbc2cf;
+    //
+    // Bold, Italic, Underline
+    highlight:  bold #ffffff;
+}
+window {
+    height:   100%;
+    width:    30em;
+    location: west;
+    anchor:   west;
+    text-color: @lightwhite;
+}
+mode-switcher {
+    border: 0px 0px 0px 0px;
+    background-color: @lightblack;
+    padding: 4px;
+}
+button selected {
+    border-color: @lightgreen;
+    text-color: @lightgreen;
+}
+inputbar {
+    background-color: @black;
+    text-color: @lightgreen;
+    padding: 5px;
+	height: 32px;
+}
+entry {
+}
+prompt {
+	margin: 0 0.4em 0 0;
+}
+mainbox {
+    expand: true;
+    background-color: @blackop;
+    spacing: 1em;
+}
+listview {
+    padding: 0em 0.4em 0em 1em;
+    dynamic: false;
+    lines: 0;
+}
+element-text {
+    background-color: inherit;
+    text-color:       inherit;
+}
+element {
+	padding: 4px;
+	border-radius: 2px;
+}
+element selected  normal {
+    background-color: @blue;
+}
+element normal active {
+    text-color: @lightblue;
+}
+element normal urgent {
+    text-color: @lightred;
+}
+element alternate normal {
+}
+element alternate active {
+    text-color: @lightblue;
+}
+element alternate urgent {
+    text-color: @lightred;
+}
+element selected active {
+    background-color: @lightblue;
+    text-color: @dark;
+}
+element selected urgent {
+    background-color: @lightred;
+    text-color: @dark;
+}
+error-message {
+    expand: true;
+    background-color: @black;
+	text-color: #f00;
+    border-color: darkred;
+    border: 2px;
+    padding: 1em;
+}
