@@ -4,9 +4,9 @@
     dark: #282c34;
 	border-color: #1d1f21;
     // Black
-    black:       #272a34;
-    blackop:     #272a34ef;
-    lightblack:  #272a34;
+    black:       #252d37;
+    blackop:     #252d37ef;
+    lightblack:  #252d37;
     //
     // Red
     red:         #ff6c6b;
@@ -40,10 +40,10 @@
     highlight:  bold #ffffff;
 }
 window {
-    height:   100%;
-    width:    30em;
-    location: west;
-    anchor:   west;
+    height:   15em;
+    width:    28em;
+    location: center;
+    anchor:   center;
     text-color: @lightwhite;
 }
 mode-switcher {
