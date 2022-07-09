@@ -68,12 +68,12 @@ draw_bold_text_with_bright_colors: true
 colors:
   # Default colors
   primary:
-    background: '0x252d37'
+    background: '0x21242b'
     foreground: '0xbbc2cf'
 
   # Normal colors
   normal:
-    black:   '0x282c34'
+    black:   '0x21242b'
     red:     '0xff6c6b'
     green:   '0x98be65'
     yellow:  '0xecbe7b'

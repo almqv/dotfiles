@@ -2,7 +2,7 @@
 #compositing-foreground = over
 
 [colors]
-background = #252d37
+background = #21242b
 foreground = #fefefe
 foreground2 = #77fefefe
 line = #bbb
@@ -24,7 +24,7 @@ black = #32344a
 red = #f7768c
 green = #9ece6a
 yellow = #e0af68
-blue = #7aa2f7
+blue = #aabbff
 magenta = #ad8ee6
 cyan = #449dab
 white = #787c99
@@ -46,7 +46,7 @@ monitor = ${env:MONITOR}
 # override-redirect = true
 
 width = 100%
-height = 32
+height = 28
 
 # bottom = 1
 
