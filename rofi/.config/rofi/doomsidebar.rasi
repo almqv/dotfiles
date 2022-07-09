@@ -4,9 +4,9 @@
     dark: #282c34;
 	border-color: #1d1f21;
     // Black
-    black:       #252d37;
-    blackop:     #252d37ef;
-    lightblack:  #252d37;
+    black:       #21242b;
+    blackop:     #21242bef;
+    lightblack:  #21242b;
     //
     // Red
     red:         #ff6c6b;
