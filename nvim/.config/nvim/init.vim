@@ -69,11 +69,11 @@ let &showbreak = '↳ '
 set laststatus=0 ruler
 set nu
 
-hi Normal guibg=NONE ctermbg=NONE
-hi StatusLine ctermbg=NONE ctermfg=NONE
-
-highlight clear LineNr
-highlight LineNr ctermfg=NONE ctermbg=NONE
+"hi Normal guibg=NONE ctermbg=NONE
+"hi StatusLine ctermbg=NONE ctermfg=NONE
+"
+"highlight clear LineNr
+"highlight LineNr ctermfg=NONE ctermbg=NONE
 
 " Airline
 let g:airline_theme='gruvbox'
