@@ -27,7 +27,7 @@ font:
   # Normal (roman) font face
   normal:
 
-    family: IBM Plex Mono
+    family: "Fira Code"
 
     # The `style` can be specified to pick a specific face.
     style: Regular
@@ -35,7 +35,7 @@ font:
   # Bold font face
   bold:
 
-    family: IBM Plex Mono
+    family: "Fira Code"
 
     # The `style` can be specified to pick a specific face.
     style: Bold
@@ -48,7 +48,7 @@ font:
   # Bold italic font face
   bold_italic:
 
-    family: IBM Plex Mono
+    family: "Fira Code"
 
     # The `style` can be specified to pick a specific face.
     style: Bold Italic
