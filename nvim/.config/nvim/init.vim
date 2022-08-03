@@ -23,20 +23,17 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'tpope/vim-markdown'
 	Plug 'ap/vim-css-color' 
 	Plug 'vim-scripts/fountain.vim'
-"	Plug 'aurieh/discord.nvim', {'do': ':UpdateRemotePlugins'} " Discord Presence
-	Plug 'joshdick/onedark.vim' " Theme
-	Plug 'rafi/awesome-vim-colorschemes'
 	Plug 'preservim/nerdtree'
 	Plug 'arakashic/chromatica.nvim'
-"	Plug 'jamestthompson3/nvim-remote-containers' " Docker Container Workspace
 	Plug 'slim-template/vim-slim'
 	Plug 'OmniSharp/omnisharp-vim'
 	Plug 'ngmy/vim-rubocop'
 	Plug 'lervag/vimtex' 
-	Plug 'mikelue/vim-maven-plugin' " Java 
+	Plug 'mikelue/vim-maven-plugin'
 	Plug 'sheerun/vim-polyglot'
-	Plug 'vim-airline/vim-airline'
-	Plug 'vim-airline/vim-airline-themes'
+"	Plug 'vim-airline/vim-airline'
+"	Plug 'vim-airline/vim-airline-themes'
+	Plug 'projekt0n/github-nvim-theme'
 call plug#end() 
 
 set nocompatible
@@ -45,7 +42,6 @@ set ignorecase
 set mouse=a	
 set hlsearch
 set autoindent	
-" set nu rnu
 filetype plugin indent on  
 syntax on		
 
@@ -68,15 +64,16 @@ let g:ruby_recommended_style = 0
 set clipboard+=unnamedplus
 
 " Theme
-colors hybrid_material
+colors github_dark
 let &showbreak = '↳ '
-" set laststatus=0 ruler
+set laststatus=0 ruler
+set nu
 
-hi Normal guibg=NONE ctermbg=NONE
-hi StatusLine ctermbg=NONE ctermfg=NONE
-
-highlight clear LineNr
-highlight LineNr ctermfg=NONE ctermbg=NONE
+"hi Normal guibg=NONE ctermbg=NONE
+"hi StatusLine ctermbg=NONE ctermfg=NONE
+"
+"highlight clear LineNr
+"highlight LineNr ctermfg=NONE ctermbg=NONE
 
 " Airline
 let g:airline_theme='gruvbox'
