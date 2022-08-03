@@ -7,3 +7,5 @@ alias ccd="pwd | xcopy"
 
 # Programs
 alias vidconvert="ffmpeg -i"
+alias vim="nvim"
+alias vi="nvim"
