@@ -61,10 +61,6 @@ modules-left = dwm
 modules-center = title
 modules-right = cmus pulseaudio wlan battery time date
 
-#################################################
-#                   MODULES			#
-#################################################
-
 [module/dwm]
 type = internal/dwm
 format = <label-tags> <label-layout> <label-floating> 
@@ -138,9 +134,9 @@ label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
 # urgent = Unselected tag with window that has urgency hint set
-label-urgent = %name%
-label-urgent-background = ${colors.selected}
-label-urgent-foreground = ${colors.foreground}
+label-urgent = [%name%]
+label-urgent-background = ${colors.background}
+label-urgent-foreground = ${colors.red}
 label-urgent-padding = 1
 
 # empty = Unselected and unoccupied tag
