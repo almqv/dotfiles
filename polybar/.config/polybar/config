@@ -2,7 +2,7 @@
 #compositing-foreground = over
 
 [colors]
-background = #21242b
+background = #24292e
 foreground = #fefefe
 foreground2 = #77fefefe
 line = #bbb
@@ -34,7 +34,7 @@ white = #787c99
 # margin-bottom = 0
 
 [bar/top]
-font-0 = "IBM Plex Mono:pixelsize=11;1"
+font-0 = "IBM Plex Mono:pixelsize=9;1"
 font-1 = "siji:pixelsize=12;1"
 font-2 = "Font Awesome 5 Free Regular:size=12;1"
 font-3 = "Font Awesome 5 Free Solid:size=12;1"
@@ -46,15 +46,15 @@ monitor = ${env:MONITOR}
 # override-redirect = true
 
 width = 100%
-height = 36
+height = 28
 
 # bottom = 1
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-padding-left = 2
-padding-right = 2
+padding-left = 16 
+padding-right = 16 
 module-margin = 1
 
 modules-left = dwm 
