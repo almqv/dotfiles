@@ -2,7 +2,7 @@
 #compositing-foreground = over
 
 [colors]
-background = #24292e
+background = #0024292e
 foreground = #fefefe
 foreground2 = #77fefefe
 line = #bbb
@@ -34,7 +34,7 @@ white = #787c99
 # margin-bottom = 0
 
 [bar/top]
-font-0 = "IBM Plex Mono:pixelsize=9;1"
+font-0 = "Fira Code:pixelsize=9:weight=medium;1"
 font-1 = "siji:pixelsize=12;1"
 font-2 = "Font Awesome 5 Free Regular:size=12;1"
 font-3 = "Font Awesome 5 Free Solid:size=12;1"
@@ -53,11 +53,11 @@ height = 28
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-padding-left = 2
-padding-right = 2
+padding-left = 4
+padding-right = 4
 module-margin = 1
 
-modules-left = dwm 
+modules-left = dwm
 modules-center = title
 modules-right = cmus pulseaudio wlan battery time date
 
@@ -290,7 +290,7 @@ type = internal/xwindow
 format-background = ${colors.background}
 format-foreground = #f0c674
 format-padding = 1
-label-maxlen = 50
+label-maxlen = 100
 
 [module/battery]
 type = internal/battery
