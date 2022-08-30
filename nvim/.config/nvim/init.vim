@@ -34,6 +34,8 @@ call plug#begin('~/.config/nvim/plugged')
 "	Plug 'vim-airline/vim-airline'
 "	Plug 'vim-airline/vim-airline-themes'
 	Plug 'projekt0n/github-nvim-theme'
+	Plug 'pantharshit00/vim-prisma'
+	Plug 'neovimhaskell/haskell-vim'
 call plug#end() 
 
 set nocompatible
