@@ -34,6 +34,8 @@ call plug#begin('~/.config/nvim/plugged')
 "	Plug 'vim-airline/vim-airline'
 "	Plug 'vim-airline/vim-airline-themes'
 	Plug 'projekt0n/github-nvim-theme'
+	Plug 'axelf4/vim-haskell'
+	"Plug 'neovimhaskell/haskell-vim'
 call plug#end() 
 
 set nocompatible
@@ -69,11 +71,11 @@ let &showbreak = '↳ '
 set laststatus=0 ruler
 set nu
 
-"hi Normal guibg=NONE ctermbg=NONE
-"hi StatusLine ctermbg=NONE ctermfg=NONE
-"
-"highlight clear LineNr
-"highlight LineNr ctermfg=NONE ctermbg=NONE
+hi Normal guibg=NONE ctermbg=NONE
+hi StatusLine ctermbg=NONE ctermfg=NONE
+
+highlight clear LineNr
+highlight LineNr ctermfg=NONE ctermbg=NONE
 
 " Airline
 let g:airline_theme='gruvbox'
