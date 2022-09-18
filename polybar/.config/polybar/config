@@ -2,8 +2,8 @@
 #compositing-foreground = over
 
 [colors]
-background = #0024292e
-foreground = #fefefe
+background = #00141414
+foreground = #efefef
 foreground2 = #77fefefe
 line = #bbb
 border = #bbb
@@ -51,19 +51,41 @@ height = 28
 # bottom = 1
 
 background = ${colors.background}
-foreground = ${colors.foreground}
+foreground = ${colors.foreground2}
 
-padding-left = 4
-padding-right = 4
+padding-left = 1
+padding-right = 1
 module-margin = 1
 
-modules-left = dwm
-modules-center = title
-modules-right = cmus pulseaudio wlan battery time date
+#modules-left = dwm
+#modules-center = title
+#modules-right = cmus pulseaudio wlan battery time date
+modules-left = date time pulseaudio dwm-layout dwm-floating cmus 
+modules-center = dwm-tags
+modules-right = 
 
-[module/dwm]
+[module/dwm-layout]
 type = internal/dwm
-format = <label-tags> <label-layout> <label-floating> 
+format = <label-layout>
+
+# Symbol of current layout
+# Available tokens:
+#   %symbol%
+label-layout = %symbol%
+label-layout-padding = 0
+label-layout-foreground = ${colors.foreground2}
+label-layout-background = ${colors.background}
+
+[module/dwm-floating]
+type = internal/dwm
+format = <label-floating>
+
+# Text to show when currently focused window is floating
+label-floating = ~
+
+[module/dwm-tags]
+type = internal/dwm
+format = [<label-tags>]
 # Path to dwm socket (default: /tmp/dwm.sock)
 # socket-path = /tmp/dwm.sock
 
@@ -100,17 +122,6 @@ label-title-padding = 1
 label-title-foreground = ${colors.primary}
 label-title-maxlen = 50
 
-# Symbol of current layout
-# Available tokens:
-#   %symbol%
-label-layout = %symbol%
-label-layout-padding = 1
-label-layout-foreground = ${colors.foreground}
-label-layout-background = ${colors.background}
-
-# Text to show when currently focused window is floating
-label-floating = ~
-
 # States: focused, unfocused, visible, urgent, empty
 # Available tokens:
 #   %name%
@@ -129,7 +140,7 @@ label-unfocused-padding = 1
 # visible = Unselected tag, but occupied tag on any monitor
 label-visible = %name%
 label-visible-background = ${self.label-focused-background}
-label-visible-foreground = ${colors.foreground}
+label-visible-foreground = ${colors.foreground2}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
@@ -141,10 +152,10 @@ label-urgent-padding = 1
 
 # empty = Unselected and unoccupied tag
 # This can be set to an empty string to hide empty tags
-label-empty = %name%
+label-empty = 
 label-empty-background = ${colors.background}
 label-empty-foreground = ${colors.foreground2}
-label-empty-padding = 1
+label-empty-padding = 0
 
 [module/cmus]
 type = custom/script
@@ -162,7 +173,8 @@ scroll-down = cmus-remote --volume -5%
 label-font = 1
 format = <label>
 format-underline = ${colors.line}
-label =  %output%
+#label =  %output%
+label = Playing: %output%
 label-maxlen = 80
 
 [module/spotify]
@@ -229,7 +241,8 @@ format-disconnected =
 
 [module/date]
 type = internal/date
-label =  %date%  
+#label =  %date%  
+label = %date%
 date = %Y-%m-%d
 time = %H:%M:%S
 interval = 1
@@ -237,7 +250,7 @@ interval = 1
 [module/time]
 type = internal/date
 label = %time%
-time = %H:%M:%S
+time = %H%M.%S
 interval = 1
 
 [module/filesystem]
@@ -259,12 +272,16 @@ label = %output%
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume = <label-volume> <bar-volume>
-label-volume =  %percentage%%
+#format-volume = <label-volume> <bar-volume>
+format-volume = <label-volume>
+#label-volume =  %percentage%%
+label-volume = %percentage%%
 label-volume-foreground = ${root.foreground}
 
-format-muted = <label-muted> <bar-volume>
-label-muted =  %percentage%%
+#format-muted = <label-muted> <bar-volume>
+format-muted = <label-muted>
+#label-muted =  %percentage%%
+label-muted = %percentage%%
 label-muted-foreground = ${colors.red}
 
 bar-volume-width = 10
@@ -276,7 +293,7 @@ bar-volume-foreground-4 = ${colors.yellow}
 bar-volume-foreground-5 = ${colors.yellow}
 bar-volume-foreground-6 = ${colors.red}
 bar-volume-gradient = false
-bar-volume-indicator = >
+bar-volume-indicator = 
 bar-volume-indicator-font = 0
 bar-volume-fill = ─
 bar-volume-fill-font = 0
