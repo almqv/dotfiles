@@ -2,8 +2,8 @@
 #compositing-foreground = over
 
 [colors]
-background = #21242b
-foreground = #fefefe
+background = #00141414
+foreground = #efefef
 foreground2 = #77fefefe
 line = #bbb
 border = #bbb
@@ -34,7 +34,7 @@ white = #787c99
 # margin-bottom = 0
 
 [bar/top]
-font-0 = "IBM Plex Mono:pixelsize=11;1"
+font-0 = "Fira Code:pixelsize=9:weight=medium;1"
 font-1 = "siji:pixelsize=12;1"
 font-2 = "Font Awesome 5 Free Regular:size=12;1"
 font-3 = "Font Awesome 5 Free Solid:size=12;1"
@@ -46,28 +46,46 @@ monitor = ${env:MONITOR}
 # override-redirect = true
 
 width = 100%
-height = 36
+height = 28
 
 # bottom = 1
 
 background = ${colors.background}
-foreground = ${colors.foreground}
+foreground = ${colors.foreground2}
 
-padding-left = 2
-padding-right = 2
+padding-left = 1
+padding-right = 1
 module-margin = 1
 
-modules-left = dwm 
-modules-center = title
-modules-right = cmus pulseaudio wlan battery time date
+#modules-left = dwm
+#modules-center = title
+#modules-right = cmus pulseaudio wlan battery time date
+modules-left = date time pulseaudio dwm-layout dwm-floating cmus 
+modules-center = dwm-tags
+modules-right = 
 
-#################################################
-#                   MODULES			#
-#################################################
-
-[module/dwm]
+[module/dwm-layout]
 type = internal/dwm
-format = <label-tags> <label-layout> <label-floating> 
+format = <label-layout>
+
+# Symbol of current layout
+# Available tokens:
+#   %symbol%
+label-layout = %symbol%
+label-layout-padding = 0
+label-layout-foreground = ${colors.foreground2}
+label-layout-background = ${colors.background}
+
+[module/dwm-floating]
+type = internal/dwm
+format = <label-floating>
+
+# Text to show when currently focused window is floating
+label-floating = ~
+
+[module/dwm-tags]
+type = internal/dwm
+format = [<label-tags>]
 # Path to dwm socket (default: /tmp/dwm.sock)
 # socket-path = /tmp/dwm.sock
 
@@ -104,17 +122,6 @@ label-title-padding = 1
 label-title-foreground = ${colors.primary}
 label-title-maxlen = 50
 
-# Symbol of current layout
-# Available tokens:
-#   %symbol%
-label-layout = %symbol%
-label-layout-padding = 1
-label-layout-foreground = ${colors.foreground}
-label-layout-background = ${colors.background}
-
-# Text to show when currently focused window is floating
-label-floating = ~
-
 # States: focused, unfocused, visible, urgent, empty
 # Available tokens:
 #   %name%
@@ -133,22 +140,22 @@ label-unfocused-padding = 1
 # visible = Unselected tag, but occupied tag on any monitor
 label-visible = %name%
 label-visible-background = ${self.label-focused-background}
-label-visible-foreground = ${colors.foreground}
+label-visible-foreground = ${colors.foreground2}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
 # urgent = Unselected tag with window that has urgency hint set
-label-urgent = %name%
-label-urgent-background = ${colors.selected}
-label-urgent-foreground = ${colors.foreground}
+label-urgent = [%name%]
+label-urgent-background = ${colors.background}
+label-urgent-foreground = ${colors.red}
 label-urgent-padding = 1
 
 # empty = Unselected and unoccupied tag
 # This can be set to an empty string to hide empty tags
-label-empty = %name%
+label-empty = 
 label-empty-background = ${colors.background}
 label-empty-foreground = ${colors.foreground2}
-label-empty-padding = 1
+label-empty-padding = 0
 
 [module/cmus]
 type = custom/script
@@ -166,7 +173,8 @@ scroll-down = cmus-remote --volume -5%
 label-font = 1
 format = <label>
 format-underline = ${colors.line}
-label =  %output%
+#label =  %output%
+label = Playing: %output%
 label-maxlen = 80
 
 [module/spotify]
@@ -233,7 +241,8 @@ format-disconnected =
 
 [module/date]
 type = internal/date
-label =  %date%  
+#label =  %date%  
+label = %date%
 date = %Y-%m-%d
 time = %H:%M:%S
 interval = 1
@@ -241,7 +250,7 @@ interval = 1
 [module/time]
 type = internal/date
 label = %time%
-time = %H:%M:%S
+time = %H%M.%S
 interval = 1
 
 [module/filesystem]
@@ -263,12 +272,16 @@ label = %output%
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume = <label-volume> <bar-volume>
-label-volume =  %percentage%%
+#format-volume = <label-volume> <bar-volume>
+format-volume = <label-volume>
+#label-volume =  %percentage%%
+label-volume = %percentage%%
 label-volume-foreground = ${root.foreground}
 
-format-muted = <label-muted> <bar-volume>
-label-muted =  %percentage%%
+#format-muted = <label-muted> <bar-volume>
+format-muted = <label-muted>
+#label-muted =  %percentage%%
+label-muted = %percentage%%
 label-muted-foreground = ${colors.red}
 
 bar-volume-width = 10
@@ -280,7 +293,7 @@ bar-volume-foreground-4 = ${colors.yellow}
 bar-volume-foreground-5 = ${colors.yellow}
 bar-volume-foreground-6 = ${colors.red}
 bar-volume-gradient = false
-bar-volume-indicator = >
+bar-volume-indicator = 
 bar-volume-indicator-font = 0
 bar-volume-fill = ─
 bar-volume-fill-font = 0
@@ -294,7 +307,7 @@ type = internal/xwindow
 format-background = ${colors.background}
 format-foreground = #f0c674
 format-padding = 1
-label-maxlen = 50
+label-maxlen = 100
 
 [module/battery]
 type = internal/battery
