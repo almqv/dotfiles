@@ -31,12 +31,10 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'lervag/vimtex' 
 	Plug 'mikelue/vim-maven-plugin'
 	Plug 'sheerun/vim-polyglot'
-"	Plug 'vim-airline/vim-airline'
-"	Plug 'vim-airline/vim-airline-themes'
 	Plug 'projekt0n/github-nvim-theme'
 	Plug 'pantharshit00/vim-prisma'
 	Plug 'axelf4/vim-haskell'
-	"Plug 'neovimhaskell/haskell-vim'
+	Plug 'ellisonleao/gruvbox.nvim'
 call plug#end() 
 
 set nocompatible
@@ -67,7 +65,8 @@ let g:ruby_recommended_style = 0
 set clipboard+=unnamedplus
 
 " Theme
-colors github_dark
+set background=dark
+colors gruvbox 
 let &showbreak = '↳ '
 set laststatus=0 ruler
 set nu

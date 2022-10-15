@@ -1,12 +1,12 @@
 * {
-    text-color:  #f6f6f6;
+    text-color:  #eddbb2;
     background-color:  rgba(1,0,0,0);
-    dark: #282c34;
+    dark: #1d2021;
 	border-color: #1d1f21;
     // Black
-    black:       #282c34;
-    blackop:     #282c34ef;
-    lightblack:  #282c34;
+    black:       #1d2021;
+    blackop:     #1d2021ef;
+    lightblack:  #1d2021;
     //
     // Red
     red:         #ff6c6b;
