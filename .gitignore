@@ -1,1 +1,9 @@
+# (n)Vim junk
 nvim/.config/nvim/plugged/
+
+# XMonad junk
+xmonad/.xmonad/*.hi
+xmonad/.xmonad/*.errors
+xmonad/.xmonad/*.o
+xmonad/.xmonad/xmonad-x86_64-linux
+xmonad/.xmonad/build-x86_64-linux/

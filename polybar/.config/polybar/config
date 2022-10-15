@@ -2,9 +2,9 @@
 #compositing-foreground = over
 
 [colors]
-background = #00141414
-foreground = #efefef
-foreground2 = #77fefefe
+background = #141414
+foreground = #ebdbb2
+foreground2 = #77ebdbb2
 line = #bbb
 border = #bbb
 accent = #434d5e
@@ -35,12 +35,13 @@ white = #787c99
 
 [bar/top]
 font-0 = "Fira Code:pixelsize=9:weight=medium;1"
-font-1 = "siji:pixelsize=12;1"
-font-2 = "Font Awesome 5 Free Regular:size=12;1"
-font-3 = "Font Awesome 5 Free Solid:size=12;1"
-font-4 = "Font Awesome 5 Brands Regular:size=12;1"
+#font-1 = "Feather:pixelsize:12;1"
+#font-1 = "siji:pixelsize=12;1"
+font-1 = "Font Awesome:size=12;1"
 
 monitor = ${env:MONITOR}
+
+line-size = 2
 
 # fixed-center = true
 # override-redirect = true
@@ -60,9 +61,9 @@ module-margin = 1
 #modules-left = dwm
 #modules-center = title
 #modules-right = cmus pulseaudio wlan battery time date
-modules-left = date time pulseaudio dwm-layout dwm-floating cmus 
-modules-center = dwm-tags
-modules-right = 
+modules-left = date time pulseaudio 
+modules-center = workspaces
+modules-right = cmus
 
 [module/dwm-layout]
 type = internal/dwm
@@ -284,7 +285,7 @@ format-muted = <label-muted>
 label-muted = %percentage%%
 label-muted-foreground = ${colors.red}
 
-bar-volume-width = 10
+bar-volume-width = 5
 bar-volume-foreground-0 = ${colors.green}
 bar-volume-foreground-1 = ${colors.green}
 bar-volume-foreground-2 = ${colors.green}
@@ -334,3 +335,47 @@ animation-charging-1 = 
 animation-charging-2 = 
 animation-charging-foreground = ${colors.foreground}
 animation-charging-framerate = 750
+
+[module/workspaces]
+type = internal/xworkspaces
+
+# %index% = Index of the workspace
+# %name% = Name of the workspace
+# %icon% = Icon of the workspace
+
+pin-workspaces = true
+enable-click = true
+enable-scroll = true
+
+format = <label-state>
+label-monitor = %index%
+label-monitor-underline = ${colors.cyan}
+
+label-active = %index%
+label-active-foreground = ${colors.blue}
+label-active-underline =  ${colors.blue}
+label-active-padding = 1
+
+label-occupied = %index%
+label-occupied-foreground = ${colors.foreground2}
+label-occupied-padding = 1
+
+label-urgent = %index%
+label-urgent-foreground = ${colors.red}
+label-urgent-padding = 1
+
+label-empty = 
+label-empty-foreground = ${colors.foreground2}
+label-empty-padding = 0
+
+icon-0 = 1;
+icon-1 = 2;
+icon-2 = 3;
+icon-3 = 4;
+icon-4 = 5;
+icon-5 = 6;
+icon-6 = 7;
+icon-7 = 8;
+icon-8 = 9;
+icon-9 = 10;
+icon-default = 
