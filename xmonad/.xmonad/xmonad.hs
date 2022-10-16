@@ -81,8 +81,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) =
   , ((modm, xK_b), spawn "firefox")
     -- screenshot
   , ((modm, xK_Print), spawn "flameshot gui")
-    -- launch gmrun
-  , ((modm .|. shiftMask, xK_p), spawn "gmrun")
+    -- lockscreen
+  , ((modm .|. shiftMask, xK_l), spawn "betterlockscreen --lock")
     -- close focused window
   , ((modm .|. shiftMask, xK_q), kill)
      -- Rotate through the available layout algorithms
@@ -177,7 +177,7 @@ myLayout = avoidStruts $ tiled ||| Mirror tiled ||| Full
     -- The default number of windows in the master pane
     nmaster = 1
     -- Default proportion of screen occupied by master pane
-    ratio = 3 / 4
+    ratio = 29/50
     -- Percent of screen to increment by when resizing panes
     delta = 3 / 100
 
