@@ -18,6 +18,8 @@ import XMonad.Hooks.EwmhDesktops (ewmh)
 import XMonad.Hooks.InsertPosition
 import XMonad.Layout.Fullscreen (fullscreenSupport)
 import XMonad.Layout.IndependentScreens (withScreens)
+import XMonad.Layout.NoBorders (noBorders)
+import XMonad.Layout.ToggleLayouts (ToggleLayout(Toggle))
 import qualified XMonad.StackSet as W
 import XMonad.Util.Run (spawnPipe)
 
@@ -115,6 +117,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) =
   , ((modm, xK_comma), sendMessage (IncMasterN 1))
     -- Deincrement the number of windows in the master area
   , ((modm, xK_period), sendMessage (IncMasterN (-1)))
+    -- Toggle fullscreen
+  , ((modm .|. shiftMask, xK_f), toggleFull)
     -- Toggle the status bar gap
     -- Use this binding with avoidStruts from Hooks.ManageDocks.
     -- See also the statusBar function from Hooks.DynamicLog.
@@ -170,14 +174,21 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) =
 -- The available layouts.  Note that each layout is separated by |||,
 -- which denotes layout choice.
 --
-myLayout = avoidStruts $ tiled ||| Mirror tiled ||| Full
+toggleFull =
+  withFocused $ \wid -> do
+    floats <- gets (W.floating . windowset)
+    if M.member wid floats
+      then withFocused $ windows . W.sink
+      else withFocused $ windows . (flip W.float $ W.RationalRect 0 0 1 1)
+
+myLayout = avoidStruts $ tiled ||| Mirror tiled ||| noBorders Full
   where
     -- default tiling algorithm partitions the screen into two panes
     tiled = Tall nmaster delta ratio
     -- The default number of windows in the master pane
     nmaster = 1
     -- Default proportion of screen occupied by master pane
-    ratio = 29/50
+    ratio = 29 / 50
     -- Percent of screen to increment by when resizing panes
     delta = 3 / 100
 
