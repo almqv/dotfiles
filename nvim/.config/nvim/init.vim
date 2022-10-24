@@ -19,22 +19,29 @@
 "                    .                    
 
 call plug#begin('~/.config/nvim/plugged')
+	" Misc
+	Plug 'vim-scripts/fountain.vim'
+	Plug 'preservim/nerdtree'
+	Plug 'numToStr/Comment.nvim'
+	" Lang support
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	Plug 'tpope/vim-markdown'
 	Plug 'ap/vim-css-color' 
-	Plug 'vim-scripts/fountain.vim'
-	Plug 'preservim/nerdtree'
+	Plug 'axelf4/vim-haskell'
+	Plug 'pantharshit00/vim-prisma'
+	Plug 'mikelue/vim-maven-plugin'
+	Plug 'sheerun/vim-polyglot'
+	Plug 'ngmy/vim-rubocop'
+	Plug 'lervag/vimtex' 
 	Plug 'arakashic/chromatica.nvim'
 	Plug 'slim-template/vim-slim'
 	Plug 'OmniSharp/omnisharp-vim'
-	Plug 'ngmy/vim-rubocop'
-	Plug 'lervag/vimtex' 
-	Plug 'mikelue/vim-maven-plugin'
-	Plug 'sheerun/vim-polyglot'
-	Plug 'projekt0n/github-nvim-theme'
-	Plug 'pantharshit00/vim-prisma'
-	Plug 'axelf4/vim-haskell'
+	" Themes
 	Plug 'ellisonleao/gruvbox.nvim'
+	Plug 'projekt0n/github-nvim-theme'
+	" Lua Line
+	Plug 'nvim-lualine/lualine.nvim'
+	Plug 'kyazdani42/nvim-web-devicons'
 call plug#end() 
 
 set nocompatible
@@ -69,7 +76,7 @@ set background=dark
 colors gruvbox 
 let &showbreak = '↳ '
 set laststatus=0 ruler
-set nu
+set rnu nu
 
 hi Normal guibg=NONE ctermbg=NONE
 hi StatusLine ctermbg=NONE ctermfg=NONE
@@ -109,3 +116,10 @@ let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
 " following line. The default is usually fine and is the symbol "\".
 let maplocalleader = ","
 set title
+
+
+" Lua crap
+lua << END
+require('lualine').setup()
+require('Comment').setup()
+END

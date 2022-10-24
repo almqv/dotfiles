@@ -3,7 +3,7 @@ env:
   TERM: xterm-256color
 
 window:
-  opacity: 0.9
+  background_opacity: 1.0
   padding:
     x: 8
     y: 8
@@ -27,15 +27,15 @@ font:
   # Normal (roman) font face
   normal:
 
-    family: Fira Code
+    family: Consolas ligaturized v2
 
     # The `style` can be specified to pick a specific face.
-    style: Bold
+    style: Normal
 
   # Bold font face
   bold:
 
-    family: Fira Code
+    family: Consolas ligaturized v2
 
     # The `style` can be specified to pick a specific face.
     style: Bold
@@ -48,13 +48,13 @@ font:
   # Bold italic font face
   bold_italic:
 
-    family: Fira Code
+    family: Consolas ligaturized v2
 
     # The `style` can be specified to pick a specific face.
     style: Bold Italic
 
   # Point size
-  size: 9
+  size: 10
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
