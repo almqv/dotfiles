@@ -177,7 +177,7 @@ toggleFull =
     floats <- gets (W.floating . windowset)
     if M.member wid floats
       then withFocused $ windows . W.sink
-      else withFocused $ windows . (flip W.float $ W.RationalRect 0 0 1 1)
+      else withFocused $ windows . flip W.float (W.RationalRect 0 0 1 1)
 
 myLayout = avoidStruts $ tiled ||| Mirror tiled ||| noBorders Full
   where
