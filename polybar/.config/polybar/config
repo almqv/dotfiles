@@ -2,7 +2,7 @@
 #compositing-foreground = over
 
 [colors]
-background = #141414
+background = #222222
 foreground = #ebdbb2
 foreground2 = #77ebdbb2
 line = #bbb
