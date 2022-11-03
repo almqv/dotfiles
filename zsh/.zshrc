@@ -111,3 +111,8 @@ export VIDPLAY=vlc
 export IMGVIEW=eog
 export BROWSER=qutebrowser
 export EDITOR=nvim
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
