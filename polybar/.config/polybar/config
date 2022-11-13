@@ -56,7 +56,7 @@ modules-right = pulseaudio cmus uptime
 
 [module/uptime]
 type = "custom/script"
-exec = awk '{print int($1/3600)":"int(($1%3600)/60)":"int($1%60)}' /proc/uptime
+exec = awk '{print int($1/3600)"h "int(($1%3600)/60)"m "}' /proc/uptime
 interval = 1
 label = uptime: %output%
 format-underline = ${colors.foreground2}
