@@ -1,47 +1,49 @@
 * {
-    text-color:  #eddbb2;
+    text-color:  #ebdbb2;
     background-color:  rgba(1,0,0,0);
-    dark: #1d2021;
+    dark: #282828;
 	border-color: #1d1f21;
     // Black
-    black:       #1d2021;
-    blackop:     #1d2021ef;
-    lightblack:  #1d2021;
+    black:       #222222;
+    blackop:     #222222aa;
+    lightblack:  #222222;
     //
     // Red
-    red:         #ff6c6b;
-    lightred:    #ff6c6b;
+    red:         #cc241d;
+    lightred:    #cc241d;
     //
     // Green
-    green:       #98be65;
-    lightgreen:  #98be65;
+    green:       #98971a;
+    lightgreen:  #98971a;
     //
     // Yellow
-    yellow:      #ecbe7b;
-    lightyellow: #ecbe7b;
+    yellow:      #d79921;
+    lightyellow: #d79921;
     //
     // Blue
-    blue:      #5f819d;
-    lightblue: #5f819d;
+    blue:      #458588;
+    lightblue: #458588;
     //
     // Magenta
-    magenta:      #c678dd;
-    lightmagenta: #c678dd;
+    magenta:      #b16286;
+    lightmagenta: #b16286;
     //
     // Cyan
-    cyan:      #5f819d;
-    lightcyan: #5f819d;
+    cyan:      #458588;
+    lightcyan: #458588;
     //
     // White
-    white:      #bbc2cf;
-    lightwhite: #bbc2cf;
+    white:      #a89984;
+    lightwhite: #a89984;
     //
     // Bold, Italic, Underline
     highlight:  bold #ffffff;
 }
 window {
-    height:   15em;
-    width:    28em;
+    height:   14em;
+    width:    24em;
+	/* height: 100%; */
+	/* width: 100%; */
     location: center;
     anchor:   center;
     text-color: @lightwhite;
@@ -58,7 +60,7 @@ button selected {
 inputbar {
     background-color: @black;
     text-color: @lightgreen;
-    padding: 5px;
+	padding: 0.4em 1em;
 	height: 32px;
 }
 entry {
@@ -67,6 +69,7 @@ prompt {
 	margin: 0 0.4em 0 0;
 }
 mainbox {
+	/* padding: 0.2em; */
     expand: true;
     background-color: @blackop;
     spacing: 1em;

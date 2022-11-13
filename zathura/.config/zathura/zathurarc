@@ -1,8 +1,7 @@
-set recolor true
-set render-loading false
+set font                    "Fira Code 12"
+set selection-notification	"true"
+set selection-clipboard		"clipboard"
+set adjust-open			    "width"
 
-set inputbar-bg "#272a34" 
-set inputbar-fg "#ffffff"
-set recolor-darkcolor "#ffffff"
-set recolor-lightcolor "#272a34"
+include gruvbox-dark
 

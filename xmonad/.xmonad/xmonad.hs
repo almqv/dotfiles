@@ -16,15 +16,17 @@ import XMonad.Hooks.EwmhDesktops (ewmh)
 import XMonad.Hooks.InsertPosition
 import XMonad.Layout.Fullscreen (fullscreenSupport)
 import XMonad.Layout.IndependentScreens (withScreens)
-import XMonad.Layout.NoBorders (noBorders)
 import XMonad.Layout.ToggleLayouts (ToggleLayout(Toggle))
 import qualified XMonad.StackSet as W
 import XMonad.Util.Run (spawnPipe)
+import XMonad.Layout.NoBorders (noBorders, smartBorders)
 
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
 --
+-- myTerminal = "alacritty -e tmux"
 myTerminal = "alacritty"
+myTmux = myTerminal ++ " -e tmux"
 
 -- Whether focus follows the mouse pointer.
 myFocusFollowsMouse :: Bool
@@ -69,6 +71,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) =
   M.fromList $
     -- launch a terminal
   [ ((modm, xK_Return), spawn $ XMonad.terminal conf)
+    -- Launch a terminal with tmux
+  , ((modm, xK_Shift_R), spawn myTmux)
     -- launch rofi app launcher
   , ((modm, xK_d), spawn "rofi -show drun")
     -- launch rofi ssh
@@ -179,7 +183,7 @@ toggleFull =
       then withFocused $ windows . W.sink
       else withFocused $ windows . flip W.float (W.RationalRect 0 0 1 1)
 
-myLayout = avoidStruts $ tiled ||| Mirror tiled ||| noBorders Full
+myLayout = smartBorders . avoidStruts $ noBorders Full ||| tiled ||| Mirror tiled 
   where
     -- default tiling algorithm partitions the screen into two panes
     tiled = Tall nmaster delta ratio

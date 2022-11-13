@@ -12,14 +12,6 @@ accent2 = #637291
 selected = #81a2be
 focused = #f0c674
 
-#background = ${xrdb:color0:#222}
-#foreground = ${xrdb:color7:#222}
-foreground-alt = ${xrdb:color7:#222}
-primary = ${xrdb:color4:#222}
-secondary = ${xrdb:color2:#222}
-alert = #2f2f2ffa
-special = ${xrdb:color12:#222}
-
 black = #32344a
 red = #f7768c
 green = #9ece6a
@@ -35,9 +27,9 @@ white = #787c99
 
 [bar/top]
 font-0 = "Fira Code:pixelsize=9:weight=medium;1"
-#font-1 = "Feather:pixelsize:12;1"
-#font-1 = "siji:pixelsize=12;1"
-font-1 = "Font Awesome:size=12;1"
+font-1 = "Feather:pixelsize:12;1"
+font-2 = "siji:pixelsize=12;1"
+font-3 = "Font Awesome:size=12;1"
 
 monitor = ${env:MONITOR}
 
@@ -47,9 +39,9 @@ line-size = 2
 # override-redirect = true
 
 width = 100%
-height = 28
+height = 32
 
-bottom = 1
+bottom = 0
 
 background = ${colors.background}
 foreground = ${colors.foreground2}
@@ -58,105 +50,16 @@ padding-left = 1
 padding-right = 1
 module-margin = 1
 
-#modules-left = dwm
-#modules-center = title
-#modules-right = cmus pulseaudio wlan battery time date
-modules-left = date time pulseaudio 
-modules-center = workspaces
-modules-right = cmus
+modules-left = date time filesystem 
+modules-center = workspaces title
+modules-right = pulseaudio cmus uptime
 
-[module/dwm-layout]
-type = internal/dwm
-format = <label-layout>
-
-# Symbol of current layout
-# Available tokens:
-#   %symbol%
-label-layout = %symbol%
-label-layout-padding = 0
-label-layout-foreground = ${colors.foreground2}
-label-layout-background = ${colors.background}
-
-[module/dwm-floating]
-type = internal/dwm
-format = <label-floating>
-
-# Text to show when currently focused window is floating
-label-floating = ~
-
-[module/dwm-tags]
-type = internal/dwm
-format = [<label-tags>]
-# Path to dwm socket (default: /tmp/dwm.sock)
-# socket-path = /tmp/dwm.sock
-
-# Left-click to view tag, right-click to toggle tag view
-enable-tags-click = true
-# Scroll to cycle between available tags
-enable-tags-scroll = true
-# If true and enable-tags-scroll = true, scrolling will view all tags regardless if occupied
-tags-scroll-empty = false
-# If true and enable-tags-scroll = true, scrolling will cycle through tags backwards
-tags-scroll-reverse = true
-# If true and enable-tags-scroll = true, wrap active tag when scrolling
-tags-scroll-wrap = true
-# Left-click to set secondary layout, right-click to switch to previous layout
-enable-layout-click = true
-# Scroll to cycle between available layouts
-enable-layout-scroll = false
-# Wrap when scrolling and reaching beginning/end of layouts
-layout-scroll-wrap = false
-# Reverse scroll direction
-layout-scroll-reverse = false
-
-# If enable-layout-click = true, clicking the layout symbol will switch to this layout
-secondary-layout-symbol = [M]
-
-# Separator in between shown tags
-# label-separator = -
-
-# Title of currently focused window
-# Available tokens:
-#   %title%
-label-title = %title%
-label-title-padding = 1
-label-title-foreground = ${colors.primary}
-label-title-maxlen = 50
-
-# States: focused, unfocused, visible, urgent, empty
-# Available tokens:
-#   %name%
-
-# focused = Selected tag on focused monitor
-label-focused = %name%
-label-focused-background = ${colors.background}
-label-focused-foreground = ${colors.blue}
-label-focused-underline= ${colors.line}
-label-focused-padding = 1
-
-# unfocused = Unselected tag on unselected monitor
-label-unfocused = %name%
-label-unfocused-padding = 1
-
-# visible = Unselected tag, but occupied tag on any monitor
-label-visible = %name%
-label-visible-background = ${self.label-focused-background}
-label-visible-foreground = ${colors.foreground2}
-label-visible-underline = ${self.label-focused-underline}
-label-visible-padding = ${self.label-focused-padding}
-
-# urgent = Unselected tag with window that has urgency hint set
-label-urgent = [%name%]
-label-urgent-background = ${colors.background}
-label-urgent-foreground = ${colors.red}
-label-urgent-padding = 1
-
-# empty = Unselected and unoccupied tag
-# This can be set to an empty string to hide empty tags
-label-empty = 
-label-empty-background = ${colors.background}
-label-empty-foreground = ${colors.foreground2}
-label-empty-padding = 0
+[module/uptime]
+type = "custom/script"
+exec = awk '{print int($1/3600)":"int(($1%3600)/60)":"int($1%60)}' /proc/uptime
+interval = 1
+label = uptime: %output%
+format-underline = ${colors.foreground2}
 
 [module/cmus]
 type = custom/script
@@ -173,9 +76,9 @@ scroll-down = cmus-remote --volume -5%
 
 label-font = 1
 format = <label>
-format-underline = ${colors.line}
-#label =  %output%
-label = Playing: %output%
+format-underline = ${colors.foreground2}
+label =  %output%
+# label = Playing: %output%
 label-maxlen = 80
 
 [module/spotify]
@@ -242,8 +145,8 @@ format-disconnected =
 
 [module/date]
 type = internal/date
-#label =  %date%  
-label = %date%
+label =  %date%  
+# label = %date%
 date = %Y-%m-%d
 time = %H:%M:%S
 interval = 1
@@ -257,11 +160,16 @@ interval = 1
 [module/filesystem]
 type = internal/fs
 mount-0 = /
-interval= 60
+mount-1 = /mnt
+interval= 1
 fixed-values = true
 spacing = 2
-format-mounted = <label-mounted>
-label-mounted =  %mountpoint% %free%
+format-mounted =  <label-mounted> 
+format-mounted-underline = ${colors.foreground2}
+# format-mounted-foreground = ${colors.foreground}
+format-unmounted = 
+label-mounted = %mountpoint% %free%
+label-mounted-foreground = ${colors.foreground2}
 
 [module/kernel]
 type = custom/script
@@ -275,14 +183,14 @@ type = internal/pulseaudio
 
 #format-volume = <label-volume> <bar-volume>
 format-volume = <label-volume>
-#label-volume =  %percentage%%
-label-volume = %percentage%%
+label-volume =  %percentage%%
+# label-volume = %percentage%%
 label-volume-foreground = ${root.foreground}
 
 #format-muted = <label-muted> <bar-volume>
 format-muted = <label-muted>
-#label-muted =  %percentage%%
-label-muted = %percentage%%
+label-muted =  %percentage%%
+# label-muted = %percentage%%
 label-muted-foreground = ${colors.red}
 
 bar-volume-width = 5
@@ -308,7 +216,7 @@ type = internal/xwindow
 format-background = ${colors.background}
 format-foreground = #f0c674
 format-padding = 1
-label-maxlen = 100
+label-maxlen = 40
 
 [module/battery]
 type = internal/battery
@@ -342,6 +250,7 @@ type = internal/xworkspaces
 # %index% = Index of the workspace
 # %name% = Name of the workspace
 # %icon% = Icon of the workspace
+# %nwin% = Number of windows in workspace
 
 pin-workspaces = true
 enable-click = true
@@ -349,11 +258,12 @@ enable-scroll = true
 
 format = <label-state>
 label-monitor = %index%
-label-monitor-underline = ${colors.cyan}
+label-monitor-underline = ${colors.yellow}
 
 label-active = %index%
-label-active-foreground = ${colors.blue}
-label-active-underline =  ${colors.blue}
+# label-active = %nwin%
+label-active-foreground = ${colors.yellow}
+label-active-underline =  ${colors.yellow}
 label-active-padding = 1
 
 label-occupied = %index%

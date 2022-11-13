@@ -2,8 +2,9 @@
 env:
   TERM: xterm-256color
 
+background_opacity: 0.95
+
 window:
-  background_opacity: 1.0
   padding:
     x: 8
     y: 8
@@ -54,7 +55,7 @@ font:
     style: Bold Italic
 
   # Point size
-  size: 10
+  size: 12
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -65,31 +66,10 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
 
-  #colors:
-  #  # Default colors
-  #  primary:
-  #    background: '0x18191c'
-  #    foreground: '0xafafaf'
-  #
-  #  # Normal colors
-  #  normal:
-  #    black:   '0x21242b'
-  #    red:     '0xff6c6b'
-  #    green:   '0x98be65'
-  #    yellow:  '0xecbe7b'
-  #    blue:    '0x51afef'
-  #    magenta: '0xc678dd'
-  #    cyan:    '0x46d9ff'
-  #    white:   '0xbbc2cf'
-
-# Colors (Gruvbox dark)
 colors:
   # Default colors
   primary:
-    # hard contrast: background = '0x1d2021'
-    # background: '0x1d2021'
     background: '0x222222'
-    # soft contrast: background = '0x32302f'
     foreground: '0xebdbb2'
 
   # Normal colors
