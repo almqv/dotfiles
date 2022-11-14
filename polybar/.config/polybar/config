@@ -26,7 +26,7 @@ white = #787c99
 # margin-bottom = 0
 
 [bar/top]
-font-0 = "Fira Code:pixelsize=9:weight=medium;1"
+font-0 = "Fira Code:pixelsize=11:weight=medium;1"
 font-1 = "Feather:pixelsize:12;1"
 font-2 = "siji:pixelsize=12;1"
 font-3 = "Font Awesome:size=12;1"
@@ -52,7 +52,7 @@ module-margin = 1
 
 modules-left = date time filesystem 
 modules-center = workspaces title
-modules-right = pulseaudio cmus uptime
+modules-right = cmus pulseaudio battery wlan uptime
 
 [module/uptime]
 type = "custom/script"
@@ -113,7 +113,7 @@ type = internal/network
 interface = wlp0s20f3
 interval = 3.0
 
-format-connected = <ramp-signal> <label-connected>
+format-connected = (<ramp-signal>) <label-connected>
 format-connected-underline = ${colors.foreground}
 label-connected = %essid%
 format-disconnected =
@@ -121,11 +121,11 @@ format-disconnected =
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
 
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
+ramp-signal-0 = 1
+ramp-signal-1 = 2
+ramp-signal-2 = 3
+ramp-signal-3 = 4
+ramp-signal-4 = 5
 ramp-signal-foreground = ${colors.foreground}
 
 [module/eth]
@@ -231,17 +231,17 @@ label-discharging = %percentage%%
 
 format-full = <label-full>
 format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground}
+format-full-prefix-foreground = ${colors.foreground2}
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
 ramp-capacity-2 = 
-ramp-capacity-foreground = ${colors.foreground} 
+ramp-capacity-foreground = ${colors.foreground2} 
 
 animation-charging-0 = 
 animation-charging-1 = 
 animation-charging-2 = 
-animation-charging-foreground = ${colors.foreground}
+animation-charging-foreground = ${colors.foreground2}
 animation-charging-framerate = 750
 
 [module/workspaces]

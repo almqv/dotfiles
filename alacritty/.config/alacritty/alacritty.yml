@@ -28,7 +28,7 @@ font:
   # Normal (roman) font face
   normal:
 
-    family: Consolas ligaturized v2
+    family: Fira Code
 
     # The `style` can be specified to pick a specific face.
     style: Normal
@@ -36,7 +36,7 @@ font:
   # Bold font face
   bold:
 
-    family: Consolas ligaturized v2
+    family: Fira Code
 
     # The `style` can be specified to pick a specific face.
     style: Bold
@@ -49,13 +49,13 @@ font:
   # Bold italic font face
   bold_italic:
 
-    family: Consolas ligaturized v2
+    family: Fira Code
 
     # The `style` can be specified to pick a specific face.
     style: Bold Italic
 
   # Point size
-  size: 12
+  size: 8
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
