@@ -10,5 +10,8 @@ alias vidconvert="ffmpeg -i"
 alias vim="nvim"
 alias vi="nvim"
 
+# Shortcuts
+alias todo="task"
+
 # Laptop stuff
 alias setbri="xrandr --output eDP-1 --brightness"
