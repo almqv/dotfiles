@@ -9,6 +9,7 @@ alias ccd="pwd | xclip"
 alias vidconvert="ffmpeg -i"
 alias vim="nvim"
 alias vi="nvim"
+# alias idea="export _JAVA_AWT_WM_NONREPARENTING=1 idea"
 
 # Shortcuts
 alias todo="task"
