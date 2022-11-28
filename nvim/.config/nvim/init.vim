@@ -1,22 +1,10 @@
-"		NEO- 
-"    ##############..... ##############   
-"    ##############......##############   
-"      ##########..........##########     
-"      ##########........##########       
-"      ##########.......##########        
-"      ##########.....##########..        
-"      ##########....##########.....      
-"    ..##########..##########.........    
-"  ....##########.#########.............  
-"    ..################JJJ............    
-"      ################.............      
-"      ##############.JJJ.JJJJJJJJJJ      
-"      ############...JJ...JJ..JJ  JJ     
-"      ##########....JJ...JJ..JJ  JJ      
-"      ########......JJJ..JJJ JJJ JJJ     
-"      ######    .........                
-"                  .....                  
-"                    .                    
+
+"  _   _         __     ___           
+" | \ | | ___  __\ \   / (_)_ __ ___  
+" |  \| |/ _ \/ _ \ \ / /| | '_ ` _ \ 
+" | |\  |  __/ (_) \ V / | | | | | | |
+" |_| \_|\___|\___/ \_/  |_|_| |_| |_|
+
 
 call plug#begin('~/.config/nvim/plugged')
 	" Misc
@@ -38,6 +26,7 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'OmniSharp/omnisharp-vim'
 	" Themes
 	Plug 'ellisonleao/gruvbox.nvim'
+	Plug 'sainnhe/gruvbox-material'
 	Plug 'projekt0n/github-nvim-theme'
 	" Lua Line
 	Plug 'nvim-lualine/lualine.nvim'
@@ -47,7 +36,12 @@ call plug#end()
 set nocompatible
 set showmatch 	
 set ignorecase	
+
+" Mouse
 set mouse=a	
+" map <ScrollWheelUp> <C-Y>
+" map <ScrollWheelDown> <C-E>
+
 set hlsearch
 set autoindent	
 filetype plugin indent on  
@@ -73,13 +67,18 @@ set clipboard+=unnamedplus
 
 " Theme
 set background=dark
-colors gruvbox 
+colorscheme gruvbox-material
 let &showbreak = '↳ '
 set laststatus=0 ruler
 set rnu nu
 
 hi Normal guibg=NONE ctermbg=NONE
-hi StatusLine ctermbg=NONE ctermfg=NONE
+hi EndOfBuffer guibg=NONE ctermbg=NONE
+hi TabLine guibg=NONE ctermbg=NONE
+" hi TabLineSel ctermfg=223 guibg=NONE ctermbg=NONE 
+hi TabLineFill guibg=NONE ctermbg=NONE
+
+hi StatusLine ctermbg=NONE guibg=NONE
 
 highlight clear LineNr
 highlight LineNr ctermfg=NONE ctermbg=NONE

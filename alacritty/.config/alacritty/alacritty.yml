@@ -2,7 +2,7 @@
 env:
   TERM: xterm-256color
 
-background_opacity: 0.95
+background_opacity: 1.0
 
 window:
   padding:
@@ -69,7 +69,7 @@ draw_bold_text_with_bright_colors: true
 colors:
   # Default colors
   primary:
-    background: '0x222222'
+    background: '0x181818'
     foreground: '0xebdbb2'
 
   # Normal colors
