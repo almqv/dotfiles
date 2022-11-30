@@ -1,4 +1,3 @@
-
 "  _   _         __     ___           
 " | \ | | ___  __\ \   / (_)_ __ ___  
 " |  \| |/ _ \/ _ \ \ / /| | '_ ` _ \ 
@@ -66,7 +65,7 @@ let g:ruby_recommended_style = 0
 set clipboard+=unnamedplus
 
 " Theme
-set background=dark
+" set background=dark
 colorscheme gruvbox-material
 let &showbreak = '↳ '
 set laststatus=0 ruler
