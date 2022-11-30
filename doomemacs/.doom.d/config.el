@@ -76,5 +76,5 @@
 ;; they are implemented.
 
 ;; Indentation
-(setq-default indent-tabs-mode t)
 (setq-default tab-width 4)
+(setq-default indent-tabs-mode t)
