@@ -28,3 +28,5 @@ $HOME/.config/polybar/launch &
 eval $(gnome-keyring-daemon --start)
 export SSH_AUTH_SOCK
 
+# Emacs daemon
+emacs --daemon &
