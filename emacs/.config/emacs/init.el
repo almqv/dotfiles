@@ -20,6 +20,9 @@
 ;; (setq indent-tabs-mode t
 ;;       tab-width 8)
 
+;; Disable backup files etc.
+(setq make-backup-files nil)
+
 ;; Theme
 ;; (load-theme 'deeper-blue t)
 (load-theme 'modus-vivendi t)
