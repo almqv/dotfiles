@@ -39,7 +39,7 @@
  '(custom-safe-themes
    '("7e377879cbd60c66b88e51fad480b3ab18d60847f31c435f15f5df18bdb18184" default))
  '(package-selected-packages
-   '(evil-commentary format-all auto-complete editorconfig haskell-mode counsel ivy go-mode rust-mode use-package treemacs-evil treemacs projectile doom-themes lsp-mode evil)))
+   '(elcord evil-tabs evil-commentary format-all auto-complete editorconfig haskell-mode counsel ivy go-mode rust-mode use-package treemacs-evil treemacs projectile doom-themes lsp-mode evil)))
     
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
