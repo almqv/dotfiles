@@ -1,11 +1,21 @@
-(setq user-full-name "E. Almqvist"
-      user-mail-address "elalmqvist@gmail.com")
-
 ;; Evil mode (vim binds)
 (require 'evil)
 (evil-mode t)
 
-(setq inhibit-startup-message t
+;; Projectile (Project management)
+(projectile-mode +1)
+;; Recommended keymap prefix on macOS
+;; (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+;; Recommended keymap prefix on Windows/Linux
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+
+;; Treemacs
+(with-eval-after-load 'treemacs
+  (define-key treemacs-mode-map [mouse-1] #'treemacs-single-click-expand-action))
+
+
+;; Startup stuff
+(setq inhibit-startup-message nil
       visible-bell nil) ;; Don't the bell thing
 
 ;; Remove ugly bars
@@ -13,21 +23,8 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 
-;; Enable line numbers
-(global-display-line-numbers-mode 1)
-
-;; Indentation
-;; (setq indent-tabs-mode t
-;;       tab-width 8)
-
 ;; Disable backup files etc.
 (setq make-backup-files nil)
-
-;; Theme
-;; (load-theme 'deeper-blue t)
-(load-theme 'modus-vivendi t)
-(set-face-attribute 'default nil :height 140)
-
 
 ;; Melpa
 (require 'package)
@@ -38,10 +35,17 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages '(lsp-mode evil)))
-    (custom-set-faces
+ '(custom-safe-themes
+   '("7e377879cbd60c66b88e51fad480b3ab18d60847f31c435f15f5df18bdb18184" default))
+ '(package-selected-packages
+   '(treemacs-evil treemacs projectile doom-themes lsp-mode evil)))
+    
+(custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;; Loading config stuff
+(load "$HOME/.config/emacs/config.el")
