@@ -12,10 +12,11 @@
 ;; Treemacs
 (with-eval-after-load 'treemacs
   (define-key treemacs-mode-map [mouse-1] #'treemacs-single-click-expand-action))
+(global-set-key (kbd "M-d") 'treemacs) ;; Alt + d to open treemacs
 
 
 ;; Startup stuff
-(setq inhibit-startup-message nil
+(setq inhibit-startup-message t
       visible-bell nil) ;; Don't the bell thing
 
 ;; Remove ugly bars
@@ -38,7 +39,7 @@
  '(custom-safe-themes
    '("7e377879cbd60c66b88e51fad480b3ab18d60847f31c435f15f5df18bdb18184" default))
  '(package-selected-packages
-   '(go-mode rust-mode use-package treemacs-evil treemacs projectile doom-themes lsp-mode evil)))
+   '(evil-commentary format-all auto-complete editorconfig haskell-mode counsel ivy go-mode rust-mode use-package treemacs-evil treemacs projectile doom-themes lsp-mode evil)))
     
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -83,6 +84,40 @@
   (setq lsp-enable-snippet nil)
   (setq read-process-output-max (* 1024 1024)) ;; 1MB
   (setq lsp-idle-delay 0.5))
+
+;; Ivy
+(ivy-mode)
+(setq ivy-use-virtual-buffers t)
+(setq ivy-use-selectable-prompt t)
+(setq enable-recursive-minibuffers t)
+;; enable this if you want `swiper' to use it
+;; (setq search-default-mode #'char-fold-to-regexp)
+(global-set-key "\C-s" 'swiper)
+(global-set-key (kbd "C-c C-r") 'ivy-resume)
+(global-set-key (kbd "<f6>") 'ivy-resume)
+(global-set-key (kbd "M-x") 'counsel-M-x)
+(global-set-key (kbd "M-f") 'counsel-find-file)
+(global-set-key (kbd "<f1> f") 'counsel-describe-function)
+(global-set-key (kbd "<f1> v") 'counsel-describe-variable)
+(global-set-key (kbd "<f1> o") 'counsel-describe-symbol)
+(global-set-key (kbd "<f1> l") 'counsel-find-library)
+(global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
+(global-set-key (kbd "<f2> u") 'counsel-unicode-char)
+(global-set-key (kbd "C-c g") 'counsel-git)
+(global-set-key (kbd "C-c j") 'counsel-git-grep)
+(global-set-key (kbd "C-c k") 'counsel-ag)
+(global-set-key (kbd "C-x l") 'counsel-locate)
+(global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
+(define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history)
+
+;; Editorconfig
+(editorconfig-mode 1)
+
+;; Autocomplete
+(ac-config-default)
+
+;; Evil Commentary (comment thing)
+(evil-commentary-mode)
 
 ;; Loading config stuff
 (load "$HOME/.config/emacs/config.el")

@@ -50,3 +50,5 @@ flycheck_*.el
 # Cache etc
 .cache/
 projectile-bookmarks.eld
+.lsp-session-v1
+*.dat
