@@ -8,19 +8,21 @@ data using wmctrl.
 import re
 import sys
 import json
-from subprocess import check_output
+from subprocess import check_output, CalledProcessError
 
 # Config
 HIDE_EMPTY_WS = True  # Exclude empty workspaces
-OVERIDE_ALL_NAMES = False
-OVERIDE_ALL_NAME = ""
-NAME_MAPS = {
+OVERIDE_ALL_NAMES = False  # Override all the WS names and use the name below
+OVERIDE_ALL_NAME = ""  # Name to use when overriding names
+NAME_MAPS: dict[int, str] = {  # Replace the indexs name with the given string
     # 0: "",
     # 1: ""
 }
+LOG_FILE = "/tmp/eww_workspace.log"  # Log file (in case of errors etc)
 
 
-# NOTE: DO NOT TOUCH
+# ------------ NOTE: DO NOT TOUCH ------------
+
 WMCTRL_SCRIPT = "wmctrl -d"
 PARSE_REGEX = r"^(\d+)\s+(\*|\-).+\s+(\w+)$"
 
@@ -63,16 +65,26 @@ def parse_workspaces():
     Function to get all the workspaces
     """
 
-    inp = check_output(WMCTRL_SCRIPT.split(" "))
-    inp = inp.decode("utf-8")
+    try:
+        nonempty = check_output(WMCTRL_NONEMPTY_SCRIPT.split(" "))
+        nonempty = nonempty.decode("utf-8")
 
-    nonempty = check_output(WMCTRL_NONEMPTY_SCRIPT.split(" "))
-    nonempty = nonempty.decode("utf-8")
+        nonempty_workspaces = re.findall(NONEMPTY_REGEX,
+                                        nonempty,
+                                        flags=re.MULTILINE)
+        nonempty_workspaces = list(map(int, nonempty_workspaces))
+    except CalledProcessError:
+        nonempty_workspaces = []
 
-    nonempty_workspaces = re.findall(NONEMPTY_REGEX,
-                                     nonempty,
-                                     flags=re.MULTILINE)
-    nonempty_workspaces = list(map(int, nonempty_workspaces))
+    try:
+        inp = check_output(WMCTRL_SCRIPT.split(" "))
+        inp = inp.decode("utf-8")
+    except CalledProcessError as err:
+        logfile = open(LOG_FILE, "a")
+        logfile.write("ERROR! COULD NOT PARSE WORKSPACES OR SOMETHING! YOU ARE ON YOUR OWN.")
+        logfile.write(f"{err}")
+
+        inp = ""
 
     out = []
 

@@ -1,16 +1,9 @@
 // Font stuff
 $font-size: 16px;
-$icon-size: 20px;
-$logo-size: 24px;
+$icon-size: 18px;
+$logo-size: 28px;
 
-// Basic color
-$bg-color: #181818;
-$bg-alt-color: #242424;
-$fg-color: #ebdbb2;
-$fg-alt-color: #635c4b;
-$border-color: #484848;
-
-// Colors
+// Basic colors
 $black: #121212;
 $red: #f7768c;
 $green: #9ece6a;
@@ -20,13 +13,20 @@ $magenta: #ad8ee6;
 $cyan: #449dab;
 $white: #787c99;
 
+// Colors
+$bg-color: #181818;
+$bg-alt-color: #242424;
+$fg-color: #ebdbb2;
+$fg-alt-color: #635c4b;
+$fg-sel-color: $blue;
+$border-color: #484848;
+
 // Misc
-$anim-delay: 250ms;
+$anim-transition: 250ms;
 
 * {
 	all: unset; //Unsets everything so you can style everything from scratch
-	font-family: "Hack Mono";
-	transition: opacity $anim-delay;
+	font-family: "Hack Mono", "Font Awesome";
 	// color: $fg-color;
 }
 
@@ -42,9 +42,23 @@ $anim-delay: 250ms;
 }
 
 // Styles on classes (see eww.yuck for more information)
+button {
+	transition-property: opacity, color;
+	transition-duration: $anim-transition;
+}
+
+// Workspaces
+.ws-active { font-weight: bold; }
+.ws-inactive { opacity: 0.2; }
+
+.workspaces {
+	// background-color: $black;
+	// border-radius: $font-size;
+	// border: 1px solid $border-color;
+}
 
 button.ws {
-	color: $fg-color;
+	// color: $fg-color;
 	font-size: $font-size;
 	margin: 4px;
 }
@@ -54,6 +68,11 @@ button.ws:hover {
 	opacity: 1.0;
 }
 
+// Control
+.control {
+	margin-bottom: $logo-size;
+}
+
 .icon {
 	opacity: 0.8;
 	font-size: $icon-size;
@@ -61,28 +80,16 @@ button.ws:hover {
 
 .icon:hover {
 	opacity: 1.0;
+	color: red;
 }
 
+// Logo button
 .logo {
-	margin-top: $font-size;
-	font-size: $icon-size;
+	margin-top: 6px;
+	font-size: $logo-size;
 	// opacity: 0.8;
 }
 
 .logo:hover {
 	color: red;
-}
-
-.workspaces {
-	// background-color: $black;
-	// border-radius: $font-size;
-	// border: 1px solid $border-color;
-}
-
-.ws-active {
-	font-weight: bold;
-}
-
-.ws-inactive {
-	opacity: 0.2;
 }

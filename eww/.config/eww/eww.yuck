@@ -1,12 +1,12 @@
 (defwidget bar [screen]
   (centerbox :orientation "v"
-        (box :class "segment-start" :valign "start"
+        (box :class "segment-start" :valign "start" :space-evenly false :orientation "v"
               (logo)
         )
-        (box :class "segment-mid" :valign "middle"
+        (box :class "segment-mid" :valign "center" :orientation "v"
               (workspaces :wsp workspaces-data :ori "v")
         )
-        (box :class "segment-end" :valign "end"
+        (box :class "segment-end" :valign "end" :orientation "v"
              (control)
         )
     )
@@ -15,13 +15,21 @@
 ;; Logo
 (defwidget logo []
     (button :class "logo"
-     "Λ"
+        "Λ"
      ))
 
 (defwidget control []
-  (button :class "icon volume" :valign "start"
+  (box :class "control" :spacing 16 :orientation "v"
+    (button :class "icon volume" :valign "start"
           ""
-          )
+        )
+    (button :class "icon music" :valign "start"
+          ""
+        )
+    (button :class "icon date" :valign "start"
+          ""
+        )
+    )
   )
 
 ;; Workspaces container
@@ -64,10 +72,10 @@
   :windowtype "dock"
   :geometry (geometry :x "0%"
                       :y "0%"
-                      :width "42px"
+                      :width "38px"
                       :height "100%"
                       :anchor "left center")
-  :reserve (struts :side "left" :distance "42px")
+  :reserve (struts :side "left" :distance "38px")
   (bar :screen 1))
 
 (defwindow bar-2
@@ -86,7 +94,7 @@
     :geometry (geometry :x "0%"
                         :y "0%"
                         :width "182px"
-                        :height "32px"
+                        :height "38px"
                         :anchor "right top"
                         )
     :reserve (struts :side "right" :distance "0px" :orientation "h")
