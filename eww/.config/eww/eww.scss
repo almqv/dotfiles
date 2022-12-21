@@ -1,5 +1,7 @@
 // Font stuff
 $font-size: 16px;
+$icon-size: 20px;
+$logo-size: 24px;
 
 // Basic color
 $bg-color: #181818;
@@ -18,9 +20,13 @@ $magenta: #ad8ee6;
 $cyan: #449dab;
 $white: #787c99;
 
+// Misc
+$anim-delay: 250ms;
+
 * {
 	all: unset; //Unsets everything so you can style everything from scratch
 	font-family: "Hack Mono";
+	transition: opacity $anim-delay;
 	// color: $fg-color;
 }
 
@@ -41,7 +47,6 @@ button.ws {
 	color: $fg-color;
 	font-size: $font-size;
 	margin: 4px;
-	transition: opacity 300ms;
 }
 
 button.ws:hover {
@@ -49,14 +54,22 @@ button.ws:hover {
 	opacity: 1.0;
 }
 
-.logo {
-	margin-top: $font-size;
-	font-size: 24px;
+.icon {
 	opacity: 0.8;
-
+	font-size: $icon-size;
 }
 
-logo:hover {
+.icon:hover {
+	opacity: 1.0;
+}
+
+.logo {
+	margin-top: $font-size;
+	font-size: $icon-size;
+	// opacity: 0.8;
+}
+
+.logo:hover {
 	color: red;
 }
 

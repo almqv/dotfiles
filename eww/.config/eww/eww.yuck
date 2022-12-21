@@ -7,9 +7,7 @@
               (workspaces :wsp workspaces-data :ori "v")
         )
         (box :class "segment-end" :valign "end"
-            ;; (music)
-            ;; (sidestuff)
-            ;; (volum)
+             (control)
         )
     )
 )
@@ -19,6 +17,12 @@
     (button :class "logo"
      "Λ"
      ))
+
+(defwidget control []
+  (button :class "icon volume" :valign "start"
+          ""
+          )
+  )
 
 ;; Workspaces container
 (defwidget workspaces [wsp]
