@@ -1,0 +1,90 @@
+(defwidget bar [screen]
+  (centerbox :orientation "v"
+        (box :class "segment-start" :valign "start"
+              (logo)
+        )
+        (box :class "segment-mid" :valign "middle"
+              (workspaces :wsp workspaces-data :ori "v")
+        )
+        (box :class "segment-end" :valign "end"
+            ;; (music)
+            ;; (sidestuff)
+            ;; (volum)
+        )
+    )
+)
+
+;; Logo
+(defwidget logo []
+    (button :class "logo"
+     "Λ"
+     ))
+
+;; Workspaces container
+(defwidget workspaces [wsp]
+  (box :space-evenly true :spacing 4 :orientation "v" :class "workspaces"
+   (for ws in wsp
+        (workspace :data ws)
+    )))
+
+;; Workspace widget
+(defwidget workspace [data]
+   (button :onclick "wmctrl -s ${data['index']}"
+           :class {data["iscurrent"] == true ? "ws ws-active" : "ws ws-inactive"}
+           "${data['name']}"
+           ))
+(deflisten workspaces-data "scripts/workspace.py")
+
+
+(defwidget metric [label value onchange]
+  (box :orientation "v"
+       :class "metric"
+       :space-evenly false
+    (box :class "label" label)
+    (scale :min 0
+           :max 101
+           ;; :orientation "v"
+           :active {onchange != ""}
+           :value {value == "" ? "0" : value}
+           :onchange onchange)))
+
+(defwidget time []
+    (box
+    "${time}"))
+(defpoll time :interval "500ms"
+  "date '+%H%M.%S %Y-%m-%d'")
+
+;; WINDOWS
+(defwindow bar-1
+  :monitor 0
+  :windowtype "dock"
+  :geometry (geometry :x "0%"
+                      :y "0%"
+                      :width "42px"
+                      :height "100%"
+                      :anchor "left center")
+  :reserve (struts :side "left" :distance "42px")
+  (bar :screen 1))
+
+(defwindow bar-2
+  :monitor 1
+  :windowtype "dock"
+  :geometry (geometry :x "0%"
+                      :y "0%"
+                      :width "42px"
+                      :height "100%"
+                      :anchor "left center")
+  :reserve (struts :side "left" :distance "42px")
+  (bar :screen 2))
+
+(defwindow time-thing
+    :monitor 0
+    :geometry (geometry :x "0%"
+                        :y "0%"
+                        :width "182px"
+                        :height "32px"
+                        :anchor "right top"
+                        )
+    :reserve (struts :side "right" :distance "0px" :orientation "h")
+    (time))
+

@@ -1,0 +1,75 @@
+// Font stuff
+$font-size: 16px;
+
+// Basic color
+$bg-color: #181818;
+$bg-alt-color: #242424;
+$fg-color: #ebdbb2;
+$fg-alt-color: #635c4b;
+$border-color: #484848;
+
+// Colors
+$black: #121212;
+$red: #f7768c;
+$green: #9ece6a;
+$yellow: #e0af68;
+$blue: #aabbff;
+$magenta: #ad8ee6;
+$cyan: #449dab;
+$white: #787c99;
+
+* {
+	all: unset; //Unsets everything so you can style everything from scratch
+	font-family: "Hack Mono";
+	// color: $fg-color;
+}
+
+// Bar styles
+.time-thing {
+	opacity: 0.2;
+}
+
+.bar-1, .bar-2 {
+	background-color: $bg-color;
+	color: $fg-color;
+	border-right: solid 1px $border-color;
+}
+
+// Styles on classes (see eww.yuck for more information)
+
+button.ws {
+	color: $fg-color;
+	font-size: $font-size;
+	margin: 4px;
+	transition: opacity 300ms;
+}
+
+button.ws:hover {
+	color: $yellow;
+	opacity: 1.0;
+}
+
+.logo {
+	margin-top: $font-size;
+	font-size: 24px;
+	opacity: 0.8;
+
+}
+
+logo:hover {
+	color: red;
+}
+
+.workspaces {
+	// background-color: $black;
+	// border-radius: $font-size;
+	// border: 1px solid $border-color;
+}
+
+.ws-active {
+	font-weight: bold;
+}
+
+.ws-inactive {
+	opacity: 0.2;
+}
