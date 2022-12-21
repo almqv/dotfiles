@@ -22,7 +22,11 @@ xset -dpms &
 #eww open bar
 
 # Polybar
-$HOME/.config/polybar/launch &
+# $HOME/.config/polybar/launch &
+
+# EWW widgets
+eww daemon &
+eww open-many bar-1 bar-2 & # the bar
 
 # Keyring
 eval $(gnome-keyring-daemon --start)

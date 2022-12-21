@@ -15,7 +15,7 @@ import qualified Data.Map as M
 import XMonad.Hooks.EwmhDesktops (ewmh)
 import XMonad.Hooks.InsertPosition
 import XMonad.Layout.Fullscreen (fullscreenSupport)
-import XMonad.Layout.IndependentScreens (withScreens)
+-- import XMonad.Layout.IndependentScreens (withScreens)
 import XMonad.Layout.ToggleLayouts (ToggleLayout(Toggle))
 import qualified XMonad.StackSet as W
 import XMonad.Util.Run (spawnPipe)
@@ -56,7 +56,8 @@ myModMask = mod4Mask
 --
 -- > workspaces = ["web", "irc", "code" ] ++ map show [4..9]
 --
-myWorkspaces = map show [1 .. 9]
+-- myWorkspaces = map show [1 .. 9]
+myWorkspaces = map show [1..9]
 
 -- Border colors for unfocused and focused windows, respectively.
 --
@@ -263,7 +264,7 @@ defaults =
     , clickJustFocuses = myClickJustFocuses
     , borderWidth = myBorderWidth
     , modMask = myModMask
-    , workspaces = withScreens 2 myWorkspaces
+    , workspaces = myWorkspaces
     , normalBorderColor = myNormalBorderColor
     , focusedBorderColor = myFocusedBorderColor
       -- key bindings
