@@ -81,7 +81,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) =
     -- launch rofi shell
   , ((modm, xK_p), spawn "rofi -show run")
     -- pause cmus
-  , ((modm, xK_u), spawn "cmus-remote --pause")
+  , ((modm, xK_u), spawn "playerctl play-pause")
     -- spawn firefox
   , ((modm, xK_b), spawn "firefox")
     -- screenshot

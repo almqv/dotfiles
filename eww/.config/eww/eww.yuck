@@ -1,36 +1,158 @@
 (defwidget bar [screen]
-  (centerbox :orientation "v"
-        (box :class "segment-start" :valign "start" :space-evenly false :orientation "v"
-              (logo)
-        )
-        (box :class "segment-mid" :valign "center" :orientation "v"
-              (workspaces :wsp workspaces-data :ori "v")
-        )
-        (box :class "segment-end" :valign "end" :orientation "v"
-             (control)
-        )
+  (box :orientation "v"
+       :vexpand "false"
+       :hexpand "false"
+    (box :class "segment-start"
+         :valign "start"
+         :space-evenly false
+         :orientation "v"
+         :space-evenly false
+      ;; (logo)
+      (power)
     )
+    (box :class "segment-mid"
+         :valign "center"
+         :orientation "v"
+         :space-evenly false
+      (workspaces :wsp workspaces-data)
+    )
+    (box :class "segment-end"
+         :valign "end"
+         :orientation "v"
+         :space-evenly false
+      (control)
+    )
+  )
 )
 
-;; Logo
+;; Logo widget
 (defwidget logo []
     (button :class "logo"
         "Λ"
      ))
 
+;; Powermenu Widgets ;;
+(defwidget power []
+  (eventbox  ;;:onhover "${EWW_CMD} update power=true"
+             :onhoverlost "${EWW_CMD} update power=false"
+    (box     :orientation "v"
+             :space-evenly "false"
+             :vexpand "false"
+             :class "powermenu ${power ? 'pm-active' : ''}"
+      ;; Open menu button
+      (button    :class "icon logo ${power ? 'logo-seperator' : ''}"
+                 :tooltip "Open menu"
+                 :onclick "${EWW_CMD} update power=true"  "Λ")
+      (revealer  :transition "slidedown"
+                 :reveal power
+                 :duration "450ms"
+        (box     :orientation "v"
+                 :class "pm-inner"
+                 :space-evenly true
+                 :halign "middle"
+                 :spacing 6
+
+          ;; Lock screen
+          (button    :class "icon lock"
+                     :tooltip "Lock screen"
+                     :onclick "betterlockscreen -l"  "")
+
+          ;; Quit WM (goto login manager)
+          (button    :class "icon quit"
+                     :tooltip "Logout"
+                     :onclick "killall xmonad-x86_64-linux" "")
+
+          ;; Reboot
+          (button    :class "icon reboot"
+                     :tooltip "Reboot"
+                     :onclick "reboot"  "")
+
+          ;; Poweroff
+          (button    :class "icon poweroff"
+                     :tooltip "Poweroff"
+                     :onclick "poweroff now"  "")
+
+        ))
+
+        ;; Poweroff
+        )))
+(defvar power false)
+
+;; Control widget (container)
 (defwidget control []
-  (box :class "control" :spacing 16 :orientation "v"
-    (button :class "icon volume" :valign "start"
-          ""
-        )
-    (button :class "icon music" :valign "start"
-          ""
-        )
-    (button :class "icon date" :valign "start"
-          ""
-        )
+  (box :class "control" :spacing 12 :space-evenly false :orientation "v"
+    ;; (wifi)
+    ;; (bat)
+    (volume)
+    (time)
     )
   )
+
+;; Clock Widget
+(defwidget time []
+  (box  :orientation "v"
+      :class "time"
+      :valign "end"
+  (button  :onclick "scripts/popup calendar"
+      :class "hour" hour)
+  (button  :onclick "scripts/popup calendar"
+      :class "min"  min)
+  (button  :onclick "scripts/popup calendar"
+      :class "sec"  sec)
+  ))
+(defpoll hour  :interval "1s"  "date '+%H'")
+(defpoll min  :interval "1s"  "date '+%M'")
+(defpoll sec :interval "1s"  "date '+%S'")
+
+;; Volume widget
+(defwidget volume []
+  (eventbox     :onhover "${EWW_CMD} update volume=true"
+                :onhoverlost "${EWW_CMD} update volume=false"
+    (box        :orientation "v"
+                :space-evenly "false"
+                :spacing "2"
+      (revealer :transition "slideup"
+                :reveal volume
+                :duration "450ms"
+        (scale  :class "volbar"
+                :value current-volume
+                :orientation "v"
+                :flipped true
+                :tooltip "Volume: ${current-volume}%"
+                :max 101
+                :min 0
+                :onchange "amixer -D pulse sset Master {}%"
+          )
+        )
+      (button   :onclick "amixer -D pulse set Master 1+ toggle"
+                :class "icon volume + ${muted-volume != 'on' ? 'red' : ''}"
+                {muted-volume != "on" ? "ﱝ" : "墳"}
+      )
+  )))
+(defvar volume false)
+(defpoll current-volume :interval "1ms" "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
+(defpoll muted-volume :interval "1ms" "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $4 }' | tr -d '%'")
+
+;; Battery Widgets ;;
+(defwidget bat []
+  (box  :orientation "v"
+      :space-evenly "false"
+    (label  :class "icon bat"
+        :halign "middle"
+        :text battery
+        :tooltip "Battery: ${battery-cappacity}%")))
+(defpoll battery      :interval "1s"  "scripts/battery icon")
+(defpoll battery-cappacity  :interval "1s"  "scripts/battery percent")
+
+;; Wifi Widgets ;;
+(defwidget wifi []
+  (box       :orientation "v"
+             :halign "middle"
+             :tooltip "SSID: ${wifi-name}"
+    (button  :class "icon wifi-icon" wifi-icon
+             )))
+(defpoll wifi-icon :interval "1s" "scripts/wifi icon")
+(defpoll wifi-name :interval "1s" "scripts/wifi name")
 
 ;; Workspaces container
 (defwidget workspaces [wsp]
@@ -60,22 +182,18 @@
            :value {value == "" ? "0" : value}
            :onchange onchange)))
 
-(defwidget time []
-    (box
-    "${time}"))
-(defpoll time :interval "500ms"
-  "date '+%H%M.%S %Y-%m-%d'")
-
 ;; WINDOWS
 (defwindow bar-1
   :monitor 0
   :windowtype "dock"
   :geometry (geometry :x "0%"
                       :y "0%"
-                      :width "38px"
+                      :width "42px"
                       :height "100%"
                       :anchor "left center")
-  :reserve (struts :side "left" :distance "38px")
+  :reserve (struts :side "left" :distance "42px")
+  :hexpand "false"
+  :vexpand "false"
   (bar :screen 1))
 
 (defwindow bar-2
@@ -87,6 +205,8 @@
                       :height "100%"
                       :anchor "left center")
   :reserve (struts :side "left" :distance "42px")
+  :hexpand "false"
+  :vexpand "false"
   (bar :screen 2))
 
 (defwindow time-thing
