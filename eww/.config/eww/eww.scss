@@ -32,9 +32,8 @@ $anim-transition: 150ms;
 	// color: $fg-color;
 }
 
-// Bar styles
-.time-thing {
-	opacity: 0.2;
+tooltip {
+	background-color: $red;
 }
 
 .bar-1, .bar-2 {
@@ -42,6 +41,9 @@ $anim-transition: 150ms;
 	color: $fg-color;
 	border-right: solid 1px $border-color;
 	padding: .3rem;
+}
+
+.segment-end {
 }
 
 // Styles on classes (see eww.yuck for more information)
@@ -87,10 +89,11 @@ scale trough {
 .powermenu {
 	transition: color $anim-transition;
 	// border-right: solid 1px $border-color;
+	padding: .5rem .2rem .3rem .2rem;
 }
 
 .quit, .lock, .reboot, .poweroff {
-	padding: .5rem .2rem .3rem 0rem;
+	// padding: .5rem .2rem .3rem .2rem;
 }
 
 // Colors for the buttons
@@ -122,6 +125,7 @@ scale trough {
 	margin: 0 .2rem;
 	font-size: $icon-size;
 	font-family: Material Icons;
+	padding: 0 1px;
 }
 
 .icon:hover {
@@ -138,33 +142,39 @@ scale trough {
 // Time
 .time {
 	font-size: 11px;
-	// border-radius: 5px;
+	font-weight: bold;
 	border-top: solid 2px $border-color;
 	color: $fg-alt-color;
-	padding: .7rem 0;
-	padding-bottom: .5rem;
+	padding: 1rem 0;
+	padding-bottom: 0rem;
 	margin: .5rem 0 .5rem 0;
 }
 
-
-
 // Logo button
 .logo {
+	margin: 0 .8rem;
 	margin-top: 6px;
 	font-size: $logo-size;
-	opacity: 0.8;
+	opacity: 0.5;
 }
 
 .logo-seperator {
 	border-bottom: 2px solid $border-color;
+	padding-bottom: .4rem;
 }
-
-// .logo:hover {
-// 	// color: $red;
-// }
 
 // Color overrides
 .red {
 	color: $red;
 	opacity: 0.8;
+}
+
+
+// Music widget
+.musicmenu {
+	// background-color: $bg-alt-color;
+}
+
+.mm-inner {
+	color: $blue;
 }

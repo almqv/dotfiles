@@ -4,34 +4,59 @@
        :hexpand "false"
     (box :class "segment-start"
          :valign "start"
+         :halign "center"
          :space-evenly false
          :orientation "v"
          :space-evenly false
-      ;; (logo)
-      (power)
+      (power :screen screen)
     )
     (box :class "segment-mid"
          :valign "center"
+         :halign "center"
          :orientation "v"
          :space-evenly false
-      (workspaces :wsp workspaces-data)
+      (workspaces :wsp workspaces-data :screen screen)
     )
     (box :class "segment-end"
          :valign "end"
+         :halign "center"
          :orientation "v"
-         :space-evenly false
-      (control)
+         :space-evenly true
+      (control :screen screen)
     )
   )
 )
 
-;; Logo widget
-(defwidget logo []
-    (button :class "logo"
-        "Λ"
-     ))
+(defwidget bar-2 [screen]
+  (box :orientation "v"
+       :vexpand "false"
+       :hexpand "false"
+    (box :class "segment-start"
+         :valign "start"
+         :halign "center"
+         :space-evenly false
+         :orientation "v"
+         :space-evenly false
+      ;; (power :screen screen)
+    )
+    (box :class "segment-mid"
+         :valign "center"
+         :halign "center"
+         :orientation "v"
+         :space-evenly false
+      (workspaces :wsp workspaces-data :screen screen)
+    )
+    (box :class "segment-end"
+         :valign "end"
+         :halign "center"
+         :orientation "v"
+         :space-evenly true
+        (control-2 :screen screen)
+    )
+  )
+)
 
-;; Powermenu Widgets ;;
+;; Powermenu widget
 (defwidget power []
   (eventbox  ;;:onhover "${EWW_CMD} update power=true"
              :onhoverlost "${EWW_CMD} update power=false"
@@ -73,8 +98,6 @@
                      :onclick "poweroff now"  "")
 
         ))
-
-        ;; Poweroff
         )))
 (defvar power false)
 
@@ -83,7 +106,18 @@
   (box :class "control" :spacing 12 :space-evenly false :orientation "v"
     ;; (wifi)
     ;; (bat)
+    (music)
     (volume)
+    (time)
+    )
+  )
+
+(defwidget control-2 []
+  (box :class "control" :spacing 12 :space-evenly false :orientation "v"
+    ;; (wifi)
+    ;; (bat)
+    ;; (music)
+    ;; (volume)
     (time)
     )
   )
@@ -110,7 +144,7 @@
                 :onhoverlost "${EWW_CMD} update volume=false"
     (box        :orientation "v"
                 :space-evenly "false"
-                :spacing "2"
+                :spacing 2
       (revealer :transition "slideup"
                 :reveal volume
                 :duration "450ms"
@@ -169,18 +203,56 @@
            ))
 (deflisten workspaces-data "scripts/workspace.py")
 
+;; Music widget
+(defwidget music []
+  (revealer      :reveal {music-status == "Playing" || music-status == "Paused"}
+    (eventbox    :onhover "${EWW_CMD} update music=true"
+                 :onhoverlost "${EWW_CMD} update music=false"
+                 ;; :onclick "wget ${artUrl} -O /tmp/cover.jpg; sleep 1; notify-send -i /tmp/cover.jpg '${title} - ${artist}' '${songtime}'"
+        (box     :orientation "v"
+                :space-evenly "false"
+                :vexpand "false"
+                :class "musicmenu ${music ? 'mm-active' : ''}"
+        (revealer  :transition "slideup"
+                    :reveal music
+                    :flipped true
+                    :duration "450ms"
+            (box     :orientation "v"
+                    :class "mm-inner"
+                    :space-evenly true
+                    :halign "middle"
+                    :spacing 4
 
-(defwidget metric [label value onchange]
-  (box :orientation "v"
-       :class "metric"
-       :space-evenly false
-    (box :class "label" label)
-    (scale :min 0
-           :max 101
-           ;; :orientation "v"
-           :active {onchange != ""}
-           :value {value == "" ? "0" : value}
-           :onchange onchange)))
+                ;; Next
+                (button    :class "icon next"
+                            :tooltip "Pause/play"
+                            :onclick "playerctl next" "")
+                ;; Pause
+                (button    :class "icon pause"
+                            :tooltip "Pause/play"
+                            :onclick "playerctl play-pause" {music-status == "Playing" ? "" : ""})
+
+                ;; Pause
+                (button    :class "icon prev"
+                            :tooltip "Pause/play"
+                            :onclick "playerctl previous" "")
+
+            ))
+        ;; Open menu button
+        (button     :class "icon"
+                    :tooltip "${title} - ${artist}"
+                    :onclick "${EWW_CMD} update music=true"  "")
+
+            )
+    )))
+
+(defpoll music-status         :interval "200ms"  "playerctl status")
+(defpoll artUrl               :interval "200ms"  "playerctl metadata artUrl")
+(defpoll title                :interval "200ms"  "playerctl metadata title")
+(defpoll artist               :interval "200ms"  "playerctl metadata artist")
+(defpoll songtime             :interval "500ms"  "scripts/getSongDuration")
+
+(defvar music false)
 
 ;; WINDOWS
 (defwindow bar-1
@@ -207,7 +279,7 @@
   :reserve (struts :side "left" :distance "42px")
   :hexpand "false"
   :vexpand "false"
-  (bar :screen 2))
+  (bar-2 :screen 2))
 
 (defwindow time-thing
     :monitor 0
