@@ -7,7 +7,7 @@
  - **Terminal**: [Alacritty](https://github.com/alacritty/alacritty)
  - **Editor**: [nvim](https://neovim.io/)
  - **Compositor**: [picom](https://github.com/yshui/picom)
- - **Bar**: [polybar](https://polybar.github.io/)
+ - **Bar**: [eww](https://github.com/elkowar/eww)
  - **Launcher**: [rofi](https://github.com/davatorium/rofi)
 
 ## Installing dotfiles
