@@ -1,0 +1,12 @@
+#!/usr/bin/bash
+
+status=$(playerctl status &>/dev/stdout)
+
+if [[ "$status" == "No players found" ]]
+then
+	echo "false"
+else
+	echo "true"
+fi
+
+
