@@ -205,7 +205,7 @@
 
 ;; Music widget
 (defwidget music []
-  (revealer      :reveal {music-status == "true"}
+  (revealer      :reveal {music-active == "true"}
     (eventbox    :onhover "${EWW_CMD} update music=true"
                  :onhoverlost "${EWW_CMD} update music=false"
                  ;; :onclick "wget ${artUrl} -O /tmp/cover.jpg; sleep 1; notify-send -i /tmp/cover.jpg '${title} - ${artist}' '${songtime}'"
@@ -246,7 +246,8 @@
             )
     )))
 
-(defpoll music-status         :interval "200ms"  "scripts/musicstatus")
+(defpoll music-active         :interval "200ms"  "scripts/musicstatus")
+(defpoll music-status         :interval "200ms"  "playerctl status")
 (defpoll artUrl               :interval "200ms"  "playerctl metadata artUrl")
 (defpoll title                :interval "200ms"  "playerctl metadata title")
 (defpoll artist               :interval "200ms"  "playerctl metadata artist")
