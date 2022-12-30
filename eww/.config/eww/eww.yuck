@@ -160,6 +160,7 @@
         )
       (button   :onclick "amixer -D pulse set Master 1+ toggle"
                 :class "icon volume + ${muted-volume != 'on' ? 'red' : ''}"
+                :tooltip "Volume: ${current-volume}%"
                 {muted-volume != "on" ? "ﱝ" : "墳"}
       )
   )))
@@ -198,7 +199,7 @@
 ;; Workspace widget
 (defwidget workspace [data]
    (button :onclick "wmctrl -s ${data['index']}"
-           :class {data["iscurrent"] == true ? "ws ws-active" : "ws ws-inactive"}
+           :class {data["iscurrent"] == true ? "active" : "inactive"}
            "${data['name']}"
            ))
 (deflisten workspaces-data "scripts/workspace.py")
