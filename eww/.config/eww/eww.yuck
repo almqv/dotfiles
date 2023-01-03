@@ -95,7 +95,7 @@
           ;; Poweroff
           (button    :class "icon poweroff"
                      :tooltip "Poweroff"
-                     :onclick "poweroff now"  "")
+                     :onclick "poweroff"  "")
 
         ))
         )))
