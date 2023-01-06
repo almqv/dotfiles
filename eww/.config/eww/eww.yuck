@@ -181,13 +181,13 @@
 
 ;; Wifi Widgets ;;
 (defwidget wifi []
-  (revealer     :reveal {wifi-status == "true"}
     (box        :orientation "v"
                 :halign "middle"
                 :tooltip "SSID: ${wifi-name}"
-        (label  :class "icon wifi"
-                ""
-                ))))
+        (label :class "icon wifi"
+                :halign "middle"
+                :text "﬉"
+                )))
 (defpoll wifi-status :interval "1s" "scripts/wifi status")
 (defpoll wifi-name :interval "1s" "scripts/wifi name")
 

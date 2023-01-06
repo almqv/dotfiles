@@ -1,12 +1,12 @@
 #!/bin/sh
 
 status() {
-[ $(cat /sys/class/net/w*/operstate) = down ] && echo false && exit
-echo true
+[ $(cat /sys/class/net/w*/operstate) = down ] && echo  && exit
+echo 
 }
 
 name() {
-    nmcli | grep "^wlp" | sed 's/\ connected\ to\ /Connected to /g' | cut -d ':' -f2
+nmcli | grep "^wlp" | sed 's/\ connected\ to\ //g' | cut -d ':' -f2
 }
 
 [ "$1" = "status" ] && status && exit
