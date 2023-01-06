@@ -104,10 +104,10 @@
 ;; Control widget (container)
 (defwidget control []
   (box :class "control" :spacing 12 :space-evenly false :orientation "v"
-    ;; (wifi)
-    ;; (bat)
     (music)
     (volume)
+    (wifi)
+    (bat)
     (time)
     )
   )
@@ -149,7 +149,7 @@
                 :reveal volume
                 :duration "450ms"
         (scale  :class "volbar"
-                :value current-volume
+                :value {current-volume != "" ? current-volume : "0"}
                 :orientation "v"
                 :flipped true
                 :tooltip "Volume: ${current-volume}%"
@@ -181,12 +181,14 @@
 
 ;; Wifi Widgets ;;
 (defwidget wifi []
-  (box       :orientation "v"
-             :halign "middle"
-             :tooltip "SSID: ${wifi-name}"
-    (button  :class "icon wifi-icon" wifi-icon
-             )))
-(defpoll wifi-icon :interval "1s" "scripts/wifi icon")
+  (revealer     :reveal {wifi-status == "true"}
+    (box        :orientation "v"
+                :halign "middle"
+                :tooltip "SSID: ${wifi-name}"
+        (label  :class "icon wifi"
+                ""
+                ))))
+(defpoll wifi-status :interval "1s" "scripts/wifi status")
 (defpoll wifi-name :interval "1s" "scripts/wifi name")
 
 ;; Workspaces container
@@ -248,10 +250,10 @@
     )))
 
 (defpoll music-active         :interval "200ms"  "scripts/musicstatus")
-(defpoll music-status         :interval "200ms"  "playerctl status")
-(defpoll artUrl               :interval "200ms"  "playerctl metadata artUrl")
-(defpoll title                :interval "200ms"  "playerctl metadata title")
-(defpoll artist               :interval "200ms"  "playerctl metadata artist")
+(defpoll music-status         :interval "200ms"  "playerctl status &>/dev/null")
+(defpoll artUrl               :interval "200ms"  "playerctl metadata artUrl &>/dev/null")
+(defpoll title                :interval "200ms"  "playerctl metadata title &>/dev/null")
+(defpoll artist               :interval "200ms"  "playerctl metadata artist &>/dev/null")
 (defpoll songtime             :interval "500ms"  "scripts/getSongDuration")
 
 (defvar music false)
