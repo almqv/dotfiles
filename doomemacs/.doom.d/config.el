@@ -80,3 +80,6 @@
 ;; (setq-default indent-tabs-mode t)
 
 ;; (elcord-mode)
+
+;; Find file
+(global-set-key (kbd "M-f") 'counsel-find-file)
