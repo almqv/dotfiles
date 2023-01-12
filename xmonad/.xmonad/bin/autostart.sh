@@ -33,4 +33,4 @@ eval $(gnome-keyring-daemon --start)
 export SSH_AUTH_SOCK
 
 # Emacs daemon
-emacs --daemon &
+# emacs --daemon &
