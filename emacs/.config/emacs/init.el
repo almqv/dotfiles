@@ -46,7 +46,7 @@
  '(elcord-quiet t)
  '(elcord-use-major-mode-as-main-icon nil)
  '(package-selected-packages
-   '(sublimity typescript-mode glsl-mode format-all hl-todo elcord evil-tabs evil-commentary format-all auto-complete editorconfig haskell-mode counsel ivy go-mode rust-mode use-package treemacs-evil treemacs projectile doom-themes lsp-mode evil)))
+   '(web-mode sublimity typescript-mode glsl-mode format-all hl-todo elcord evil-tabs evil-commentary format-all auto-complete editorconfig haskell-mode counsel ivy go-mode rust-mode use-package treemacs-evil treemacs projectile doom-themes lsp-mode evil)))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -138,3 +138,18 @@
 
 ;; Loading config stuff
 (load "$HOME/.config/emacs/config.el")
+
+;; Lang stuff
+
+;; Typescript / webmode stuff
+(setq web-mode-markup-indent-offset 2)
+(setq web-mode-code-indent-offset 2)
+(setq web-mode-css-indent-offset 2)
+(use-package web-mode
+  :ensure t
+  :mode (("\\.js\\'" . web-mode)
+	 ("\\.jsx\\'" .  web-mode)
+	 ("\\.ts\\'" . web-mode)
+	 ("\\.tsx\\'" . web-mode)
+	 ("\\.html\\'" . web-mode))
+  :commands web-mode)
