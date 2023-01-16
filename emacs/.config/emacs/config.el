@@ -11,11 +11,11 @@
 ;; Enable line numbers
 (global-display-line-numbers-mode 1)
 
-;; Indentation
+;; Indentaion
 (setq
-	indent-tabs-mode t
-	tab-width 4
-)
+ indent-tabs-mode t
+ tab-width 4
+ )
 (define-key evil-insert-state-map (kbd "TAB") 'tab-to-tab-stop)
 
 ;; TODO keywords etc
