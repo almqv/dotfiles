@@ -85,7 +85,7 @@
           ;; Quit WM (goto login manager)
           (button    :class "icon quit"
                      :tooltip "Logout"
-                     :onclick "killall xmonad-x86_64-linux" "")
+                     :onclick "loginctl kill-session $XDG_SESSION_ID" "")
 
           ;; Reboot
           (button    :class "icon reboot"

@@ -15,3 +15,6 @@ alias todo="task"
 
 # Laptop stuff
 alias setbri="xrandr --output eDP-1 --brightness"
+
+# Cringe
+alias gdb-multiarch="arm-none-eabi-gdb"
