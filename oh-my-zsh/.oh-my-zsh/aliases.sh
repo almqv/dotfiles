@@ -12,9 +12,13 @@ alias vi="nvim"
 # alias idea="export _JAVA_AWT_WM_NONREPARENTING=1 idea"
 
 # Shortcuts
-alias todo="task"
+# alias todo="task"
+alias armas="arm-none-eabi-as -march=armv6-m -g"
+alias armld="arm-none-eabi-ld -T \"/usr/share/eterm8/md407-ram.x\""
+alias armgdb="arm-none-eabi-gdb"
 
 # Laptop stuff
 alias setbri="xrandr --output eDP-1 --brightness"
-alias lsbat="echo \"Power: $(cat /sys/class/power_supply/BAT0/capacity)\"%"
+alias lsbat="cat /sys/class/power_supply/BAT0/capacity"
 alias lsnet="nmcli | grep "^wlp" | sed 's/\ connected\ to\ //g' | cut -d ':' -f2"
+

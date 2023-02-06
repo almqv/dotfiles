@@ -104,7 +104,7 @@
 ;; Control widget (container)
 (defwidget control []
   (box :class "control" :spacing 12 :space-evenly false :orientation "v"
-    (music)
+    ;; (music)
     (volume)
     (wifi)
     (bat)
@@ -165,8 +165,8 @@
       )
   )))
 (defvar volume false)
-(defpoll current-volume :interval "1ms" "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
-(defpoll muted-volume :interval "1ms" "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $4 }' | tr -d '%'")
+(defpoll current-volume :interval "180ms" "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
+(defpoll muted-volume :interval "180ms" "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $4 }' | tr -d '%'")
 
 ;; Battery Widgets ;;
 (defwidget bat []

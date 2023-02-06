@@ -5,3 +5,4 @@ set adjust-open			    "width"
 
 include gruvbox-dark
 
+set guioptions none

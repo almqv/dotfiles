@@ -6,7 +6,7 @@
 (load-theme 'doom-tomorrow-night t)
 
 ;; Font size
-(set-face-attribute 'default nil :height 140 :family "Fira Code")
+(set-face-attribute 'default nil :height 120 :family "Fira Code")
 
 ;; Enable line numbers
 (global-display-line-numbers-mode 1)
