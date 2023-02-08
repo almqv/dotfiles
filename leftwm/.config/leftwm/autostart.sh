@@ -34,6 +34,3 @@ export SSH_AUTH_SOCK
 
 # Emacs daemon
 # emacs --daemon &
-
-# LeftWM theme
-leftwm-command "LoadTheme $HOME/.config/leftwm/themes/current/theme.toml"
