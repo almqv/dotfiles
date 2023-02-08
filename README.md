@@ -3,9 +3,9 @@
 ## Stuff I use
  - **OS**: [Arch Linux](https://archlinux.org/)
  - **Kernel**: [lqx](https://liquorix.net/) *(standard linux as fallback)*
- - **WM**: [ewm](http://github.com/E-Almqvist/ewm) or [XMonad](https://xmonad.org/)
+ - **WM**: [LeftWM](https://leftwm.org/)
  - **Terminal**: [Alacritty](https://github.com/alacritty/alacritty)
- - **Editor**: [nvim](https://neovim.io/)
+ - **Editor**: [Emacs](https://www.gnu.org/software/emacs/) or [nvim](https://neovim.io/)
  - **Compositor**: [picom](https://github.com/yshui/picom)
  - **Bar**: [eww](https://github.com/elkowar/eww)
  - **Launcher**: [rofi](https://github.com/davatorium/rofi)
