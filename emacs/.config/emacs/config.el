@@ -9,7 +9,7 @@
 (set-face-attribute 'default nil :height 140 :family "Fira Code")
 
 ;; Enable line numbers
-(global-display-line-numbers-mode 1)
+(global-display-line-numbers-mode -1)
 
 ;; Indentaion
 (setq
