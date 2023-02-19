@@ -8,18 +8,18 @@ $black: #121212;
 $red: #f7768c;
 $green: #9ece6a;
 $yellow: #e0af68;
-$blue: #aabbff;
+$blue: #6677bb;
 $magenta: #ad8ee6;
 $cyan: #449dab;
 $white: #787c99;
 
 // Colors
-$bg-color: #181818;
-$bg-alt-color: #242424;
-$fg-color: #ebdbb2;
-$fg-alt-color: #635c4b;
+$bg-color: #E0E0E0;
+$bg-alt-color: #E0E0E0;
+$fg-color: #181818;
+$fg-alt-color: #181818;
 $fg-sel-color: $blue;
-$border-color: #484848;
+$border-color: #909090;
 
 $fg-accent: $blue;
 
@@ -123,7 +123,6 @@ scale trough {
 	border-radius: 5px;
 }
 .icon {
-	opacity: 0.4;
 	margin: 0 .2rem;
 	font-size: $icon-size;
 	font-family: Material Icons;
@@ -131,7 +130,7 @@ scale trough {
 }
 
 .icon:hover {
-	opacity: 1.0;
+	opacity: 0.6;
 	// color: red;
 }
 
@@ -157,7 +156,7 @@ scale trough {
 	margin: 0 .8rem;
 	margin-top: 6px;
 	font-size: $logo-size;
-	opacity: 0.5;
+	opacity: 0.6;
 }
 
 .logo-seperator {
