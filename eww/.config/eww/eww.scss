@@ -69,7 +69,7 @@ button {
 }
 
 .workspaces > button:hover {
-  color: $fg-accent;
+  color: $fg-sel-color;
   opacity: 0.8;
 }
 
@@ -162,7 +162,7 @@ scale trough {
   border-top: solid 2px $border-color;
   padding: 1rem 0;
   padding-bottom: 0rem;
-  margin: 0.5rem 0 0.5rem 0;
+  margin-bottom: 0.5rem;
 }
 
 // Logo button

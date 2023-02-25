@@ -79,7 +79,7 @@ colors:
     blue:    '0x4271ae'
     magenta: '0x8959a8'
     cyan:    '0x3e999f'
-    white:   '0xd6d6d6'
+    white:   '0x565656'
 
   bright:
     black:   '0x8e908c'
@@ -89,7 +89,7 @@ colors:
     blue:    '0x5795e6'
     magenta: '0xb777e0'
     cyan:    '0x66bdc3'
-    white:   '0xefefef'
+    white:   '0x262626'
 
 cursor:
   # Values for `style`:

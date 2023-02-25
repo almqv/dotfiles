@@ -209,7 +209,6 @@
   (revealer      :reveal {music-active == "true"}
     (eventbox    :onhover "${EWW_CMD} update music=true"
                  :onhoverlost "${EWW_CMD} update music=false"
-                 ;; :onclick "wget ${artUrl} -O /tmp/cover.jpg; sleep 1; notify-send -i /tmp/cover.jpg '${title} - ${artist}' '${songtime}'"
         (box     :orientation "v"
                 :space-evenly "false"
                 :vexpand "false"

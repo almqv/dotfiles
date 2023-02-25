@@ -47,7 +47,7 @@
  '(elcord-use-major-mode-as-main-icon nil)
  '(evil-undo-system 'undo-redo)
  '(package-selected-packages
-   '(ligature evil-smartparens smartparens web-mode sublimity typescript-mode glsl-mode format-all hl-todo elcord evil-tabs evil-commentary format-all auto-complete editorconfig haskell-mode counsel ivy go-mode rust-mode use-package treemacs-evil treemacs projectile doom-themes lsp-mode evil)))
+   '(yaml-mode ligature evil-smartparens smartparens web-mode sublimity typescript-mode glsl-mode format-all hl-todo elcord evil-tabs evil-commentary format-all auto-complete editorconfig haskell-mode counsel ivy go-mode rust-mode use-package treemacs-evil treemacs projectile doom-themes lsp-mode evil)))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

@@ -66,10 +66,10 @@ set clipboard+=unnamedplus
 
 " Theme
 " set background=dark
-colorscheme gruvbox-material
+colorscheme github_light
 let &showbreak = '↳ '
 set laststatus=0 ruler
-set rnu nu
+" set rnu nu
 
 hi Normal guibg=NONE ctermbg=NONE
 hi EndOfBuffer guibg=NONE ctermbg=NONE
@@ -83,7 +83,7 @@ highlight clear LineNr
 highlight LineNr ctermfg=NONE ctermbg=NONE
 
 " Airline
-let g:airline_theme='gruvbox'
+let g:airline_theme='github_light'
 
 " Color stuff
 set encoding=UTF-8
