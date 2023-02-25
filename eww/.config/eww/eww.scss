@@ -4,22 +4,23 @@ $icon-size: 18px;
 $logo-size: 22px;
 
 // Basic colors
-$black: #121212;
-$red: #f7768c;
-$green: #9ece6a;
-$yellow: #e0af68;
-$blue: #6677bb;
-$magenta: #ad8ee6;
-$cyan: #449dab;
-$white: #787c99;
+$black: #1d1f21;
+$red: #c82829;
+$green: #718c00;
+$yellow: #eab700;
+$blue: #4271ae;
+$magenta: #8959a8;
+$cyan: #66bdc3;
+$white: #d6d6d6;
 
 // Colors
-$bg-color: #E0E0E0;
-$bg-alt-color: #E0E0E0;
-$fg-color: #181818;
-$fg-alt-color: #181818;
+$bg-color: #fff;
+$bg-alt-color: #d6d6d6;
+$fg-color: #4d4d4c;
+$fg-alt-color: #4d4d4c;
 $fg-sel-color: $blue;
-$border-color: #909090;
+$fg-desel-color: $white;
+$border-color: #d6d6d6;
 
 $fg-accent: $blue;
 
@@ -27,21 +28,22 @@ $fg-accent: $blue;
 $anim-transition: 150ms;
 
 * {
-	all: unset; //Unsets everything so you can style everything from scratch
-	font-family: "Fira Code";
-	// color: $fg-color;
+  all: unset; //Unsets everything so you can style everything from scratch
+  font-family: "Fira Code";
+  // color: $fg-color;
 }
 
 tooltip {
-	color: $fg-alt-color;
-	background-color: $bg-alt-color;
+  color: $fg-alt-color;
+  background-color: $bg-alt-color;
 }
 
-.bar-1, .bar-2 {
-	background-color: $bg-color;
-	color: $fg-color;
-	border-right: solid 1px $border-color;
-	padding: .3rem;
+.bar-1,
+.bar-2 {
+  background-color: $bg-color;
+  color: $fg-color;
+  border-right: solid 1px $border-color;
+  padding: 0.3rem;
 }
 
 .segment-end {
@@ -49,133 +51,144 @@ tooltip {
 
 // Styles on classes (see eww.yuck for more information)
 button {
-	transition-property: opacity, color;
-	transition-duration: $anim-transition;
+  transition-property: opacity, color;
+  transition-duration: $anim-transition;
 }
 
 // Workspaces
 .workspaces {
-	// background-color: $bg-alt-color;
-	// padding: .3rem;
-	// border: solid 1px $black;
-	// border-radius: $font-size;
+  // background-color: $bg-alt-color;
+  // padding: .3rem;
+  // border: solid 1px $black;
+  // border-radius: $font-size;
 }
 
 .workspaces > button {
-	font-size: $font-size;
-	margin: 4px;
+  font-size: $font-size;
+  margin: 4px;
 }
 
 .workspaces > button:hover {
-	color: $fg-accent;
-	opacity: 0.8;
+  color: $fg-accent;
+  opacity: 0.8;
 }
 
 button.active {
-	font-weight: bold;
-	color: $blue;
+  // font-weight: bold;
+  color: $fg-sel-color;
 }
-button.inactive { opacity: 0.2; }
+button.inactive {
+  color: $fg-desel-color;
+}
 
 // Generic stuff
 scale trough {
-	all: unset;
-	background-color: $bg-alt-color;
-	border-radius: 5px;
-	min-height: 60px;
-	min-width: 4px;
-	margin: .3rem 0 .3rem 0;
+  all: unset;
+  background-color: $bg-alt-color;
+  border-radius: 5px;
+  min-height: 60px;
+  min-width: 4px;
+  margin: 0.3rem 0 0.3rem 0;
 }
 
 // Menu
 .powermenu {
-	transition: color $anim-transition;
-	// border-right: solid 1px $border-color;
-	padding: .5rem .2rem .3rem .2rem;
+  transition: color $anim-transition;
+  // border-right: solid 1px $border-color;
+  padding: 0.5rem 0.2rem 0.3rem 0.2rem;
 }
 
-.quit, .lock, .reboot, .poweroff {
-	// padding: .5rem .2rem .3rem .2rem;
+.quit,
+.lock,
+.reboot,
+.poweroff {
+  // padding: .5rem .2rem .3rem .2rem;
 }
 
 // Colors for the buttons
-.lock:hover 	{ color: $white; 	}
-.quit:hover 	{ color: $green; 	}
-.reboot:hover 	{ color: $yellow; 	}
-.poweroff:hover { color: $red; 		}
+.lock:hover {
+  color: $white;
+}
+.quit:hover {
+  color: $green;
+}
+.reboot:hover {
+  color: $yellow;
+}
+.poweroff:hover {
+  color: $red;
+}
 
 .pm-active {
-	// background-color: $bg-alt-color;
-	// border-radius: 5px;
+  // background-color: $bg-alt-color;
+  // border-radius: 5px;
 }
 
 .pm-inner {
-	padding: .2rem 0;
+  padding: 0.2rem 0;
 }
 
 // Control
 .control {
-	margin-bottom: $logo-size;
-	padding: .5rem;
-	margin: 0 .5rem 0 .5rem;
-	font-family: Material Icons;
-	font-size: 1.6em;
-	border-radius: 5px;
+  margin-bottom: $logo-size;
+  padding: 0.5rem;
+  margin: 0;
+  font-family: Material Icons;
+  font-size: 1.6em;
+  border-radius: 5px;
 }
+
 .icon {
-	margin: 0 .2rem;
-	font-size: $icon-size;
-	font-family: Material Icons;
-	padding: 0 1px;
+  margin: 0 0.2rem;
+  font-size: $icon-size;
+  font-family: Material Icons;
+  padding: 0 1px;
 }
 
 .icon:hover {
-	opacity: 0.6;
-	// color: red;
+  opacity: 0.6;
 }
 
 // Volume stuff
 .volbar trough highlight {
-	background-color: $fg-accent;
-	border-radius: 5px;
+  background-color: $fg-accent;
+  border-radius: 5px;
 }
 
 // Time
 .time {
-	font-size: 11px;
-	font-weight: bold;
-	border-top: solid 2px $border-color;
-	color: $fg-alt-color;
-	padding: 1rem 0;
-	padding-bottom: 0rem;
-	margin: .5rem 0 .5rem 0;
+  font-size: 11px;
+  font-weight: bold;
+  border-top: solid 2px $border-color;
+  padding: 1rem 0;
+  padding-bottom: 0rem;
+  margin: 0.5rem 0 0.5rem 0;
 }
 
 // Logo button
 .logo {
-	margin: 0 .8rem;
-	margin-top: 6px;
-	font-size: $logo-size;
-	opacity: 0.6;
+  margin: 0 0.8rem;
+  margin-top: 6px;
+  font-size: $logo-size;
+  // opacity: 0.6;
 }
 
 .logo-seperator {
-	border-bottom: 2px solid $border-color;
-	padding-bottom: .4rem;
+  border-bottom: 2px solid $border-color;
+  padding-bottom: 0.4rem;
 }
 
 // Color overrides
 .red {
-	color: $red;
-	opacity: 0.8;
+  color: $red;
+  opacity: 0.8;
 }
-
 
 // Music widget
 .musicmenu {
-	// background-color: $bg-alt-color;
+  // background-color: $bg-alt-color;
 }
 
 .mm-inner {
-	color: $blue;
+  color: $blue;
 }
