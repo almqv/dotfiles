@@ -3,13 +3,13 @@
       user-mail-address "elalmqvist@gmail.com")
 
 ;; Theme
-(load-theme 'doom-tomorrow-night t)
+(load-theme 'doom-tomorrow-day t)
 
 ;; Font size
 (set-face-attribute 'default nil :height 140 :family "Fira Code")
 
 ;; Enable line numbers
-(global-display-line-numbers-mode -1)
+(global-display-line-numbers-mode 1)
 
 ;; Indentaion
 (setq

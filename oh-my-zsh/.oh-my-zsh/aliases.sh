@@ -18,3 +18,6 @@ alias setbri="xrandr --output eDP-1 --brightness"
 
 # Cringe
 alias gdb-multiarch="arm-none-eabi-gdb"
+
+# Git stuff
+alias gc="git add -A && git commit -m"
