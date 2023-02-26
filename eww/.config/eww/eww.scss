@@ -4,25 +4,25 @@ $icon-size: 18px;
 $logo-size: 22px;
 
 // Basic colors
+$blue: #81a2be;
+$cyan: #add9ff;
 $black: #1d1f21;
-$red: #c82829;
-$green: #718c00;
-$yellow: #eab700;
-$blue: #4271ae;
-$magenta: #8959a8;
-$cyan: #66bdc3;
-$white: #d6d6d6;
+$red: #cc6666;
+$green: #b5bd68;
+$yellow: #f0c674;
+$magenta: #b294bb;
+$white: #c5c8c6;
 
 // Colors
-$bg-color: #fff;
-$bg-alt-color: #d6d6d6;
-$fg-color: #4d4d4c;
-$fg-alt-color: #4d4d4c;
-$fg-sel-color: $blue;
-$fg-desel-color: #c9c9c9;
-$border-color: #d6d6d6;
+$bg-color: #1d1f21;
+$bg-alt-color: #131519;
+$fg-color: #c5c8c6;
+$fg-alt-color: #5f5f5f;
+$fg-sel-color: $cyan;
+$fg-desel-color: $fg-alt-color;
+$border-color: #434549;
 
-$fg-accent: $blue;
+$fg-accent: $cyan;
 
 // Misc
 $anim-transition: 150ms;
@@ -41,9 +41,8 @@ tooltip {
 .bar-1,
 .bar-2 {
   background-color: $bg-color;
-  color: $fg-color;
+  color: $fg-alt-color;
   border-right: solid 1px $border-color;
-  padding: 0.3rem;
 }
 
 .segment-end {
@@ -57,10 +56,7 @@ button {
 
 // Workspaces
 .workspaces {
-  // background-color: $bg-alt-color;
   // padding: .3rem;
-  // border: solid 1px $black;
-  // border-radius: $font-size;
 }
 
 .workspaces > button {
@@ -77,6 +73,7 @@ button.active {
   // font-weight: bold;
   color: $fg-sel-color;
 }
+
 button.inactive {
   color: $fg-desel-color;
 }
@@ -107,7 +104,7 @@ scale trough {
 
 // Colors for the buttons
 .lock:hover {
-  color: $white;
+  color: $blue;
 }
 .quit:hover {
   color: $green;
@@ -131,11 +128,9 @@ scale trough {
 // Control
 .control {
   margin-bottom: $logo-size;
-  padding: 0.5rem;
-  margin: 0;
+  margin-bottom: 0.5rem;
   font-family: Material Icons;
   font-size: 1.6em;
-  border-radius: 5px;
 }
 
 .icon {
@@ -157,11 +152,11 @@ scale trough {
 
 // Time
 .time {
+  // color: $fg-alt-color;
   font-size: 11px;
   font-weight: bold;
-  border-top: solid 2px $border-color;
-  padding: 1rem 0;
-  padding-bottom: 0rem;
+  border-top: solid 2px $fg-alt-color;
+  padding-top: 1rem;
   margin-bottom: 0.5rem;
 }
 
@@ -170,7 +165,6 @@ scale trough {
   margin: 0 0.8rem;
   margin-top: 6px;
   font-size: $logo-size;
-  // opacity: 0.6;
 }
 
 .logo-seperator {

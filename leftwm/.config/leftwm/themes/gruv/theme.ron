@@ -2,7 +2,7 @@
 (
 	border_width: 1,
 	margin: 16,
-	default_border_color: "#d6d6d6",
-	focused_border_color: "#565656",
-	floating_border_color: "#f6f6f6",
+	default_border_color: "#434549",
+	focused_border_color: "#636569",
+	floating_border_color: "#434549",
 )

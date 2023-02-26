@@ -1,49 +1,35 @@
 * {
-  text-color: #000;
+  text-color: #efefef;
   background-color: rgba(1, 0, 0, 0);
   dark: #282828;
   border-color: #1d1f21;
   // Black
-  black: #fff;
-  blackop: #eee;
-  lightblack: #222222;
-  //
-  // Red
-  red: #cc241d;
-  lightred: #cc241d;
-  //
-  // Green
-  green: #98971a;
-  lightgreen: #98971a;
-  //
-  // Yellow
-  yellow: #d79921;
-  lightyellow: #d79921;
-  //
-  // Blue
-  blue: #4271ae;
-  lightblue: #4271ae;
-  //
-  // Magenta
-  magenta: #b16286;
-  lightmagenta: #b16286;
-  //
-  // Cyan
-  cyan: #458588;
-  lightcyan: #458588;
-  //
-  // White
-  white: #a89984;
-  lightwhite: #a89984;
+  blue: #81a2be;
+  lightblue: #81a2be;
+  cyan: #add9ff;
+  lightcyan: #add9ff;
+  black: #1d1f21;
+  lightblack: #1d1f21;
+  blackop: #1d1f21aa;
+  red: #cc6666;
+  lightred: #cc6666;
+  green: #b5bd68;
+  lightgreen: #b5bd68;
+  yellow: #f0c674;
+  lightyellow: #f0c674;
+  magenta: #b294bb;
+  lightmagenta: #b294bb;
+  white: #c5c8c6;
+  lightwhite: #c5c8c6;
   //
   // Bold, Italic, Underline
-  highlight: bold #ffffff;
+  highlight: bold #ccc;
 }
 window {
   /* height: 14em; */
-  width: 24em;
+  /* width: 24em; */
   height: 100%;
-  /* width: 100%; */
+  width: 100%;
   location: west;
   /* anchor: center; */
   text-color: @lightwhite;
