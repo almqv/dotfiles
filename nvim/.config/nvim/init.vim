@@ -66,7 +66,7 @@ set clipboard+=unnamedplus
 
 " Theme
 " set background=dark
-colorscheme github_light
+colorscheme github_dark
 let &showbreak = '↳ '
 set laststatus=0 ruler
 " set rnu nu

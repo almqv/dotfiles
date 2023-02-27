@@ -46,6 +46,7 @@
  '(elcord-quiet t)
  '(elcord-use-major-mode-as-main-icon t)
  '(evil-undo-system 'undo-redo)
+ '(lsp-rust-server 'rls)
  '(package-selected-packages
    '(scss-mode yaml-mode ligature evil-smartparens smartparens web-mode sublimity typescript-mode glsl-mode format-all hl-todo elcord evil-tabs evil-commentary format-all auto-complete editorconfig haskell-mode counsel ivy go-mode rust-mode use-package treemacs-evil treemacs projectile doom-themes lsp-mode evil)))
 
