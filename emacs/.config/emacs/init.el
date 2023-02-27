@@ -48,7 +48,7 @@
  '(evil-undo-system 'undo-redo)
  '(lsp-rust-server 'rust-analyzer)
  '(package-selected-packages
-   '(lsp-ui company flycheck scss-mode yaml-mode ligature evil-smartparens smartparens web-mode sublimity typescript-mode glsl-mode format-all hl-todo elcord evil-tabs evil-commentary format-all auto-complete editorconfig haskell-mode counsel ivy go-mode rust-mode use-package treemacs-evil treemacs projectile doom-themes lsp-mode evil)))
+   '(aggressive-indent lsp-ui company flycheck scss-mode yaml-mode ligature evil-smartparens smartparens web-mode sublimity typescript-mode glsl-mode format-all hl-todo elcord evil-tabs evil-commentary format-all auto-complete editorconfig haskell-mode counsel ivy go-mode rust-mode use-package treemacs-evil treemacs projectile doom-themes lsp-mode evil)))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -170,3 +170,8 @@
   (lsp-ui-peek-always-show t)
   (lsp-ui-sideline-show-hover t)
   (lsp-ui-doc-enable nil))
+
+;; Automatic shit
+(global-aggressive-indent-mode 1)
+(electric-pair-mode t)
+;; (add-to-list 'aggressive-indent-excluded-modes 'html-mode)
