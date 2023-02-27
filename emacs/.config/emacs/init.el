@@ -46,9 +46,9 @@
  '(elcord-quiet t)
  '(elcord-use-major-mode-as-main-icon t)
  '(evil-undo-system 'undo-redo)
- '(lsp-rust-server 'rls)
+ '(lsp-rust-server 'rust-analyzer)
  '(package-selected-packages
-   '(scss-mode yaml-mode ligature evil-smartparens smartparens web-mode sublimity typescript-mode glsl-mode format-all hl-todo elcord evil-tabs evil-commentary format-all auto-complete editorconfig haskell-mode counsel ivy go-mode rust-mode use-package treemacs-evil treemacs projectile doom-themes lsp-mode evil)))
+   '(lsp-ui company flycheck scss-mode yaml-mode ligature evil-smartparens smartparens web-mode sublimity typescript-mode glsl-mode format-all hl-todo elcord evil-tabs evil-commentary format-all auto-complete editorconfig haskell-mode counsel ivy go-mode rust-mode use-package treemacs-evil treemacs projectile doom-themes lsp-mode evil)))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -161,3 +161,12 @@
 (setq use-dialog-box nil)
 
 (global-auto-revert-mode 1)
+
+;; LSP ui
+(use-package lsp-ui
+  :ensure
+  :commands lsp-ui-mode
+  :custom
+  (lsp-ui-peek-always-show t)
+  (lsp-ui-sideline-show-hover t)
+  (lsp-ui-doc-enable nil))
