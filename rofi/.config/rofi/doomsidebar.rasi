@@ -1,122 +1,108 @@
 * {
-    text-color:  #ebdbb2;
-    background-color:  rgba(1,0,0,0);
-    dark: #282828;
-	border-color: #1d1f21;
-    // Black
-    black:       #181818;
-    blackop:     #18181888;
-    lightblack:  #181818;
-    //
-    // Red
-    red:         #cc241d;
-    lightred:    #cc241d;
-    //
-    // Green
-    green:       #98971a;
-    lightgreen:  #98971a;
-    //
-    // Yellow
-    yellow:      #d79921;
-    lightyellow: #d79921;
-    //
-    // Blue
-    blue:      #458588;
-    lightblue: #458588;
-    //
-    // Magenta
-    magenta:      #b16286;
-    lightmagenta: #b16286;
-    //
-    // Cyan
-    cyan:      #458588;
-    lightcyan: #458588;
-    //
-    // White
-    white:      #a89984;
-    lightwhite: #a89984;
-    //
-    // Bold, Italic, Underline
-    highlight:  bold #ffffff;
+  text-color: #efefef;
+  background-color: rgba(1, 0, 0, 0);
+  dark: #282828;
+  border-color: #1d1f21;
+  // Black
+  blue: #81a2be;
+  lightblue: #81a2be;
+  cyan: #add9ff;
+  lightcyan: #add9ff;
+  black: #1d1f21;
+  lightblack: #1d1f21;
+  blackop: #1d1f21aa;
+  red: #cc6666;
+  lightred: #cc6666;
+  green: #b5bd68;
+  lightgreen: #b5bd68;
+  yellow: #f0c674;
+  lightyellow: #f0c674;
+  magenta: #b294bb;
+  lightmagenta: #b294bb;
+  white: #c5c8c6;
+  lightwhite: #c5c8c6;
+  //
+  // Bold, Italic, Underline
+  highlight: bold #ccc;
 }
 window {
-    height:   14em;
-    width:    24em;
-	/* height: 100%; */
-	/* width: 100%; */
-    location: center;
-    anchor:   center;
-    text-color: @lightwhite;
+  /* height: 14em; */
+  /* width: 24em; */
+  height: 100%;
+  width: 100%;
+  location: west;
+  /* anchor: center; */
+  text-color: @lightwhite;
 }
 mode-switcher {
-    border: 0px 0px 0px 0px;
-    background-color: @lightblack;
-    padding: 4px;
+  border: 0px 0px 0px 0px;
+  background-color: @lightblack;
+  padding: 4px;
 }
 button selected {
-    border-color: @lightgreen;
-    text-color: @lightgreen;
+  border-color: @lightgreen;
+  text-color: @lightgreen;
 }
 inputbar {
-    background-color: @black;
-    text-color: @lightgreen;
-	padding: 0.4em 1em;
-	height: 32px;
+  background-color: @black;
+  text-color: @lightgreen;
+  padding: 0.4em 1em;
+  height: 32px;
 }
 entry {
 }
 prompt {
-	margin: 0 0.4em 0 0;
+  margin: 0 0.4em 0 0;
 }
 mainbox {
-	/* padding: 0.2em; */
-    expand: true;
-    background-color: @blackop;
-    spacing: 1em;
+  /* padding: 0.2em; */
+  expand: true;
+  background-color: @blackop;
+  spacing: 1em;
 }
 listview {
-    padding: 0em 0.4em 0em 1em;
-    dynamic: false;
-    lines: 0;
+  padding: 0em 0.4em 0em 1em;
+  dynamic: false;
+  lines: 0;
 }
 element-text {
-    background-color: inherit;
-    text-color:       inherit;
+  background-color: inherit;
+  text-color: inherit;
 }
 element {
-	padding: 4px;
-	border-radius: 2px;
+  padding: 4px;
+  border-radius: 2px;
 }
-element selected  normal {
-    background-color: @blue;
+element selected normal {
+  background-color: @blue;
 }
 element normal active {
-    text-color: @lightblue;
+  text-color: @lightblue;
 }
 element normal urgent {
-    text-color: @lightred;
+  text-color: @lightred;
 }
 element alternate normal {
 }
 element alternate active {
-    text-color: @lightblue;
+  text-color: @lightblue;
 }
 element alternate urgent {
-    text-color: @lightred;
+  text-color: @lightred;
 }
 element selected active {
-    background-color: @lightblue;
-    text-color: @dark;
+  background-color: @lightblue;
+  text-color: @dark;
 }
 element selected urgent {
-    background-color: @lightred;
-    text-color: @dark;
+  background-color: @lightred;
+  text-color: @dark;
 }
 error-message {
-    expand: true;
-    background-color: @black;
-	text-color: #f00;
-    border-color: darkred;
-    border: 2px;
-    padding: 1em;
+  expand: true;
+  background-color: @black;
+  text-color: #f00;
+  border-color: darkred;
+  border: 2px;
+  padding: 1em;
 }

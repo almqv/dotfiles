@@ -22,3 +22,6 @@ alias setbri="xrandr --output eDP-1 --brightness"
 alias lsbat="cat /sys/class/power_supply/BAT0/capacity"
 alias lsnet="nmcli | grep "^wlp" | sed 's/\ connected\ to\ //g' | cut -d ':' -f2"
 alias gdb-multiarch="arm-none-eabi-gdb"
+
+# Git stuff
+alias gc="git add -A && git commit -m"
