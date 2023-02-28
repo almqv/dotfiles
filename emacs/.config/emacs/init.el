@@ -57,12 +57,9 @@
 ;; Disable backup files etc.
 (setq make-backup-files nil)
 
-<<<<<<< HEAD
-=======
 ;; Melpa
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
-(package-initialize)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -88,7 +85,6 @@
  ;; If there is more than one, they won't work right.
  )
 
->>>>>>> master
 ;; LSP
 (require 'use-package)
 (use-package lsp-mode

@@ -250,7 +250,7 @@
     )))
 
 (defpoll music-active         :interval "200ms"  "scripts/musicstatus")
-(defpoll music-status         :interval "200ms"  "playerctl status &>/dev/null")
+(defpoll music-status         :interval "200ms"  "playerctl status")
 (defpoll artUrl               :interval "200ms"  "playerctl metadata artUrl &>/dev/null")
 (defpoll title                :interval "200ms"  "playerctl metadata title &>/dev/null")
 (defpoll artist               :interval "200ms"  "playerctl metadata artist &>/dev/null")
