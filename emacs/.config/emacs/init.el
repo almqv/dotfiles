@@ -172,6 +172,6 @@
   (lsp-ui-doc-enable nil))
 
 ;; Automatic shit
-(global-aggressive-indent-mode 1)
+(global-aggressive-indent-mode -1)
 (electric-pair-mode t)
 ;; (add-to-list 'aggressive-indent-excluded-modes 'html-mode)
