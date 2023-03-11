@@ -44,7 +44,7 @@
  '(elcord-idle-message "Thinking...")
  '(elcord-idle-timer 300)
  '(elcord-quiet t)
- '(elcord-use-major-mode-as-main-icon t)
+ '(elcord-use-major-mode-as-main-icon nil)
  '(evil-undo-system 'undo-redo)
  '(lsp-rust-server 'rust-analyzer)
  '(package-selected-packages

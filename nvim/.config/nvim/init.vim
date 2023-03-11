@@ -23,6 +23,7 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'arakashic/chromatica.nvim'
 	Plug 'slim-template/vim-slim'
 	Plug 'OmniSharp/omnisharp-vim'
+	Plug 'ARM9/arm-syntax-vim'
 	" Themes
 	Plug 'ellisonleao/gruvbox.nvim'
 	Plug 'sainnhe/gruvbox-material'
