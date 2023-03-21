@@ -78,6 +78,7 @@
         (command: SoftReload, value: "", modifier: ["modkey", "Shift"], key: "x"),
         // (command: Execute, value: "loginctl kill-session $XDG_SESSION_ID", modifier: ["modkey", "Shift"], key: "x"),
         (command: Execute, value: "betterlockscreen --lock", modifier: ["modkey", "Shift"], key: "l"),
+        (command: Execute, value: "emacs", modifier: ["modkey", "Shift"], key: "e"),
         (command: Execute, value: "flameshot gui", modifier: ["modkey"], key: "Print"),
         (command: MoveToLastWorkspace, value: "", modifier: ["modkey", "Shift"], key: "w"),
         (command: SwapTags, value: "", modifier: ["modkey"], key: "w"),
