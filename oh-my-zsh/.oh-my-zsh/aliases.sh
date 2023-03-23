@@ -7,8 +7,8 @@ alias ccd="pwd | xclip"
 
 # Programs
 alias vidconvert="ffmpeg -i"
-alias vim="nvim"
-alias vi="nvim"
+# alias vim="nvim"
+# alias vi="nvim"
 
 # Shortcuts
 alias todo="task"
