@@ -12,7 +12,8 @@
  '(elcord-idle-message "Thinking...")
  '(elcord-mode t nil (elcord))
  '(elcord-quiet t)
- '(package-selected-packages '(lsp-pyright elcord quelpa eldoc-cmake cpputils-cmake))
+ '(package-selected-packages
+   '(scala-mode thrift lsp-pyright elcord quelpa eldoc-cmake cpputils-cmake))
  '(warning-suppress-types '((initialization) (defvaralias))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
