@@ -28,6 +28,7 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'ellisonleao/gruvbox.nvim'
 	Plug 'sainnhe/gruvbox-material'
 	Plug 'projekt0n/github-nvim-theme'
+	Plug 'chriskempson/base16-vim'
 	" Lua Line
 	Plug 'nvim-lualine/lualine.nvim'
 	Plug 'kyazdani42/nvim-web-devicons'
@@ -56,27 +57,27 @@ set shiftwidth=4
 let g:ruby_recommended_style = 0
 
 " Binds
-	" Tabs
-	vmap <Tab> >gv
-	vmap <S-Tab> <gv
+" Tabs
+vmap <Tab> >gv
+vmap <S-Tab> <gv
 
-	" NERDTree
-	nmap <silent> <C-D> :NERDTreeToggle<CR> 
+" NERDTree
+nmap <silent> <C-D> :NERDTreeToggle<CR> 
 
 set clipboard+=unnamedplus
 
 " Theme
 " set background=dark
-colorscheme github_dark
+colorscheme base16-tomorrow-night
 let &showbreak = '↳ '
 set laststatus=0 ruler
-" set rnu nu
+set nu
 
-hi Normal guibg=NONE ctermbg=NONE
-hi EndOfBuffer guibg=NONE ctermbg=NONE
-hi TabLine guibg=NONE ctermbg=NONE
-" hi TabLineSel ctermfg=223 guibg=NONE ctermbg=NONE 
-hi TabLineFill guibg=NONE ctermbg=NONE
+" hi Normal guibg=NONE ctermbg=NONE
+" hi EndOfBuffer guibg=NONE ctermbg=NONE
+" hi TabLine guibg=NONE ctermbg=NONE
+" " hi TabLineSel ctermfg=223 guibg=NONE ctermbg=NONE 
+" hi TabLineFill guibg=NONE ctermbg=NONE
 
 hi StatusLine ctermbg=NONE guibg=NONE
 
