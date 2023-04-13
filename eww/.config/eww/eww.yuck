@@ -104,7 +104,7 @@
 ;; Control widget (container)
 (defwidget control []
   (box :class "control" :spacing 12 :space-evenly false :orientation "v"
-    ;; (music)
+    (music)
     (volume)
     (wifi)
     (bat)
