@@ -104,7 +104,7 @@ source $ZSH/oh-my-zsh.sh
 
 source $ZSH/aliases.sh
 export TERM='xterm-256color'
-export PATH="$HOME/.scripts:$HOME/.cargo/bin:$PATH" # Add custom scripts!
+export PATH="$HOME/.scripts:$HOME/.cargo/bin:$HOME/.local/bin:$PATH" # Add custom scripts!
 
 # Program defaults
 export VIDPLAY=vlc
