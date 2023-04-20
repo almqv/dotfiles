@@ -25,7 +25,7 @@ return require("packer").startup(function(use)
 		branch = "v2.x",
 		requires = {
 			-- LSP Support
-			{ "neovim/nvim-lspconfig" },             -- Required
+			{ "neovim/nvim-lspconfig" }, -- Required
 			{
 				-- Optional
 				"williamboman/mason.nvim",
@@ -33,12 +33,12 @@ return require("packer").startup(function(use)
 					pcall(vim.cmd, "MasonUpdate")
 				end,
 			},
-			{ "williamboman/mason-lspconfig.nvim" },             -- Optional
+			{ "williamboman/mason-lspconfig.nvim" }, -- Optional
 
 			-- Autocompletion
-			{ "hrsh7th/nvim-cmp" },                 -- Required
-			{ "hrsh7th/cmp-nvim-lsp" },             -- Required
-			{ "L3MON4D3/LuaSnip" },                 -- Required
+			{ "hrsh7th/nvim-cmp" }, -- Required
+			{ "hrsh7th/cmp-nvim-lsp" }, -- Required
+			{ "L3MON4D3/LuaSnip" }, -- Required
 		}
 	}
 
@@ -56,5 +56,9 @@ return require("packer").startup(function(use)
 		config = function()
 			require("todo-comments").setup({})
 		end
+	}
+	use {
+		"windwp/nvim-autopairs",
+		config = function() require("nvim-autopairs").setup {} end
 	}
 end)
