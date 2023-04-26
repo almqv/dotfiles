@@ -11,7 +11,7 @@
  - **Launcher**: [rofi](https://github.com/davatorium/rofi)
 
 ## Installing dotfiles
-`git clone git.wych.dev/repos/dotfiles.git && cd dotfiles`
+`git clone git.wych.dev/repos/dotfiles.git ~/dotfiles && cd dotfiles`
 
 Then use [stow](https://www.gnu.org/software/stow/) to create symlinks for each *dotfile*: `$ stow (stow options) (package)`
 	
