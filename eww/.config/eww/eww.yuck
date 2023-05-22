@@ -281,15 +281,3 @@
   :hexpand "false"
   :vexpand "false"
   (bar-2 :screen 2))
-
-(defwindow time-thing
-    :monitor 0
-    :geometry (geometry :x "0%"
-                        :y "0%"
-                        :width "182px"
-                        :height "38px"
-                        :anchor "right top"
-                        )
-    :reserve (struts :side "right" :distance "0px" :orientation "h")
-    (time))
-
