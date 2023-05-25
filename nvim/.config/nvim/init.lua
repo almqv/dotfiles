@@ -9,7 +9,7 @@ require("evim.init")
 
 -- Theme
 vim.opt.termguicolors = true
-vim.cmd.colorscheme "base16-tomorrow-night"
+vim.cmd.colorscheme "base16-gruvbox-dark-hard"
 
 -- Editor settings
 vim.opt.nu         = true
