@@ -9,7 +9,10 @@ require("evim.init")
 
 -- Theme
 vim.opt.termguicolors = true
-vim.cmd.colorscheme "melange"
+require('onedark').setup {
+	style = 'darker'
+}
+vim.cmd.colorscheme "onedark"
 
 -- Editor settings
 vim.opt.nu         = true

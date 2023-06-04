@@ -75,6 +75,7 @@ return require("packer").startup(function(use)
 		config = function() require("nvim-autopairs").setup {} end
 	}
 
+	use "navarasu/onedark.nvim"
 
 	if packer_bootstrap then
 		require("packer").sync()
