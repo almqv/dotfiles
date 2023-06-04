@@ -77,6 +77,12 @@ return require("packer").startup(function(use)
 		"windwp/nvim-autopairs",
 		config = function() require("nvim-autopairs").setup {} end
 	}
+	use {
+		"lewis6991/gitsigns.nvim",
+		config = function()
+			require('gitsigns').setup()
+		end
+	}
 
 	if packer_bootstrap then
 		require("packer").sync()

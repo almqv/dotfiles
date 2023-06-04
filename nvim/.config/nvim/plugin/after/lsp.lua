@@ -42,8 +42,8 @@ lsp.on_attach(function(client, bufnr)
 	vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
 	vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 	vim.keymap.set("n", "<A-g>", function()
-		vim.cmd "Prettier" -- NOTE: this is super hacky but fuck you
 		vim.lsp.buf.format { async = true }
+		-- vim.cmd "Prettier" -- NOTE: this is super hacky but fuck you
 	end, opts)
 end)
 
