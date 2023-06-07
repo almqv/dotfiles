@@ -9,6 +9,8 @@ lsp.ensure_installed({
 	"rust_analyzer",
 	"pyright",
 	"clangd",
+	"tailwindcss",
+	"prismals",
 })
 
 local cmp = require("cmp")
