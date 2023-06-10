@@ -31,6 +31,7 @@ return require("packer").startup(function(use)
 	-- Themes
 	use "savq/melange-nvim"
 	use "chriskempson/base16-vim"
+	use "navarasu/onedark.nvim"
 
 	-- LSP
 	use {
@@ -54,6 +55,8 @@ return require("packer").startup(function(use)
 			{ "L3MON4D3/LuaSnip" }, -- Required
 		}
 	}
+	use "jose-elias-alvarez/null-ls.nvim"
+	use "MunifTanjim/prettier.nvim"
 
 	-- Misc
 	-- use "vimsence/vimsence"
@@ -74,7 +77,12 @@ return require("packer").startup(function(use)
 		"windwp/nvim-autopairs",
 		config = function() require("nvim-autopairs").setup {} end
 	}
-
+	use {
+		"lewis6991/gitsigns.nvim",
+		config = function()
+			require('gitsigns').setup()
+		end
+	}
 
 	if packer_bootstrap then
 		require("packer").sync()

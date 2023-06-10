@@ -19,7 +19,6 @@ window:
     # General application class
     general: Alacritty
 
-
 scrolling:
   history: 5000
 
@@ -27,7 +26,6 @@ scrolling:
 font:
   # Normal (roman) font face
   normal:
-
     family: Fira Code
 
     # The `style` can be specified to pick a specific face.
@@ -35,7 +33,6 @@ font:
 
   # Bold font face
   bold:
-
     family: Fira Code
 
     # The `style` can be specified to pick a specific face.
@@ -43,12 +40,12 @@ font:
 
   # Italic font face
   italic:
+    family: Fira Code
 
     style: Italic
 
   # Bold italic font face
   bold_italic:
-
     family: Fira Code
 
     # The `style` can be specified to pick a specific face.
@@ -69,43 +66,43 @@ draw_bold_text_with_bright_colors: true
 colors:
   # Default colors
   primary:
-    background: '0x1d1f21'
-    foreground: '0xc5c8c6'
+    background: "0x1d1f21"
+    foreground: "0xc5c8c6"
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '0x1d1f21'
-    cursor: '0xc5c8c6'
+    text: "0x1d1f21"
+    cursor: "0xc5c8c6"
 
   # Normal colors
   normal:
-    black:   '0x1d1f21'
-    red:     '0xcc6666'
-    green:   '0xb5bd68'
-    yellow:  '0xf0c674'
-    blue:    '0x81a2be'
-    magenta: '0xb294bb'
-    cyan:    '0x8abeb7'
-    white:   '0xc5c8c6'
+    black: "0x1d1f21"
+    red: "0xcc6666"
+    green: "0xb5bd68"
+    yellow: "0xf0c674"
+    blue: "0x81a2be"
+    magenta: "0xb294bb"
+    cyan: "0x8abeb7"
+    white: "0xc5c8c6"
 
   # Bright colors
   bright:
-    black:   '0x969896'
-    red:     '0xcc6666'
-    green:   '0xb5bd68'
-    yellow:  '0xf0c674'
-    blue:    '0x81a2be'
-    magenta: '0xb294bb'
-    cyan:    '0x8abeb7'
-    white:   '0xffffff'
+    black: "0x969896"
+    red: "0xcc6666"
+    green: "0xb5bd68"
+    yellow: "0xf0c674"
+    blue: "0x81a2be"
+    magenta: "0xb294bb"
+    cyan: "0x8abeb7"
+    white: "0xffffff"
 
   indexed_colors:
-    - { index: 16, color: '0xde935f' }
-    - { index: 17, color: '0xa3685a' }
-    - { index: 18, color: '0x282a2e' }
-    - { index: 19, color: '0x373b41' }
-    - { index: 20, color: '0xb4b7b4' }
-    - { index: 21, color: '0xe0e0e0' }
+    - { index: 16, color: "0xde935f" }
+    - { index: 17, color: "0xa3685a" }
+    - { index: 18, color: "0x282a2e" }
+    - { index: 19, color: "0x373b41" }
+    - { index: 20, color: "0xb4b7b4" }
+    - { index: 21, color: "0xe0e0e0" }
 
 cursor:
   # Values for `style`:
@@ -115,22 +112,21 @@ cursor:
   style: Beam
 
 key_bindings:
-    # (Windows, Linux, and BSD only)
-  - { key: V,        mods: Control|Shift, action: Paste            }
-  - { key: C,        mods: Control|Shift, action: Copy             }
-  - { key: Insert,   mods: Shift,         action: PasteSelection   }
-  - { key: Key0,     mods: Control,       action: ResetFontSize    }
-  - { key: Equals,   mods: Control,       action: IncreaseFontSize }
-  - { key: Plus,     mods: Control,       action: IncreaseFontSize }
-  - { key: Minus,    mods: Control,       action: DecreaseFontSize }
-  - { key: Minus,    mods: Control,       action: DecreaseFontSize }
+  # (Windows, Linux, and BSD only)
+  - { key: V, mods: Control|Shift, action: Paste }
+  - { key: C, mods: Control|Shift, action: Copy }
+  - { key: Insert, mods: Shift, action: PasteSelection }
+  - { key: Key0, mods: Control, action: ResetFontSize }
+  - { key: Equals, mods: Control, action: IncreaseFontSize }
+  - { key: Plus, mods: Control, action: IncreaseFontSize }
+  - { key: Minus, mods: Control, action: DecreaseFontSize }
+  - { key: Minus, mods: Control, action: DecreaseFontSize }
 
-  - { key: Paste,                    action: Paste                            }
-  - { key: Copy,                     action: Copy                             }
-  - { key: L,         mods: Control, action: ClearLogNotice                   }
-  - { key: L,         mods: Control, chars: "\x0c"                            }
-  - { key: PageUp,    mods: Shift,   action: ScrollPageUp,   mode: ~Alt       }
-  - { key: PageDown,  mods: Shift,   action: ScrollPageDown, mode: ~Alt       }
-  - { key: Home,      mods: Shift,   action: ScrollToTop,    mode: ~Alt       }
-  - { key: End,       mods: Shift,   action: ScrollToBottom, mode: ~Alt       }
-
+  - { key: Paste, action: Paste }
+  - { key: Copy, action: Copy }
+  - { key: L, mods: Control, action: ClearLogNotice }
+  - { key: L, mods: Control, chars: "\x0c" }
+  - { key: PageUp, mods: Shift, action: ScrollPageUp, mode: ~Alt }
+  - { key: PageDown, mods: Shift, action: ScrollPageDown, mode: ~Alt }
+  - { key: Home, mods: Shift, action: ScrollToTop, mode: ~Alt }
+  - { key: End, mods: Shift, action: ScrollToBottom, mode: ~Alt }

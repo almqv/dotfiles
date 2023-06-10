@@ -109,7 +109,6 @@ export PATH="$HOME/.scripts:$HOME/.cargo/bin:$HOME/.local/bin:$PATH" # Add custo
 # Program defaults
 export VIDPLAY=vlc
 export IMGVIEW=eog
-export BROWSER=qutebrowser
 export EDITOR=nvim
 
 # pyenv

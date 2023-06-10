@@ -19,3 +19,7 @@ vim.keymap.set("n", "<leader>y", "\"+y")
 vim.keymap.set("v", "<leader>y", "\"+y")
 vim.keymap.set("n", "<leader>Y", "\"+Y")
 
+-- Prettier
+vim.keymap.set("n", "<leader>g", function()
+	vim.cmd "Prettier" -- NOTE: this is super hacky but fuck you
+end, { buffer = bufnr, desc = "[lsp] Format" })
