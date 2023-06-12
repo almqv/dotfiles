@@ -161,7 +161,7 @@
       (button   :onclick "amixer -D pulse set Master 1+ toggle"
                 :class "icon volume + ${muted-volume != 'on' ? 'red' : ''}"
                 :tooltip "Volume: ${current-volume}%"
-                {muted-volume != "on" ? "ﱝ" : "墳"}
+                {muted-volume != "on" ? "󰝟" : "󰕾"}
       )
   )))
 (defvar volume false)
@@ -230,7 +230,7 @@
                 ;; Pause
                 (button    :class "icon pause"
                             :tooltip "Pause/play"
-                            :onclick "playerctl play-pause" {music-status == "Playing" ? "" : ""})
+                            :onclick "playerctl play-pause" {music-status == "Playing" ? "󰏤" : ""})
 
                 ;; Pause
                 (button    :class "icon prev"
