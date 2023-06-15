@@ -29,160 +29,100 @@ $anim-transition: 150ms;
 
 * {
   all: unset; //Unsets everything so you can style everything from scratch
-  font-family: "Fira Code";
-  // color: $fg-color;
+  font-family: "Lato Mono";
 }
 
 tooltip {
   color: $fg-alt-color;
   background-color: $bg-alt-color;
+  border-radius: 12px;
 }
 
 .bar-1,
 .bar-2 {
-  background-color: $bg-color;
-  color: $fg-alt-color;
-  border-right: solid 1px $border-color;
+  background-color: rgba(0, 0, 0, 0.65);
 }
 
+.main-cont {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-bottom: 0;
+  padding-top: 4px;
+}
+
+.segment-start,
+.segment-middle,
 .segment-end {
 }
 
-// Styles on classes (see eww.yuck for more information)
-button {
-  transition-property: opacity, color;
-  transition-duration: $anim-transition;
-}
-
-// Workspaces
-.workspaces {
-	  padding: .3rem;
-}
-
-.workspaces > button {
-  font-size: $font-size;
-  margin: 4px;
-}
-
-.workspaces > button:hover {
-  color: $fg-sel-color;
-  opacity: 0.8;
-}
-
-button.active {
-  // font-weight: bold;
-  color: $fg-sel-color;
-}
-
-button.inactive {
-  color: $fg-desel-color;
-}
-
-// Generic stuff
-scale trough {
-  all: unset;
-  background-color: $bg-alt-color;
-  border-radius: 5px;
-  min-height: 60px;
-  min-width: 4px;
-  margin: 0.3rem 0 0.3rem 0;
-}
-
-// Menu
-.powermenu {
-  transition: color $anim-transition;
-  // border-right: solid 1px $border-color;
-  padding: 0.5rem 0.2rem 0.3rem 0.2rem;
-}
-
-.quit,
-.lock,
-.reboot,
-.poweroff {
-  // padding: .5rem .2rem .3rem .2rem;
-}
-
-// Colors for the buttons
-.lock:hover {
-  color: $blue;
-}
-.quit:hover {
-  color: $green;
-}
-.reboot:hover {
-  color: $yellow;
-}
-.poweroff:hover {
-  color: $red;
-}
-
-.pm-active {
-  // background-color: $bg-alt-color;
-  // border-radius: 5px;
-}
-
-.pm-inner {
-  padding: 0.2rem 0;
-}
-
-// Control
-.control {
-  margin-bottom: $logo-size;
-  margin-bottom: 0.5rem;
-  font-family: Material Icons;
-  font-size: 1.6em;
-}
-
 .icon {
-  margin: 0 0.2rem;
-  font-size: $icon-size;
-  font-family: Material Icons;
-  padding: 0 1px;
+  opacity: 1;
+  transition: opacity $anim-transition;
 }
 
 .icon:hover {
   opacity: 0.6;
 }
 
-// Volume stuff
-.volbar trough highlight {
-  background-color: $fg-accent;
-  border-radius: 5px;
+.inactive,
+.active {
+  font-size: 1.28rem;
 }
 
-// Time
-.time {
-  // color: $fg-alt-color;
-  font-size: 11px;
-  font-weight: bold;
-  border-top: solid 2px $fg-alt-color;
-  padding-top: 1rem;
-  margin-bottom: 0.5rem;
+.inactive {
+  color: $fg-color;
+  transition: color $anim-transition;
+  color: $fg-color;
+}
+.active {
+  color: $fg-color;
 }
 
-// Logo button
+.pm-inner {
+  padding-left: 6px;
+  padding-right: 6px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.icon {
+  font-size: 1.2rem;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
 .logo {
-  margin: 0 0.8rem;
-  margin-top: 6px;
-  font-size: $logo-size;
+  font-weight: 600;
 }
 
 .logo-seperator {
-  border-bottom: 2px solid $border-color;
-  padding-bottom: 0.4rem;
+  border-left: 2px solid $fg-color;
 }
 
-// Color overrides
+.time {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+// Volume stuff
+.vol {
+ padding-left: 0;
+}
+
+.volbar trough highlight {
+  background-color: $fg-accent;
+  border-radius: 8px;
+}
+
+scale trough {
+  all: unset;
+  background-color: $bg-alt-color;
+  border-radius: 8px;
+  min-height: 6px;
+  min-width: 70px;
+  margin: 0px 8px 0px 0px;
+}
+
 .red {
   color: $red;
-  opacity: 0.8;
-}
-
-// Music widget
-.musicmenu {
-  // background-color: $bg-alt-color;
-}
-
-.mm-inner {
-  color: $blue;
 }
