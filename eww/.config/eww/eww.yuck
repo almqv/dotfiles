@@ -57,32 +57,32 @@
                  :class "pm-inner"
                  :space-evenly true
                  :valign "middle"
-                 :spacing 16
+                 :spacing 8
 
           ;; Lock screen
           (button    :class "icon lock"
                      :tooltip "Lock screen"
-                     :onclick "betterlockscreen -l"  "")
+                     :onclick "betterlockscreen -l"  "󰌾")
 
           ;; Quit WM (goto login manager)
-          (button    :class "icon quit"
+          (button    :class "icon logout"
                      :tooltip "Logout"
-                     :onclick "loginctl kill-session $XDG_SESSION_ID" "")
+                     :onclick "loginctl kill-session $XDG_SESSION_ID" "󰍃")
 
           ;; Reboot
           (button    :class "icon reboot"
                      :tooltip "Reboot"
-                     :onclick "reboot"  "")
+                     :onclick "reboot"  "󰑓")
 
           ;; Poweroff
           (button    :class "icon poweroff"
                      :tooltip "Poweroff"
-                     :onclick "poweroff"  "")
+                     :onclick "poweroff"  "󰐥")
 
         ))
 	  (button    :class "icon logo ${power ? 'logo-seperator' : ''}"
 				   :tooltip "Open menu"
-				   :onclick "${EWW_CMD} update power=true"  "Λ")
+				   :onclick "${EWW_CMD} update power=true"  "󰘧")
         )))
 (defvar power false)
 
@@ -133,6 +133,7 @@
 					  :onchange "amixer -D pulse sset Master {}%" )
 			)
 		(button   :onclick "amixer -D pulse set Master 1+ toggle"
+				  :tooltip "Volume on/off"
 				  :class "icon vol" {muted-volume != "on" ? "󰝟" : "󰕾"}
 				  )
 	   )

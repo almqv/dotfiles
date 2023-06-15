@@ -33,14 +33,14 @@ $anim-transition: 150ms;
 }
 
 tooltip {
-  color: $fg-alt-color;
+  color: $fg-color;
   background-color: $bg-alt-color;
   border-radius: 12px;
 }
 
 .bar-1,
 .bar-2 {
-  background-color: rgba(0, 0, 0, 0.65);
+  background-color: rgba(29, 31, 33, 0.75);
 }
 
 .main-cont {
@@ -66,18 +66,18 @@ tooltip {
 
 .inactive,
 .active {
-  font-size: 1.28rem;
+  font-size: 1.4rem;
 }
 
 .inactive {
   color: $fg-color;
   transition: color $anim-transition;
-  color: $fg-color;
 }
 .active {
   color: $fg-color;
 }
 
+// POWERMENU
 .pm-inner {
   padding-left: 6px;
   padding-right: 6px;
@@ -85,6 +85,27 @@ tooltip {
   padding-bottom: 0;
 }
 
+.pm-inner button {
+  font-size: 16px;
+}
+
+.poweroff {
+  color: $red;
+}
+
+.reboot {
+  color: $yellow;
+}
+
+.logout {
+  color: $green;
+}
+
+.lock {
+  color: $blue;
+}
+
+// ICON & LOGO
 .icon {
   font-size: 1.2rem;
   padding-left: 6px;
@@ -106,7 +127,7 @@ tooltip {
 
 // Volume stuff
 .vol {
- padding-left: 0;
+  padding-left: 0;
 }
 
 .volbar trough highlight {
