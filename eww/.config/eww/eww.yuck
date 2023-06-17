@@ -6,7 +6,7 @@
 			:valign "center"
 			(start-control :screen screen)
 		)
-		(box :class "segment-middle"
+		(box :class "segment-center"
 			:halign "center"
 			:valign "center"
 			:space-evenly true
@@ -28,7 +28,7 @@
 			:valign "center"
 			(start-control :screen screen)
 		)
-		(box :class "segment-middle"
+		(box :class "segment-center"
 			:halign "center"
 			:valign "center"
 			:space-evenly true
@@ -56,7 +56,7 @@
         (box     :orientation "h"
                  :class "pm-inner"
                  :space-evenly true
-                 :valign "middle"
+                 :valign "center"
                  :spacing 8
 
           ;; Lock screen
@@ -110,7 +110,7 @@
   (box  :orientation "h"
       :class "time"
 	  :space-evenly "false"
-      :halign "middle"
+      :halign "center"
   (button  :onclick "scripts/popup calendar"
       :class "day" full-time)
   ))
@@ -148,7 +148,7 @@
   (box  :orientation "v"
       :space-evenly "false"
     (label  :class "icon bat"
-        :halign "middle"
+        :halign "center"
         :text battery
         :tooltip "Battery: ${battery-cappacity}%")))
 (defpoll battery      :interval "1s"  "scripts/battery icon")
@@ -157,7 +157,7 @@
 ;; Wifi Widgets ;;
 (defwidget wifi []
   (box       :orientation "v"
-             :halign "middle"
+             :halign "center"
              :tooltip "SSID: ${wifi-name}"
     (button  :class "icon wifi-icon" wifi-icon
              )))
