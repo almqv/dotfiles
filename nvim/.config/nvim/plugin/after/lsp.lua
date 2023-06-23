@@ -11,6 +11,7 @@ lsp.ensure_installed({
 	"clangd",
 	"tailwindcss",
 	"prismals",
+	"gopls",
 })
 
 local cmp = require("cmp")

@@ -40,13 +40,12 @@ tooltip {
 
 .bar-1,
 .bar-2 {
-  background-color: rgba(29, 31, 33, 0.45);
+  background-color: rgba(29, 31, 33, 0.65);
 }
 
 .main-cont {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-  padding-bottom: 0;
   padding-top: 1px;
 }
 
@@ -70,7 +69,7 @@ tooltip {
 }
 
 .inactive {
-  color: $fg-color;
+  color: $fg-alt-color;
   transition: color $anim-transition;
 }
 .active {
@@ -81,8 +80,7 @@ tooltip {
 .pm-inner {
   padding-left: 6px;
   padding-right: 6px;
-  padding-top: 0;
-  padding-bottom: 0;
+  margin-top: -1px;
 }
 
 .pm-inner button {
