@@ -1,16 +1,17 @@
 * {
-  text-color: #efefef;
+  text-color: #fff;
   background-color: rgba(1, 0, 0, 0);
-  dark: #282828;
+  dark: #000;
   border-color: #1d1f21;
   // Black
   blue: #81a2be;
   lightblue: #81a2be;
   cyan: #add9ff;
   lightcyan: #add9ff;
-  black: #1d1f21;
-  lightblack: #1d1f21;
-  blackop: #1d1f21aa;
+  black: #000;
+  lightblack: #111;
+  blackop: #000a;
+  lightblackop: #1119;
   red: #cc6666;
   lightred: #cc6666;
   green: #b5bd68;
@@ -26,11 +27,11 @@
   highlight: bold #ccc;
 }
 window {
-  /* height: 14em; */
-  /* width: 24em; */
-  height: 100%;
-  width: 100%;
-  location: west;
+  height: 14em; 
+  width: 24em; 
+  /*height: 100%;*/
+  /*width: 100%;*/
+  location: center;
   /* anchor: center; */
   text-color: @lightwhite;
 }
@@ -44,9 +45,8 @@ button selected {
   text-color: @lightgreen;
 }
 inputbar {
-  background-color: @black;
   text-color: @lightgreen;
-  padding: 0.4em 1em;
+  padding: 0.2em 1em;
   height: 32px;
 }
 entry {
@@ -55,10 +55,10 @@ prompt {
   margin: 0 0.4em 0 0;
 }
 mainbox {
-  /* padding: 0.2em; */
+  padding: 0.7em 0em;
   expand: true;
-  background-color: @blackop;
-  spacing: 1em;
+  background-color: @lightblackop;
+  spacing: 0.5em;
 }
 listview {
   padding: 0em 0.4em 0em 1em;
@@ -74,7 +74,7 @@ element {
   border-radius: 2px;
 }
 element selected normal {
-  background-color: @blue;
+  text-color: @lightblue;
 }
 element normal active {
   text-color: @lightblue;
