@@ -2,7 +2,7 @@
 env:
   TERM: xterm-256color
 
-background_opacity: 1.0
+background_opacity: 0.94
 
 window:
   padding:
