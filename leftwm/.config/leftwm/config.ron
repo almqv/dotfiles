@@ -72,7 +72,7 @@
         (command: Execute, value: "rofi -show drun", modifier: ["modkey"], key: "d"),
         (command: Execute, value: "rofi -show ssh", modifier: ["modkey"], key: "s"),
         (command: Execute, value: "alacritty", modifier: ["modkey"], key: "Return"),
-        (command: Execute, value: "xdg-open https://google.com", modifier: ["modkey"], key: "b"), // 
+        (command: Execute, value: "chromium", modifier: ["modkey"], key: "b"), // 
         (command: Execute, value: "playerctl play-pause", modifier: ["modkey"], key: "u"),
         (command: CloseWindow, value: "", modifier: ["modkey", "Shift"], key: "q"),
         (command: SoftReload, value: "", modifier: ["modkey", "Shift"], key: "x"),
