@@ -75,7 +75,7 @@ ZSH_THEME="edvardm"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting)
+plugins=(git fast-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -107,14 +107,9 @@ export TERM='xterm-256color'
 export PATH="$HOME/.scripts:$HOME/.cargo/bin:$HOME/.local/bin:$PATH" # Add custom scripts!
 
 # Program defaults
-export VIDPLAY=vlc
+export VIDPLAY=mpv
 export IMGVIEW=eog
 export EDITOR=nvim
-
-# pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
 
 # pnpm
 export PNPM_HOME="/home/elal/.local/share/pnpm"
