@@ -164,7 +164,7 @@ mods = "Shift"
 history = 5000
 
 [window]
-opacity = 1.0
+opacity = 0.99
 title = "Terminal"
 
 [window.class]
