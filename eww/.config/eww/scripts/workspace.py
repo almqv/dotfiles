@@ -14,27 +14,17 @@ from subprocess import check_output, CalledProcessError
 HIDE_EMPTY_WS = True  # Exclude empty workspaces
 OVERIDE_ALL_NAMES = False  # Override all the WS names and use the name below
 OVERIDE_ALL_NAME = ""  # Name to use when overriding names
-NAME_MAPS: dict[int, str] = {  # Replace the indexs name with the given string
+NAME_MAPS: dict[int, str] = {
     # 0: "",
     # 1: ""
 }
 LOG_FILE = "/tmp/eww_workspace.log"  # Log file (in case of errors etc)
 
-
-# ------------ NOTE: DO NOT TOUCH ------------
+# Compile regex patterns
+PARSE_REGEX = re.compile(r"^(\d+)\s+(\*|\-).+\s+(\w+)$")
 
 WMCTRL_SCRIPT = "wmctrl -d"
-PARSE_REGEX = r"^(\d+)\s+(\*|\-).+\s+(\w+)$"
-
-NONEMPTY_REGEX = r"^\w+\s+(\w+|\d+).+$"
-WMCTRL_NONEMPTY_SCRIPT = "wmctrl -l"
-
-
-def parse_groups(grps: tuple) -> tuple:
-    """
-    Parses the given regex groups
-    """
-    return int(grps[0]), grps[2], grps[1] == "*"
+NONEMPTY_SCRIPT = "wmctrl -l"
 
 
 class Workspace:
@@ -46,7 +36,7 @@ class Workspace:
         self.index = index
         if OVERIDE_ALL_NAMES:
             self.name = OVERIDE_ALL_NAME
-        elif index in NAME_MAPS.keys():
+        elif index in NAME_MAPS:
             self.name = NAME_MAPS[index]
         else:
             self.name = name
@@ -60,57 +50,67 @@ class Workspace:
         return json.dumps(self, default=lambda o: o.__dict__, sort_keys=True)
 
 
+def parse_groups(grps: tuple) -> tuple:
+    """
+    Parses the given regex groups
+    """
+    return int(grps[0]), grps[2], grps[1] == "*"
+
+
 def parse_workspaces():
     """
     Function to get all the workspaces
     """
 
+    nonempty_workspaces = set()
     try:
-        nonempty = check_output(WMCTRL_NONEMPTY_SCRIPT.split(" "))
+        nonempty = check_output(NONEMPTY_SCRIPT.split(" "))
         nonempty = nonempty.decode("utf-8")
 
-        nonempty_workspaces = re.findall(NONEMPTY_REGEX,
-                                        nonempty,
-                                        flags=re.MULTILINE)
-        nonempty_workspaces = list(map(int, nonempty_workspaces))
+        for line in nonempty.splitlines():
+            try:
+                ws_num = line[12]
+                nonempty_workspaces.add(int(ws_num))
+            except:
+                continue
     except CalledProcessError:
-        nonempty_workspaces = []
+        pass
 
     try:
         inp = check_output(WMCTRL_SCRIPT.split(" "))
         inp = inp.decode("utf-8")
     except CalledProcessError as err:
-        logfile = open(LOG_FILE, "a")
-        logfile.write("ERROR! COULD NOT PARSE WORKSPACES OR SOMETHING! YOU ARE ON YOUR OWN.")
-        logfile.write(f"{err}")
+        with open(LOG_FILE, "a") as logfile:
+            logfile.write(
+                "ERROR! COULD NOT PARSE WORKSPACES OR SOMETHING! YOU ARE ON YOUR OWN."
+            )
+            logfile.write(f"{err}")
 
         inp = ""
 
     out = []
 
     for line in inp.splitlines():
-        matches = re.search(PARSE_REGEX, line)
-        grps = matches.groups()
-        data = parse_groups(grps)
-        workspace = Workspace(*data, data[0] not in nonempty_workspaces)
-
-        out.append(workspace)
+        matches = PARSE_REGEX.search(line)
+        if matches:
+            grps = matches.groups()
+            data = parse_groups(grps)
+            workspace = Workspace(*data, data[0] not in nonempty_workspaces)
+            out.append(workspace)
 
     return out
 
 
 if __name__ == "__main__":
-    args = sys.argv
-
     # NOTE: use deflisten
     LAST_STRING = ""
     while True:
         workspaces = parse_workspaces()
-        workspaces = list(filter(lambda ws:
-                                 (ws.iscurrent)
-                                 or (not ws.isempty)
-                                 or (not HIDE_EMPTY_WS),
-                                 workspaces))
+        workspaces = [
+            ws
+            for ws in workspaces
+            if ws.iscurrent or (not ws.isempty) or (not HIDE_EMPTY_WS)
+        ]
 
         json_str = json.dumps(workspaces, default=lambda ws: ws.to_json())
 
