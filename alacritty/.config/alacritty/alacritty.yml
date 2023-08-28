@@ -2,12 +2,11 @@
 env:
   TERM: xterm-256color
 
-background_opacity: 0.94
-
 window:
+  opacity: 1.0
   padding:
-    x: 16
-    y: 16
+    x: 8
+    y: 8
 
   # Window title
   title: Terminal
@@ -60,7 +59,7 @@ draw_bold_text_with_bright_colors: true
 colors:
   # Default colors
   primary:
-    background: "0x181818"
+    background: "0x121212"
     foreground: "0xffffff"
 
   # Colors the cursor will use if `custom_cursor_colors` is true

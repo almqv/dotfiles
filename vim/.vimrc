@@ -34,4 +34,4 @@ syntax on
 "set nu rnu
 "set ruler
 
-colors koehler
+" colors koehler
