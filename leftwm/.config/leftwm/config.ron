@@ -57,7 +57,7 @@
     layout_mode: Tag,
     insert_behavior: Bottom,
     scratchpad: [
-        (name: "Qalc", value: "alacritty -e qalc", x: 760, y: 415, height: 250, width: 400),
+        (name: "Qalc", value: "alacritty -e qalc -t", x: 760, y: 415, height: 250, width: 400),
     ],
     window_rules: [],
     disable_current_tag_swap: true,
