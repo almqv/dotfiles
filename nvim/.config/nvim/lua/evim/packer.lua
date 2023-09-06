@@ -16,7 +16,7 @@ vim.cmd [[packadd packer.nvim]]
 return require("packer").startup(function(use)
 	-- Core
 	use "wbthomason/packer.nvim"
-	-- use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
+	use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
 	use {
 		"nvim-telescope/telescope.nvim", tag = "0.1.1",
 		requires = { { "nvim-lua/plenary.nvim" } }
@@ -83,6 +83,9 @@ return require("packer").startup(function(use)
 			require('gitsigns').setup()
 		end
 	}
+
+	-- Lang stuff / cool stuff
+	use "lervag/vimtex"
 
 	if packer_bootstrap then
 		require("packer").sync()
