@@ -1,0 +1,71 @@
+{
+	"telemetry.telemetryLevel": "off",
+    "editor.insertSpaces": false,
+	"editor.detectIndentation": false,
+	"explorer.confirmDelete": false,
+	"git.openRepositoryInParentFolders": "never",
+	"workbench.editorAssociations": {
+		"*.sqlite": "default"
+	},
+	"workbench.startupEditor": "none",
+	"editor.minimap.enabled": false,
+	"breadcrumbs.enabled": false,
+	"editor.renderWhitespace": "none",
+	"window.menuBarVisibility": "toggle",
+	"workbench.activityBar.visible": false,
+	"editor.fontFamily": "Fira Code, 'Droid Sans Mono', 'monospace', monospace",
+	"window.zoomLevel": -1,
+	"jupyter.askForKernelRestart": false,
+	"vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["u"],
+            "commands": ["undo"]
+        },
+        {
+            "before": ["c-r"],
+            "commands": ["redo"]
+        },
+        {
+            "before": ["<leader>", "t"],
+            "commands": ["workbench.action.toggleSidebarVisibility"]
+        },
+        {
+            "before": ["g", "s"],
+            "commands": ["workbench.action.showAllSymbols"]
+        },
+        {
+            "before": ["g", "a"],
+            "commands": ["references-view.findReferences"]
+        },
+        {
+            "before": ["g", "r"],
+            "commands": ["editor.action.rename"]
+        },
+        {
+            "before": ["g", "w"],
+            "commands": ["editor.emmet.action.wrapWithAbbreviation"]
+        }
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": ["g", "r"],
+            "commands": ["git.revertSelectedRanges"]
+        },
+        {
+            "before": ["g", "w"],
+            "commands": ["editor.emmet.action.wrapWithAbbreviation"]
+        },
+        {
+            "before": ["c-<leader>"],
+            "commands": ["editor.action.triggerSuggest"]
+        }
+	],
+	"editor.mouseWheelScrollSensitivity": 2,
+	"editor.smoothScrolling": true,
+	"workbench.list.smoothScrolling": true,
+	"terminal.integrated.smoothScrolling": true,
+	"editor.cursorSmoothCaretAnimation": "on",
+	"[latex]": {
+		"editor.defaultFormatter": "mathematic.vscode-latex"
+	},
+}
