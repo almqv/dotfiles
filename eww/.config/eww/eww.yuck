@@ -82,7 +82,7 @@
         ))
 	  (button    :class "icon logo ${power ? 'logo-seperator' : ''}"
 				   :tooltip "Open menu"
-				   :onclick "${EWW_CMD} update power=true"  "󰘧")
+				   :onclick "${EWW_CMD} update power=true"  "Λ")
         )))
 (defvar power false)
 
