@@ -84,6 +84,9 @@ return require("packer").startup(function(use)
 		end
 	}
 
+	-- Lang stuff / cool stuff
+	use "lervag/vimtex"
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
