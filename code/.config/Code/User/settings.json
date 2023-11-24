@@ -1,7 +1,7 @@
 {
 	"telemetry.telemetryLevel": "off",
     "editor.insertSpaces": false,
-	"editor.detectIndentation": false,
+	"editor.detectIndentation": true,
 	"explorer.confirmDelete": false,
 	"git.openRepositoryInParentFolders": "never",
 	"workbench.editorAssociations": {
@@ -67,5 +67,28 @@
 	"editor.cursorSmoothCaretAnimation": "on",
 	"[latex]": {
 		"editor.defaultFormatter": "mathematic.vscode-latex"
+	},
+	"cSpell.userWords": [
+		"pycocotools",
+		"torchvision"
+	],
+	"[python]": {
+		"editor.defaultFormatter": "ms-python.black-formatter"
+	},
+	"workbench.colorCustomizations": {},
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[jsonc]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 }
