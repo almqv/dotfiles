@@ -1,3 +1,15 @@
+#!/usr/bin/bash
+
+WM_CHECK=$(wmctrl -m | grep Name | cut -d: -f2 | sed 's/ //g')
+
+if [ "$WM_CHECK" != "LeftWM" ]; then
+	echo "Not LEFTWM, ignoring..."
+	exit 0
+else
+	echo "OK"
+fi
+
+
 # Keyboard layout
 setxkbmap se &
 
