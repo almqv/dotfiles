@@ -22,6 +22,16 @@ M.general = {
 		["J"] = { ":m '>+1<CR>gv=gv" },
 		["K"] = { ":m '<-2<CR>gv=gv" },
 	},
+
+	i = {
+		["<C-l>"] = {
+			function()
+				vim.fn.feedkeys(vim.fn["copilot#Accept"](), "")
+			end,
+			"Copilot Accept",
+			{ replace_keycodes = true, nowait = true, silent = true, expr = true, noremap = true },
+		},
+	},
 }
 
 -- more keybinds!
