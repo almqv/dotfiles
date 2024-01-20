@@ -13,14 +13,13 @@ M.general = {
 			"formatting",
 		},
 	},
-	v = {
-		[">"] = { ">gv", "indent" },
-	},
 
-	s = {
-		-- Move up and down when selected
-		["J"] = { ":m '>+1<CR>gv=gv" },
-		["K"] = { ":m '<-2<CR>gv=gv" },
+	v = {
+		-- Indentation
+		[">"] = { ">gv", "indent" },
+		-- Move selection up/down with K/J
+		["J"] = { ":m '>+1<CR>gv=gv", "move selection down" },
+		["K"] = { ":m '<-2<CR>gv=gv", "move selection up" },
 	},
 
 	i = {
