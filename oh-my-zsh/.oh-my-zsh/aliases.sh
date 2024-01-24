@@ -24,3 +24,7 @@ alias gdb-multiarch="arm-none-eabi-gdb"
 
 # Git stuff
 alias gc="git add -A && git commit -m"
+
+# Shortcuts 
+alias dots="cd $HOME/.dotfiles"
+alias dev="cd $HOME/Projects/almtech/ingenuity/"
