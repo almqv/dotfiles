@@ -18,6 +18,9 @@ local options = {
 		python = { "black" },
 
 		sh = { "shfmt" },
+
+    -- Joke langs 
+    haskell = { "stylish-haskell" }
 	},
 
 	-- adding same formatter for multiple filetypes can look too much work for some
