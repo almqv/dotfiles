@@ -21,3 +21,10 @@ alias gdb-multiarch="arm-none-eabi-gdb"
 
 # Git stuff
 alias gc="git add -A && git commit -m"
+
+# Very nice things
+cd_gitroot() {
+  cd "$(git rev-parse --show-toplevel)" 
+}
+
+alias cr="cd_gitroot"
