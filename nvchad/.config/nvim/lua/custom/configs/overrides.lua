@@ -14,6 +14,8 @@ M.treesitter = {
     "markdown_inline",
     "prisma",
     "haskell",
+    "python",
+    "maintained",
   },
   indent = {
     enable = true,
