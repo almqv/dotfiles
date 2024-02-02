@@ -27,4 +27,12 @@ alias gc="git add -A && git commit -m"
 
 # Shortcuts 
 alias dots="cd $HOME/.dotfiles"
+
+# Very nice things
+cd_gitroot() {
+  cd "$(git rev-parse --show-toplevel)" 
+}
+
+alias cr="cd_gitroot"
+
 alias dev="cd $HOME/Projects/almtech/ingenuity/"
