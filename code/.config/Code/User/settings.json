@@ -12,7 +12,6 @@
 	"breadcrumbs.enabled": false,
 	"editor.renderWhitespace": "none",
 	"window.menuBarVisibility": "toggle",
-	"workbench.activityBar.visible": false,
 	"editor.fontFamily": "Fira Code, 'Droid Sans Mono', 'monospace', monospace",
 	"window.zoomLevel": -1,
 	"jupyter.askForKernelRestart": false,
@@ -91,4 +90,5 @@
 	"[javascript]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
+	"workbench.activityBar.location": "hidden",
 }
