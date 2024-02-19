@@ -5,5 +5,3 @@
 --   pattern = "*",
 --   command = "tabdo wincmd =",
 -- })
-
-vim.opt.mouse = ""

@@ -32,3 +32,5 @@ alias cr="cd_gitroot"
 alias dev="cd $HOME/Projects/almtech/ingenuity/"
 
 alias dc="docker-compose"
+
+alias dots="cd $HOME/.dotfiles/"
