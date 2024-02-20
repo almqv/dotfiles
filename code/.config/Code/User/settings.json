@@ -91,4 +91,10 @@
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"workbench.activityBar.location": "hidden",
+	"github.copilot.enable": {
+		"*": false,
+		"plaintext": false,
+		"markdown": false,
+		"scminput": false
+	},
 }
