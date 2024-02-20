@@ -1,100 +1,113 @@
 {
-	"telemetry.telemetryLevel": "off",
-    "editor.insertSpaces": false,
-	"editor.detectIndentation": true,
-	"explorer.confirmDelete": false,
-	"git.openRepositoryInParentFolders": "never",
-	"workbench.editorAssociations": {
-		"*.sqlite": "default"
-	},
-	"workbench.startupEditor": "none",
-	"editor.minimap.enabled": false,
-	"breadcrumbs.enabled": false,
-	"editor.renderWhitespace": "none",
-	"window.menuBarVisibility": "toggle",
-	"editor.fontFamily": "Fira Code, 'Droid Sans Mono', 'monospace', monospace",
-	"window.zoomLevel": -1,
-	"jupyter.askForKernelRestart": false,
-	"vim.normalModeKeyBindingsNonRecursive": [
-        {
-            "before": ["u"],
-            "commands": ["undo"]
-        },
-        {
-            "before": ["c-r"],
-            "commands": ["redo"]
-        },
-        {
-            "before": ["<leader>", "t"],
-            "commands": ["workbench.action.toggleSidebarVisibility"]
-        },
-        {
-            "before": ["g", "s"],
-            "commands": ["workbench.action.showAllSymbols"]
-        },
-        {
-            "before": ["g", "a"],
-            "commands": ["references-view.findReferences"]
-        },
-        {
-            "before": ["g", "r"],
-            "commands": ["editor.action.rename"]
-        },
-        {
-            "before": ["g", "w"],
-            "commands": ["editor.emmet.action.wrapWithAbbreviation"]
-        }
-    ],
-    "vim.visualModeKeyBindingsNonRecursive": [
-        {
-            "before": ["g", "r"],
-            "commands": ["git.revertSelectedRanges"]
-        },
-        {
-            "before": ["g", "w"],
-            "commands": ["editor.emmet.action.wrapWithAbbreviation"]
-        },
-        {
-            "before": ["c-<leader>"],
-            "commands": ["editor.action.triggerSuggest"]
-        }
-	],
-	"editor.mouseWheelScrollSensitivity": 2,
-	"editor.smoothScrolling": true,
-	"workbench.list.smoothScrolling": true,
-	"terminal.integrated.smoothScrolling": true,
-	"editor.cursorSmoothCaretAnimation": "on",
-	"[latex]": {
-		"editor.defaultFormatter": "mathematic.vscode-latex"
-	},
-	"cSpell.userWords": [
-		"pycocotools",
-		"torchvision"
-	],
-	"[python]": {
-		"editor.defaultFormatter": "ms-python.black-formatter"
-	},
-	"workbench.colorCustomizations": {},
-	"[typescriptreact]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"[typescript]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"[json]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"[jsonc]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"[javascript]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"workbench.activityBar.location": "hidden",
-	"github.copilot.enable": {
-		"*": false,
-		"plaintext": false,
-		"markdown": false,
-		"scminput": false
-	},
+  "telemetry.telemetryLevel": "off",
+  "editor.detectIndentation": true,
+  "explorer.confirmDelete": false,
+  "git.openRepositoryInParentFolders": "never",
+  "workbench.editorAssociations": {
+    "*.sqlite": "default"
+  },
+  "workbench.startupEditor": "none",
+  "editor.minimap.enabled": false,
+  "breadcrumbs.enabled": true,
+  "editor.renderWhitespace": "none",
+  "window.menuBarVisibility": "toggle",
+  "editor.fontFamily": "Fira Code, 'Droid Sans Mono', 'monospace', monospace",
+  "jupyter.askForKernelRestart": false,
+  "vim.handleKeys": {
+    "<C-j>": false,
+    "<C-l>": false,
+    "<C-k>": false,
+    "<C-d>": false,
+    "<C-p>": false,
+    "<C-i>": false,
+    "<C-b>": false,
+    "<C-o>": false,
+  },
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["u"],
+      "commands": ["undo"]
+    },
+    {
+      "before": ["c-r"],
+      "commands": ["redo"]
+    },
+    {
+      "before": ["<leader>", "t"],
+      "commands": ["workbench.action.toggleSidebarVisibility"]
+    },
+    {
+      "before": ["g", "s"],
+      "commands": ["workbench.action.showAllSymbols"]
+    },
+    {
+      "before": ["g", "a"],
+      "commands": ["references-view.findReferences"]
+    },
+    {
+      "before": ["g", "r"],
+      "commands": ["editor.action.rename"]
+    },
+    {
+      "before": ["g", "w"],
+      "commands": ["editor.emmet.action.wrapWithAbbreviation"]
+    }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["g", "r"],
+      "commands": ["git.revertSelectedRanges"]
+    },
+    {
+      "before": ["g", "w"],
+      "commands": ["editor.emmet.action.wrapWithAbbreviation"]
+    },
+    {
+      "before": ["c-<leader>"],
+      "commands": ["editor.action.triggerSuggest"]
+    },
+    {
+      "before": ["<leader>", "g"],
+      "commands": ["editor.action.showHover"]
+    }
+  ],
+  "vim.leader": "<Space>",
+  "editor.mouseWheelScrollSensitivity": 2,
+  "editor.smoothScrolling": true,
+  "workbench.list.smoothScrolling": true,
+  "terminal.integrated.smoothScrolling": true,
+  "[latex]": {
+    "editor.defaultFormatter": "mathematic.vscode-latex"
+  },
+  "C_Cpp.intelliSenseEngine": "disabled",
+  "workbench.colorCustomizations": {},
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[c]": {
+    "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+  },
+  "[cpp]": {
+    "editor.defaultFormatter": "xaver.clang-format"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "cmake.showOptionsMovedNotification": false,
+  "window.autoDetectColorScheme": true,
+  "window.zoomLevel": -1,
+  "haskell.manageHLS": "GHCup",
+  "window.customTitleBarVisibility": "auto"
 }
