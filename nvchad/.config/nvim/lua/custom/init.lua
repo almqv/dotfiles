@@ -5,3 +5,8 @@
 --   pattern = "*",
 --   command = "tabdo wincmd =",
 -- })
+vim.filetype.add({
+  extension = {
+    mdx = 'mdx'
+  }
+})
