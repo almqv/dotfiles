@@ -40,3 +40,7 @@ alias dev="cd $HOME/Projects/almtech/ingenuity/"
 alias dc="docker-compose"
 
 alias dots="cd $HOME/.dotfiles/"
+
+# Vim stuff 
+alias vi="nvim"
+alias vim="nvim"

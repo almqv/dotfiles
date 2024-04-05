@@ -47,18 +47,18 @@ local plugins = {
 		end,
 	},
 
-  {
-    "github/copilot.vim",
-    lazy = false,
-    config = function()
-      -- Mapping tab is already used by NvChad
-      vim.g.copilot_no_tab_map = true;
-      vim.g.copilot_assume_mapped = true;
-      vim.g.copilot_tab_fallback = "";
-      -- The mapping is set to other key, see custom/lua/mappings
-      -- or run <leader>ch to see copilot mapping section
-    end
-  },
+	{
+		"github/copilot.vim",
+		lazy = false,
+		config = function()
+			-- Mapping tab is already used by NvChad
+			vim.g.copilot_no_tab_map = true
+			vim.g.copilot_assume_mapped = true
+			vim.g.copilot_tab_fallback = ""
+			-- The mapping is set to other key, see custom/lua/mappings
+			-- or run <leader>ch to see copilot mapping section
+		end,
+	},
 
 	{
 		"nvim-treesitter/nvim-treesitter",
@@ -66,6 +66,13 @@ local plugins = {
 			"JoosepAlviste/nvim-ts-context-commentstring",
 		},
 		opts = overrides.treesitter,
+		config = function(_, opts)
+			dofile(vim.g.base46_cache .. "syntax")
+			require("nvim-treesitter.configs").setup(opts)
+
+			-- use markdown parser for mdx files
+			vim.treesitter.language.register("mdx", "markdown", "tsx")
+		end,
 	},
 
 	{
