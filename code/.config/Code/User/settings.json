@@ -109,5 +109,12 @@
   "window.autoDetectColorScheme": true,
   "window.zoomLevel": -1,
   "haskell.manageHLS": "GHCup",
-  "window.customTitleBarVisibility": "auto"
+  "window.customTitleBarVisibility": "auto",
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+  "haskell.serverExecutablePath": "/usr/bin/haskell-language-server"
 }
