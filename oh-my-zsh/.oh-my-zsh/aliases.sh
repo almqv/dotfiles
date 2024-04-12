@@ -38,3 +38,6 @@ alias dots="cd $HOME/.dotfiles/"
 # Vim stuff 
 alias vi="nvim"
 alias vim="nvim"
+
+# Clock reset thing 
+alias restart_clock="ssh rasp \"sudo systemctl restart pyscript@clock.py.service\""
