@@ -29,15 +29,15 @@ cd_gitroot() {
 
 alias cr="cd_gitroot"
 
-alias dev="cd $HOME/Projects/almtech/ingenuity/"
+alias dev="cd $HOME/Projects/almtech/exa/"
 
 alias dc="docker-compose"
 
 alias dots="cd $HOME/.dotfiles/"
 
 # Vim stuff 
-alias vi="nvim"
-alias vim="nvim"
+# alias vi="nvim"
+# alias vim="nvim"
 
 # Clock reset thing 
 alias restart_clock="ssh rasp \"sudo systemctl restart pyscript@clock.py.service\""

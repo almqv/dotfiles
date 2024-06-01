@@ -15,6 +15,7 @@ M.treesitter = {
     "prisma",
     "haskell",
     "python",
+    "zig",
   },
   indent = {
     enable = true,
