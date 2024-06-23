@@ -29,7 +29,7 @@ cd_gitroot() {
 
 alias cr="cd_gitroot"
 
-alias dev="cd $HOME/Projects/almtech/exa/"
+alias dev="cd $HOME/Projects/almtech/exa/code/"
 
 alias dc="docker-compose"
 

@@ -21,9 +21,7 @@ local plugins = {
 
 	-- {
 	-- 	"nvim-treesitter/nvim-treesitter",
-	-- 	opts = overrides.treesitter,
-	-- },
-
+	-- 	opts = overrides.treesitter, },
 	{
 		"nvim-tree/nvim-tree.lua",
 		opts = overrides.nvimtree,
@@ -66,13 +64,13 @@ local plugins = {
 			"JoosepAlviste/nvim-ts-context-commentstring",
 		},
 		opts = overrides.treesitter,
-		config = function(_, opts)
-			dofile(vim.g.base46_cache .. "syntax")
-			require("nvim-treesitter.configs").setup(opts)
-
-			-- use markdown parser for mdx files
-			vim.treesitter.language.register("mdx", "markdown", "tsx")
-		end,
+		-- config = function(_, opts)
+		-- 	dofile(vim.g.base46_cache .. "syntax")
+		-- 	require("nvim-treesitter.configs").setup(opts)
+		--
+		-- 	-- use markdown parser for mdx files
+		-- 	vim.treesitter.language.register("mdx", "markdown", "tsx")
+		-- end,
 	},
 
 	{
