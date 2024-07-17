@@ -14,10 +14,10 @@ fi
 setxkbmap se &
 
 # Display settings
-$HOME/.screenlayout/layout.sh &
+sh $HOME/.screenlayout/layout.sh &
 
 # Compositor
-$HOME/.config/picom/launch &
+sh $HOME/.config/picom/launch &
 
 # Background
 nitrogen --restore &
