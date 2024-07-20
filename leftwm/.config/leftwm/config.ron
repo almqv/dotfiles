@@ -5,18 +5,25 @@
     workspaces: [
       (
         output: "eDP-1",
-        y: 1440,
-        x: 320,
+        y: 0,
+        x: 0,
         height: 1080,
         width: 1920,
       ),
-      (
-        output: "DP-1",
-        y: 0,
-        x: 0,
-        height: 1440,
-        width: 2560,
-      )
+      // (
+      //   output: "eDP-1",
+      //   y: 1440,
+      //   x: 320,
+      //   height: 1080,
+      //   width: 1920,
+      // ),
+      // (
+      //   output: "DP-1",
+      //   y: 0,
+      //   x: 0,
+      //   height: 1440,
+      //   width: 2560,
+      // )
     ],
     tags: [
         "1",

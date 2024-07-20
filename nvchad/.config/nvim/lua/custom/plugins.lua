@@ -71,7 +71,7 @@ local plugins = {
 			require("nvim-treesitter.configs").setup(opts)
 
 			-- use markdown parser for mdx files
-			vim.treesitter.language.register("mdx", "markdown", "tsx")
+			-- vim.treesitter.language.register("mdx", "markdown", "tsx")
 		end,
 	},
 
