@@ -64,10 +64,5 @@
   programs.neovim = {
     enable = true;
     viAlias = true;
-    extraConfig = ''
-      " Example Neovim configuration
-      set number
-      syntax on
-    '';
   };
 }
