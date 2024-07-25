@@ -64,12 +64,10 @@
   programs.neovim = {
     enable = true;
     viAlias = true;
-    settings = {
-      neovim.init.vimrc = ''
-        " Example Neovim configuration
-        set number
-        syntax on
-      '';
-    };
+    extraConfig = ''
+      " Example Neovim configuration
+      set number
+      syntax on
+    '';
   };
 }
