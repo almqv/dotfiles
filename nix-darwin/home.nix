@@ -73,6 +73,10 @@
     jq
     tmux
     htop
+
+    # Tools 
+    nmap
+    dig
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
