@@ -70,7 +70,6 @@
     wget
     ffmpeg
     gnupg
-    git 
     jq
     tmux
     htop
@@ -114,11 +113,29 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  programs.git = {
+    package = pkgs.gitFull;
+    enable = true;
+    userName = "Elias Almqvist";
+    userEmail = "elalmqvist@gmail.com";
+    lfs.enable = true;
+    ignores = [
+      ".dir-locals.el"
+      ".envrc"
+      ".DS_Store"
+    ];
+    signing.signByDefault = true;
+    signing.key = "E31A99CE3E75A158";
+    extraConfig = {
+      commit.gpgsign = true;
+    };
+  };
+
   programs.zsh = {
     enable = true;
     oh-my-zsh = {
       enable = true;
-      theme = "lambda";
+      theme = "half-life";
       plugins = [ "git" "macos" ];
     };
   };
