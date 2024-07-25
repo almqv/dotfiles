@@ -3,66 +3,54 @@
 {
   home.username = "elal";
   home.homeDirectory = "/Users/elal";
-  home.stateVersion = "23.05";
+  home.stateVersion = "22.11";
 
   programs.home-manager.enable = true;
 
-  # Packages to install
   home.packages = with pkgs; [
     alacritty
     neovim
-    yabai
+    zsh
+    oh-my-zsh
     skhd
+    yabai
   ];
 
-  # Yabai configuration
-  services.yabai = {
-    enable = true;
-    extraConfig = ''
-      yabai -m config mouse_follows_focus off
-      yabai -m config focus_follows_mouse autoraise
-      yabai -m config window_placement second_child
-      yabai -m config window_topmost on
-      yabai -m config window_shadow off
-      yabai -m config window_opacity off
-      yabai -m config window_border off
-    '';
-  };
-
-  # skhd configuration
-  services.skhd = {
-    enable = true;
-    extraConfig = ''
-      # Example skhd configuration
-      alt - e : echo "Hello world"
-    '';
-  };
-
-  # Alacritty configuration
   programs.alacritty = {
     enable = true;
-    settings = {
-      font = {
-        normal = {
-          family = "Menlo";
-          size = 12.0;
-        };
-      };
-      window = {
-        padding = {
-          x = 2;
-          y = 2;
-        };
-        dynamic_padding = false;
-      };
-      dynamic_title = true;
-      scrollback = 10000;
-    };
+    # Add any Alacritty-specific configurations here
   };
 
-  # Neovim configuration
   programs.neovim = {
     enable = true;
     viAlias = true;
+    vimAlias = true;
+    # Add any Neovim-specific configurations here
   };
+
+  programs.zsh = {
+    enable = true;
+    oh-my-zsh = {
+      enable = true;
+      theme = "lambda";
+    };
+    # Add any other Zsh-specific configurations here
+  };
+
+  home.file.".config/skhd/skhdrc".text = ''
+    # Add your skhd keybindings here
+  '';
+
+  home.file.".config/yabai/yabairc".text = ''
+    # Add your yabai configuration here
+  '';
+
+  # Optionally, you can add Homebrew integration if needed
+  # homebrew = {
+  #   enable = true;
+  #   onActivation.autoUpdate = true;
+  #   onActivation.cleanup = "zap";
+  #   brews = [];
+  #   casks = [];
+  # };
 }
