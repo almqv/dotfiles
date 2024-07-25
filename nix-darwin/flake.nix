@@ -1,54 +1,23 @@
-{ config, pkgs, ... }:
-
 {
-  home.username = "elal";
-  home.homeDirectory = "/Users/elal";
-  home.stateVersion = "22.11";
+  description = "Home Manager configuration";
 
-  programs.home-manager.enable = true;
-
-  home.packages = with pkgs; [
-    alacritty
-    neovim
-    zsh
-    oh-my-zsh
-    skhd
-    yabai
-  ];
-
-  programs.alacritty = {
-    enable = true;
-    # Add any Alacritty-specific configurations here
-  };
-
-  programs.neovim = {
-    enable = true;
-    # Add any Neovim-specific configurations here
-  };
-
-  programs.zsh = {
-    enable = true;
-    oh-my-zsh = {
-      enable = true;
-      theme = "lambda";
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
-    # Add any other Zsh-specific configurations here
   };
 
-  home.file.".config/skhd/skhdrc".text = ''
-    # Add your skhd keybindings here
-  '';
+  outputs = { nixpkgs, home-manager, ... }:
+    let
+      system = "aarch64-darwin";
+      pkgs = nixpkgs.legacyPackages.${system};
+    in {
+      homeConfigurations.elal = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
 
-  home.file.".config/yabai/yabairc".text = ''
-    # Add your yabai configuration here
-  '';
-
-  # Optionally, you can add Homebrew integration if needed
-  # homebrew = {
-  #   enable = true;
-  #   onActivation.autoUpdate = true;
-  #   onActivation.cleanup = "zap";
-  #   brews = [];
-  #   casks = [];
-  # };
+        modules = [ ./home.nix ];
+      };
+    };
 }
