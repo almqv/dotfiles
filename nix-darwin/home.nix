@@ -62,6 +62,7 @@
     zathura
     irssi
     spotify
+    discord
 
     # Utils 
     stow
@@ -72,6 +73,7 @@
     git 
     jq
     tmux
+    htop
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
