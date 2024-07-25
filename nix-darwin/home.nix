@@ -15,6 +15,28 @@
   # release notes.
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
+  nixpkgs = {
+    # You can add overlays here
+    overlays = [
+      # If you want to use overlays exported from other flakes:
+      # neovim-nightly-overlay.overlays.default
+
+      # Or define it inline, for example:
+      # (final: prev: {
+      #   hi = final.hello.overrideAttrs (oldAttrs: {
+      #     patches = [ ./change-hello-to-hi.patch ];
+      #   });
+      # })
+    ];
+    # Configure your nixpkgs instance
+    config = {
+      # Disable if you don't want unfree packages
+      allowUnfree = true;
+      # Workaround for https://github.com/nix-community/home-manager/issues/2942
+      allowUnfreePredicate = _: true;
+    };
+  };
+
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
@@ -34,6 +56,17 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
+
+    # Programs
+    slack
+    zathura
+    irssi
+    spotify
+
+    # Utils 
+    stow
+    curl
+    wget
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -74,7 +107,7 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-	programs.zsh = {
+  programs.zsh = {
     enable = true;
     oh-my-zsh = {
       enable = true;
