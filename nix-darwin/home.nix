@@ -79,6 +79,7 @@
     jq
     tmux
     htop
+    sshfs
 
     # Cringe
     pfetch
