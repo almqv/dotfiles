@@ -89,6 +89,19 @@
     nmap
     dig
 
+    # Development stuff
+    gcc
+    rustc
+    rustup
+
+    nodejs_22
+    nodePackages.pnpm
+
+    go 
+    lua
+    ruby
+    julia_19-bin # compat 
+
     # DE/WM/Ricing
     yabai # wm
     skhd  # key mngr
