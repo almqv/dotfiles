@@ -91,9 +91,12 @@
 
     # Development stuff
     gcc
+
+    # rust
     rustc
     rustup
 
+    # js/ts/node/web
     nodejs_22
     nodePackages.pnpm
 
@@ -101,6 +104,10 @@
     lua
     ruby
     julia_19-bin # compat 
+
+    # py
+    python3
+    python312Packages.pip
 
     # DE/WM/Ricing
     yabai # wm
@@ -116,6 +123,7 @@
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
+
     # ".screenrc".source = dotfiles/screenrc;
 
     # # You can also set the file content immediately.
@@ -168,6 +176,13 @@
 
   programs.zsh = {
     enable = true;
+    shellAliases = {
+      dev = "cd $HOME/Projects/almtech/exa/";
+      xcopy = "pbcopy";
+      xpaste = "pbpaste";
+      ccd = "echo $PWD | xcopy";
+      cr = "cd $(git rev-parse --show-toplevel)";
+    };
     oh-my-zsh = {
       enable = true;
       theme = "half-life";
@@ -187,6 +202,29 @@
 
   programs.alacritty = {
     enable = true;
+    settings = {
+      font = {
+        normal = {
+          family = "Hack Nerd Font";
+          style = "Regular";
+        };
+        bold = {
+          family = "Hack Nerd Font";
+          style = "Bold";
+        };
+        italic = {
+          family = "Hack Nerd Font";
+          style = "Italic";
+        };
+        size = 12;
+      };
+      window = {
+        padding = {
+          x = 8;
+          y = 8;
+        };
+      };
+    };
   };
 
   programs.neovim = {

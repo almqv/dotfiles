@@ -22,4 +22,14 @@ Then use [stow](https://www.gnu.org/software/stow/) to create symlinks for each 
 
 **i.e.** `$ stow -S vim`
 
+### Anything nix related
+I use [nix: home-manager](https://github.com/nix-community/home-manager). I suggest you do too. `stow` is fine until it isn't. 
 
+If you want to try out my nix config, then you can do this:
+```sh
+home-manager switch --flake .#elal
+```
+
+Be sure that your hostname is `exa` and your username is `elal`.
+
+I suggest you change the above to **your** hostname and **your** username.
