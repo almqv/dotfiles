@@ -98,6 +98,7 @@
 
     # haskell
     ghc
+    haskell-language-server
 
     # rust
     rustc

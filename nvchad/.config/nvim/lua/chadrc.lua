@@ -17,7 +17,20 @@ M.ui = {
 
 M.plugins = "plugins"
 
--- check core.mappings for table structure
+-- Get the mappings
 M.mappings = require "mappings"
+
+-- Load the mapping because the devs are retarded and changed it from a good system to a bad one
+local function set_mappings(mode, key, value)
+  local opts = value.opts or {}
+  opts.desc = value[2]
+  vim.keymap.set(mode, key, value[1], opts)
+end
+
+for mode, mode_mappings in pairs(M.mappings.general) do
+  for key, mapping in pairs(mode_mappings) do
+    set_mappings(mode, key, mapping)
+  end
+end
 
 return M
