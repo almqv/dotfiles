@@ -111,7 +111,7 @@
     # golang
     go 
 
-    # lua <3
+    # lua <3 (divine intellect)
     lua
 
     # ruby
@@ -123,6 +123,14 @@
     # py
     python3
     python312Packages.pip
+
+    # formatters
+    shfmt
+    nodePackages.prettier
+    black
+    clang-tools # clang-format
+    nixpkgs-fmt
+    stylish-haskell
 
     # DE/WM/Ricing
     yabai # wm
