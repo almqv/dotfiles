@@ -90,7 +90,13 @@
     dig
 
     # Development stuff
+    gh
+
+    # c/c++
     gcc
+
+    # haskell
+    ghc
 
     # rust
     rustc
@@ -100,9 +106,16 @@
     nodejs_22
     nodePackages.pnpm
 
+    # golang
     go 
+
+    # lua <3
     lua
+
+    # ruby
     ruby
+
+    # julia
     julia_19-bin # compat 
 
     # py
