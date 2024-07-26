@@ -1,38 +1,25 @@
 ---@type MappingsTable
-local M = {}
 
-M.general = {
-	n = {
-		[";"] = { ":", "enter command mode", opts = { nowait = true } },
+require "nvchad.mappings"
 
-		--  format with conform
-		["<leader>fm"] = {
-			function()
-				require("conform").format()
-			end,
-			"formatting",
-		},
-	},
+local map = vim.keymap.set
 
-	v = {
-		-- Indentation
-		[">"] = { ">gv", "indent" },
-		-- Move selection up/down with K/J
-		["J"] = { ":m '>+1<CR>gv=gv", "move selection down" },
-		["K"] = { ":m '<-2<CR>gv=gv", "move selection up" },
-	},
+-- General
+map("n", ";", ":", { desc = "enter command mode", nowait = true })
 
-	i = {
-		["<C-l>"] = {
-			function()
-				vim.fn.feedkeys(vim.fn["copilot#Accept"](), "")
-			end,
-			"Copilot Accept",
-			{ replace_keycodes = true, nowait = true, silent = true, expr = true, noremap = true },
-		},
-	},
-}
+-- Format with conform
+map("n", "<leader>fm", function()
+  require("conform").format()
+end, { desc = "formatting" })
 
--- more keybinds!
+-- Indentation in visual mode
+map("v", ">", ">gv", { desc = "indent" })
 
-return M
+-- Move selection up/down with K/J in visual mode
+map("v", "J", ":m '>+1<CR>gv=gv", { desc = "move selection down" })
+map("v", "K", ":m '<-2<CR>gv=gv", { desc = "move selection up" })
+
+-- Copilot accept in insert mode
+map("i", "<C-l>", function()
+  vim.fn.feedkeys(vim.fn["copilot#Accept"](), "")
+end, { desc = "Copilot Accept", replace_keycodes = true, nowait = true, silent = true, expr = true, noremap = true })
