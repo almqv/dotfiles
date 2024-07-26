@@ -72,7 +72,32 @@ local plugins = {
 		--  for users those who want auto-save conform + lazyloading!
 		-- event = "BufWritePre"
 		config = function()
-			require("custom.configs.conform")
+      local options = {
+        lsp_fallback = true,
+
+        formatters_by_ft = {
+          -- Divine Intellect Languages
+          lua = { "stylua" },
+
+          -- Web Dev shit
+          javascript = { "prettier" },
+          typescript = { "prettier" },
+          javascriptreact = { "prettier" },
+          typescriptreact = { "prettier" },
+          css = { "prettier" },
+          scss = { "prettier" },
+          html = { "prettier" },
+
+          -- Data Science & AI stuff
+          python = { "black" },
+
+          sh = { "shfmt" },
+
+          -- Joke langs 
+          haskell = { "stylish-haskell" }
+        },
+      }
+      require("conform").setup(options)
 		end,
 	},
 
