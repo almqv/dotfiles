@@ -1,5 +1,8 @@
 { config, pkgs, ... }:
 
+let 
+  termPath = "/Applications/Alacritty.app";
+in
 {
   home.file.".skhdrc" = {
     executable = true;
@@ -7,7 +10,7 @@
       # Mod1 is alt, Mod4 is cmd
 
       # Terminal
-      cmd - return : open -n /Applications/iTerm.app
+      cmd - return : open -n ${termPath}
 
       # dmenu equivalent (you may want to install choose-gui or another launcher)
       cmd - p : open -n /Applications/choose-gui.app

@@ -38,11 +38,6 @@
   };
 
   imports = [
-    # Services
-    ./services/nix-daemon.nix  # NOTE: DO NOT REMOVE
-    ./services/yabai.nix
-    ./services/skhd.nix
-
     # Modules
     ./modules/yabai.nix
     ./modules/skhd.nix
@@ -156,6 +151,13 @@
       enable = true;
       theme = "half-life";
       plugins = [ "git" "macos" ];
+      extraConfig = ''
+        # Homebrew
+        export PATH="/usr/local/bin:/opt/homebrew/bin:$PATH"
+
+        # Nix
+        if [ -e /etc/profile.d/nix.sh ]; then . /etc/profile.d/nix.sh; fi
+      '';
     };
   };
 
