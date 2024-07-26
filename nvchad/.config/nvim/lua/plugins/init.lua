@@ -1,5 +1,3 @@
-local overrides = require("custom.configs.overrides")
-
 ---@type NvPluginSpec[]
 local plugins = {
 
@@ -8,15 +6,35 @@ local plugins = {
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
-			require("plugins.configs.lspconfig")
-			require("custom.configs.lspconfig")
+			-- require "plugins.configs.lspconfig"
+			require "configs.lspconfig"
 		end, -- Override to setup mason-lspconfig
 	},
 
 	-- override plugin configs
 	{
 		"williamboman/mason.nvim",
-		opts = overrides.mason,
+		opts = {
+      ensure_installed = {
+        -- lua stuff
+        "lua-language-server",
+        "stylua",
+
+        -- web dev stuff
+        "css-lsp",
+        "html-lsp",
+        "typescript-language-server",
+        "deno",
+        "prettier",
+
+        -- c/cpp stuff
+        "clangd",
+        "clang-format",
+
+        -- Fun/joke langs 
+        "hls",
+      },
+    },
 	},
 
 	-- {
@@ -24,7 +42,20 @@ local plugins = {
 	-- 	opts = overrides.treesitter, },
 	{
 		"nvim-tree/nvim-tree.lua",
-		opts = overrides.nvimtree,
+		opts = {
+      git = {
+        enable = true,
+      },
+
+      renderer = {
+        highlight_git = true,
+        icons = {
+          show = {
+            git = true,
+          },
+        },
+      },
+    },
 	},
 
 	-- Install a plugin
@@ -63,7 +94,30 @@ local plugins = {
 		dependencies = {
 			"JoosepAlviste/nvim-ts-context-commentstring",
 		},
-		opts = overrides.treesitter,
+		opts = {
+      ensure_installed = {
+        "vim",
+        "lua",
+        "html",
+        "css",
+        "javascript",
+        "typescript",
+        "tsx",
+        "c",
+        "markdown",
+        "markdown_inline",
+        "prisma",
+        "haskell",
+        "python",
+        "zig",
+      },
+      indent = {
+        enable = true,
+        -- disable = {
+        --   "python"
+        -- },
+      },
+    },
 		-- config = function(_, opts)
 		-- 	dofile(vim.g.base46_cache .. "syntax")
 		-- 	require("nvim-treesitter.configs").setup(opts)
