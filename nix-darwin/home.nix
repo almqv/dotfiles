@@ -80,6 +80,10 @@
     tmux
     htop
 
+    # Cringe
+    pfetch
+    neofetch
+
     # Tools 
     nmap
     dig
