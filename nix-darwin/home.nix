@@ -91,6 +91,9 @@
     # DE/WM/Ricing
     yabai # wm
     skhd  # key mngr
+
+    # Fonts 
+    nerdfonts
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -161,6 +164,9 @@
 
         # Nix
         if [ -e /etc/profile.d/nix.sh ]; then . /etc/profile.d/nix.sh; fi
+
+        # TERM
+        export TERM=xterm-xfree86
       '';
     };
   };
