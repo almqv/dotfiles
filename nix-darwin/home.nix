@@ -38,6 +38,10 @@
   };
 
   imports = [
+    # Services
+    ./services/nix-daemon.nix  # NOTE: DO NOT REMOVE
+
+    # Modules
     ./modules/yabai.nix
     ./modules/skhd.nix
   ];
