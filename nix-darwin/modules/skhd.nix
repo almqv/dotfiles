@@ -2,6 +2,7 @@
 
 let 
   termPath = "/Applications/Alacritty.app";
+  browserPath = "/Applications/Firefox.app";
 in
 {
   home.file.".skhdrc" = {
@@ -69,6 +70,9 @@ in
 
       # Restart yabai
       shift + cmd - q : yabai --restart-service
+
+      # Start browser
+      cmd - b : open -n ${browserPath}
     '';
   };
 }
