@@ -73,6 +73,9 @@ in
 
       # Start browser
       cmd - b : open -n ${browserPath}
+
+      # Screenshot selection
+      cmd - f3 : screencapture -i -c
     '';
   };
 }
