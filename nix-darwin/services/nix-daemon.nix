@@ -1,5 +1,8 @@
-{ config, pkgs, scriptPath ? "/opt/nix-daemon.sh", ... }:
+{ config, pkgs, ... }:
 
+let 
+  fullScriptPath = "/opt/nix-daemon.sh";
+in
 {
   home.file."Library/LaunchAgents/org.nixos.autostart.plist" = {
     text = ''
@@ -12,7 +15,7 @@
         <key>ProgramArguments</key>
         <array>
           <string>${pkgs.bash}/bin/bash</string>
-          <string>${scriptPath}</string>
+          <string>${fullScriptPath}</string>
         </array>
         <key>RunAtLoad</key>
         <true/>
@@ -23,7 +26,7 @@
     '';
   };
 
-  home.file."${scriptPath}" = {
+  home.file."${fullScriptPath}" = {
     text = ''
       if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
         . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
