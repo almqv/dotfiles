@@ -37,6 +37,11 @@
     };
   };
 
+  imports = [
+    ./modules/yabai.nix
+    ./modules/skhd.nix
+  ];
+
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
@@ -157,33 +162,5 @@
     viAlias = true;
     vimAlias = true;
     defaultEditor = true;
-  };
-
-  # Services
-
-  # yabai (wm)
-  services.yabai = {
-    enable = true;
-    package = pkgs.yabai;
-    config = {
-      layout = "bsp";
-      auto_balance = "on";
-      split_ratio = 0.50;
-      window_placement = "second_child";
-    };
-    # extraConfig = ''
-    # '';
-  };
-
-  # skhd (keybinds etc.)
-  services.skhd = {
-    enable = true;
-    package = pkgs.skhd;
-    skhdConfig = ''
-      # Add your skhd keybindings here
-      # For example:
-      # alt - return : open -n /Applications/iTerm.app
-      # shift + alt - r : yabai -m space --rotate 90
-    '';
   };
 }
