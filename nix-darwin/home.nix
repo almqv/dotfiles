@@ -40,6 +40,8 @@
   imports = [
     # Services
     ./services/nix-daemon.nix  # NOTE: DO NOT REMOVE
+    ./services/yabai.nix
+    ./services/skhd.nix
 
     # Modules
     ./modules/yabai.nix
