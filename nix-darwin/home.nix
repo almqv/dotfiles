@@ -79,6 +79,7 @@
     jq
     tmux
     htop
+    ripgrep
     sshfs
 
     # Cringe
