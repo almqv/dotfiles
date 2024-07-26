@@ -1,34 +1,36 @@
 { config, pkgs, ... }:
 
+let 
+  fullScriptPath = ".scripts/skhd-daemon.sh";
+in
 {
-  # service
-  home.file."Library/LaunchAgents/org.nixos.skhd.plist" = {
+  home.file."Library/LaunchAgents/org.skhdos.autostart.plist" = {
     text = ''
       <?xml version="1.0" encoding="UTF-8"?>
       <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
       <plist version="1.0">
       <dict>
         <key>Label</key>
-        <string>org.nixos.skhd</string>
+        <string>org.skhdos.autostart</string>
         <key>ProgramArguments</key>
         <array>
-          <string>${pkgs.skhd}/bin/skhd</string>
+          <string>${pkgs.bash}/bin/bash</string>
+          <string>${fullScriptPath}</string>
         </array>
-        <key>EnvironmentVariables</key>
-        <dict>
-          <key>PATH</key>
-          <string>${pkgs.skhd}/bin:${pkgs.bash}/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
-        </dict>
         <key>RunAtLoad</key>
         <true/>
         <key>KeepAlive</key>
-        <true/>
-        <key>StandardOutPath</key>
-        <string>${config.home.homeDirectory}/.skhd.out.log</string>
-        <key>StandardErrorPath</key>
-        <string>${config.home.homeDirectory}/.skhd.err.log</string>
+        <false/>
       </dict>
       </plist>
     '';
   };
+
+  home.file."${fullScriptPath}" = {
+    text = ''
+      skhd --start-service
+    '';
+    executable = true;
+  };
 }
+

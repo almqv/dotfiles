@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 let 
-  fullScriptPath = "/opt/nix-daemon.sh";
+  fullScriptPath = ".scripts/nix-daemon.sh";
 in
 {
   home.file."Library/LaunchAgents/org.nixos.autostart.plist" = {
