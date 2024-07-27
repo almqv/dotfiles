@@ -99,6 +99,7 @@
     # haskell
     ghc
     haskell-language-server
+    haskellPackages.cabal-install
 
     # rust
     rustc
