@@ -30,9 +30,6 @@ local plugins = {
         -- c/cpp stuff
         "clangd",
         "clang-format",
-
-        -- Fun/joke langs 
-        "hls",
       },
     },
 	},
