@@ -216,6 +216,9 @@
         # Homebrew
         export PATH="/usr/local/bin:/opt/homebrew/bin:$PATH"
 
+        # Scripts path 
+        export PATH="$HOME/.scripts:$PATH"
+
         # Nix
         if [ -e /etc/profile.d/nix.sh ]; then . /etc/profile.d/nix.sh; fi
 
