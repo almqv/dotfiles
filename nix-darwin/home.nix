@@ -210,18 +210,18 @@
       ccd = "echo $PWD | xcopy";
       cr = "cd $(git rev-parse --show-toplevel)";
     };
-    initExtra = ''
-      # Function to check if we're in a nix-shell
-      in_nix_shell() {
-        if [ -n "$IN_NIX_SHELL" ]; then
-          echo "(devenv) "
-        fi
-      }
-      
-      # Set the prompt
-      setopt PROMPT_SUBST
-      export PS1='$(in_nix_shell)$(PS1)'
-    '';
+    # initExtra = ''
+    #   # Function to check if we're in a nix-shell
+    #   in_nix_shell() {
+    #     if [ -n "$IN_NIX_SHELL" ]; then
+    #       echo "(devenv) "
+    #     fi
+    #   }
+    #
+    #   # Set the prompt
+    #   setopt PROMPT_SUBST
+    #   export PS1='$(in_nix_shell)$PS1'
+    # '';
     oh-my-zsh = {
       enable = true;
       theme = "half-life";
