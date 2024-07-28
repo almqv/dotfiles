@@ -27,6 +27,14 @@
       #     patches = [ ./change-hello-to-hi.patch ];
       #   });
       # })
+
+      (final: prev: {
+        ngspice = prev.ngspice.overrideAttrs (oldAttrs: {
+          configureFlags = (oldAttrs.configureFlags or []) ++ [
+            "--with-ngshared"
+          ];
+        });
+      })
     ];
     # Configure your nixpkgs instance
     config = {
@@ -81,6 +89,9 @@
     htop
     ripgrep
     sshfs
+
+    # Simulators
+    ngspice
 
     # Cringe
     pfetch
