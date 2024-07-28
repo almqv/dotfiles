@@ -233,6 +233,9 @@
         # Scripts path 
         export PATH="$HOME/.scripts:$PATH"
 
+        # User bin 
+        export PATH="$HOME/.local/bin:$PATH"
+
         # Nix
         if [ -e /etc/profile.d/nix.sh ]; then . /etc/profile.d/nix.sh; fi
 
