@@ -220,7 +220,7 @@
       
       # Set the prompt
       setopt PROMPT_SUBST
-      export PS1='$(in_nix_shell)%B%F{cyan}%~%f%b %# '
+      export PS1='$(in_nix_shell)$(PS1)'
     '';
     oh-my-zsh = {
       enable = true;
