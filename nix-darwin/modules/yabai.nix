@@ -2,7 +2,7 @@
 
 let 
   split_ratio = "0.50";
-  gap_padding = "16";
+  gap_padding = "0";
 in
 {
   # Create configuration files for yabai and skhd
@@ -30,8 +30,9 @@ in
 
       # mouse stuff 
       # yabai -m config mouse_follows_focus on
-      # yabai -m config focus_follows_mouse autofocus
+      yabai -m config focus_follows_mouse autofocus
 
+      # Move window with mouse
       yabai -m config mouse_modifier cmd
       yabai -m config mouse_action1 move
       yabai -m config mouse_action2 resize
