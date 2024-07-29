@@ -82,6 +82,7 @@
     htop
     ripgrep
     sshfs
+    libqalculate
 
     # Simulators
     # ngspice
