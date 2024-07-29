@@ -30,7 +30,7 @@ in
 
       # mouse stuff 
       # yabai -m config mouse_follows_focus on
-      yabai -m config focus_follows_mouse autofocus
+      # yabai -m config focus_follows_mouse autofocus
 
       yabai -m config mouse_modifier cmd
       yabai -m config mouse_action1 move

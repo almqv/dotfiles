@@ -84,7 +84,7 @@
     sshfs
 
     # Simulators
-    ngspice
+    # ngspice
 
     # Cringe
     pfetch
