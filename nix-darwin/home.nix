@@ -27,14 +27,6 @@
       #     patches = [ ./change-hello-to-hi.patch ];
       #   });
       # })
-
-      (final: prev: {
-        ngspice = prev.ngspice.overrideAttrs (oldAttrs: {
-          configureFlags = (oldAttrs.configureFlags or []) ++ [
-            "--with-ngshared"
-          ];
-        });
-      })
     ];
     # Configure your nixpkgs instance
     config = {
@@ -79,6 +71,7 @@
     discord
 
     # Utils 
+    coreutils # *happy rms noises*
     stow
     curl
     wget
@@ -220,6 +213,7 @@
       xpaste = "pbpaste";
       ccd = "echo $PWD | xcopy";
       cr = "cd $(git rev-parse --show-toplevel)";
+      nd = "nix develop -c $SHELL";
     };
     # initExtra = ''
     #   # Function to check if we're in a nix-shell
