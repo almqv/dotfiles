@@ -83,6 +83,7 @@
     ripgrep
     sshfs
     libqalculate
+    imagemagick
 
     # Simulators
     # ngspice

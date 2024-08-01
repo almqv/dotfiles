@@ -8,7 +8,7 @@ local M = {}
 local highlights = require "highlights"
 
 M.ui = {
-  theme = "flex-light",
+  theme = "gruvchad",
   theme_toggle = { "gruvchad", "flex-light" },
 
   hl_override = highlights.override,
