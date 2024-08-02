@@ -69,6 +69,7 @@
     irssi
     spotify
     discord
+    gimp
 
     # Utils 
     coreutils # *happy rms noises*
