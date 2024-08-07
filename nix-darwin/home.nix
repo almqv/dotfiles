@@ -70,6 +70,7 @@
     spotify
     discord
     gimp
+    vscode
 
     # Utils 
     coreutils # *happy rms noises*
