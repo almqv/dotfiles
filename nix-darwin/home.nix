@@ -71,6 +71,7 @@
     discord
     gimp
     vscode
+    gtkwave
 
     # Utils 
     coreutils # *happy rms noises*
@@ -86,6 +87,7 @@
     sshfs
     libqalculate
     imagemagick
+    llvm
 
     # Simulators
     # ngspice
