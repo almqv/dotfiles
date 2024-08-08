@@ -87,7 +87,10 @@
     sshfs
     libqalculate
     imagemagick
+
+    # compiler stuff
     llvm
+    libllvm
 
     # Simulators
     # ngspice
@@ -241,10 +244,10 @@
         export PATH="$PATH:$HOME/.ghcup/bin"
 
         # Super hacky and fucking stupid way of doing things - stuff
-        # export PATH="/usr/local/llvm/bin:$PATH"
-        # export LDFLAGS="-L/usr/local/llvm/lib $LDFLAGS"
-        # export CPPFLAGS="-I/usr/local/llvm/include $CPPFLAGS"
-        # export DYLD_LIBRARY_PATH="/usr/local/llvm/lib:$DYLD_LIBRARY_PATH"
+        export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+        export LDFLAGS="-L/opt/homebrew/opt/llvm/lib $LDFLAGS"
+        export CPPFLAGS="-I/opt/homebrew/opt/llvm/include $CPPFLAGS"
+        export DYLD_LIBRARY_PATH="/opt/homebrew/opt/llvm/lib:$DYLD_LIBRARY_PATH"
 
         # Nix
         if [ -e /etc/profile.d/nix.sh ]; then . /etc/profile.d/nix.sh; fi
