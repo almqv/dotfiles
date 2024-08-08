@@ -240,10 +240,10 @@
         export PATH="$PATH:$HOME/.ghcup/bin"
 
         # Super hacky and fucking stupid way of doing things - stuff
-        export PATH="$HOME/.local/hack/bin:$PATH"
-        export LDFLAGS="-L$HOME/.local/hack/lib $LDFLAGS"
-        export CPPFLAGS="-I$HOME/.local/hack/include $CPPFLAGS"
-        export DYLD_LIBRARY_PATH="$HOME/.local/hack/lib:$DYLD_LIBRARY_PATH"
+        export PATH="/usr/local/llvm/bin:$PATH"
+        export LDFLAGS="-L/usr/local/llvm/lib $LDFLAGS"
+        export CPPFLAGS="-I/usr/local/llvm/include $CPPFLAGS"
+        export DYLD_LIBRARY_PATH="/usr/local/llvm/lib:$DYLD_LIBRARY_PATH"
 
         # Nix
         if [ -e /etc/profile.d/nix.sh ]; then . /etc/profile.d/nix.sh; fi
