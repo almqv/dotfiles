@@ -239,6 +239,12 @@
         # GHCup
         export PATH="$PATH:$HOME/.ghcup/bin"
 
+        # Super hacky and fucking stupid way of doing things - stuff
+        export PATH="$HOME/.local/hack/bin:$PATH"
+        export LDFLAGS="-L$HOME/.local/hack/lib $LDFLAGS"
+        export CPPFLAGS="-I$HOME/.local/hack/include $CPPFLAGS"
+        export DYLD_LIBRARY_PATH="$HOME/.local/hack/lib:$DYLD_LIBRARY_PATH"
+
         # Nix
         if [ -e /etc/profile.d/nix.sh ]; then . /etc/profile.d/nix.sh; fi
 
