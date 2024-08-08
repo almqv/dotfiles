@@ -105,6 +105,7 @@
 
     # Development stuff
     gh
+    docker
 
     # c/c++
     # gcc
