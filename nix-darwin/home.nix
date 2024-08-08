@@ -234,6 +234,9 @@
         # User bin 
         export PATH="$HOME/.local/bin:$PATH"
 
+        # GHCup
+        export PATH="$PATH:$HOME/.ghcup/bin"
+
         # Nix
         if [ -e /etc/profile.d/nix.sh ]; then . /etc/profile.d/nix.sh; fi
 
