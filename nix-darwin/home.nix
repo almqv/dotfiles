@@ -105,7 +105,6 @@
 
     # Development stuff
     gh
-    # gnat
 
     # c/c++
     # gcc
