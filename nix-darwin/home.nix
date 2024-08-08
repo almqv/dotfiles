@@ -27,6 +27,7 @@
       #     patches = [ ./change-hello-to-hi.patch ];
       #   });
       # })
+      (import ./overlays/ghdl-llvm.nix)
     ];
     # Configure your nixpkgs instance
     config = {
@@ -87,7 +88,11 @@
     sshfs
     libqalculate
     imagemagick
+
+    # compiler stuff
     llvm
+    libllvm
+    ghdl-llvm
 
     # Simulators
     # ngspice
