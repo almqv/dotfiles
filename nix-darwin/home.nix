@@ -90,6 +90,9 @@
 
     # Deps needed to build stuff
     or-tools
+    gnumake
+    cmake
+    swig4
 
     # compiler stuff
     llvm
