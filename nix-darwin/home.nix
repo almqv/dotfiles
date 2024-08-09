@@ -93,6 +93,7 @@
     gnumake
     cmake
     swig4
+    boost
 
     # compiler stuff
     llvm
