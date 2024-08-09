@@ -88,6 +88,9 @@
     libqalculate
     imagemagick
 
+    # Deps needed to build stuff
+    or-tools
+
     # compiler stuff
     llvm
     libllvm
