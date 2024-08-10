@@ -95,6 +95,10 @@
     swig4
     boost
 
+    # fucking stupid compat workarounds
+    libvirt
+    virt-manager
+
     # compiler stuff
     llvm
     libllvm
@@ -131,6 +135,9 @@
     # js/ts/node/web
     nodejs_22
     nodePackages.pnpm
+
+    # vhdl
+    vhdl-ls
 
     # golang
     go 
