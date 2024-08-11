@@ -87,6 +87,7 @@
     sshfs
     libqalculate
     imagemagick
+    figlet
 
     # Deps needed to build stuff
     or-tools
@@ -96,6 +97,7 @@
     boost
 
     # fucking stupid compat workarounds
+    qemu
     libvirt
     virt-manager
 
