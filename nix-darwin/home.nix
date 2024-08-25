@@ -301,6 +301,32 @@
           y = 8;
         };
       };
+      colors = {
+        primary = {
+          background = "0x1e2122";
+          foreground = "0xd4be98";
+        };
+        normal = {
+          black = "0x17191a";
+          red = "0xea6962";
+          green = "0xa9b665";
+          yellow = "0xd8a657";
+          blue = "0x7daea3";
+          magenta = "0xd3869b";
+          cyan = "0x89b482";
+          white = "0xd4be98";
+        };
+        bright = {
+          black = "0x32302f";
+          red = "0xea6962";
+          green = "0xa9b665";
+          yellow = "0xd8a657";
+          blue = "0x7daea3";
+          magenta = "0xd3869b";
+          cyan = "0x89b482";
+          white = "0xd4be98";
+        };
+      };
     };
   };
 

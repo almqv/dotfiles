@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 let 
-  termPath = "/Applications/iTerm.app";
+  termPath = "/Applications/Alacritty.app";
   browserPath = "/Applications/Firefox.app";
 in
 {
