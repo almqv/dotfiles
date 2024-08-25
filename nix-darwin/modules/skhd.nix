@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 let 
-  termPath = "/Applications/Alacritty.app";
+  termPath = "/Applications/iTerm.app";
   browserPath = "/Applications/Firefox.app";
 in
 {
@@ -72,7 +72,7 @@ in
       shift + cmd - c : yabai --restart-service
 
       # Start browser
-      cmd - b : open -n ${browserPath}
+      shift + cmd - b : open -n ${browserPath}
 
       # Screenshot selection
       cmd - f3 : screencapture -i -c

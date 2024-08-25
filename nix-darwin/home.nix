@@ -170,7 +170,7 @@
     skhd  # key mngr
 
     # terminal
-    iterm2
+    # iterm2
 
     # Fonts 
     nerdfonts
