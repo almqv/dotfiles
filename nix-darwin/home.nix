@@ -169,6 +169,9 @@
     yabai # wm
     skhd  # key mngr
 
+    # terminal
+    iterm2
+
     # Fonts 
     nerdfonts
   ];

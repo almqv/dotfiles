@@ -17,7 +17,7 @@ in
       cmd - p : open -n /Applications/choose-gui.app
 
       # Close window
-      cmd + shift - c : yabai -m window --close
+      cmd + shift - q : yabai -m window --close
 
       # Focus window
       cmd - j : yabai -m window --focus south
@@ -69,7 +69,7 @@ in
       shift + cmd - 9 : yabai -m window --space 9
 
       # Restart yabai
-      shift + cmd - q : yabai --restart-service
+      shift + cmd - c : yabai --restart-service
 
       # Start browser
       cmd - b : open -n ${browserPath}
