@@ -30,6 +30,9 @@ local plugins = {
         -- c/cpp stuff
         "clangd",
         "clang-format",
+
+        -- rust
+        "rust-analyzer",
       },
     },
 	},
@@ -75,6 +78,9 @@ local plugins = {
         formatters_by_ft = {
           -- Divine Intellect Languages
           lua = { "stylua" },
+
+          -- rust 
+          rust = { "rustfmt" },
 
           -- Web Dev shit
           javascript = { "prettier" },
@@ -132,6 +138,8 @@ local plugins = {
         "haskell",
         "python",
         "zig",
+        "rust",
+        "vhdl",
       },
       indent = {
         enable = true,
