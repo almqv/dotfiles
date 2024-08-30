@@ -72,6 +72,7 @@
     gimp
     vscode
     gtkwave
+    klayout
 
     # Utils 
     coreutils # *happy rms noises*
