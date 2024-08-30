@@ -245,6 +245,7 @@
       cr = "cd $(git rev-parse --show-toplevel)";
       nd = "nix develop -c $SHELL";
       ls = "ls --color";
+      gac = "git add -A && git commit -m";
     };
     oh-my-zsh = {
       enable = true;
