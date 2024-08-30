@@ -72,7 +72,6 @@
     gimp
     vscode
     gtkwave
-    klayout
 
     # Utils 
     coreutils # *happy rms noises*
@@ -89,6 +88,7 @@
     libqalculate
     imagemagick
     figlet
+    tree
 
     # Deps needed to build stuff
     or-tools
