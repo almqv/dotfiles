@@ -134,8 +134,6 @@
     # rust
     rustc
     rustup
-    rust-analyzer
-    rustfmt
 
     # js/ts/node/web
     nodejs_22
