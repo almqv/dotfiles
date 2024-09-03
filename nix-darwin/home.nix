@@ -213,6 +213,7 @@
   home.sessionVariables = {
     EDITOR = "nvim";
     SHELL = "${pkgs.zsh}/bin/zsh";
+    LIBTORCH = "${pkgs.libtorch-bin}/lib";
   };
 
   # Let Home Manager install and manage itself.
