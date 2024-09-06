@@ -72,6 +72,7 @@
     gimp
     vscode
     gtkwave
+    gephi
 
     # Utils 
     coreutils # *happy rms noises*

@@ -35,7 +35,7 @@ local function split_string(s)
 end
 
 M.ui = {
-	theme = "blossom_light",
+	theme = "gruvchad",
 	theme_toggle = { "gruvchad", "blossom_light" },
 
 	hl_override = highlights.override,
