@@ -15,12 +15,14 @@
 ;; - `doom-variable-pitch-font' -- a non-monospace font (where applicable)
 ;; - `doom-big-font' -- used for `doom-big-font-mode'; use this for
 ;;   presentations or streaming.
-;; - `doom-unicode-font' -- for unicode glyphs
+;; - `doom-symbol-font' -- for symbols
 ;; - `doom-serif-font' -- for the `fixed-pitch-serif' face
 ;;
 ;; See 'C-h v doom-font' for documentation and more examples of what they
 ;; accept. For example:
 ;;
+;;(setq doom-font (font-spec :family "Fira Code" :size 12 :weight 'semi-light)
+;;      doom-variable-pitch-font (font-spec :family "Fira Sans" :size 13))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
@@ -73,60 +75,10 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-;; Indentation
-;; (setq-default tab-width 4)
-;; (setq-default indent-tabs-mode t)
 
-;; Discord thing
-;; (elcord-mode)
-
-;; (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
-;; Find file
-(global-set-key "\C-s" 'swiper)
-(global-set-key (kbd "C-c C-r") 'ivy-resume)
-(global-set-key (kbd "<f6>") 'ivy-resume)
-(global-set-key (kbd "M-x") 'counsel-M-x)
-(global-set-key (kbd "M-f") 'counsel-find-file)
-(global-set-key (kbd "<f1> f") 'counsel-describe-function)
-(global-set-key (kbd "<f1> v") 'counsel-describe-variable)
-(global-set-key (kbd "<f1> o") 'counsel-describe-symbol)
-(global-set-key (kbd "<f1> l") 'counsel-find-library)
-(global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
-(global-set-key (kbd "<f2> u") 'counsel-unicode-char)
-(global-set-key (kbd "C-c g") 'counsel-git)
-(global-set-key (kbd "C-c j") 'counsel-git-grep)
-(global-set-key (kbd "C-c k") 'counsel-ag)
-(global-set-key (kbd "C-x l") 'counsel-locate)
-(global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
-(define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history)
-
-
-(global-set-key (kbd "M-g") 'format-all-buffer)
-
-;; accept completion from copilot and fallback to company
-;; (use-package! copilot
-;;   :hook (prog-mode . copilot-mode)
-;;   :bind (:map copilot-completion-map
-;;               ("<tab>" . 'copilot-accept-completion)
-;;               ("TAB" . 'copilot-accept-completion)
-;;               ("C-TAB" . 'copilot-accept-completion-by-word)
-;;               ("C-<tab>" . 'copilot-accept-completion-by-word)))
-
+;; Mappings for dragging stuff
 (use-package! drag-stuff
   :config
   (drag-stuff-global-mode 1)
   (map! :v "J" #'drag-stuff-down
         :v "K" #'drag-stuff-up))
-
-;; (after! (evil copilot)
-;;   ;; Define the custom function that either accepts the completion or does the default behavior
-;;   (defun my/copilot-tab-or-default ()
-;;     (interactive)
-;;     (if (and (bound-and-true-p copilot-mode)
-;;              ;; Add any other conditions to check for active copilot suggestions if necessary
-;;              )
-;;         (copilot-accept-completion)
-;;       (evil-insert 1))) ; Default action to insert a tab. Adjust as needed.
-
-;;   ;; Bind the custom function to <tab> in Evil's insert state
-;;   (evil-define-key 'insert 'global (kbd "<tab>") 'my/copilot-tab-or-default))
