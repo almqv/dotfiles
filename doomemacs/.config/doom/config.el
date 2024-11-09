@@ -21,8 +21,6 @@
 ;; See 'C-h v doom-font' for documentation and more examples of what they
 ;; accept. For example:
 ;;
-
-(setq doom-font (font-spec :family "Fira Code" :size 12))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
@@ -106,23 +104,29 @@
 (global-set-key (kbd "M-g") 'format-all-buffer)
 
 ;; accept completion from copilot and fallback to company
-(use-package! copilot
-  :hook (prog-mode . copilot-mode)
-  :bind (:map copilot-completion-map
-              ("<tab>" . 'copilot-accept-completion)
-              ("TAB" . 'copilot-accept-completion)
-              ("C-TAB" . 'copilot-accept-completion-by-word)
-              ("C-<tab>" . 'copilot-accept-completion-by-word)))
+;; (use-package! copilot
+;;   :hook (prog-mode . copilot-mode)
+;;   :bind (:map copilot-completion-map
+;;               ("<tab>" . 'copilot-accept-completion)
+;;               ("TAB" . 'copilot-accept-completion)
+;;               ("C-TAB" . 'copilot-accept-completion-by-word)
+;;               ("C-<tab>" . 'copilot-accept-completion-by-word)))
 
-(after! (evil copilot)
-  ;; Define the custom function that either accepts the completion or does the default behavior
-  (defun my/copilot-tab-or-default ()
-    (interactive)
-    (if (and (bound-and-true-p copilot-mode)
-             ;; Add any other conditions to check for active copilot suggestions if necessary
-             )
-        (copilot-accept-completion)
-      (evil-insert 1))) ; Default action to insert a tab. Adjust as needed.
+(use-package! drag-stuff
+  :config
+  (drag-stuff-global-mode 1)
+  (map! :v "J" #'drag-stuff-down
+        :v "K" #'drag-stuff-up))
 
-  ;; Bind the custom function to <tab> in Evil's insert state
-  (evil-define-key 'insert 'global (kbd "<tab>") 'my/copilot-tab-or-default))
+;; (after! (evil copilot)
+;;   ;; Define the custom function that either accepts the completion or does the default behavior
+;;   (defun my/copilot-tab-or-default ()
+;;     (interactive)
+;;     (if (and (bound-and-true-p copilot-mode)
+;;              ;; Add any other conditions to check for active copilot suggestions if necessary
+;;              )
+;;         (copilot-accept-completion)
+;;       (evil-insert 1))) ; Default action to insert a tab. Adjust as needed.
+
+;;   ;; Bind the custom function to <tab> in Evil's insert state
+;;   (evil-define-key 'insert 'global (kbd "<tab>") 'my/copilot-tab-or-default))

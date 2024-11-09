@@ -160,6 +160,10 @@
     python3
     python312Packages.pip
 
+    # scala
+    metals
+    scalafmt
+
     # formatters
     shfmt
     nodePackages.prettier
