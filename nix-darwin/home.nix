@@ -163,6 +163,7 @@
     # scala
     metals
     scalafmt
+    sbt
 
     # formatters
     shfmt

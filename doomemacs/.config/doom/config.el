@@ -82,3 +82,8 @@
   (drag-stuff-global-mode 1)
   (map! :v "J" #'drag-stuff-down
         :v "K" #'drag-stuff-up))
+
+;; Format buffer bind
+(map! :leader
+      (:prefix ("f" . "format")
+       :desc "Format buffer" "m" #'+format/buffer))
