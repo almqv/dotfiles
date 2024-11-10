@@ -118,6 +118,7 @@
     # Tools 
     nmap
     dig
+    verilator
 
     # Development stuff
     gh
