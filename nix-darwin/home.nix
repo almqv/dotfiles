@@ -155,7 +155,8 @@
     ruby
 
     # julia
-    julia_19-bin # compat 
+    julia-bin
+    # julia_19-bin # compat 
 
     # py
     python3
