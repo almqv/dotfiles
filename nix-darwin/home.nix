@@ -176,7 +176,7 @@
     stylish-haskell
 
     # DE/WM/Ricing
-    yabai # wm
+    # yabai # wm
     skhd  # key mngr
 
     # terminal
