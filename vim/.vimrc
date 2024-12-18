@@ -23,15 +23,15 @@ set wrap
 set noet
 
 set autoindent
-set noexpandtab 
-set tabstop=8
-set shiftwidth=8
+" set noexpandtab 
+" set tabstop=8
+" set shiftwidth=8
 
 vmap <Tab> >gv
 vmap <S-Tab> <gv
 
 syntax on
 "set nu rnu
-"set ruler
+set ruler
 
 " colors koehler
