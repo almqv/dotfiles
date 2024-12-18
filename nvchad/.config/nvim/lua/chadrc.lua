@@ -35,14 +35,19 @@ local function split_string(s)
 end
 
 M.ui = {
-	theme = "gruvchad",
-	theme_toggle = { "gruvchad", "blossom_light" },
+	theme = "yoru",
+	theme_toggle = { "yoru", "blossom_light" },
 
 	hl_override = highlights.override,
 	hl_add = highlights.add,
 
 	statusline = {
+		enabled = false,
 		theme = "vscode",
+	},
+
+	tabufline = {
+		enabled = false,
 	},
 
 	hl_override = {
