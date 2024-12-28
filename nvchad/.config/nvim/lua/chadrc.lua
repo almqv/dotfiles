@@ -35,19 +35,15 @@ local function split_string(s)
 end
 
 M.ui = {
-	theme = "onenord",
-	theme_toggle = { "onenord", "blossom_light" },
+	theme = "ayu_dark",
+	theme_toggle = { "ayu_dark", "blossom_light" },
 
 	hl_override = highlights.override,
 	hl_add = highlights.add,
 
 	statusline = {
-		enabled = false,
+		enabled = true,
 		theme = "vscode",
-	},
-
-	tabufline = {
-		enabled = false,
 	},
 
 	hl_override = {
