@@ -258,6 +258,8 @@
     prefix = "C-s";
     keyMode = "vi";
     extraConfig = ''
+      set -g default-command "${pkgs.zsh}/bin/zsh"
+
       # Reload config with prefix + r
       unbind r
       bind r source-file ~/.config/tmux/tmux.conf
