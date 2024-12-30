@@ -216,6 +216,7 @@
       cr = "cd $(git rev-parse --show-toplevel)";
       nd = "nix develop -c $SHELL";
       ls = "ls --color";
+      tmux = "tmux -2";
     };
     oh-my-zsh = {
       enable = true;
