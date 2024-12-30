@@ -81,7 +81,7 @@
     ffmpeg
     gnupg
     jq
-    tmux
+    # tmux
     htop
     ripgrep
     sshfs
@@ -248,6 +248,17 @@
         export TERM=xterm-xfree86
       '';
     };
+  };
+
+  programs.tmux = {
+    enable = true;
+    mouse = true;
+    terminal = "xterm-256color";
+    shell = "${pkgs.zsh}/bin/zsh";
+    # If you need any tmux config to run before shell startup:
+    extraConfig = ''
+      set -g default-command "${pkgs.zsh}/bin/zsh"
+    '';
   };
 
   programs.neovim = {
