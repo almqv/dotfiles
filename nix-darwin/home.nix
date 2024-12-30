@@ -39,7 +39,6 @@
 
   imports = [
     # Modules
-    ./modules/yabai.nix
     ./modules/skhd.nix
   ];
 
@@ -178,12 +177,6 @@
     # DE/WM/Ricing
     # yabai # wm
     skhd  # key mngr
-
-    # terminal
-    # iterm2
-
-    # Fonts 
-    nerdfonts
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -285,61 +278,6 @@
         # TERM
         export TERM=xterm-xfree86
       '';
-    };
-  };
-
-  programs.alacritty = {
-    enable = true;
-    settings = {
-      font = {
-        normal = {
-          family = "FiraCode Nerd Font Mono";
-          style = "Regular";
-        };
-        bold = {
-          family = "FiraCode Nerd Font Mono";
-          style = "Bold";
-        };
-        italic = {
-          family = "FiraCode Nerd Font Mono";
-          style = "Italic";
-        };
-        size = 12;
-      };
-      window = {
-        padding = {
-          x = 8;
-          y = 8;
-        };
-        opacity = 0.8;
-        blur = true;
-      };
-      colors = {
-        primary = {
-          background = "0x000000";
-          foreground = "0xB3B1AD";
-        };
-        normal = {
-          black = "0x01060E";
-          red = "0xEA6C73";
-          green = "0x91B362";
-          yellow = "0xF9AF4F";
-          blue = "0x53BDFA";
-          magenta = "0xFAE994";
-          cyan = "0x90E1C6";
-          white = "0xC7C7C7";
-        };
-        bright = {
-          black = "0x686868";
-          red = "0xF07178";
-          green = "0xC2D94C";
-          yellow = "0xFFB454";
-          blue = "0x59C2FF";
-          magenta = "0xFFEE99";
-          cyan = "0x95E6CB";
-          white = "0xFFFFFF";
-        };
-      };
     };
   };
 
