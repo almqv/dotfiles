@@ -255,9 +255,18 @@
     mouse = true;
     terminal = "xterm-256color";
     shell = "${pkgs.zsh}/bin/zsh";
-    # If you need any tmux config to run before shell startup:
+    prefix = "C-s";
+    keyMode = "vi";
     extraConfig = ''
-      set -g default-command "${pkgs.zsh}/bin/zsh"
+      # Reload config with prefix + r
+      unbind r
+      bind r source-file ~/.config/tmux/tmux.conf
+
+      # Vim-like pane navigation
+      bind-key h select-pane -L
+      bind-key j select-pane -D
+      bind-key k select-pane -U
+      bind-key l select-pane -R
     '';
   };
 
