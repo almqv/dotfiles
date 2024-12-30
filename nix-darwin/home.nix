@@ -269,6 +269,12 @@
       bind-key j select-pane -D
       bind-key k select-pane -U
       bind-key l select-pane -R
+
+      # Split panes using h and v
+      unbind '"'
+      unbind %
+      bind å split-window -h
+      bind ä split-window -v 
     '';
   };
 
