@@ -257,6 +257,15 @@
     shell = "${pkgs.zsh}/bin/zsh";
     prefix = "C-s";
     keyMode = "vi";
+    plugins = [
+      {
+        plugin = pkgs.tmuxPlugins.cpu;
+        extraConfig = ''
+          set-option -g status-interval 1
+          set-option -g status-right "#[fg=green,bg=default,bright]#{cpu_bg_color}#{cpu_percentage} "
+        '';
+      }
+    ];
     extraConfig = ''
       set -g default-command "${pkgs.zsh}/bin/zsh"
 
@@ -275,6 +284,22 @@
       unbind %
       bind å split-window -h
       bind ä split-window -v 
+
+      # Status bar configuration
+      set-option -g status on
+      set-option -g status-justify centre
+      set-option -g status-keys vi
+      set-option -g status-position bottom
+      set-option -g status-style fg=colour136,bg=colour235
+      set-option -g status-left-length 20
+      set-option -g status-left-style default
+      set-option -g status-left "#[fg=green,bright]#(whoami)#[default]"
+      set-option -g status-right-length 140
+      set-option -g status-right-style default
+      
+      # Window status styling
+      set-window-option -g window-status-style fg=colour244,bg=default
+      set-window-option -g window-status-current-style fg=colour166,bg=default
     '';
   };
 
