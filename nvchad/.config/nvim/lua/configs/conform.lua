@@ -5,6 +5,9 @@ local options = {
 		-- Divine Intellect Languages
 		lua = { "stylua" },
 
+    -- based
+    scala = { "scalafmt" },
+
 		-- Web Dev shit
 		javascript = { "prettier" },
 		typescript = { "prettier" },

@@ -34,27 +34,31 @@ local function split_string(s)
 	return t
 end
 
-M.ui = {
-	theme = "gruvchad",
-	theme_toggle = { "gruvchad", "blossom_light" },
 
-	hl_override = highlights.override,
-	hl_add = highlights.add,
+M = {
+  base46 = {
+    theme = "onenord",
+    theme_toggle = { "onenord", "blossom_light" },
+  },
+  ui = {
+    hl_override = highlights.override,
+    hl_add = highlights.add,
 
-	statusline = {
-		enabled = true,
-		theme = "vscode",
-	},
+    statusline = {
+      enabled = true,
+      theme = "vscode",
+    },
 
-	hl_override = {
-		NvDashAscii = { bg = "blue", fg = "white" },
-	},
+    hl_override = {
+      NvDashAscii = { bg = "blue", fg = "white" },
+    },
 
-	nvdash = {
-		load_on_startup = true,
-		header = custom_logo,
-		width = 100,
-	},
+    nvdash = {
+      load_on_startup = true,
+      header = custom_logo,
+      width = 100,
+    },
+  }
 }
 
 return M
