@@ -6,7 +6,7 @@ local lspconfig = require("lspconfig")
 local servers = {
 	"html",
 	"cssls",
-	"tsserver",
+	"ts_ls",
 	"clangd",
 	"rust_analyzer",
 	"vhdl_ls",
@@ -25,18 +25,3 @@ for _, lsp in ipairs(servers) do
 		capabilities = capabilities,
 	})
 end
-
--- typescript
--- lspconfig.tsserver.setup({
--- 	on_attach = on_attach,
--- 	on_init = on_init,
--- 	capabilities = capabilities,
--- })
-
--- Haskell
--- lspconfig.hls.setup({
--- 	on_attach = on_attach,
--- 	on_init = on_init,
--- 	capabilities = capabilities,
--- 	filetypes = { "haskell", "lhaskell", "cabal" },
--- })
