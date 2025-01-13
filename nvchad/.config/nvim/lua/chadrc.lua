@@ -37,8 +37,8 @@ end
 
 M = {
   base46 = {
-    theme = "onenord",
-    theme_toggle = { "onenord", "blossom_light" },
+    theme = "ayu_dark",
+    theme_toggle = { "ayu_dark", "ayu_dark" },
   },
   ui = {
     hl_override = highlights.override,
