@@ -165,6 +165,7 @@
     metals
     scalafmt
     sbt
+    coursier
 
     # formatters
     shfmt
