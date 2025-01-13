@@ -301,6 +301,10 @@
       # Window status styling
       set-window-option -g window-status-style fg=colour244,bg=default
       set-window-option -g window-status-current-style fg=colour166,bg=default
+
+      # Truecolor support
+      set -g default-terminal "tmux-256color"
+      set -ga terminal-overrides ",*256col*:Tc"
     '';
   };
 
