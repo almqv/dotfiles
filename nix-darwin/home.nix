@@ -236,6 +236,9 @@
         # GHCup
         export PATH="$PATH:$HOME/.ghcup/bin"
 
+        # CS (Scala)
+        export PATH="$PATH:$HOME/Library/Application\ Support/Coursier/bin"
+
         # Super hacky and fucking stupid way of doing things - stuff
         # export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
         # export LDFLAGS="-L/opt/homebrew/opt/llvm/lib $LDFLAGS"
