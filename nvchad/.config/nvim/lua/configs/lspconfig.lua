@@ -31,7 +31,7 @@ lspconfig.metals.setup({
     excludedPackages = { "akka.actor.typed.javadsl", "com.github.swagger.akka.javadsl" },
   },
   init_options = {
-    statusBarProvider = "off",
+    statusBarProvider = "on",
   },
   -- on_attach = function(client, bufnr)
   --   -- Add your keybindings and other on_attach functions here
