@@ -157,29 +157,36 @@ local plugins = {
 		-- end,
 	},
 
-	-- {
-	-- 	"numToStr/Comment.nvim",
-	-- 	dependencies = "JoosepAlviste/nvim-ts-context-commentstring",
-	-- 	config = function()
-	-- 		require("Comment").setup({
-	-- 			pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
-	-- 		})
-	-- 	end,
-	-- },
+  {
+    "scalameta/nvim-metals",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    ft = { "scala", "sbt", "java" },
+    opts = function()
+      local metals_config = require("metals").bare_config()
+      metals_config.on_attach = function(client, bufnr)
+        -- your on_attach function
+      end
 
-	-- To make a plugin not be loaded
+      return metals_config
+    end,
+    config = function(self, metals_config)
+      local nvim_metals_group = vim.api.nvim_create_augroup("nvim-metals", { clear = true })
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = self.ft,
+        callback = function()
+          require("metals").initialize_or_attach(metals_config)
+        end,
+        group = nvim_metals_group,
+      })
+    end
+  },
+  --
 	{
 	  "NvChad/nvim-colorizer.lua",
 	  enabled = true
 	},
-
-	-- All NvChad plugins are lazy-loaded by default
-	-- For a plugin to be loaded, you will need to set either `ft`, `cmd`, `keys`, `event`, or set `lazy = false`
-	-- If you want a plugin to load on startup, add `lazy = false` to a plugin spec, for example
-	-- {
-	--   "mg979/vim-visual-multi",
-	--   lazy = false,
-	-- }
 }
 
 return plugins

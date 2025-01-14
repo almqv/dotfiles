@@ -14,7 +14,7 @@ local servers = {
 	"tailwindcss",
 	"pyright",
 	"julials",
-	"metals",
+	-- "metals", -- handled by nvim-metals
 }
 
 -- lsps with default config
