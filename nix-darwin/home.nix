@@ -161,11 +161,12 @@
     python3
     python312Packages.pip
 
-    # scala
-    metals
+    # Scala
+    # metals  # handled by coursier
     scalafmt
     sbt
     coursier
+    jdk
 
     # formatters
     shfmt
@@ -237,7 +238,7 @@
         export PATH="$PATH:$HOME/.ghcup/bin"
 
         # CS (Scala)
-        export PATH="$PATH:$HOME/Library/Application\ Support/Coursier/bin"
+        export PATH="$PATH:$HOME/Library/Application Support/Coursier/bin"
 
         # Super hacky and fucking stupid way of doing things - stuff
         # export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
