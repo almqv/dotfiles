@@ -219,6 +219,7 @@
       nd = "nix develop -c $SHELL";
       ls = "ls --color";
       tmux = "tmux -2";
+      py = "python";
     };
     oh-my-zsh = {
       enable = true;
