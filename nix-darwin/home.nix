@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -41,6 +41,28 @@
     # '')
 
     # Programs
+    slack
+    zathura
+    irssi
+    spotify
+    discord
+    gimp
+    vscode
+    gtkwave
+    gephi
+
+    # Utils 
+    coreutils # *happy rms noises*
+    stow
+    curl
+    wget
+    ffmpeg
+    gnupg
+    jq
+    # tmux
+    htop
+    ripgrep
+    sshfs
     libqalculate
     imagemagick
     figlet
@@ -142,6 +164,17 @@
     SHELL = "${pkgs.zsh}/bin/zsh";
     LIBTORCH = "${pkgs.libtorch-bin}/lib";
   };
+
+  # Link apps to ~/Applications/Nix
+  home.activation = {
+    linkApps = lib.hm.dag.entryAfter [ "checkLinkTargets" ] ''
+      mkdir -p ~/Applications/Nix
+      for app in ~/.nix-profile/Applications/*.app; do
+        ln -sf "$app" ~/Applications/Nix/
+      done
+    '';
+  };
+
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
