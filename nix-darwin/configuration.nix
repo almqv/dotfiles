@@ -3,8 +3,31 @@
 {
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
-  environment.systemPackages =
-  [ pkgs.git
+  environment.systemPackages = with pkgs; [ 
+    # Programs
+    slack
+    zathura
+    irssi
+    spotify
+    discord
+    gimp
+    vscode
+    gtkwave
+    gephi
+
+    # Utils 
+    coreutils # *happy rms noises*
+    git
+    stow
+    curl
+    wget
+    ffmpeg
+    gnupg
+    jq
+    # tmux
+    htop
+    ripgrep
+    sshfs
   ];
 
   # Necessary for using flakes on this system.

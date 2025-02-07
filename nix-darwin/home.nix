@@ -41,28 +41,6 @@
     # '')
 
     # Programs
-    slack
-    zathura
-    irssi
-    spotify
-    discord
-    gimp
-    vscode
-    gtkwave
-    gephi
-
-    # Utils 
-    coreutils # *happy rms noises*
-    stow
-    curl
-    wget
-    ffmpeg
-    gnupg
-    jq
-    # tmux
-    htop
-    ripgrep
-    sshfs
     libqalculate
     imagemagick
     figlet
