@@ -20,6 +20,11 @@
   # $ darwin-rebuild changelog
   system.stateVersion = 6;
 
+  # Fix dumb MacOS features that no one asked for
+  system.defaults.NSGlobalDomain = {
+    ApplePressAndHoldEnabled = false;
+  };
+
   # Allow unfree (and optionally broken) packages
   nixpkgs.config = {
     allowUnfree = true;
