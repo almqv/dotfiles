@@ -210,6 +210,7 @@
       ls = "ls --color";
       tmux = "tmux -2";
       py = "python";
+      drs = "darwin-rebuild switch --flake $HOME/.dotfiles/nix-darwin";
     };
     oh-my-zsh = {
       enable = true;
