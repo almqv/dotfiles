@@ -75,6 +75,7 @@
     swig4
     boost
     libtorch-bin
+    texliveMedium
 
     # fucking stupid compat workarounds
     qemu
