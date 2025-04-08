@@ -146,6 +146,7 @@
     sbt
     coursier
     jdk
+    scala-cli
 
     # formatters
     shfmt
