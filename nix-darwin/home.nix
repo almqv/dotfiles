@@ -147,7 +147,7 @@
     coursier
     jdk
     scala-cli
-    bloop
+    # bloop
 
     # formatters
     shfmt
