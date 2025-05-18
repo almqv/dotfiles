@@ -261,7 +261,7 @@
         plugin = pkgs.tmuxPlugins.cpu;
         extraConfig = ''
           set-option -g status-interval 1
-          set-option -g status-right "#[fg=green,bg=default,bright]#{cpu_bg_color}#{cpu_percentage} "
+          set-option -g status-right "#[fg=black,bg=default,bright]#{cpu_bg_color}#{cpu_percentage} "
         '';
       }
     ];
