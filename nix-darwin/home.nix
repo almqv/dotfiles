@@ -50,6 +50,7 @@
     vscode
     gtkwave
     gephi
+    presenterm
 
     # Utils 
     coreutils # *happy rms noises*
