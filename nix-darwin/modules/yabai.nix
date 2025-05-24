@@ -3,17 +3,18 @@
 {
   home.packages = with pkgs; [
     yabai
+    sudo
   ];
 
   # Create a script to install and load the scripting addition
   home.activation.installYabaiSA = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    if ! sudo -n true 2>/dev/null; then
+    if ! ${pkgs.sudo}/bin/sudo -n true 2>/dev/null; then
       echo "Please enter your password to install yabai scripting addition:"
-      sudo yabai --install-sa
-      sudo yabai --load-sa
+      ${pkgs.sudo}/bin/sudo yabai --install-sa
+      ${pkgs.sudo}/bin/sudo yabai --load-sa
     else
-      sudo yabai --install-sa
-      sudo yabai --load-sa
+      ${pkgs.sudo}/bin/sudo yabai --install-sa
+      ${pkgs.sudo}/bin/sudo yabai --load-sa
     fi
   '';
 
