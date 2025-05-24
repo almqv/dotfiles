@@ -5,14 +5,15 @@ let
   browserPath = "/Applications/LibreWolf.app";
 in
 {
-  home.packages = with pkgs; [
+  # Add skhd to system packages
+  environment.systemPackages = with pkgs; [
     skhd
   ];
 
-  # Configure skhd service
+  # Configure skhd service at system level
   services.skhd = {
     enable = true;
-    configFile = pkgs.writeText "skhdrc" ''
+    skhdConfig = ''
       # Modifier
       alt = cmd
       shift = shift

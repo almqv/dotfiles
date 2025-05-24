@@ -36,4 +36,10 @@
     name = "elal";
     home = "/Users/elal";
   };
+
+  # Import window management modules
+  imports = [
+    ./modules/yabai.nix
+    ./modules/skhd.nix
+  ];
 }

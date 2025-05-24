@@ -1,12 +1,13 @@
 { config, pkgs, lib, ... }:
 
 {
-  home.packages = with pkgs; [
+  # Add yabai to system packages
+  environment.systemPackages = with pkgs; [
     yabai
   ];
 
   # Create a script to install and load the scripting addition
-  home.activation.installYabaiSA = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+  system.activationScripts.installYabaiSA = lib.mkForce ''
     if ! /usr/bin/sudo -n true 2>/dev/null; then
       echo "Please enter your password to install yabai scripting addition:"
       /usr/bin/sudo yabai --install-sa
