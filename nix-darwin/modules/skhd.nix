@@ -147,8 +147,8 @@ in
     '';
   };
 
-  # Create a script to start skhd
-  home.activation.startSkhd = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+  # Create a script to start skhd after yabai
+  home.activation.startSkhd = lib.hm.dag.entryAfter [ "startYabai" ] ''
     if ! pgrep -x "skhd" > /dev/null; then
       skhd --start-service
     fi

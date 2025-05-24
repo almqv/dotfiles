@@ -87,8 +87,20 @@
     };
   };
 
+  # Create a script to install and load the scripting addition
+  home.activation.installYabaiSA = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    if ! sudo -n true 2>/dev/null; then
+      echo "Please enter your password to install yabai scripting addition:"
+      sudo yabai --install-sa
+      sudo yabai --load-sa
+    else
+      sudo yabai --install-sa
+      sudo yabai --load-sa
+    fi
+  '';
+
   # Create a script to start yabai
-  home.activation.startYabai = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+  home.activation.startYabai = lib.hm.dag.entryAfter [ "installYabaiSA" ] ''
     if ! pgrep -x "yabai" > /dev/null; then
       yabai --start-service
     fi
