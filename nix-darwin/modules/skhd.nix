@@ -9,10 +9,10 @@ in
     skhd
   ];
 
-  # Create skhd config file
-  home.file.".config/skhd/skhdrc" = {
-    executable = true;
-    text = ''
+  # Configure skhd service
+  services.skhd = {
+    enable = true;
+    configFile = pkgs.writeText "skhdrc" ''
       # Modifier
       alt = cmd
       shift = shift
@@ -96,11 +96,4 @@ in
       alt + shift + 9 : yabai -m window --space 9
     '';
   };
-
-  # Create a script to start skhd after yabai
-  home.activation.startSkhd = lib.hm.dag.entryAfter [ "configureYabai" ] ''
-    if ! pgrep -x "skhd" > /dev/null; then
-      skhd --start-service
-    fi
-  '';
 }
