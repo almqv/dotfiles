@@ -9,10 +9,10 @@ in
     skhd
   ];
 
-  # Enable skhd service
-  services.skhd = {
-    enable = true;
-    config = ''
+  # Create skhd config file
+  home.file.".config/skhd/skhdrc" = {
+    executable = true;
+    text = ''
       # Modifier
       alt = cmd
       shift = shift
@@ -94,61 +94,11 @@ in
       alt + shift + 7 : yabai -m window --space 7
       alt + shift + 8 : yabai -m window --space 8
       alt + shift + 9 : yabai -m window --space 9
-
-      # Toggle window split
-      alt + t : yabai -m window --toggle split
-
-      # Toggle window float
-      alt + shift + space : yabai -m window --toggle float
-
-      # Toggle window fullscreen
-      alt + shift + f : yabai -m window --toggle zoom-fullscreen
-
-      # Toggle window native fullscreen
-      alt + f : yabai -m window --toggle native-fullscreen
-
-      # Toggle window split
-      alt + e : yabai -m window --toggle split
-
-      # Balance tree
-      alt + b : yabai -m space --balance
-
-      # Focus monitor
-      alt + 1 : yabai -m display --focus 1
-      alt + 2 : yabai -m display --focus 2
-      alt + 3 : yabai -m display --focus 3
-
-      # Send window to monitor
-      alt + shift + 1 : yabai -m window --display 1
-      alt + shift + 2 : yabai -m window --display 2
-      alt + shift + 3 : yabai -m window --display 3
-
-      # Focus space
-      alt + 1 : yabai -m space --focus 1
-      alt + 2 : yabai -m space --focus 2
-      alt + 3 : yabai -m space --focus 3
-      alt + 4 : yabai -m space --focus 4
-      alt + 5 : yabai -m space --focus 5
-      alt + 6 : yabai -m space --focus 6
-      alt + 7 : yabai -m space --focus 7
-      alt + 8 : yabai -m space --focus 8
-      alt + 9 : yabai -m space --focus 9
-
-      # Send window to space
-      alt + shift + 1 : yabai -m window --space 1
-      alt + shift + 2 : yabai -m window --space 2
-      alt + shift + 3 : yabai -m window --space 3
-      alt + shift + 4 : yabai -m window --space 4
-      alt + shift + 5 : yabai -m window --space 5
-      alt + shift + 6 : yabai -m window --space 6
-      alt + shift + 7 : yabai -m window --space 7
-      alt + shift + 8 : yabai -m window --space 8
-      alt + shift + 9 : yabai -m window --space 9
     '';
   };
 
   # Create a script to start skhd after yabai
-  home.activation.startSkhd = lib.hm.dag.entryAfter [ "startYabai" ] ''
+  home.activation.startSkhd = lib.hm.dag.entryAfter [ "configureYabai" ] ''
     if ! pgrep -x "skhd" > /dev/null; then
       skhd --start-service
     fi
