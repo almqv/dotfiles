@@ -51,7 +51,6 @@
     gtkwave
     gephi
     presenterm
-    chatgpt # hi sama
 
     # Utils 
     coreutils # *happy rms noises*
