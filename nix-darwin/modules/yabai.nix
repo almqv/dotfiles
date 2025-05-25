@@ -93,5 +93,9 @@
       external_bar_autohide_show_animation_curve_overshoot_overshoot = 0.0;
       external_bar_autohide_hide_animation_curve_overshoot_overshoot = 0.0;
     };
+    extraConfig = ''
+      yabai -m rule --add app="^System Settings$" manage=off
+      yabai -m rule --add app="^Calculator$" manage=off
+    '';
   };
 } 
