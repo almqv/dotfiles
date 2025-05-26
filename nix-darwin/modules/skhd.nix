@@ -15,8 +15,8 @@ in
     enable = true;
     skhdConfig = ''
       # Applications
-      cmd + return : open -a ${termPath}
-      cmd + b : open -a ${browserPath}
+      cmd + return : open -na ${termPath}
+      cmd + b : open -na ${browserPath}
 
       # Focus windows
       cmd + j : yabai -m window --focus south
