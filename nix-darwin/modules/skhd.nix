@@ -65,26 +65,16 @@ in
       cmd - 8 : yabai -m space --focus 8
       cmd - 9 : yabai -m space --focus 9
 
-      # Monitor Management
-      cmd + alt - 1 : yabai -m display --focus 1
-      cmd + alt - 2 : yabai -m display --focus 2
-      cmd + alt - 3 : yabai -m display --focus 3
-
-      # Send window to monitor
-      cmd + alt + shift - 1 : yabai -m window --display 1
-      cmd + alt + shift - 2 : yabai -m window --display 2
-      cmd + alt + shift - 3 : yabai -m window --display 3
-
-      # Send window to space
-      cmd + alt + shift - 1 : yabai -m window --space 1
-      cmd + alt + shift - 2 : yabai -m window --space 2
-      cmd + alt + shift - 3 : yabai -m window --space 3
-      cmd + alt + shift - 4 : yabai -m window --space 4
-      cmd + alt + shift - 5 : yabai -m window --space 5
-      cmd + alt + shift - 6 : yabai -m window --space 6
-      cmd + alt + shift - 7 : yabai -m window --space 7
-      cmd + alt + shift - 8 : yabai -m window --space 8
-      cmd + alt + shift - 9 : yabai -m window --space 9
+      # Send window to workspace
+      cmd + shift - 1 : yabai -m window --space 1
+      cmd + shift - 2 : yabai -m window --space 2
+      cmd + shift - 3 : yabai -m window --space 3
+      cmd + shift - 4 : yabai -m window --space 4
+      cmd + shift - 5 : yabai -m window --space 5
+      cmd + shift - 6 : yabai -m window --space 6
+      cmd + shift - 7 : yabai -m window --space 7
+      cmd + shift - 8 : yabai -m window --space 8
+      cmd + shift - 9 : yabai -m window --space 9
     '';
   };
 }
