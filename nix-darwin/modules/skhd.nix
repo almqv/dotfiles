@@ -10,13 +10,20 @@ in
     skhd
   ];
 
+  # Add post-activation script to reload skhd
+  system.activationScripts.postActivation.text = ''
+    # Reload skhd configuration
+    echo "reloading skhd..."
+    skhd --reload
+  '';
+
   # Configure skhd service at system level
   services.skhd = {
     enable = true;
     skhdConfig = ''
       # Applications
       cmd - return : open -na ${termPath}
-      cmd - b : open -na ${browserPath}
+      # cmd - b : open -na ${browserPath}
 
       # Focus windows
       cmd - j : yabai -m window --focus south
