@@ -10,13 +10,6 @@ in
     skhd
   ];
 
-  # Add post-activation script to reload skhd
-  system.activationScripts.postActivation.text = ''
-    # Reload skhd configuration
-    echo "reloading skhd..."
-    skhd --reload
-  '';
-
   # Configure skhd service at system level
   services.skhd = {
     enable = true;
@@ -52,6 +45,14 @@ in
       # Space Management
       cmd - r : yabai -m space --rotate 90
       # cmd - b : yabai -m space --balance
+
+      # Screen Navigation
+      cmd - . : yabai -m display --focus east
+      cmd - , : yabai -m display --focus west
+
+      # Move window to screen
+      cmd + shift - . : yabai -m window --display east; yabai -m display --focus east
+      cmd + shift - , : yabai -m window --display west; yabai -m display --focus west
 
       # Monitor Management
       cmd + alt - 1 : yabai -m display --focus 1
