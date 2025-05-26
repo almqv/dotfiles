@@ -37,8 +37,8 @@ end
 
 M = {
   base46 = {
-    theme = "doomchad",
-    theme_toggle = { "doomchad", "everforest_light" },
+    theme = "decay",
+    theme_toggle = { "decay", "everforest_light" },
   },
   ui = {
     hl_override = highlights.override,
