@@ -1,8 +1,8 @@
 { config, pkgs, lib, ... }:
 
 let 
+  termPath = "/Applications/Ghostty.app";
   browserPath = "/Applications/LibreWolf.app";
-  newTerm = ''osascript -e 'tell application "Ghostty" to activate' -e 'tell application "System Events" to keystroke "n" using {command down}'';
 in
 {
   # Add skhd to system packages
@@ -15,7 +15,7 @@ in
     enable = true;
     skhdConfig = ''
       # Applications
-      cmd - return : ${newTerm}
+      cmd - return : open -na ${termPath}
       # cmd - b : open -na ${browserPath}
 
       # Focus windows
