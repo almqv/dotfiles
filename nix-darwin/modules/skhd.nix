@@ -54,6 +54,17 @@ in
       cmd + shift - . : yabai -m window --display east; yabai -m display --focus east
       cmd + shift - , : yabai -m window --display west; yabai -m display --focus west
 
+      # Workspace Navigation
+      cmd - 1 : yabai -m space --focus 1
+      cmd - 2 : yabai -m space --focus 2
+      cmd - 3 : yabai -m space --focus 3
+      cmd - 4 : yabai -m space --focus 4
+      cmd - 5 : yabai -m space --focus 5
+      cmd - 6 : yabai -m space --focus 6
+      cmd - 7 : yabai -m space --focus 7
+      cmd - 8 : yabai -m space --focus 8
+      cmd - 9 : yabai -m space --focus 9
+
       # Monitor Management
       cmd + alt - 1 : yabai -m display --focus 1
       cmd + alt - 2 : yabai -m display --focus 2
@@ -63,17 +74,6 @@ in
       cmd + alt + shift - 1 : yabai -m window --display 1
       cmd + alt + shift - 2 : yabai -m window --display 2
       cmd + alt + shift - 3 : yabai -m window --display 3
-
-      # Space Navigation
-      cmd + alt - 1 : yabai -m space --focus 1
-      cmd + alt - 2 : yabai -m space --focus 2
-      cmd + alt - 3 : yabai -m space --focus 3
-      cmd + alt - 4 : yabai -m space --focus 4
-      cmd + alt - 5 : yabai -m space --focus 5
-      cmd + alt - 6 : yabai -m space --focus 6
-      cmd + alt - 7 : yabai -m space --focus 7
-      cmd + alt - 8 : yabai -m space --focus 8
-      cmd + alt - 9 : yabai -m space --focus 9
 
       # Send window to space
       cmd + alt + shift - 1 : yabai -m window --space 1
