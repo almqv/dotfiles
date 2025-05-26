@@ -1,8 +1,8 @@
 { config, pkgs, lib, ... }:
 
 let 
-  termPath = "/Applications/Ghostty.app";
   browserPath = "/Applications/LibreWolf.app";
+  newTerm = ''osascript -e 'tell application "Ghostty" to activate' -e 'tell application "System Events" to keystroke "n" using {command down}'';
 in
 {
   # Add skhd to system packages
@@ -15,7 +15,7 @@ in
     enable = true;
     skhdConfig = ''
       # Applications
-      cmd - return : open -na ${termPath}
+      cmd - return : ${newTerm}
       # cmd - b : open -na ${browserPath}
 
       # Focus windows
@@ -47,12 +47,12 @@ in
       # cmd - b : yabai -m space --balance
 
       # Screen Navigation
-      cmd - . : yabai -m display --focus east
-      cmd - , : yabai -m display --focus west
+      # cmd - . : yabai -m display --focus east
+      # cmd - , : yabai -m display --focus west
 
       # Move window to screen
-      cmd + shift - . : yabai -m window --display east; yabai -m display --focus east
-      cmd + shift - , : yabai -m window --display west; yabai -m display --focus west
+      # cmd + shift - . : yabai -m window --display east; yabai -m display --focus east
+      # cmd + shift - , : yabai -m window --display west; yabai -m display --focus west
 
       # Workspace Navigation
       cmd - 1 : yabai -m space --focus 1
