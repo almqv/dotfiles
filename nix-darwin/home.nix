@@ -40,7 +40,6 @@
     zathura
     irssi
     spotify
-    discord
     gimp
     vscode
     gtkwave
