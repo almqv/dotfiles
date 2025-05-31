@@ -118,6 +118,9 @@
     # vhdl
     vhdl-ls
 
+    # (system)verilog 
+    verible
+
     # golang
     go 
 
