@@ -251,7 +251,7 @@
     mouse = true;
     terminal = "xterm-256color";
     shell = "${pkgs.zsh}/bin/zsh";
-    shortcut = "§"; # Changed from C-s to § for Swedish layout
+    shortcut = "s"; 
     keyMode = "vi";
     historyLimit = 5000;
 
@@ -273,7 +273,7 @@
       bind r source-file ~/.config/tmux/tmux.conf
 
       # Custom prefix bindings
-      bind-key § last-window
+      bind-key ö last-window
       bind-key e send-prefix
 
       # Vim-like pane navigation
@@ -293,14 +293,14 @@
       set-option -g status-position bottom
       set-option -g status-bg colour234
       set-option -g status-fg colour137
-      set-option -g status-left ''
-      set-option -g status-right '#[fg=colour233,bg=colour241,bold] %d/%m #[fg=colour233,bg=colour245,bold] %H:%M:%S '
+      set-option -g status-left ""
+      set-option -g status-right "#[fg=colour233,bg=colour241,bold] %Y-%m-%d #[fg=colour233,bg=colour245,bold] %H:%M:%S "
       set-option -g status-right-length 50
       set-option -g status-left-length 20
 
       # Window status styling (overwritten)
-      set-window-option -g window-status-current-format ' #I#[fg=colour250]:#[fg=colour255]#W#[fg=colour50]#F '
-      set-window-option -g window-status-format ' #I#[fg=colour237]:#[fg=colour250]#W#[fg=colour244]#F '
+      set-window-option -g window-status-current-format " #I#[fg=colour250]:#[fg=colour255]#W#[fg=colour50]#F "
+      set-window-option -g window-status-format " #I#[fg=colour237]:#[fg=colour250]#W#[fg=colour244]#F "
 
       # Truecolor support
       set-option -sa terminal-overrides ",xterm*:Tc"
