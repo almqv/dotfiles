@@ -251,8 +251,10 @@
     mouse = true;
     terminal = "xterm-256color";
     shell = "${pkgs.zsh}/bin/zsh";
-    prefix = "C-s";
+    shortcut = "§"; # Changed from C-s to § for Swedish layout
     keyMode = "vi";
+    historyLimit = 5000;
+
     plugins = [
       {
         plugin = pkgs.tmuxPlugins.cpu;
@@ -262,6 +264,7 @@
         '';
       }
     ];
+
     extraConfig = ''
       set -g default-command "${pkgs.zsh}/bin/zsh"
 
@@ -269,33 +272,35 @@
       unbind r
       bind r source-file ~/.config/tmux/tmux.conf
 
+      # Custom prefix bindings
+      bind-key § last-window
+      bind-key e send-prefix
+
       # Vim-like pane navigation
       bind-key h select-pane -L
       bind-key j select-pane -D
       bind-key k select-pane -U
       bind-key l select-pane -R
 
-      # Split panes using h and v
+      # Split panes using Swedish keys
       unbind '"'
       unbind %
       bind å split-window -h
-      bind ä split-window -v 
+      bind ä split-window -v
 
-      # Status bar configuration
+      # Status bar configuration (overwritten)
       set-option -g status on
-      set-option -g status-justify centre
-      set-option -g status-keys vi
       set-option -g status-position bottom
-      set-option -g status-style fg=colour136,bg=colour235
+      set-option -g status-bg colour234
+      set-option -g status-fg colour137
+      set-option -g status-left ''
+      set-option -g status-right '#[fg=colour233,bg=colour241,bold] %d/%m #[fg=colour233,bg=colour245,bold] %H:%M:%S '
+      set-option -g status-right-length 50
       set-option -g status-left-length 20
-      set-option -g status-left-style default
-      set-option -g status-left "#[fg=green,bright]#(whoami)#[default]"
-      set-option -g status-right-length 140
-      set-option -g status-right-style default
-      
-      # Window status styling
-      set-window-option -g window-status-style fg=colour244,bg=default
-      set-window-option -g window-status-current-style fg=colour166,bg=default
+
+      # Window status styling (overwritten)
+      set-window-option -g window-status-current-format ' #I#[fg=colour250]:#[fg=colour255]#W#[fg=colour50]#F '
+      set-window-option -g window-status-format ' #I#[fg=colour237]:#[fg=colour250]#W#[fg=colour244]#F '
 
       # Truecolor support
       set-option -sa terminal-overrides ",xterm*:Tc"
