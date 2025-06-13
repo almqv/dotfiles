@@ -42,7 +42,6 @@
     spotify
     gimp
     vscode
-    gtkwave
     gephi
     presenterm
 
@@ -115,11 +114,11 @@
     nodejs_22
     nodePackages.pnpm
 
-    # vhdl
-    vhdl-ls
-
-    # (system)verilog 
-    verible
+    # chip dev
+    vhdl-ls # vhdl
+    verible # SV
+    # gtkwave
+    surfer
 
     # golang
     go 
