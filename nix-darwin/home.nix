@@ -307,6 +307,30 @@
     '';
   };
 
+  programs.vim = {
+    enable = true;
+    settings = {
+      number = true;
+      relativenumber = false;
+      tabstop = 4;
+      shiftwidth = 4;
+      expandtab = true;
+    };
+    extraConfig = ''
+      syntax on
+      set background=dark
+      colorscheme slate
+
+      set mouse=a
+      set autoindent
+      set smartcase
+      set smartindent
+      set ignorecase
+      set hlsearch
+      set wrap
+    '';
+  };
+
   programs.neovim = {
     enable = true;
     viAlias = true;
