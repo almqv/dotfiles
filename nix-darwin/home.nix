@@ -230,17 +230,16 @@
         # CS (Scala)
         export PATH="$PATH:$HOME/Library/Application Support/Coursier/bin"
 
-        # Super hacky and fucking stupid way of doing things - stuff
-        # export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
-        # export LDFLAGS="-L/opt/homebrew/opt/llvm/lib $LDFLAGS"
-        # export CPPFLAGS="-I/opt/homebrew/opt/llvm/include $CPPFLAGS"
-        # export DYLD_LIBRARY_PATH="/opt/homebrew/opt/llvm/lib:$DYLD_LIBRARY_PATH"
-
         # Nix
         if [ -e /etc/profile.d/nix.sh ]; then . /etc/profile.d/nix.sh; fi
 
         # TERM
         export TERM=xterm-xfree86
+
+        # Source .env file for environment variables
+        if [ -f "$HOME/.env" ]; then
+          source "$HOME/.env"
+        fi
       '';
     };
   };

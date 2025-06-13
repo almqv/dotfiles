@@ -37,7 +37,7 @@ end
 
 M = {
   base46 = {
-    theme = "everforest_light",
+    theme = "tomorrow_night",
     theme_toggle = { "tomorrow_night", "everforest_light" },
   },
   ui = {
