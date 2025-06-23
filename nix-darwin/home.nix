@@ -266,6 +266,9 @@
     extraConfig = ''
       set -g default-command "${pkgs.zsh}/bin/zsh"
 
+      # Start window numbering at 1
+      set -g base-index 1
+
       # Reload config with prefix + r
       unbind r
       bind r source-file ~/.config/tmux/tmux.conf

@@ -14,7 +14,7 @@ local servers = {
 	"tailwindcss",
 	"pyright",
 	"julials",
-  "verible",
+  -- "verible",
 }
 
 -- lsps with default config
@@ -25,6 +25,10 @@ for _, lsp in ipairs(servers) do
 		capabilities = capabilities,
 	})
 end
+
+lspconfig.verible.setup({
+  cmd = { "verible-verilog-ls", "--rules_config_search" },
+})
 
 -- lspconfig.metals.setup({
 --   settings = {

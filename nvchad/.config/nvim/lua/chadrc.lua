@@ -37,8 +37,8 @@ end
 
 M = {
   base46 = {
-    theme = "tomorrow_night",
-    theme_toggle = { "tomorrow_night", "everforest_light" },
+    theme = "github_dark",
+    theme_toggle = { "github_dark", "everforest_light" },
   },
   ui = {
     hl_override = highlights.override,
