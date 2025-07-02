@@ -30,6 +30,16 @@ lspconfig.verible.setup({
   cmd = { "verible-verilog-ls", "--rules_config_search" },
 })
 
+lspconfig.nixd.setup({
+   settings = {
+      nixd = {
+         formatting = {
+            command = { "nixfmt" },
+         },
+      },
+   },
+})
+
 -- lspconfig.metals.setup({
 --   settings = {
 --     showImplicitArguments = true,

@@ -106,6 +106,9 @@
     haskellPackages.cabal-install
     haskellPackages.stack
 
+    # nix
+    nixfmt-rfc-style
+
     # rust
     rustc
     rustup
