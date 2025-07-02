@@ -107,6 +107,7 @@
     haskellPackages.stack
 
     # nix
+    nixd
     nixfmt-rfc-style
 
     # rust
