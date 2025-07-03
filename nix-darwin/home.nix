@@ -257,16 +257,6 @@
     keyMode = "vi";
     historyLimit = 5000;
 
-    plugins = [
-      {
-        plugin = pkgs.tmuxPlugins.cpu;
-        extraConfig = ''
-          set-option -g status-interval 1
-          set-option -g status-right "#[fg=black,bg=default,bright]#{cpu_bg_color}#{cpu_percentage} "
-        '';
-      }
-    ];
-
     extraConfig = ''
       set -g default-command "${pkgs.zsh}/bin/zsh"
 
