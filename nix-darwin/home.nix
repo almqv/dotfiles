@@ -62,6 +62,9 @@
     figlet
     tree
 
+    # env 
+    direnv
+
     # Deps needed to build stuff
     or-tools
     gnumake
