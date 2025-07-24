@@ -17,8 +17,8 @@ in
     package = pkgs.aerospace;
 
     userSettings = {
-      after-startup-command = [ ];
       start-at-login = true;
+      after-startup-command = [ ];
 
       enable-normalization-flatten-containers = true;
       enable-normalization-opposite-orientation-for-nested-containers = true;
@@ -30,9 +30,7 @@ in
       on-focused-monitor-changed = [ "move-mouse monitor-lazy-center" ];
       automatically-unhide-macos-hidden-apps = false;
 
-      "key-mapping" = {
-        preset = "qwerty";
-      };
+      "key-mapping".preset = "qwerty";
 
       gaps = {
         inner = {
@@ -48,114 +46,100 @@ in
       };
 
       mode = {
-        main = {
-          binding = {
-            # Defaults 
-            "alt-slash" = "layout tiles horizontal vertical";
-            # "alt-comma" = "layout accordion horizontal vertical";
+        main.binding = {
+          # Layout / focus
+          "cmd-slash" = "layout tiles horizontal vertical";
+          "cmd-h" = "focus left";
+          "cmd-j" = "focus down";
+          "cmd-k" = "focus up";
+          "cmd-l" = "focus right";
 
-            "alt-h" = "focus left";
-            "alt-j" = "focus down";
-            "alt-k" = "focus up";
-            "alt-l" = "focus right";
+          # Move (replaces broken `swap`)
+          "cmd-shift-h" = "move left";
+          "cmd-shift-j" = "move down";
+          "cmd-shift-k" = "move up";
+          "cmd-shift-l" = "move right";
 
-            # keep swap instead of move
-            "alt-shift-h" = "swap left";
-            "alt-shift-j" = "swap down";
-            "alt-shift-k" = "swap up";
-            "alt-shift-l" = "swap right";
+          # Resize
+          "cmd-shift-minus" = "resize smart -${toStr delta}";
+          "cmd-shift-equal" = "resize smart +${toStr delta}";
+          "cmd-ctrl-j" = "resize height +${toStr delta}";
+          "cmd-ctrl-k" = "resize height -${toStr delta}";
+          "cmd-ctrl-h" = "resize width  -${toStr delta}";
+          "cmd-ctrl-l" = "resize width  +${toStr delta}";
 
-            # coarse resize via smart
-            "alt-shift-minus" = "resize smart -${toStr delta}";
-            "alt-shift-equal" = "resize smart +${toStr delta}";
+          # Workspaces 1–9
+          "cmd-1" = "workspace 1";
+          "cmd-2" = "workspace 2";
+          "cmd-3" = "workspace 3";
+          "cmd-4" = "workspace 4";
+          "cmd-5" = "workspace 5";
+          "cmd-6" = "workspace 6";
+          "cmd-7" = "workspace 7";
+          "cmd-8" = "workspace 8";
+          "cmd-9" = "workspace 9";
 
-            # fine resize
-            "alt-ctrl-j" = "resize height +${toStr delta}";
-            "alt-ctrl-k" = "resize height -${toStr delta}";
-            "alt-ctrl-h" = "resize width  -${toStr delta}";
-            "alt-ctrl-l" = "resize width  +${toStr delta}";
+          "cmd-shift-1" = "move-node-to-workspace 1";
+          "cmd-shift-2" = "move-node-to-workspace 2";
+          "cmd-shift-3" = "move-node-to-workspace 3";
+          "cmd-shift-4" = "move-node-to-workspace 4";
+          "cmd-shift-5" = "move-node-to-workspace 5";
+          "cmd-shift-6" = "move-node-to-workspace 6";
+          "cmd-shift-7" = "move-node-to-workspace 7";
+          "cmd-shift-8" = "move-node-to-workspace 8";
+          "cmd-shift-9" = "move-node-to-workspace 9";
 
-            # workspaces
-            "alt-1" = "workspace 1";
-            "alt-2" = "workspace 2";
-            "alt-3" = "workspace 3";
-            "alt-4" = "workspace 4";
-            "alt-5" = "workspace 5";
-            "alt-6" = "workspace 6";
-            "alt-7" = "workspace 7";
-            "alt-8" = "workspace 8";
-            "alt-9" = "workspace 9";
+          # Launch + state
+          "cmd-return" = "exec-and-forget open -na ${termPath}";
+          "cmd-shift-space" = "layout floating tiling";
+          "cmd-shift-f" = "fullscreen";
+          "cmd-f" = "macos-native-fullscreen";
 
-            "alt-shift-1" = "move-node-to-workspace 1";
-            "alt-shift-2" = "move-node-to-workspace 2";
-            "alt-shift-3" = "move-node-to-workspace 3";
-            "alt-shift-4" = "move-node-to-workspace 4";
-            "alt-shift-5" = "move-node-to-workspace 5";
-            "alt-shift-6" = "move-node-to-workspace 6";
-            "alt-shift-7" = "move-node-to-workspace 7";
-            "alt-shift-8" = "move-node-to-workspace 8";
-            "alt-shift-9" = "move-node-to-workspace 9";
-
-            # optional:
-            # "alt-tab"       = "workspace-back-and-forth";
-            # "alt-shift-tab" = "move-workspace-to-monitor --wrap-around next";
-            # "alt-shift-semicolon" = "mode service";
-
-            # launch
-            "alt-enter" = "exec-and-forget open -na ${termPath}";
-
-            # states
-            "alt-shift-space" = "layout floating tiling";
-            "alt-shift-f" = "fullscreen";
-            "alt-f" = "macos-native-fullscreen";
-            "alt-e" = "split opposite";
-          };
+          # Replace `split opposite` with join-with (works with normalization)
+          "cmd-e" = "join-with right";
         };
 
-        service = {
-          binding = {
-            esc = [
-              "reload-config"
-              "mode main"
-            ];
-            r = [
-              "flatten-workspace-tree"
-              "mode main"
-            ];
-            f = [
-              "layout floating tiling"
-              "mode main"
-            ];
-            backspace = [
-              "close-all-windows-but-current"
-              "mode main"
-            ];
+        service.binding = {
+          esc = [
+            "reload-config"
+            "mode main"
+          ];
+          r = [
+            "flatten-workspace-tree"
+            "mode main"
+          ];
+          f = [
+            "layout floating tiling"
+            "mode main"
+          ];
+          backspace = [
+            "close-all-windows-but-current"
+            "mode main"
+          ];
 
-            # keep service mode on ALT to avoid collisions
-            "alt-shift-h" = [
-              "join-with left"
-              "mode main"
-            ];
-            "alt-shift-j" = [
-              "join-with down"
-              "mode main"
-            ];
-            "alt-shift-k" = [
-              "join-with up"
-              "mode main"
-            ];
-            "alt-shift-l" = [
-              "join-with right"
-              "mode main"
-            ];
+          "alt-shift-h" = [
+            "join-with left"
+            "mode main"
+          ];
+          "alt-shift-j" = [
+            "join-with down"
+            "mode main"
+          ];
+          "alt-shift-k" = [
+            "join-with up"
+            "mode main"
+          ];
+          "alt-shift-l" = [
+            "join-with right"
+            "mode main"
+          ];
 
-            down = "volume down";
-            up = "volume up";
-            "shift-down" = [
-              "volume set 0"
-              "mode main"
-            ];
-          };
+          down = "volume down";
+          up = "volume up";
+          "shift-down" = [
+            "volume set 0"
+            "mode main"
+          ];
         };
       };
     };
