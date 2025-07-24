@@ -8,7 +8,7 @@
 let
   termPath = "/Applications/Ghostty.app";
   browserPath = "/Applications/LibreWolf.app";
-  delta = 20;
+  delta = "20";
 in
 {
   programs.aerospace = {
