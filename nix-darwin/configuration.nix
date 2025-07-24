@@ -41,6 +41,5 @@
   imports = [
     # ./modules/yabai.nix
     # ./modules/skhd.nix
-    ./modules/aerospace.nix # WM & bindings
   ];
 }
