@@ -7,6 +7,7 @@
 
 let
   termPath = "/Applications/Ghostty.app";
+  browserPath = "/Applications/LibreWolf.app";
 in
 {
   programs.aerospace = {
@@ -20,7 +21,7 @@ in
       enable-normalization-flatten-containers = true;
       enable-normalization-opposite-orientation-for-nested-containers = true;
 
-      accordion-padding = 30;
+      accordion-padding = 20;
       default-root-container-layout = "tiles";
       default-root-container-orientation = "auto";
 
@@ -82,7 +83,7 @@ in
             "alt-shift-tab" = "move-workspace-to-monitor --wrap-around next";
             "alt-shift-semicolon" = "mode service";
 
-            # Your old skhd cmd-* bindings
+            # skhd port
             "cmd-return" = "exec-and-forget open -na ${termPath}";
             "cmd-j" = "focus down";
             "cmd-k" = "focus up";
