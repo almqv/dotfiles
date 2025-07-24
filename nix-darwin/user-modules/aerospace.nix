@@ -102,7 +102,7 @@ in
             # "cmd-shift-semicolon" = "mode service";
 
             # launch
-            "cmd-return" = "exec-and-forget open -na ${termPath}";
+            "cmd-enter" = "exec-and-forget open -na ${termPath}";
 
             # states
             "cmd-shift-space" = "layout floating tiling";
