@@ -18,7 +18,7 @@ in
 
     userSettings = {
       after-startup-command = [ ];
-      start-at-login = false;
+      start-at-login = true;
 
       enable-normalization-flatten-containers = true;
       enable-normalization-opposite-orientation-for-nested-containers = true;
