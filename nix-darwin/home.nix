@@ -20,6 +20,12 @@
   # release notes.
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
+  # Imports
+  imports = [
+    # User modules
+    ./user-modules/aerospace.nix
+  ];
+
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
