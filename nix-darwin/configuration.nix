@@ -1,16 +1,16 @@
-{ pkgs, ... }: 
+{ pkgs, ... }:
 
 {
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
-  environment.systemPackages = with pkgs; [ 
+  environment.systemPackages = with pkgs; [
     git
   ];
 
   # Necessary for using flakes on this system.
   nix.settings.experimental-features = "nix-command flakes";
 
-  # Enable zsh 
+  # Enable zsh
   programs.zsh.enable = true;
 
   # Used for backwards compatibility, please read the changelog before changing.
@@ -39,7 +39,7 @@
 
   # Import window management modules
   imports = [
-    ./modules/yabai.nix
-    ./modules/skhd.nix
+    # ./modules/yabai.nix
+    # ./modules/skhd.nix
   ];
 }

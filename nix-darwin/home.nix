@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -45,7 +50,7 @@
     gephi
     presenterm
 
-    # Utils 
+    # Utils
     coreutils # *happy rms noises*
     stow
     curl
@@ -62,7 +67,7 @@
     figlet
     tree
 
-    # env 
+    # env
     direnv
 
     # Deps needed to build stuff
@@ -90,7 +95,7 @@
     pfetch
     neofetch
 
-    # Tools 
+    # Tools
     nmap
     dig
     verilator
@@ -128,7 +133,7 @@
     surfer
 
     # golang
-    go 
+    go
 
     # lua <3 (divine intellect)
     lua
@@ -138,7 +143,7 @@
 
     # julia
     julia-bin
-    # julia_19-bin # compat 
+    # julia_19-bin # compat
 
     # py
     python3
@@ -220,7 +225,10 @@
     oh-my-zsh = {
       enable = true;
       theme = "half-life";
-      plugins = [ "git" "macos" ];
+      plugins = [
+        "git"
+        "macos"
+      ];
       extraConfig = ''
         # Homebrew
         export PATH="/usr/local/bin:/opt/homebrew/bin:$PATH"
@@ -256,7 +264,7 @@
     mouse = true;
     terminal = "xterm-256color";
     shell = "${pkgs.zsh}/bin/zsh";
-    shortcut = "s"; 
+    shortcut = "s";
     keyMode = "vi";
     historyLimit = 5000;
 

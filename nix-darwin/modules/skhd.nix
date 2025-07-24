@@ -1,6 +1,11 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
-let 
+let
   termPath = "/Applications/Ghostty.app";
   browserPath = "/Applications/LibreWolf.app";
 in

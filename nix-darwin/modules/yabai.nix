@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   # Add yabai to system packages
@@ -98,4 +103,4 @@
       yabai -m rule --add app="^Calculator$" manage=off
     '';
   };
-} 
+}
