@@ -51,64 +51,64 @@ in
         main = {
           binding = {
             # Defaults 
-            "cmd-slash" = "layout tiles horizontal vertical";
-            # "cmd-comma" = "layout accordion horizontal vertical";
+            "alt-slash" = "layout tiles horizontal vertical";
+            # "alt-comma" = "layout accordion horizontal vertical";
 
-            "cmd-h" = "focus left";
-            "cmd-j" = "focus down";
-            "cmd-k" = "focus up";
-            "cmd-l" = "focus right";
+            "alt-h" = "focus left";
+            "alt-j" = "focus down";
+            "alt-k" = "focus up";
+            "alt-l" = "focus right";
 
             # keep swap instead of move
-            "cmd-shift-h" = "swap left";
-            "cmd-shift-j" = "swap down";
-            "cmd-shift-k" = "swap up";
-            "cmd-shift-l" = "swap right";
+            "alt-shift-h" = "swap left";
+            "alt-shift-j" = "swap down";
+            "alt-shift-k" = "swap up";
+            "alt-shift-l" = "swap right";
 
             # coarse resize via smart
-            "cmd-shift-minus" = "resize smart -${toStr delta}";
-            "cmd-shift-equal" = "resize smart +${toStr delta}";
+            "alt-shift-minus" = "resize smart -${toStr delta}";
+            "alt-shift-equal" = "resize smart +${toStr delta}";
 
             # fine resize
-            "cmd-ctrl-j" = "resize height +${toStr delta}";
-            "cmd-ctrl-k" = "resize height -${toStr delta}";
-            "cmd-ctrl-h" = "resize width  -${toStr delta}";
-            "cmd-ctrl-l" = "resize width  +${toStr delta}";
+            "alt-ctrl-j" = "resize height +${toStr delta}";
+            "alt-ctrl-k" = "resize height -${toStr delta}";
+            "alt-ctrl-h" = "resize width  -${toStr delta}";
+            "alt-ctrl-l" = "resize width  +${toStr delta}";
 
             # workspaces
-            "cmd-1" = "workspace 1";
-            "cmd-2" = "workspace 2";
-            "cmd-3" = "workspace 3";
-            "cmd-4" = "workspace 4";
-            "cmd-5" = "workspace 5";
-            "cmd-6" = "workspace 6";
-            "cmd-7" = "workspace 7";
-            "cmd-8" = "workspace 8";
-            "cmd-9" = "workspace 9";
+            "alt-1" = "workspace 1";
+            "alt-2" = "workspace 2";
+            "alt-3" = "workspace 3";
+            "alt-4" = "workspace 4";
+            "alt-5" = "workspace 5";
+            "alt-6" = "workspace 6";
+            "alt-7" = "workspace 7";
+            "alt-8" = "workspace 8";
+            "alt-9" = "workspace 9";
 
-            "cmd-shift-1" = "move-node-to-workspace 1";
-            "cmd-shift-2" = "move-node-to-workspace 2";
-            "cmd-shift-3" = "move-node-to-workspace 3";
-            "cmd-shift-4" = "move-node-to-workspace 4";
-            "cmd-shift-5" = "move-node-to-workspace 5";
-            "cmd-shift-6" = "move-node-to-workspace 6";
-            "cmd-shift-7" = "move-node-to-workspace 7";
-            "cmd-shift-8" = "move-node-to-workspace 8";
-            "cmd-shift-9" = "move-node-to-workspace 9";
+            "alt-shift-1" = "move-node-to-workspace 1";
+            "alt-shift-2" = "move-node-to-workspace 2";
+            "alt-shift-3" = "move-node-to-workspace 3";
+            "alt-shift-4" = "move-node-to-workspace 4";
+            "alt-shift-5" = "move-node-to-workspace 5";
+            "alt-shift-6" = "move-node-to-workspace 6";
+            "alt-shift-7" = "move-node-to-workspace 7";
+            "alt-shift-8" = "move-node-to-workspace 8";
+            "alt-shift-9" = "move-node-to-workspace 9";
 
             # optional:
-            # "cmd-tab"       = "workspace-back-and-forth";
-            # "cmd-shift-tab" = "move-workspace-to-monitor --wrap-around next";
-            # "cmd-shift-semicolon" = "mode service";
+            # "alt-tab"       = "workspace-back-and-forth";
+            # "alt-shift-tab" = "move-workspace-to-monitor --wrap-around next";
+            # "alt-shift-semicolon" = "mode service";
 
             # launch
-            "cmd-enter" = "exec-and-forget open -na ${termPath}";
+            "alt-enter" = "exec-and-forget open -na ${termPath}";
 
             # states
-            "cmd-shift-space" = "layout floating tiling";
-            "cmd-shift-f" = "fullscreen";
-            "cmd-f" = "macos-native-fullscreen";
-            "cmd-e" = "split opposite";
+            "alt-shift-space" = "layout floating tiling";
+            "alt-shift-f" = "fullscreen";
+            "alt-f" = "macos-native-fullscreen";
+            "alt-e" = "split opposite";
           };
         };
 
