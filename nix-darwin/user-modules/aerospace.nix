@@ -153,13 +153,19 @@ in
     };
   };
   home.activation.reloadAeroSpace = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    if ${pkgs.procps}/bin/pgrep -x AeroSpace >/dev/null; then
-      # Reload config; if that fails (rare), restart
-      ${pkgs.aerospace}/bin/aerospace reload-config --no-gui \
-        || ${pkgs.killall}/bin/killall AeroSpace
+    PGREP=/usr/bin/pgrep
+    OPEN=/usr/bin/open
+    KILLALL=/usr/bin/killall
+    AS=${pkgs.aerospace}/bin/aerospace
+    APP="${pkgs.aerospace}/Applications/AeroSpace.app/Contents/MacOS/AeroSpace"
+
+    if $PGREP -x AeroSpace >/dev/null 2>&1; then
+      echo Reloading AeroSpace config...
+      $AS reload-config --no-gui || $KILLALL AeroSpace
     else
-      /usr/bin/open -a AeroSpace \
-        || "${pkgs.aerospace}/Applications/AeroSpace.app/Contents/MacOS/AeroSpace" &
+      echo Loading AeroSpace...
+      $OPEN -a AeroSpace || "$APP" &
     fi
   '';
+
 }
