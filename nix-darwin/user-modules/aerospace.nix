@@ -78,6 +78,7 @@ in
           "alt-7" = "workspace 7";
           "alt-8" = "workspace 8";
           "alt-9" = "workspace 9";
+          "alt-10" = "workspace 10";
 
           "alt-shift-1" = "move-node-to-workspace 1";
           "alt-shift-2" = "move-node-to-workspace 2";
@@ -88,6 +89,7 @@ in
           "alt-shift-7" = "move-node-to-workspace 7";
           "alt-shift-8" = "move-node-to-workspace 8";
           "alt-shift-9" = "move-node-to-workspace 9";
+          "alt-shift-0" = "move-node-to-workspace 10";
 
           # Launch + state
           "alt-enter" = "exec-and-forget open -na ${termPath}";
