@@ -78,7 +78,7 @@ in
           "alt-7" = "workspace 7";
           "alt-8" = "workspace 8";
           "alt-9" = "workspace 9";
-          "alt-10" = "workspace 10";
+          "alt-0" = "workspace 10";
 
           "alt-shift-1" = "move-node-to-workspace 1";
           "alt-shift-2" = "move-node-to-workspace 2";
