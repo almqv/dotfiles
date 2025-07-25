@@ -17,8 +17,13 @@ in
     package = pkgs.aerospace;
 
     userSettings = {
+      # Ensure we start at login; HM only writes the file, so you still need a launchd agent or the built‑in login item
       start-at-login = true;
-      after-startup-command = [ ];
+
+      # Run once so every fresh workspace starts horizontal (master left / stack right)
+      after-startup-command = [
+        "layout tiles horizontal vertical"
+      ];
 
       enable-normalization-flatten-containers = true;
       enable-normalization-opposite-orientation-for-nested-containers = true;
@@ -54,7 +59,7 @@ in
           "alt-k" = "focus up";
           "alt-l" = "focus right";
 
-          # Move (replaces broken `swap`)
+          # Move (using move since your build errors on swap)
           "alt-shift-h" = "move left";
           "alt-shift-j" = "move down";
           "alt-shift-k" = "move up";
@@ -68,7 +73,7 @@ in
           "alt-ctrl-h" = "resize width  -${toStr delta}";
           "alt-ctrl-l" = "resize width  +${toStr delta}";
 
-          # Workspaces 1–9
+          # Workspaces 1–10
           "alt-1" = "workspace 1";
           "alt-2" = "workspace 2";
           "alt-3" = "workspace 3";
@@ -98,6 +103,7 @@ in
           "alt-f" = "macos-native-fullscreen";
 
           # Replace `split opposite` with join-with (works with normalization)
+          # This merges current node with the container to the right, preserving the right-side stack.
           "alt-e" = "join-with right";
         };
 
@@ -146,4 +152,14 @@ in
       };
     };
   };
+  home.activation.reloadAeroSpace = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    if ${pkgs.procps}/bin/pgrep -x AeroSpace >/dev/null; then
+      # Reload config; if that fails (rare), restart
+      ${pkgs.aerospace}/bin/aerospace reload-config --no-gui \
+        || ${pkgs.killall}/bin/killall AeroSpace
+    else
+      /usr/bin/open -a AeroSpace \
+        || "${pkgs.aerospace}/Applications/AeroSpace.app/Contents/MacOS/AeroSpace" &
+    fi
+  '';
 }
