@@ -37,16 +37,29 @@ in
 
       "key-mapping".preset = "qwerty";
 
+      # gaps = {
+      #   inner = {
+      #     horizontal = 0;
+      #     vertical = 0;
+      #   };
+      #   outer = {
+      #     left = 0;
+      #     bottom = 0;
+      #     top = 0;
+      #     right = 0;
+      #   };
+      # };
+
       gaps = {
         inner = {
-          horizontal = 0;
-          vertical = 0;
+          horizontal = delta;
+          vertical = delta;
         };
         outer = {
-          left = 0;
-          bottom = 0;
-          top = 0;
-          right = 0;
+          left = delta;
+          bottom = delta;
+          top = delta;
+          right = delta;
         };
       };
 
