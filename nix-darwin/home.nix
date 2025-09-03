@@ -217,7 +217,7 @@
   programs.zsh = {
     enable = true;
     shellAliases = {
-      dev = "cd $HOME/Projects/almtech/exa/";
+      dev = "cd $HOME/Projects/almtech/zetta/";
       xcopy = "pbcopy";
       xpaste = "pbpaste";
       ccd = "echo $PWD | xcopy";
