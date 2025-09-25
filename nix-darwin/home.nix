@@ -154,6 +154,7 @@
     # py
     python3
     python312Packages.pip
+    pyright
 
     # Scala
     # metals  # handled by coursier
