@@ -109,6 +109,7 @@
     # Development stuff
     gh
     docker
+    cursor-cli # agi make me $1T ARR pls
 
     # c/c++
     # gcc
