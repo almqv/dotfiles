@@ -14,7 +14,7 @@ local servers = {
 	"tailwindcss",
 	"pyright",
 	"julials",
-  -- "verible",
+  "verible",
 }
 
 -- lsps with default config
