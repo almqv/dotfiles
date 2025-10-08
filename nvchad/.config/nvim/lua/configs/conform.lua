@@ -1,42 +1,39 @@
 local options = {
-	lsp_fallback = true,
-
-	formatters_by_ft = {
-		-- Divine Intellect Languages
-		lua = { "stylua" },
+  formatters_by_ft = {
+    -- Divine Intellect Languages
+    lua = { "stylua" },
 
     -- based
     scala = { "scalafmt" },
 
-		-- Web Dev shit
-		javascript = { "prettier" },
-		typescript = { "prettier" },
-		javascriptreact = { "prettier" },
-		typescriptreact = { "prettier" },
-		css = { "prettier" },
-		scss = { "prettier" },
-		html = { "prettier" },
+    -- Web Dev shit
+    javascript = { "prettier" },
+    typescript = { "prettier" },
+    javascriptreact = { "prettier" },
+    typescriptreact = { "prettier" },
+    css = { "prettier" },
+    scss = { "prettier" },
+    html = { "prettier" },
 
-		-- Data Science & AI stuff
-		python = { "black" },
+    -- Data Science & AI stuff
+    python = { "black" },
 
-		sh = { "shfmt" },
+    sh = { "shfmt" },
 
-    -- Joke langs 
-    haskell = { "stylish-haskell" }
+    -- Joke langs
+    haskell = { "stylish-haskell" },
 
     -- (system)verilog
-    verilog = { "verible-verilog-format" }
-	},
+    verilog = { "verible-verilog-format" },
+  },
 
-	-- adding same formatter for multiple filetypes can look too much work for some
-	-- instead of the above code you could just use a loop! the config is just a table after all!
-
-	-- format_on_save = {
-	--   -- These options will be passed to conform.format()
-	--   timeout_ms = 500,
-	--   lsp_fallback = true,
-	-- },
+  format_on_save = {
+    -- These options will be passed to conform.format()
+    timeout_ms = 500,
+    lsp_fallback = true,
+  },
 }
 
 require("conform").setup(options)
+
+return options

@@ -136,6 +136,7 @@
     # chip dev
     vhdl-ls # vhdl
     verible # SV
+    svls # SV linter, but better
     # gtkwave
     surfer
 

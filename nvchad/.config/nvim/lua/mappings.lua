@@ -1,11 +1,12 @@
----@type MappingsTable
-
 require "nvchad.mappings"
+
+-- add yours here
 
 local map = vim.keymap.set
 
--- General
-map("n", ";", ":", { desc = "enter command mode", nowait = true })
+map("n", ";", ":", { desc = "CMD enter command mode" })
+
+-- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 
 -- Format with conform
 map("n", "<leader>fm", function()
