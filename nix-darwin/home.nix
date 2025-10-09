@@ -313,6 +313,9 @@
       set-option -g status-right "#[fg=colour233,bg=colour241,bold] %Y-%m-%d #[fg=colour233,bg=colour245,bold] %H:%M:%S "
       set-option -g status-right-length 50
       set-option -g status-left-length 20
+      set -g pane-border-style fg=colour244
+      set -g pane-active-border-style fg=colour244
+
 
       # Window status styling (overwritten)
       set-window-option -g window-status-current-format " #I#[fg=colour250]:#[fg=colour255]#W#[fg=colour50]#F "
