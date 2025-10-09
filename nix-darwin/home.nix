@@ -157,6 +157,7 @@
     python3
     python312Packages.pip
     pyright
+    uv
 
     # Scala
     # metals  # handled by coursier
