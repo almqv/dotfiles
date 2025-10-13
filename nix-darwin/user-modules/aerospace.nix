@@ -8,6 +8,7 @@
 let
   termPath = "/Applications/Ghostty.app";
   browserPath = "/Applications/LibreWolf.app"; # unused, keep if you’ll bind it later
+  openBin = "/usr/bin/open";
   delta = 20;
   toStr = builtins.toString;
 in
@@ -110,7 +111,7 @@ in
           "cmd-shift-0" = "move-node-to-workspace 10";
 
           # Launch + state
-          "cmd-enter" = "exec-and-forget open -na ${termPath}";
+          "cmd-enter" = "exec-and-forget ${openBin} -na ${termPath}";
           "cmd-shift-space" = "layout floating tiling";
           "cmd-f" = "fullscreen";
           "cmd-shift-f" = "macos-native-fullscreen";
@@ -180,5 +181,4 @@ in
       $OPEN -a AeroSpace || "$APP" &
     fi
   '';
-
 }
