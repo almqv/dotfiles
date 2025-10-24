@@ -4,7 +4,9 @@ local options = {
     lua = { "stylua" },
 
     -- based
-    scala = { "scalafmt" },
+    c = { "clang-format" },
+    cpp = { "clang-format" },
+    rust = { "rustfmt" },
 
     -- Web Dev shit
     javascript = { "prettier" },
@@ -20,11 +22,23 @@ local options = {
 
     sh = { "shfmt" },
 
+    -- cringe
+    scala = { "scalafmt" },
+
     -- Joke langs
     haskell = { "stylish-haskell" },
 
     -- (system)verilog
     verilog = { "verible-verilog-format" },
+    systemverilog = { "verible-verilog-format" },
+  },
+
+  formatters = {
+    ["verible-verilog-format"] = {
+      command = "verible-verilog-format",
+      args = { "-" },
+      stdin = true,
+    },
   },
 
   format_on_save = {
