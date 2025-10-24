@@ -29,12 +29,12 @@ local options = {
     haskell = { "stylish-haskell" },
 
     -- (system)verilog
-    verilog = { "verible-verilog-format" },
-    systemverilog = { "verible-verilog-format" },
+    verilog = { "verible" },
+    systemverilog = { "verible" },
   },
 
   formatters = {
-    ["verible-verilog-format"] = {
+    ["verible"] = {
       command = "verible-verilog-format",
       args = { "-" },
       stdin = true,
