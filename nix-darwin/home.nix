@@ -156,6 +156,7 @@
     # py
     python3
     python312Packages.pip
+    python312Packages.ipykernel
     pyright
     uv
 
