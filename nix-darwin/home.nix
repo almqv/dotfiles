@@ -80,6 +80,7 @@
     # Deps needed to build stuff
     or-tools
     gnumake
+    ninja
     cmake
     swig4
     boost
