@@ -235,6 +235,7 @@
       py = "python";
       drs = "darwin-rebuild switch --flake $HOME/.dotfiles/nix-darwin";
       ta = "tmux attach";
+      s = "ssh";
     };
     oh-my-zsh = {
       enable = true;
