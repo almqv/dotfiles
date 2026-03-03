@@ -7,17 +7,6 @@ alias ccd="pwd | xclip"
 
 # Programs
 alias vidconvert="ffmpeg -i"
-# alias vim="nvim"
-# alias vi="nvim"
-
-# Shortcuts
-alias todo="task"
-
-# Laptop stuff
-alias setbri="xrandr --output eDP-1 --brightness"
-
-# Cringe
-alias gdb-multiarch="arm-none-eabi-gdb"
 
 # Git stuff
 alias gc="git add -A && git commit -m"
@@ -29,15 +18,12 @@ cd_gitroot() {
 
 alias cr="cd_gitroot"
 
-alias dev="cd $HOME/Projects/almtech/exa/code/"
+alias dev="cd $HOME/Projects/zetta/"
 
 alias dc="docker-compose"
 
 alias dots="cd $HOME/.dotfiles/"
 
 # Vim stuff 
-# alias vi="nvim"
-# alias vim="nvim"
-
-# Clock reset thing 
-alias restart_clock="ssh rasp \"sudo systemctl restart pyscript@clock.py.service\""
+alias vi="nvim"
+alias vim="nvim"
