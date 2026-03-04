@@ -110,3 +110,6 @@ export PATH="$HOME/.scripts:$HOME/.cargo/bin:$HOME/.local/bin:$PATH" # Add custo
 export VIDPLAY=mpv
 export IMGVIEW=eog
 export EDITOR=nvim
+
+# Neovim
+export PATH="/opt/nvim/bin/:$PATH"
