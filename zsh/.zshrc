@@ -8,7 +8,7 @@ export ZSH="/home/elal/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="edvardm"
+ZSH_THEME="afowler"
 # Good themes:
 # afowler
 # bira
@@ -113,3 +113,17 @@ export EDITOR=nvim
 
 # Neovim
 export PATH="/opt/nvim/bin/:$PATH"
+
+export QT_STYLE_OVERRIDE=adwaita-dark
+export PATH="$HOME/.npm-global/bin:$PATH"
+
+# OpenClaw Completion
+source "/home/elal/.openclaw/completions/openclaw.zsh"
+
+# pnpm
+export PNPM_HOME="/home/elal/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

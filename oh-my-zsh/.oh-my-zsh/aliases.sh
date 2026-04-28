@@ -1,7 +1,9 @@
 #!/usr/bin/bash
 
-alias xcopy="xclip -selection c"
-alias xpaste="xclip -selection c -o"
+alias xcopy="xclip"
+alias xpaste="xclip -o"
+
+alias sc="flameshot gui"
 
 alias ccd="pwd | xclip"
 
@@ -27,3 +29,13 @@ alias dots="cd $HOME/.dotfiles/"
 # Vim stuff 
 alias vi="nvim"
 alias vim="nvim"
+
+# ssh
+alias s="ssh"
+
+# python
+alias python="python3"
+alias py="python"
+
+# fmt
+alias fmt="cd build && ninja format-all && cd -"
