@@ -39,3 +39,9 @@ alias py="python"
 
 # fmt
 alias fmt="cd build && ninja format-all && cd -"
+
+# opencode
+alias oc="opencode"
+
+# tmux 
+alias ta="tmux attach"
