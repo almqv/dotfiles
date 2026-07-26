@@ -45,3 +45,4 @@ alias oc="opencode"
 
 # tmux 
 alias ta="tmux attach"
+alias tn="tmux new-session -t dev \; set-option destroy-unattached on"
