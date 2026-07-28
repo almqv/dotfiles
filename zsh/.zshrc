@@ -8,7 +8,7 @@ export ZSH="/home/elal/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="edvardm"
+ZSH_THEME="afowler"
 # Good themes:
 # afowler
 # bira
@@ -75,7 +75,7 @@ ZSH_THEME="edvardm"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fast-syntax-highlighting)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -111,6 +111,15 @@ export VIDPLAY=mpv
 export IMGVIEW=eog
 export EDITOR=nvim
 
+# Neovim
+export PATH="/opt/nvim/bin/:$PATH"
+
+export QT_STYLE_OVERRIDE=adwaita-dark
+export PATH="$HOME/.npm-global/bin:$PATH"
+
+# OpenClaw Completion
+source "/home/elal/.openclaw/completions/openclaw.zsh"
+
 # pnpm
 export PNPM_HOME="/home/elal/.local/share/pnpm"
 case ":$PATH:" in
@@ -119,7 +128,5 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-# PYENV
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+# opencode
+export PATH=/home/elal/.opencode/bin:$PATH

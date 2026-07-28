@@ -1,23 +1,14 @@
 #!/usr/bin/bash
 
-alias xcopy="xclip -selection c"
-alias xpaste="xclip -selection c -o"
+alias xcopy="xclip"
+alias xpaste="xclip -o"
+
+alias sc="flameshot gui"
 
 alias ccd="pwd | xclip"
 
 # Programs
 alias vidconvert="ffmpeg -i"
-# alias vim="nvim"
-# alias vi="nvim"
-
-# Shortcuts
-alias todo="task"
-
-# Laptop stuff
-alias setbri="xrandr --output eDP-1 --brightness"
-
-# Cringe
-alias gdb-multiarch="arm-none-eabi-gdb"
 
 # Git stuff
 alias gc="git add -A && git commit -m"
@@ -29,15 +20,29 @@ cd_gitroot() {
 
 alias cr="cd_gitroot"
 
-alias dev="cd $HOME/Projects/almtech/exa/code/"
+alias dev="cd $HOME/Projects/zetta/"
 
 alias dc="docker-compose"
 
 alias dots="cd $HOME/.dotfiles/"
 
 # Vim stuff 
-# alias vi="nvim"
-# alias vim="nvim"
+alias vi="nvim"
+alias vim="nvim"
 
-# Clock reset thing 
-alias restart_clock="ssh rasp \"sudo systemctl restart pyscript@clock.py.service\""
+# ssh
+alias s="ssh"
+
+# python
+alias python="python3"
+alias py="python"
+
+# fmt
+alias fmt="cd build && ninja format-all && cd -"
+
+# opencode
+alias oc="opencode"
+
+# tmux 
+alias ta="tmux attach"
+alias tn="tmux new-session -t dev \; set-option destroy-unattached on"
