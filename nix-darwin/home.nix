@@ -190,6 +190,14 @@
     LIBTORCH = "${pkgs.libtorch-bin}/lib";
   };
 
+  # Port watcher started by ssh's LocalCommand (Host zetta/dev in ~/.ssh/config):
+  # mirrors every TCP port listening on zetta to localhost while connected
+  home.file.".local/bin/zetta-autoforward" = {
+    source = ./scripts/zetta-autoforward;
+    executable = true;
+    force = true;
+  };
+
   # Link apps to ~/Applications/Nix
   home.activation = {
     linkApps = lib.hm.dag.entryAfter [ "checkLinkTargets" ] ''
@@ -233,9 +241,12 @@
       ls = "ls --color";
       tmux = "tmux -2";
       py = "python";
-      drs = "darwin-rebuild switch --flake $HOME/.dotfiles/nix-darwin";
+      drs = "sudo darwin-rebuild switch --flake $HOME/.dotfiles/nix-darwin#exa";
       ta = "tmux attach";
       s = "ssh";
+      # `ssh dev` (see ~/.ssh/config): tmux session group "dev" on zetta,
+      # own view per terminal, self-destructs on detach, auto port-forwarding
+      z = "ssh dev";
     };
     oh-my-zsh = {
       enable = true;

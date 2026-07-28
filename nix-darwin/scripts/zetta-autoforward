@@ -1,0 +1,47 @@
+#!/bin/zsh
+# Auto-started by ssh (LocalCommand in ~/.ssh/config) — do not run by hand.
+# While the ssh master connection to $HOST is alive, mirror every TCP port
+# listening on the remote to localhost. New services appear within ~2s,
+# dead ones are cleaned up. Logs to ~/.cache/zetta-autoforward.log
+set -u
+HOST="${1:-zetta}"
+LOG=~/.cache/zetta-autoforward.log
+PIDFILE=~/.cache/zetta-autoforward-$HOST.pid
+mkdir -p ~/.cache
+
+# only one watcher per host
+if [[ -f $PIDFILE ]] && kill -0 "$(cat $PIDFILE)" 2>/dev/null; then exit 0; fi
+echo $$ > "$PIDFILE"
+
+typeset -A active   # port -> 1 (forwarded) | skip (in use locally / privileged)
+print "$(date '+%F %T') watcher started for $HOST" >> "$LOG"
+
+while ssh -O check "$HOST" &>/dev/null; do
+  ports=("${(f)$(ssh -o PermitLocalCommand=no "$HOST" "ss -tlnH | awk '{print \$4}' | grep -oE '[0-9]+\$' | sort -un" 2>/dev/null)}")
+
+  for p in $ports; do
+    [[ -z "$p" ]] && continue
+    (( p < 1024 )) && continue
+    if [[ -z "${active[$p]:-}" ]]; then
+      if ssh -O forward -L "${p}:localhost:${p}" "$HOST" &>/dev/null; then
+        active[$p]=1
+        print "$(date '+%F %T') + localhost:$p" >> "$LOG"
+      else
+        active[$p]=skip
+      fi
+    fi
+  done
+
+  for p in ${(k)active}; do
+    if (( ! ${ports[(Ie)$p]} )); then
+      [[ "${active[$p]}" == 1 ]] && ssh -O cancel -L "${p}:localhost:${p}" "$HOST" &>/dev/null && \
+        print "$(date '+%F %T') - localhost:$p" >> "$LOG"
+      unset "active[$p]"
+    fi
+  done
+
+  sleep 2
+done
+
+print "$(date '+%F %T') watcher stopped (connection closed)" >> "$LOG"
+rm -f "$PIDFILE"
