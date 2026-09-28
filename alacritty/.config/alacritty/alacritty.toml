@@ -1,57 +1,61 @@
 [colors]
 draw_bold_text_with_bright_colors = true
 
-[[colors.indexed_colors]]
-color = "0xde935f"
-index = 16
-
-[[colors.indexed_colors]]
-color = "0xa3685a"
-index = 17
-
-[[colors.indexed_colors]]
-color = "0x282a2e"
-index = 18
-
-[[colors.indexed_colors]]
-color = "0x373b41"
-index = 19
-
-[[colors.indexed_colors]]
-color = "0xb4b7b4"
-index = 20
-
-[[colors.indexed_colors]]
-color = "0xe0e0e0"
-index = 21
-
-[colors.bright]
-black = "0x969896"
-blue = "0x81a2be"
-cyan = "0x8abeb7"
-green = "0xb5bd68"
-magenta = "0xb294bb"
-red = "0xcc6666"
-white = "0xffffff"
-yellow = "0xf0c674"
+# Nord — https://www.nordtheme.com/docs/colors-and-palettes
+[colors.primary]
+background = "#2e3440"
+foreground = "#d8dee9"
+dim_foreground = "#a5abb6"
 
 [colors.cursor]
-cursor = "0xc5c8c6"
-text = "0x1d1f21"
+text = "#2e3440"
+cursor = "#d8dee9"
+
+[colors.vi_mode_cursor]
+text = "#2e3440"
+cursor = "#d8dee9"
+
+[colors.selection]
+text = "CellForeground"
+background = "#4c566a"
+
+[colors.search.matches]
+foreground = "CellBackground"
+background = "#88c0d0"
+
+[colors.footer_bar]
+foreground = "#d8dee9"
+background = "#434c5e"
 
 [colors.normal]
-black = "0x1d1f21"
-blue = "0x81a2be"
-cyan = "0x8abeb7"
-green = "0xb5bd68"
-magenta = "0xb294bb"
-red = "0xcc6666"
-white = "0xc5c8c6"
-yellow = "0xf0c674"
+black = "#3b4252"
+red = "#bf616a"
+green = "#a3be8c"
+yellow = "#ebcb8b"
+blue = "#81a1c1"
+magenta = "#b48ead"
+cyan = "#88c0d0"
+white = "#e5e9f0"
 
-[colors.primary]
-background = "0x121212"
-foreground = "0xffffff"
+[colors.bright]
+black = "#616e88"
+red = "#bf616a"
+green = "#a3be8c"
+yellow = "#ebcb8b"
+blue = "#81a1c1"
+magenta = "#b48ead"
+cyan = "#8fbcbb"
+white = "#eceff4"
+
+[colors.dim]
+black = "#373e4d"
+red = "#94545d"
+green = "#809575"
+yellow = "#b29e75"
+blue = "#68809a"
+magenta = "#8c738c"
+cyan = "#6d96a5"
+white = "#aeb3bb"
 
 [cursor]
 style = "Block"
