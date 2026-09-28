@@ -2,7 +2,7 @@
 local ewm = require("ewm")
 
 local function update()
-	ewm.setstatus(os.date("%Y-%m-%d %H:%M:%S"))
+	ewm.setstatus("clk: " .. os.date("%Y-%m-%d %H:%M:%S"))
 end
 
 ewm.on("startup", update)

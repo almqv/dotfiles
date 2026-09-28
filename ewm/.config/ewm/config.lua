@@ -10,10 +10,10 @@ ewm.set {
 	gapmodes = { 20, 0 }, -- cycled by switchgaps
 	barpadding = 6,
 	fonts = { "Fira Code:size=9" },
-	colors = { -- Nord (dark): nord0 bg, nord1 surfaces, frost accents
+	colors = { -- NvChad onenord (base46), same as nvim; bar styled like tabufline
 		--       fg          bg          border
-		norm = { "#d8dee9", "#2e3440", "#3b4252" },
-		sel = { "#88c0d0", "#3b4252", "#5e81ac" },
+		norm = { "#bfc5d0", "#252b37", "#414753" }, -- base05, darker_black, line
+		sel = { "#D8DEE9", "#2a303c", "#81A1C1" }, -- white, black (nvim bg), nord_blue
 	},
 	tags = { "1", "2", "3", "4", "5", "6", "7", "8", "9" },
 	layouts = { "tile", "floating", "monocle" }, -- first is the default
@@ -127,8 +127,9 @@ for i = 1, 9 do
 	key(mod .. "+Control+Shift", tostring(i), ewm.toggletag, i)
 end
 
--- session
-key(mod .. "+Shift", "r", ewm.reload)
+-- session; the config reloads on save, restart also picks up a newly
+-- installed ewm without closing any windows
+key(mod .. "+Shift", "r", ewm.restart)
 key(mod .. "+Shift", "e", ewm.quit)
 
 -- mouse; tag bar buttons without arguments receive the clicked tag
