@@ -60,7 +60,7 @@ style = "Block"
 TERM = "xterm-256color"
 
 [font]
-size = 8
+size = 6.5
 
 [font.bold]
 family = "FiraCode Nerd Font"

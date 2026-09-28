@@ -1,6 +1,3 @@
-# (n)Vim junk
-nvim/.config/nvim/plugged/
-
 # XMonad junk
 xmonad/.xmonad/*.hi
 xmonad/.xmonad/*.errors
