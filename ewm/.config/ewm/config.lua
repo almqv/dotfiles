@@ -48,6 +48,8 @@ end
 local home = os.getenv("HOME")
 ewm.autostart { "setxkbmap", "-model", "apple", "-layout", "us" }
 ewm.autostart { home .. "/.screenlayout/layout.sh" }
+-- only reaches keyboards present now; replugged ones get X's 660/25 default
+-- unless ~/.dotfiles/xorg (00-keyboard.conf) is stowed into /etc
 ewm.autostart { "xset", "r", "rate", "200", "40" }
 ewm.autostart { "nitrogen", "--restore" }
 ewm.autostart { "xsettingsd" }
