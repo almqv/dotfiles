@@ -73,7 +73,12 @@ key(mod, "d", dmenu)
 key(mod, "Return", ewm.spawn, { terminal })
 key(mod, "e", ewm.spawn, { "firefox" })
 key(mod .. "+Shift", "l", ewm.spawn, { "slock" })
-key(mod, "Print", ewm.spawn, { "flameshot", "gui" })
+-- SESSION_MANAGER inherited from an old GNOME login points at a dead socket;
+-- Qt stalls ~1s trying to reach it, so start flameshot without it
+local screenshot = { "env", "-u", "SESSION_MANAGER", "flameshot", "gui" }
+key(mod, "Print", ewm.spawn, screenshot)
+-- Apple keyboards have no Print key; F13 (keycode 191) produces XF86Tools
+key(mod .. "+Shift", "XF86Tools", ewm.spawn, screenshot)
 
 -- windows
 key(mod, "b", ewm.togglebar)
