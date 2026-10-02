@@ -46,11 +46,9 @@ end
 
 -- programs started once per session (from the old ~/.ewm/autostart.sh)
 local home = os.getenv("HOME")
-ewm.autostart { "setxkbmap", "-model", "apple", "-layout", "us" }
+-- layout + repeat rate, reapplied when the keyboard reconnects (see the script)
+ewm.autostart { ewm.configdir .. "/keyboard.sh" }
 ewm.autostart { home .. "/.screenlayout/layout.sh" }
--- only reaches keyboards present now; replugged ones get X's 660/25 default
--- unless ~/.dotfiles/xorg (00-keyboard.conf) is stowed into /etc
-ewm.autostart { "xset", "r", "rate", "200", "40" }
 ewm.autostart { "nitrogen", "--restore" }
 ewm.autostart { "xsettingsd" }
 
