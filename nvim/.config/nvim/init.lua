@@ -1,64 +1,37 @@
---      __     ___
---    __\ \   / (_)_ __ ___
---   / _ \ \ / /| | '_ ` _ \
---  |  __/\ V / | | | | | | |
---   \___| \_/  |_|_| |_| |_|
---        epsilons Viim
+vim.g.base46_cache = vim.fn.stdpath "data" .. "/base46/"
+vim.g.mapleader = " "
 
-require("evim.init")
+-- bootstrap lazy and all plugins
+local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 
--- Theme
-vim.opt.termguicolors = true
-local theme = require("onedark")
+if not vim.uv.fs_stat(lazypath) then
+  local repo = "https://github.com/folke/lazy.nvim.git"
+  vim.fn.system { "git", "clone", "--filter=blob:none", repo, "--branch=stable", lazypath }
+end
 
-theme.setup {
-	-- Main options --
-	style = "warmer",          -- Default theme style. Choose between "dark", "darker", "cool", "deep", "warm", "warmer" and "light"
-	transparent = true,       -- Show/hide background
-	term_colors = true,        -- Change terminal color as per the selected theme style
-	ending_tildes = true,     -- Show the end-of-buffer tildes. By default they are hidden
-	cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
+vim.opt.rtp:prepend(lazypath)
 
-	-- toggle theme style ---
-	toggle_style_key = nil,                                                           -- keybind to toggle theme style. Leave it nil to disable it, or set it to a string, for example "<leader>ts"
-	toggle_style_list = { "dark", "darker", "cool", "deep", "warm", "warmer", "light" }, -- List of styles to toggle between
+local lazy_config = require "configs.lazy"
 
-	-- Change code style ---
-	-- Options are italic, bold, underline, none
-	-- You can configure multiple style with comma separated, For e.g., keywords = "italic,bold"
-	code_style = {
-		comments = "italic",
-		keywords = "none",
-		functions = "bold",
-		strings = "none",
-		variables = "none"
-	},
+-- load plugins
+require("lazy").setup({
+  {
+    "NvChad/NvChad",
+    lazy = false,
+    branch = "v2.5",
+    import = "nvchad.plugins",
+  },
 
-	-- Lualine options --
-	lualine = {
-		transparent = true, -- lualine center bar transparency
-	},
+  { import = "plugins" },
+}, lazy_config)
 
-	-- Custom Highlights --
-	colors = {},  -- Override default colors
-	highlights = {}, -- Override highlight groups
+-- load theme
+dofile(vim.g.base46_cache .. "defaults")
+dofile(vim.g.base46_cache .. "statusline")
 
-	-- Plugins Config --
-	diagnostics = {
-		darker = true, -- darker colors for diagnostic
-		undercurl = true, -- use undercurl instead of underline for diagnostics
-		background = true, -- use background color for virtual text
-	},
-}
-vim.cmd.colorscheme "onedark"
+require "options"
+require "autocmds"
 
--- Editor settings
-vim.opt.nu         = true
-vim.opt.scrolloff  = 4
-
-vim.opt.autoindent = true
-vim.opt.tabstop    = 4
-vim.opt.shiftwidth = 4
-
-vim.opt.hlsearch   = false
-vim.opt.incsearch  = true
+vim.schedule(function()
+  require "mappings"
+end)

@@ -15,7 +15,7 @@ alias gc="git add -A && git commit -m"
 
 # Very nice things
 cd_gitroot() {
-  cd "$(git rev-parse --show-toplevel)" 
+  cd "$(git rev-parse --show-toplevel)"
 }
 
 alias cr="cd_gitroot"
@@ -26,7 +26,7 @@ alias dc="docker-compose"
 
 alias dots="cd $HOME/.dotfiles/"
 
-# Vim stuff 
+# Vim stuff
 alias vi="nvim"
 alias vim="nvim"
 
@@ -43,6 +43,8 @@ alias fmt="cd build && ninja format-all && cd -"
 # opencode
 alias oc="opencode"
 
-# tmux 
+# tmux
 alias ta="tmux attach"
 alias tn="tmux new-session -t dev \; set-option destroy-unattached on"
+
+alias o="open"

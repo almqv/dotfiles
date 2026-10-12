@@ -1,57 +1,55 @@
 [colors]
 draw_bold_text_with_bright_colors = true
 
-[[colors.indexed_colors]]
-color = "0xde935f"
-index = 16
-
-[[colors.indexed_colors]]
-color = "0xa3685a"
-index = 17
-
-[[colors.indexed_colors]]
-color = "0x282a2e"
-index = 18
-
-[[colors.indexed_colors]]
-color = "0x373b41"
-index = 19
-
-[[colors.indexed_colors]]
-color = "0xb4b7b4"
-index = 20
-
-[[colors.indexed_colors]]
-color = "0xe0e0e0"
-index = 21
-
-[colors.bright]
-black = "0x969896"
-blue = "0x81a2be"
-cyan = "0x8abeb7"
-green = "0xb5bd68"
-magenta = "0xb294bb"
-red = "0xcc6666"
-white = "0xffffff"
-yellow = "0xf0c674"
+# NvChad onenord (base46), same as nvim. The 16 ANSI colors follow
+# base46/term.lua, which nvim uses for its own :terminal.
+[colors.primary]
+background = "#2a303c" # base00
+foreground = "#bfc5d0" # base05
 
 [colors.cursor]
-cursor = "0xc5c8c6"
-text = "0x1d1f21"
+text = "#2a303c"
+cursor = "#bfc5d0"
+
+[colors.vi_mode_cursor]
+text = "#2a303c"
+cursor = "#bfc5d0"
+
+[colors.selection] # Visual
+text = "CellForeground"
+background = "#434C5E" # base02
+
+[colors.search.matches] # Search
+foreground = "#3B4252" # base01
+background = "#EBCB8B" # base0A
+
+[colors.search.focused_match] # IncSearch
+foreground = "#3B4252" # base01
+background = "#e39a83" # base09
+
+[colors.footer_bar] # statusline
+foreground = "#bfc5d0"
+background = "#333945"
 
 [colors.normal]
-black = "0x1d1f21"
-blue = "0x81a2be"
-cyan = "0x8abeb7"
-green = "0xb5bd68"
-magenta = "0xb294bb"
-red = "0xcc6666"
-white = "0xc5c8c6"
-yellow = "0xf0c674"
+black = "#3B4252"   # base01
+red = "#d57780"     # base08
+green = "#A3BE8C"   # base0B
+yellow = "#EBCB8B"  # base0A
+blue = "#81A1C1"    # base0D
+magenta = "#B48EAD" # base0E
+cyan = "#97b7d7"    # base0C
+white = "#bfc5d0"   # base05
 
-[colors.primary]
-background = "0x121212"
-foreground = "0xffffff"
+[colors.bright]
+black = "#4C566A"   # base03
+red = "#d57780"
+green = "#A3BE8C"
+yellow = "#EBCB8B"
+blue = "#81A1C1"
+magenta = "#B48EAD"
+cyan = "#97b7d7"
+white = "#ced4df"   # base07
 
 [cursor]
 style = "Block"
@@ -60,7 +58,7 @@ style = "Block"
 TERM = "xterm-256color"
 
 [font]
-size = 8
+size = 6.5
 
 [font.bold]
 family = "FiraCode Nerd Font"

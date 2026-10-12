@@ -1,17 +1,15 @@
-![Preview](preview.png)
+![Preview](preview-ewm.png)
 
 ## Stuff I use
- - **OS**: [Arch Linux](https://archlinux.org/)
- - **Kernel**: [lqx](https://liquorix.net/) *(standard linux as fallback)*
- - **WM**: [LeftWM](https://leftwm.org/)
+ - **WM**: [ewm](https://github.com/almqv/ewm)
+ - **Bar**: ewm's built-in bar ([status.lua](ewm/.config/ewm/plugins/status.lua))
  - **Terminal**: [Alacritty](https://github.com/alacritty/alacritty)
- - **Editor**: [Emacs](https://www.gnu.org/software/emacs/) or [nvim](https://neovim.io/)
- - **Compositor**: [picom](https://github.com/yshui/picom)
- - **Bar**: [eww](https://github.com/elkowar/eww)
- - **Launcher**: [rofi](https://github.com/davatorium/rofi)
+ - **Editor**: [nvim](https://github.com/neovim/neovim) or [Emacs](https://github.com/emacs-mirror/emacs)
+ - **Launcher**: [dmenu](https://git.suckless.org/dmenu/)
+ - **Locker**: [slock](https://git.suckless.org/slock/)
 
 ## Installing dotfiles
-`git clone git.wych.dev/repos/dotfiles.git && cd dotfiles`
+`git clone https://github.com/almqv/dotfiles.git && cd dotfiles`
 
 Then use [stow](https://www.gnu.org/software/stow/) to create symlinks for each *dotfile*: `$ stow (stow options) (package)`
 	
