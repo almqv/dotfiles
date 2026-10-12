@@ -274,9 +274,6 @@
         # Nix
         if [ -e /etc/profile.d/nix.sh ]; then . /etc/profile.d/nix.sh; fi
 
-        # TERM
-        export TERM=xterm-xfree86
-
         # Source .env file for environment variables
         if [ -f "$HOME/.env" ]; then
           source "$HOME/.env"
@@ -288,7 +285,8 @@
   programs.tmux = {
     enable = true;
     mouse = true;
-    terminal = "xterm-256color";
+    # Correct TERM *inside* tmux; outer terminal capabilities come from terminal-features below
+    terminal = "tmux-256color";
     shell = "${pkgs.zsh}/bin/zsh";
     shortcut = "s";
     keyMode = "vi";
@@ -337,9 +335,21 @@
       set-window-option -g window-status-current-format " #I#[fg=colour250]:#[fg=colour255]#W#[fg=colour50]#F "
       set-window-option -g window-status-format " #I#[fg=colour237]:#[fg=colour250]#W#[fg=colour244]#F "
 
-      # Truecolor support
-      set-option -sa terminal-overrides ",xterm*:Tc"
+      # Truecolor/undercurl etc. for the outer terminal (local Ghostty, or the
+      # xterm-256color fallback Ghostty's ssh wrapper uses on hosts without its terminfo)
+      set -as terminal-features ",xterm-ghostty:RGB:usstyle,xterm-256color:RGB"
     '';
+  };
+
+  # Ghostty (installed as /Applications/Ghostty.app, so no package). Merged with
+  # ~/Library/Application Support/com.mitchellh.ghostty/config, which still holds the rest.
+  # ssh-terminfo: `ssh host` installs xterm-ghostty terminfo on the remote (cached per user@host),
+  #   falls back to TERM=xterm-256color if that fails.
+  # ssh-env: sends COLORTERM=truecolor + TERM_PROGRAM so remote tmux/nvim enable 24-bit color.
+  programs.ghostty = {
+    enable = true;
+    package = null;
+    settings.shell-integration-features = "ssh-env,ssh-terminfo";
   };
 
   programs.vim = {
