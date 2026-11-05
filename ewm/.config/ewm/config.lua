@@ -13,7 +13,7 @@ ewm.set {
 	colors = { -- NvChad gruvchad (base46), same as nvim; bar styled like tabufline
 		--       fg          bg          border
 		norm = { "#c0b196", "#1a1d1e", "#323536" }, -- base05, darker_black, line
-		sel = { "#c7b89d", "#1e2122", "#6d8dad" }, -- white, black, blue (NvChad FloatBorder)
+		sel = { "#c7b89d", "#1e2122", "#d4be98" }, -- white, black, base04 (warm beige border)
 	},
 	tags = { "1", "2", "3", "4", "5", "6", "7", "8", "9" },
 	layouts = { "tile", "floating", "monocle" }, -- first is the default
