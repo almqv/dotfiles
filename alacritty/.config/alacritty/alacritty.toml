@@ -1,55 +1,55 @@
 [colors]
 draw_bold_text_with_bright_colors = true
 
-# NvChad onenord (base46), same as nvim. The 16 ANSI colors follow
+# NvChad gruvchad (base46), same as nvim. The 16 ANSI colors follow
 # base46/term.lua, which nvim uses for its own :terminal.
 [colors.primary]
-background = "#2a303c" # base00
-foreground = "#bfc5d0" # base05
+background = "#1e2122" # base00
+foreground = "#c0b196" # base05
 
 [colors.cursor]
-text = "#2a303c"
-cursor = "#bfc5d0"
+text = "#1e2122"
+cursor = "#c0b196"
 
 [colors.vi_mode_cursor]
-text = "#2a303c"
-cursor = "#bfc5d0"
+text = "#1e2122"
+cursor = "#c0b196"
 
 [colors.selection] # Visual
 text = "CellForeground"
-background = "#434C5E" # base02
+background = "#36393a" # base02
 
 [colors.search.matches] # Search
-foreground = "#3B4252" # base01
-background = "#EBCB8B" # base0A
+foreground = "#2c2f30" # base01
+background = "#e0c080" # base0A
 
 [colors.search.focused_match] # IncSearch
-foreground = "#3B4252" # base01
-background = "#e39a83" # base09
+foreground = "#2c2f30" # base01
+background = "#e78a4e" # base09
 
 [colors.footer_bar] # statusline
-foreground = "#bfc5d0"
-background = "#333945"
+foreground = "#c0b196"
+background = "#222526"
 
 [colors.normal]
-black = "#3B4252"   # base01
-red = "#d57780"     # base08
-green = "#A3BE8C"   # base0B
-yellow = "#EBCB8B"  # base0A
-blue = "#81A1C1"    # base0D
-magenta = "#B48EAD" # base0E
-cyan = "#97b7d7"    # base0C
-white = "#bfc5d0"   # base05
+black = "#2c2f30"   # base01
+red = "#ec6b64"     # base08
+green = "#a9b665"   # base0B
+yellow = "#e0c080"  # base0A
+blue = "#7daea3"    # base0D
+magenta = "#d3869b" # base0E
+cyan = "#86b17f"    # base0C
+white = "#c0b196"   # base05
 
 [colors.bright]
-black = "#4C566A"   # base03
-red = "#d57780"
-green = "#A3BE8C"
-yellow = "#EBCB8B"
-blue = "#81A1C1"
-magenta = "#B48EAD"
-cyan = "#97b7d7"
-white = "#ced4df"   # base07
+black = "#404344"   # base03
+red = "#ec6b64"
+green = "#a9b665"
+yellow = "#e0c080"
+blue = "#7daea3"
+magenta = "#d3869b"
+cyan = "#86b17f"
+white = "#c7b89d"   # base07
 
 [cursor]
 style = "Block"

@@ -10,10 +10,10 @@ ewm.set {
 	gapmodes = { 20, 0 }, -- cycled by switchgaps
 	barpadding = 6,
 	fonts = { "Fira Code:size=9" },
-	colors = { -- NvChad onenord (base46), same as nvim; bar styled like tabufline
+	colors = { -- NvChad gruvchad (base46), same as nvim; bar styled like tabufline
 		--       fg          bg          border
-		norm = { "#bfc5d0", "#252b37", "#414753" }, -- base05, darker_black, line
-		sel = { "#D8DEE9", "#2a303c", "#81A1C1" }, -- white, black (nvim bg), nord_blue
+		norm = { "#c0b196", "#1a1d1e", "#323536" }, -- base05, darker_black, line
+		sel = { "#c7b89d", "#1e2122", "#6d8dad" }, -- white, black, blue (NvChad FloatBorder)
 	},
 	tags = { "1", "2", "3", "4", "5", "6", "7", "8", "9" },
 	layouts = { "tile", "floating", "monocle" }, -- first is the default
@@ -58,7 +58,7 @@ local terminal = os.getenv("TERMINAL") or pick { "alacritty", "kitty", "st", "x-
 
 local function dmenu()
 	ewm.spawn { "dmenu_run", "-m", tostring(ewm.monitor().num), "-p", "Run $", "-z", "512",
-		"-nb", "#2e3440", "-nf", "#d8dee9", "-sb", "#3b4252", "-sf", "#88c0d0" }
+		"-nb", "#1e2122", "-nf", "#c0b196", "-sb", "#36393a", "-sf", "#c7b89d" }
 end
 
 -- media keys

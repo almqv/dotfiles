@@ -4,6 +4,7 @@
  - **WM**: [ewm](https://github.com/almqv/ewm)
  - **Bar**: ewm's built-in bar ([status.lua](ewm/.config/ewm/plugins/status.lua))
  - **Terminal**: [Alacritty](https://github.com/alacritty/alacritty)
+ - **Theme**: NvChad Gruvchad, shared by Neovim, Alacritty, and ewm.
  - **Editor**: [nvim](https://github.com/neovim/neovim) or [Emacs](https://github.com/emacs-mirror/emacs)
  - **Launcher**: [dmenu](https://git.suckless.org/dmenu/)
  - **Locker**: [slock](https://git.suckless.org/slock/)
